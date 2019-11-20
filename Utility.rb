@@ -50,22 +50,39 @@ end
 
 
 def compare(op, locationTrue, locationEnd)
-  str = getTopTwoFromStack() + "D=M-D"+"\n"+"@"+locationTrue+"\n"+"D;"+op+"\n"+ decrementStackPointer() + "D=0"+"\n" + pushToStack() + "@"+locationEnd+"\n"+"0;JMP"+"\n"+atTrue(locationTrue, locationEnd)+endComp(locationEnd)
+  str = getTopTwoFromStack() + "D=M-D"+"\n"+"@"+locationTrue+"\n"+"D;"+op+"\n"+ jumpLocations(locationTrue, locationEnd)
   return str
 end
 
+
+def jumpLocations(locationTrue, locationEnd)
+  str = decrementStackPointer() + "D=0"+"\n" + pushToStack() + "@"+locationEnd+"\n"+"0;JMP"+"\n"+atTrue(locationTrue, locationEnd)+endOp(locationEnd)
+  return str
+end
 
 def atTrue(locationTrue, locationEnd)
 str = "("+locationTrue+")"+"\n"+ decrementStackPointer() + "D=-1"+"\n" + pushToStack() + "@"+locationEnd+"\n"+"0;JMP"+"\n"
-  puts "(" + locationTrue + ")"
-  puts "(" + locationEnd + ")"
   return str
 end
 
-def endComp(locationEnd)
+
+def endOp(locationEnd)
   str = "(" + locationEnd + ")" + "\n"
   return str
 end
 
 
+def boolAnd(locationTrue, locationEnd)
+  str = getTopTwoFromStack()
+end
 
+
+def boolOr(locationTrue, locationEnd)
+  str = getTopTwoFromStack() + "@"+locationTrue+"\n"+"D;JNE"+"\n"+"D=M"+"\n"+"@"+locationTrue+"\n"+"D;JNE"+"\n" + jumpLocations(locationTrue, locationEnd)
+end
+
+
+def boolNot(locationTrue, locationEnd)
+  str = getTopOfStack() + "@"+locationTrue+"\n"+"D;JEQ"+"\n" + jumpLocations(locationTrue, locationEnd)
+  return str
+end

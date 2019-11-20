@@ -90,7 +90,7 @@ def convertCommand(arr, i)
     cmds
 
   when "not"
-    cmds = getTopOfStack()
+    cmds = boolNot(locationTrue, locationEnd)
 
   #push and pop vary based on what we are pushing this is handled in there own functions
   when "push"
