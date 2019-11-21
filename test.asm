@@ -56,6 +56,7 @@ M=M+1
 
 
 
+
 //push constant to stack
 @5
 D=A
@@ -86,13 +87,12 @@ M=M-D
 @SP
 M=M-1
 
-
 //get the top of stack
 @SP
 A=M-1
 
-
 M=D+M
+
 
 //end of program infinite loop
 (END)

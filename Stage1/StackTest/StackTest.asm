@@ -73,11 +73,9 @@ M=M-D
 @SP
 M=M-1
 
-
 //get the top of stack
 @SP
 A=M-1
-
 
 D=M-D
 @jumpLocation2
@@ -94,7 +92,6 @@ M=D
 //increment the stack pointer
 @SP
 M=M+1
-
 
 //get comparison ops jump
 @locationEnd2
@@ -114,13 +111,11 @@ M=D
 @SP
 M=M+1
 
-
 @locationEnd2
 0;JMP
 
 //end of jump
 (locationEnd2)
-
 
 
 
@@ -168,11 +163,9 @@ M=M-D
 @SP
 M=M-1
 
-
 //get the top of stack
 @SP
 A=M-1
-
 
 D=M-D
 @jumpLocation5
@@ -189,7 +182,6 @@ M=D
 //increment the stack pointer
 @SP
 M=M+1
-
 
 //get comparison ops jump
 @locationEnd5
@@ -209,13 +201,11 @@ M=D
 @SP
 M=M+1
 
-
 @locationEnd5
 0;JMP
 
 //end of jump
 (locationEnd5)
-
 
 
 
@@ -263,11 +253,9 @@ M=M-D
 @SP
 M=M-1
 
-
 //get the top of stack
 @SP
 A=M-1
-
 
 D=M-D
 @jumpLocation8
@@ -284,7 +272,6 @@ M=D
 //increment the stack pointer
 @SP
 M=M+1
-
 
 //get comparison ops jump
 @locationEnd8
@@ -304,13 +291,11 @@ M=D
 @SP
 M=M+1
 
-
 @locationEnd8
 0;JMP
 
 //end of jump
 (locationEnd8)
-
 
 
 
@@ -358,11 +343,9 @@ M=M-D
 @SP
 M=M-1
 
-
 //get the top of stack
 @SP
 A=M-1
-
 
 D=M-D
 @jumpLocation11
@@ -379,7 +362,6 @@ M=D
 //increment the stack pointer
 @SP
 M=M+1
-
 
 //get comparison ops jump
 @locationEnd11
@@ -399,13 +381,11 @@ M=D
 @SP
 M=M+1
 
-
 @locationEnd11
 0;JMP
 
 //end of jump
 (locationEnd11)
-
 
 
 
@@ -453,11 +433,9 @@ M=M-D
 @SP
 M=M-1
 
-
 //get the top of stack
 @SP
 A=M-1
-
 
 D=M-D
 @jumpLocation14
@@ -474,7 +452,6 @@ M=D
 //increment the stack pointer
 @SP
 M=M+1
-
 
 //get comparison ops jump
 @locationEnd14
@@ -494,13 +471,11 @@ M=D
 @SP
 M=M+1
 
-
 @locationEnd14
 0;JMP
 
 //end of jump
 (locationEnd14)
-
 
 
 
@@ -548,11 +523,9 @@ M=M-D
 @SP
 M=M-1
 
-
 //get the top of stack
 @SP
 A=M-1
-
 
 D=M-D
 @jumpLocation17
@@ -569,7 +542,6 @@ M=D
 //increment the stack pointer
 @SP
 M=M+1
-
 
 //get comparison ops jump
 @locationEnd17
@@ -589,13 +561,11 @@ M=D
 @SP
 M=M+1
 
-
 @locationEnd17
 0;JMP
 
 //end of jump
 (locationEnd17)
-
 
 
 
@@ -643,11 +613,9 @@ M=M-D
 @SP
 M=M-1
 
-
 //get the top of stack
 @SP
 A=M-1
-
 
 D=M-D
 @jumpLocation20
@@ -664,7 +632,6 @@ M=D
 //increment the stack pointer
 @SP
 M=M+1
-
 
 //get comparison ops jump
 @locationEnd20
@@ -684,13 +651,11 @@ M=D
 @SP
 M=M+1
 
-
 @locationEnd20
 0;JMP
 
 //end of jump
 (locationEnd20)
-
 
 
 
@@ -738,11 +703,9 @@ M=M-D
 @SP
 M=M-1
 
-
 //get the top of stack
 @SP
 A=M-1
-
 
 D=M-D
 @jumpLocation23
@@ -759,7 +722,6 @@ M=D
 //increment the stack pointer
 @SP
 M=M+1
-
 
 //get comparison ops jump
 @locationEnd23
@@ -779,13 +741,11 @@ M=D
 @SP
 M=M+1
 
-
 @locationEnd23
 0;JMP
 
 //end of jump
 (locationEnd23)
-
 
 
 
@@ -833,11 +793,9 @@ M=M-D
 @SP
 M=M-1
 
-
 //get the top of stack
 @SP
 A=M-1
-
 
 D=M-D
 @jumpLocation26
@@ -854,7 +812,6 @@ M=D
 //increment the stack pointer
 @SP
 M=M+1
-
 
 //get comparison ops jump
 @locationEnd26
@@ -874,13 +831,11 @@ M=D
 @SP
 M=M+1
 
-
 @locationEnd26
 0;JMP
 
 //end of jump
 (locationEnd26)
-
 
 
 
@@ -940,13 +895,12 @@ M=M-D
 @SP
 M=M-1
 
-
 //get the top of stack
 @SP
 A=M-1
 
-
 M=D+M
+
 
 //push constant to stack
 @112
@@ -978,13 +932,12 @@ M=M-D
 @SP
 M=M-1
 
-
 //get the top of stack
 @SP
 A=M-1
 
-
 M=M-D
+
 
 //negate
 //get the top of stack
@@ -992,6 +945,7 @@ M=M-D
 A=M-1
 
 M=-M
+
 
 //bit wise and
 //get the top two from stack
@@ -1010,11 +964,9 @@ M=M-D
 @SP
 M=M-1
 
-
 //get the top of stack
 @SP
 A=M-1
-
 
 D=D&M
 //decrement the stack pointer
@@ -1061,11 +1013,9 @@ M=M-D
 @SP
 M=M-1
 
-
 //get the top of stack
 @SP
 A=M-1
-
 
 D=D|M
 //decrement the stack pointer

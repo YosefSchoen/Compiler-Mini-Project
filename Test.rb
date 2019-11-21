@@ -95,48 +95,48 @@ def convertCommand(arr, i)
   #basic arithmetic operations
   when "add"
     cmds = "//add"+"\n" +
-        getTopTwoFromStack() + "M=D+M"+"\n"
+        getTopTwoFromStack() + "M=D+M"+"\n"+"\n"
 
   when "sub"
     cmds = "//subtract"+"\n" +
-        getTopTwoFromStack() + "M=M-D"+"\n"
+        getTopTwoFromStack() + "M=M-D"+"\n"+"\n"
 
   when "neg"
     cmds = "//negate"+"\n" +
-        getTopOfStack() +"M=-M"+"\n"
+        getTopOfStack() +"M=-M"+"\n"+"\n"
 
   #basic comparison operations they call the compare function in Utility
   when "eq"
     cmds = "//check if equal"+"\n" +
-        compare("JEQ", jumpLocation, locationEnd)
+        compare("JEQ", jumpLocation, locationEnd)+"\n"
 
   when "gt"
     cmds = "//check if greater than"+"\n" +
-        compare("JGT", jumpLocation, locationEnd)
+        compare("JGT", jumpLocation, locationEnd)+"\n"
 
   when "lt"
     cmds = "//check if less than"+"\n" +
-        compare("JLT", jumpLocation, locationEnd)
+        compare("JLT", jumpLocation, locationEnd)+"\n"
 
   #basic bitwise operations
   when "and"
     cmds = "//bit wise and"+"\n" +
-        getTopTwoFromStack() + "D=D&M"+"\n" + decrementStackPointer() + pushToStack()
+        getTopTwoFromStack() + "D=D&M"+"\n" + decrementStackPointer() + pushToStack()+"\n"
 
   when "or"
     cmds = "//bit wise or"+"\n" +
-        getTopTwoFromStack() + "D=D|M"+"\n" + decrementStackPointer() + pushToStack()
+        getTopTwoFromStack() + "D=D|M"+"\n" + decrementStackPointer() + pushToStack()+"\n"
 
   when "not"
     cmds = "//bit wise not"+"\n" +
-        getTopOfStack() + "D=!M"+"\n"+ decrementStackPointer() + pushToStack()
+        getTopOfStack() + "D=!M"+"\n"+ decrementStackPointer() + pushToStack()+"\n"
 
   #push and pop vary based on what we are pushing this is handled in there own functions
   when "push"
-    cmds = convertSegmentPush(arr)
+    cmds = convertSegmentPush(arr)+"\n"
 
   when "pop"
-    cmds = convertSegmentPop(arr)
+    cmds = convertSegmentPop(arr)+"\n"
   end
 
   return cmds

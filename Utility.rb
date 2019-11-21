@@ -49,28 +49,28 @@ end
 def pushToStack()
   str = "//push to stack"+"\n"+
       "@SP"+"\n"+"A=M"+"\n"+"M=D"+"\n"+ incrementStackPointer()
-  return str+"\n"
+  return str
 end
 
 
 def removeFromStack()
   str = "//remove to stack"+"\n"+
   getTopOfStack()+"M=M-D"+"\n"+ decrementStackPointer()
-  return str+"\n"
+  return str
 end
 
 
 def getTopTwoFromStack
   str = "//get the top two from stack"+"\n"+
       getTopOfStack() + "D=M"+"\n" + removeFromStack() + getTopOfStack()
-  return str+"\n"
+  return str
 end
 
 
 def jumpLocations(jumpLocation, locationEnd, x)
   str = "//get comparison ops jump"+"\n"+
       "@"+locationEnd+"\n"+"0;JMP"+"\n"+ startOfJump(jumpLocation, locationEnd, x) + endOfJump(locationEnd)
-  return str+"\n"
+  return str
 end
 
 
@@ -91,5 +91,5 @@ end
 def compare(op, locationTrue, locationEnd)
   str = "//"+op+" comparison"+"\n"+
   getTopTwoFromStack() + "D=M-D"+"\n"+"@"+locationTrue+"\n"+"D;"+op+"\n"+ decrementStackPointer() + "D=0"+"\n" + pushToStack() + jumpLocations(locationTrue, locationEnd, "-1")
-  return str+"\n"
+  return str
 end
