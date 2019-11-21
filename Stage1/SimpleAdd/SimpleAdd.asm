@@ -52,4 +52,4 @@ M=D+M
 
 (END)
 @END
-1;JMP
+0;JMP

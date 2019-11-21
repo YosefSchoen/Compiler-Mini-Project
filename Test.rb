@@ -1,54 +1,66 @@
 require_relative 'Utility'
 
 def convertSegmentPop(arr)
-  cmds = []
+  cmds = ""
   segment = arr[1]
   value = arr[2]
 
   case segment
   when "local"
+    cmds = "\n"
 
   when "argument"
+      cmds = "\n"
 
   when "static"
+    cmds = "\n"
 
   when "constant"
     cmds = getTopOfStack() + removeFromStack()
 
   when "temp"
+    cmds = "\n"
 
   when "this"
+    cmds = "\n"
 
   when "that"
+    cmds = "\n"
 
   when "pointer"
+    cmds = "\n"
   end
+
+  return cmds
 end
 
 
 def convertSegmentPush(arr)
-  cmds = []
+  cmds = ""
   segment = arr[1]
   value = arr[2]
 
   case segment
   when "local"
-    cmds = "@LCL"+"\n"+"A=M+"+value+"\n"+"D=M"+"\n" + pushToStack() + "\n"
-  when "argument"
+    cmds = "@"+value+"\n"+"D=A"+"\n"+"@LCL"+"\n"+"A=M+D"+"\n"+"M=D"+"\n" + pushToStack() + "\n"
 
-    cmds = "@ARG"+"\n"+"A=M+"+value+"\n"+"D=M"+"\n" + pushToStack() + "\n"
+  when "argument"
+    cmds = "@"+value+"\n"+"D=A"+"\n"+"@ARG"+"\n"+"A=M+D"+"\n"+"M=D"+"\n" + pushToStack() + "\n"
+
   when "static"
+    cmds = "\n"
 
   when "constant"
-    cmds= "@"+value+"\n"+"D=A"+"\n" + pushToStack()+ "\n"
+    cmds = "@"+value+"\n"+"D=A"+"\n" + pushToStack()+ "\n"
 
   when "temp"
+    cmds = "\n"
 
   when "this"
-    cmds = "@THIS"+"\n"+"A=M+"+value+"\n"+"D=M"+"\n" + pushToStack() + "\n"
+    cmds = "@"+value+"\n"+"D=A"+"\n"+"@THIS"+"\n"+"A=M+D"+"\n"+"M=D"+"\n" + pushToStack() + "\n"
 
   when "that"
-    cmds = "@THAT"+"\n"+"A=M+"+value+"\n"+"D=M"+"\n" + pushToStack() + "\n"
+    cmds = "@"+value+"\n"+"D=A"+"\n"+"@THAT"+"\n"+"A=M+D"+"\n"+"M=D"+"\n" + pushToStack() + "\n"
 
   when "pointer"
   end
@@ -62,6 +74,7 @@ def convertCommand(arr, i)
 
   op = arr[0]
   locationTrue = "".concat("TRUE", i.to_s())
+  locationFalse = "".concat("FALSE", i.to_s())
   locationEnd = "".concat("ENDCOMP", i.to_s())
   #the various commands will be handled case by case each command is the the first word in the array
   case op
@@ -84,13 +97,13 @@ def convertCommand(arr, i)
     cmds = compare("JLT", locationTrue, locationEnd)+"\n"
 
   when "and"
-    cmds
+    cmds = getTopTwoFromStack() + "D=D&M"+"\n" + decrementStackPointer() + pushToStack()
 
   when "or"
-    cmds
+    cmds = getTopTwoFromStack() + "D=D|M"+"\n" + decrementStackPointer() + pushToStack()
 
   when "not"
-    cmds = boolNot(locationTrue, locationEnd)
+    cmds = getTopOfStack() + "D=!M"+"\n"+ decrementStackPointer() + pushToStack()
 
   #push and pop vary based on what we are pushing this is handled in there own functions
   when "push"
@@ -140,6 +153,10 @@ writeFile("Stage1/SimpleAdd/SimpleAdd.asm", lines) #writes the lines to a asm fi
 
 lines = readFile("Stage1/StackTest/StackTest.vm")
 writeFile("Stage1/StackTest/StackTest.asm", lines)
+
+lines = readFile("Stage2/BasicTest/BasicTest.vm")
+writeFile("Stage2/BasicTest/BasicTest.asm", lines)
+
 
 lines = readFile("test.vm")
 writeFile("test.asm", lines)

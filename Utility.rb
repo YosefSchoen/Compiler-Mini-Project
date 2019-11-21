@@ -9,7 +9,7 @@ end
 
 
 def endProgram()
-  str = "(END)"+"\n"+"@END"+"\n"+"1;JMP"+"\n"
+  str = "(END)"+"\n"+"@END"+"\n"+"0;JMP"+"\n"
 end
 
 
@@ -49,40 +49,42 @@ def getTopTwoFromStack
 end
 
 
-def compare(op, locationTrue, locationEnd)
-  str = getTopTwoFromStack() + "D=M-D"+"\n"+"@"+locationTrue+"\n"+"D;"+op+"\n"+ jumpLocations(locationTrue, locationEnd)
+def jumpLocations(jumpLocation, locationEnd, x)
+  str = "@"+locationEnd+"\n"+"0;JMP"+"\n"+ startOfJump(jumpLocation, locationEnd, x) + endOfJump(locationEnd)
   return str
 end
 
 
-def jumpLocations(locationTrue, locationEnd)
-  str = decrementStackPointer() + "D=0"+"\n" + pushToStack() + "@"+locationEnd+"\n"+"0;JMP"+"\n"+atTrue(locationTrue, locationEnd)+endOp(locationEnd)
-  return str
-end
-
-def atTrue(locationTrue, locationEnd)
-str = "("+locationTrue+")"+"\n"+ decrementStackPointer() + "D=-1"+"\n" + pushToStack() + "@"+locationEnd+"\n"+"0;JMP"+"\n"
+def startOfJump(jumpLocation, locationEnd, x)
+  str = "("+jumpLocation+")"+"\n"+ decrementStackPointer() + "D="+x+"\n" + pushToStack() + "@"+locationEnd+"\n"+"0;JMP"+"\n"
   return str
 end
 
 
-def endOp(locationEnd)
+def endOfJump(locationEnd)
   str = "(" + locationEnd + ")" + "\n"
   return str
 end
 
 
-def boolAnd(locationTrue, locationEnd)
-  str = getTopTwoFromStack()
+def compare(op, locationTrue, locationEnd)
+  str = getTopTwoFromStack() + "D=M-D"+"\n"+"@"+locationTrue+"\n"+"D;"+op+"\n"+ decrementStackPointer() + "D=0"+"\n" + pushToStack() + jumpLocations(locationTrue, locationEnd, "-1")
+  return str
+end
+
+
+def boolAnd(locationFalse, locationEnd)
+  str = getTopTwoFromStack() + "@"+locationFalse+"\n"+"D;JEQ"+"\n"+"D=M"+"\n"+"@"+locationFalse+"\n"+"D;JEQ"+"\n" + decrementStackPointer() + "D=-1"+"\n" + pushToStack() + jumpLocations(locationFalse, locationEnd, "0")
 end
 
 
 def boolOr(locationTrue, locationEnd)
-  str = getTopTwoFromStack() + "@"+locationTrue+"\n"+"D;JNE"+"\n"+"D=M"+"\n"+"@"+locationTrue+"\n"+"D;JNE"+"\n" + jumpLocations(locationTrue, locationEnd)
+  str = getTopTwoFromStack() + "@"+locationTrue+"\n"+"D;JNE"+"\n"+"D=M"+"\n"+"@"+locationTrue+"\n"+"D;JNE"+"\n" + decrementStackPointer() + "D=0"+"\n" + pushToStack() + jumpLocations(locationTrue, locationEnd, "-1")
 end
 
 
 def boolNot(locationTrue, locationEnd)
-  str = getTopOfStack() + "@"+locationTrue+"\n"+"D;JEQ"+"\n" + jumpLocations(locationTrue, locationEnd)
+  str = getTopOfStack() + "@"+locationTrue+"\n"+"D;JEQ"+"\n" + decrementStackPointer() + "D=0"+"\n" + pushToStack() + jumpLocations(locationTrue, locationEnd, "0")
   return str
 end
+
