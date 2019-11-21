@@ -57,6 +57,23 @@ D=M
 @R13
 A=M
 M=D
+//get the top of stack
+@SP
+A=M-1
+
+//remove to stack
+//get the top of stack
+@SP
+A=M-1
+
+M=M-D
+//decrement the stack pointer
+@SP
+M=M-1
+
+@R13
+D=M
+M=M-D
 
 
 //end of program infinite loop

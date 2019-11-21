@@ -188,4 +188,5 @@ end
 
 translateVmToHack("Stage1/SimpleAdd/SimpleAdd.vm", "Stage1/SimpleAdd/SimpleAdd.asm")
 translateVmToHack("Stage1/StackTest/StackTest.vm", "Stage1/StackTest/StackTest.asm")
+translateVmToHack("Stage2/BasicTest/BasicTest.vm", "Stage2/BasicTest/BasicTest.asm")
 translateVmToHack("test.vm", "test.asm")

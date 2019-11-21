@@ -96,13 +96,14 @@ end
 
 
 def popToSegment(segment, value)
-  str = "@"+segment+"\n"+"A=M"+"\n"+"D=A"+"\n"+"@"+value+"\n"+"D=D+A"+"\n"+"@R13"+"\n"+"M=D"+ getTopOfStack() + "D=M"+"\n"+"@R13"+"\n"+"A=M"+"\n"+"M=D"+"\n"
+  str = "@"+segment+"\n"+"A=M"+"\n"+"D=A"+"\n"+"@"+value+"\n"+"D=D+A"+"\n"+"@R13"+"\n"+"M=D"+
+      getTopOfStack() + "D=M"+"\n"+"@R13"+"\n"+"A=M"+"\n"+"M=D"+"\n"+
+      getTopOfStack()+removeFromStack()+"@R13"+"\n"+"D=M"+"\n"+"M=M-D"+"\n"
   return str
 end
 
 
 def pushFromSegment(segment, value)
-  str = "@"+segment+"\n"
+  str = "@"+value+"\n"+"D=A"+"\n"+"@"+segment+"\n"+"A=D+M"+"\n"+"D=M"+"\n"+pushToStack()
   return str
-
 end
