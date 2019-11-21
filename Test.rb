@@ -12,25 +12,32 @@ def convertSegmentPop(arr)
 
   case segment
   when "local"
-    cmds = "\n"
+    cmds = "//pop to local segment"+"\n"+
+        getTopOfStack() + "D=M"+"\n"+"@LCL"+"\n"+"A=M+"+value+"\n"+"M=D"+"\n"+ removeFromStack()
 
   when "argument"
-      cmds = "\n"
+      cmds = "//pop to argument segment"+"\n"+
+        getTopOfStack() + "D=M"+"\n"+"@ARG"+"\n"+"A=M+"+value+"\n"+"M=D"+"\n"+ removeFromStack()
+
 
   when "static"
     cmds = "\n"
 
   when "constant"
-    cmds = getTopOfStack() + removeFromStack()
+    cmds = cmds = "//pop constant"+"\n"+
+        getTopOfStack() + removeFromStack()
 
   when "temp"
     cmds = "\n"
 
   when "this"
-    cmds = "\n"
+    cmds = cmds = "//pop to this segment"+"\n"+
+       getTopOfStack() + "D=M"+"\n"+"@THIS"+"\n"+"A=M+"+value+"\n"+"M=D"+"\n"+ removeFromStack()
+
 
   when "that"
-    cmds = "\n"
+    cmds = cmds = "//pop to that segment"+"\n"+
+       getTopOfStack() + "D=M"+"\n"+"@THAT"+"\n"+"A=M+"+value+"\n"+"M=D"+"\n"+ removeFromStack()
 
   when "pointer"
     cmds = "\n"
@@ -48,33 +55,33 @@ def convertSegmentPush(arr)
 
   case segment
   when "local"
-    cmds = "//push to local segment"+"\n"+
-        "@"+value+"\n"+"D=A"+"\n"+"@LCL"+"\n"+"A=M+D"+"\n"+"M=D"+"\n" + pushToStack()
+    cmds = "//push from local segment"+"\n"+
+        "@LCL+"+value+"\n"+"D=M"+"\n" + pushToStack()
 
   when "argument"
-    cmds = "//push to argument segment"+"\n"+
-        "@"+value+"\n"+"D=A"+"\n"+"@ARG"+"\n"+"A=M+D"+"\n"+"M=D"+"\n" + pushToStack()
+    cmds = "//push from argument segment"+"\n"+
+        "@ARG+"+value+"\n"+"D=M"+"\n" + pushToStack()
 
   when "static"
-    cmds = "//push to static segment"+"\n"
+    cmds = "//push from static segment"+"\n"
 
   when "constant"
     cmds = "//push constant to stack"+"\n"+
         "@"+value+"\n"+"D=A"+"\n" + pushToStack()
 
   when "temp"
-    cmds = "//push to temp segment"+"\n"
+    cmds = "//push from temp segment"+"\n"
 
   when "this"
-    cmds = "//push to this segment"+"\n"+
-        "@"+value+"\n"+"D=A"+"\n"+"@THIS"+"\n"+"A=M+D"+"\n"+"M=D"+"\n" + pushToStack()
+    cmds = "//push from this segment"+"\n"+
+        "@THIS+"+value+"\n"+"D=M"+"\n" + pushToStack()
 
   when "that"
-    cmds = "//push to that segment"+"\n"+
-        "@"+value+"\n"+"D=A"+"\n"+"@THAT"+"\n"+"A=M+D"+"\n"+"M=D"+"\n" + pushToStack()
+    cmds = "//push from that segment"+"\n"+
+        "@THAT+"+value+"\n"+"D=M"+"\n" + pushToStack()
 
   when "pointer"
-    cmds = "//push to pointer segment"+"\n"
+    cmds = "//push from pointer segment"+"\n"
   end
 
   return cmds
