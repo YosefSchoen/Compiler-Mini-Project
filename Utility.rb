@@ -93,3 +93,16 @@ def compare(op, locationTrue, locationEnd)
   getTopTwoFromStack() + "D=M-D"+"\n"+"@"+locationTrue+"\n"+"D;"+op+"\n"+ decrementStackPointer() + "D=0"+"\n" + pushToStack() + jumpLocations(locationTrue, locationEnd, "-1")
   return str
 end
+
+
+def popToSegment(segment, value)
+  str = "@"+segment+"\n"+"A=M"+"\n"+"D=A"+"\n"+"@"+value+"\n"+"D=D+A"+"\n"+"@R13"+"\n"+"M=D"+ getTopOfStack() + "D=M"+"\n"+"@R13"+"\n"+"A=M"+"\n"+"M=D"+"\n"
+  return str
+end
+
+
+def pushFromSegment(segment, value)
+  str = "@"+segment+"\n"
+  return str
+
+end

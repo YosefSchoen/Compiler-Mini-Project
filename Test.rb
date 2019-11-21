@@ -13,31 +13,29 @@ def convertSegmentPop(arr)
   case segment
   when "local"
     cmds = "//pop to local segment"+"\n"+
-        getTopOfStack() + "D=M"+"\n"+"@LCL"+"\n"+"A=M+"+value+"\n"+"M=D"+"\n"+ removeFromStack()
+        popToSegment("LCL", value)
 
   when "argument"
       cmds = "//pop to argument segment"+"\n"+
-        getTopOfStack() + "D=M"+"\n"+"@ARG"+"\n"+"A=M+"+value+"\n"+"M=D"+"\n"+ removeFromStack()
-
+        popToSegment("ARG", value)
 
   when "static"
     cmds = "\n"
 
   when "constant"
-    cmds = cmds = "//pop constant"+"\n"+
+    cmds = "//pop constant"+"\n"+
         getTopOfStack() + removeFromStack()
 
   when "temp"
     cmds = "\n"
 
   when "this"
-    cmds = cmds = "//pop to this segment"+"\n"+
-       getTopOfStack() + "D=M"+"\n"+"@THIS"+"\n"+"A=M+"+value+"\n"+"M=D"+"\n"+ removeFromStack()
-
+    cmds = "//pop to this segment"+"\n"+
+       popToSegment("THIS", value)
 
   when "that"
-    cmds = cmds = "//pop to that segment"+"\n"+
-       getTopOfStack() + "D=M"+"\n"+"@THAT"+"\n"+"A=M+"+value+"\n"+"M=D"+"\n"+ removeFromStack()
+    cmds = "//pop to that segment"+"\n"+
+       popToSegment("THAT", value)
 
   when "pointer"
     cmds = "\n"
@@ -56,11 +54,11 @@ def convertSegmentPush(arr)
   case segment
   when "local"
     cmds = "//push from local segment"+"\n"+
-        "@LCL+"+value+"\n"+"D=M"+"\n" + pushToStack()
+        pushFromSegment("LCL", value)
 
   when "argument"
     cmds = "//push from argument segment"+"\n"+
-        "@ARG+"+value+"\n"+"D=M"+"\n" + pushToStack()
+        pushFromSegment("ARG", value)
 
   when "static"
     cmds = "//push from static segment"+"\n"
@@ -74,11 +72,11 @@ def convertSegmentPush(arr)
 
   when "this"
     cmds = "//push from this segment"+"\n"+
-        "@THIS+"+value+"\n"+"D=M"+"\n" + pushToStack()
+        pushFromSegment("THIS", value)
 
   when "that"
     cmds = "//push from that segment"+"\n"+
-        "@THAT+"+value+"\n"+"D=M"+"\n" + pushToStack()
+        pushFromSegment("THAT", value)
 
   when "pointer"
     cmds = "//push from pointer segment"+"\n"
