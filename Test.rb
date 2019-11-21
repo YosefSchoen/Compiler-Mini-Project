@@ -1,9 +1,14 @@
+
+#Utility has various functions which help with the program
 require_relative 'Utility'
 
+#this function will convert the vm pop command based on which of the various segments were used
 def convertSegmentPop(arr)
-  cmds = ""
-  segment = arr[1]
-  value = arr[2]
+
+
+  cmds = "" #cmds will be the string of hack asm commands
+  segment = arr[1] #the segment is the second word in the vm command
+  value = arr[2] #the value is the third word in the vm command
 
   case segment
   when "local"
@@ -35,34 +40,41 @@ def convertSegmentPop(arr)
 end
 
 
+#this function will convert the vm push command based on which of the various segments were used
 def convertSegmentPush(arr)
-  cmds = ""
-  segment = arr[1]
-  value = arr[2]
+  cmds = "" #cmds will be the string of hack asm commands
+  segment = arr[1] #the segment is the second word in the vm command
+  value = arr[2] #the value is the third word in the vm command
 
   case segment
   when "local"
-    cmds = "@"+value+"\n"+"D=A"+"\n"+"@LCL"+"\n"+"A=M+D"+"\n"+"M=D"+"\n" + pushToStack() + "\n"
+    cmds = "//push to local segment"+"\n"+
+        "@"+value+"\n"+"D=A"+"\n"+"@LCL"+"\n"+"A=M+D"+"\n"+"M=D"+"\n" + pushToStack()
 
   when "argument"
-    cmds = "@"+value+"\n"+"D=A"+"\n"+"@ARG"+"\n"+"A=M+D"+"\n"+"M=D"+"\n" + pushToStack() + "\n"
+    cmds = "//push to argument segment"+"\n"+
+        "@"+value+"\n"+"D=A"+"\n"+"@ARG"+"\n"+"A=M+D"+"\n"+"M=D"+"\n" + pushToStack()
 
   when "static"
-    cmds = "\n"
+    cmds = "//push to static segment"+"\n"
 
   when "constant"
-    cmds = "@"+value+"\n"+"D=A"+"\n" + pushToStack()+ "\n"
+    cmds = "//push constant to stack"+"\n"+
+        "@"+value+"\n"+"D=A"+"\n" + pushToStack()
 
   when "temp"
-    cmds = "\n"
+    cmds = "//push to temp segment"+"\n"
 
   when "this"
-    cmds = "@"+value+"\n"+"D=A"+"\n"+"@THIS"+"\n"+"A=M+D"+"\n"+"M=D"+"\n" + pushToStack() + "\n"
+    cmds = "//push to this segment"+"\n"+
+        "@"+value+"\n"+"D=A"+"\n"+"@THIS"+"\n"+"A=M+D"+"\n"+"M=D"+"\n" + pushToStack()
 
   when "that"
-    cmds = "@"+value+"\n"+"D=A"+"\n"+"@THAT"+"\n"+"A=M+D"+"\n"+"M=D"+"\n" + pushToStack() + "\n"
+    cmds = "//push to that segment"+"\n"+
+        "@"+value+"\n"+"D=A"+"\n"+"@THAT"+"\n"+"A=M+D"+"\n"+"M=D"+"\n" + pushToStack()
 
   when "pointer"
+    cmds = "//push to pointer segment"+"\n"
   end
 
   return cmds
@@ -72,38 +84,52 @@ end
 #the array of strings will be converted to strings of hack asm code
 def convertCommand(arr, i)
 
-  op = arr[0]
-  locationTrue = "".concat("TRUE", i.to_s())
-  locationFalse = "".concat("FALSE", i.to_s())
-  locationEnd = "".concat("ENDCOMP", i.to_s())
+  op = arr[0] #the operation is the first word in the vm command
+
+  jumpLocation = "jumpLocation"+i.to_s()
+  locationEnd = "locationEnd"+i.to_s()
+
   #the various commands will be handled case by case each command is the the first word in the array
   case op
+
+  #basic arithmetic operations
   when "add"
-    cmds = getTopTwoFromStack() + "M=D+M"+"\n"
+    cmds = "//add"+"\n" +
+        getTopTwoFromStack() + "M=D+M"+"\n"
 
   when "sub"
-    cmds = getTopTwoFromStack() + "M=M-D"+"\n"
+    cmds = "//subtract"+"\n" +
+        getTopTwoFromStack() + "M=M-D"+"\n"
 
   when "neg"
-    cmds = getTopOfStack() +"M=-M"+"\n"
+    cmds = "//negate"+"\n" +
+        getTopOfStack() +"M=-M"+"\n"
 
+  #basic comparison operations they call the compare function in Utility
   when "eq"
-    cmds = compare("JEQ", locationTrue, locationEnd)+"\n"
+    cmds = "//check if equal"+"\n" +
+        compare("JEQ", jumpLocation, locationEnd)
 
   when "gt"
-    cmds = compare("JGT", locationTrue, locationEnd)+"\n"
+    cmds = "//check if greater than"+"\n" +
+        compare("JGT", jumpLocation, locationEnd)
 
   when "lt"
-    cmds = compare("JLT", locationTrue, locationEnd)+"\n"
+    cmds = "//check if less than"+"\n" +
+        compare("JLT", jumpLocation, locationEnd)
 
+  #basic bitwise operations
   when "and"
-    cmds = getTopTwoFromStack() + "D=D&M"+"\n" + decrementStackPointer() + pushToStack()
+    cmds = "//bit wise and"+"\n" +
+        getTopTwoFromStack() + "D=D&M"+"\n" + decrementStackPointer() + pushToStack()
 
   when "or"
-    cmds = getTopTwoFromStack() + "D=D|M"+"\n" + decrementStackPointer() + pushToStack()
+    cmds = "//bit wise or"+"\n" +
+        getTopTwoFromStack() + "D=D|M"+"\n" + decrementStackPointer() + pushToStack()
 
   when "not"
-    cmds = getTopOfStack() + "D=!M"+"\n"+ decrementStackPointer() + pushToStack()
+    cmds = "//bit wise not"+"\n" +
+        getTopOfStack() + "D=!M"+"\n"+ decrementStackPointer() + pushToStack()
 
   #push and pop vary based on what we are pushing this is handled in there own functions
   when "push"
@@ -116,13 +142,14 @@ def convertCommand(arr, i)
   return cmds
 end
 
-
+#creates an array of the lines of a vm file to read
 def readFile(fileName)
   lines = []
 
   inFile = File.new(fileName, "r")
 
   while (line = inFile.gets)
+    #removing comments and empty lines
     if (line[0] != "/" and line[1] != "/" and line != "\n")
       lines << line
     end
@@ -132,7 +159,7 @@ def readFile(fileName)
   return lines
 end
 
-
+#writes the lines to a asm file
 def writeFile(fileName, lines)
   outFile = File.new(fileName, "w")
   outFile.syswrite(initializeProgram())
@@ -148,15 +175,12 @@ def writeFile(fileName, lines)
   outFile.syswrite(endProgram())
 end
 
-lines = readFile("Stage1/SimpleAdd/SimpleAdd.vm") #creates an array of the lines of a vm file to read
-writeFile("Stage1/SimpleAdd/SimpleAdd.asm", lines) #writes the lines to a asm file
+#takes in a vm file and translates it to a hack asm file
+def translateVmToHack(vmFile, asmFile)
+  lines = readFile(vmFile)
+  writeFile(asmFile, lines)
+end
 
-lines = readFile("Stage1/StackTest/StackTest.vm")
-writeFile("Stage1/StackTest/StackTest.asm", lines)
-
-lines = readFile("Stage2/BasicTest/BasicTest.vm")
-writeFile("Stage2/BasicTest/BasicTest.asm", lines)
-
-
-lines = readFile("test.vm")
-writeFile("test.asm", lines)
+translateVmToHack("Stage1/SimpleAdd/SimpleAdd.vm", "Stage1/SimpleAdd/SimpleAdd.asm")
+translateVmToHack("Stage1/StackTest/StackTest.vm", "Stage1/StackTest/StackTest.asm")
+translateVmToHack("test.vm", "test.asm")

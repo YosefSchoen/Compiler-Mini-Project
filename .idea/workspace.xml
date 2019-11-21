@@ -2,15 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e2bbf7f2-661c-4b38-bdc0-4dc1c947d57a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Project7/Stage2/BasicTest/BasicTest.asm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Project7/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Project7/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Project7/Stage1/SimpleAdd/SimpleAdd.asm" beforeDir="false" afterPath="$PROJECT_DIR$/../Project7/Stage1/SimpleAdd/SimpleAdd.asm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Project7/Stage1/StackTest/StackTest.asm" beforeDir="false" afterPath="$PROJECT_DIR$/../Project7/Stage1/StackTest/StackTest.asm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Project7/Stage1/StackTest/StackTest.vm" beforeDir="false" afterPath="$PROJECT_DIR$/../Project7/Stage1/StackTest/StackTest.vm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Project7/Test.rb" beforeDir="false" afterPath="$PROJECT_DIR$/../Project7/Test.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Project7/Utility.rb" beforeDir="false" afterPath="$PROJECT_DIR$/../Project7/Utility.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Project7/test.asm" beforeDir="false" afterPath="$PROJECT_DIR$/../Project7/test.asm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Project7/test.vm" beforeDir="false" afterPath="$PROJECT_DIR$/../Project7/test.vm" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -113,7 +110,7 @@
       <workItem from="1573673879825" duration="1977000" />
       <workItem from="1573729928657" duration="7600000" />
       <workItem from="1573814754201" duration="184000" />
-      <workItem from="1573815022876" duration="56168000" />
+      <workItem from="1573815022876" duration="61393000" />
     </task>
     <task id="LOCAL-00001" summary="New Commit">
       <created>1574256572492</created>
@@ -122,7 +119,21 @@
       <option name="project" value="LOCAL" />
       <updated>1574256572492</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="New Commit">
+      <created>1574317878375</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1574317878375</updated>
+    </task>
+    <task id="LOCAL-00003" summary="New Commit">
+      <created>1574318096673</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1574318096673</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -149,7 +160,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/MiniProject@Test.rcov" NAME="Test Coverage Results" MODIFIED="1573607065364" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
-    <SUITE FILE_PATH="coverage/Project7@Test.rcov" NAME="Test Coverage Results" MODIFIED="1574317826787" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="C:\Users\josep\RubymineProjects\Project7" MODULE_NAME="Project7" />
+    <SUITE FILE_PATH="coverage/Project7@Test.rcov" NAME="Test Coverage Results" MODIFIED="1574326762351" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="C:\Users\josep\RubymineProjects\Project7" MODULE_NAME="Project7" />
     <SUITE FILE_PATH="coverage/Project7@Utility.rcov" NAME="Utility Coverage Results" MODIFIED="1574100649750" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Project7" MODULE_NAME="Project7" />
   </component>
 </project>

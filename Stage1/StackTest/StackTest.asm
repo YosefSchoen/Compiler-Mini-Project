@@ -1,684 +1,1109 @@
+//initialize stack segment pointer
 @256
 D=A
 @SP
 M=D
+
+//initialize local segment pointer
 @300
 D=A
 @LCL
 M=D
+
+//initialize argument segment pointer
 @400
 D=A
 @ARG
 M=D
+
+//initialize this segment pointer
 @3000
 D=A
 @THIS
 M=D
+
+//initialize that segment pointer
 @3010
 D=A
 @THAT
 M=D
+
+
+//push constant to stack
 @17
 D=A
+//push to stack
 @SP
 A=M
 M=D
+//increment the stack pointer
 @SP
 M=M+1
 
 
 
+//push constant to stack
 @17
 D=A
+//push to stack
 @SP
 A=M
 M=D
+//increment the stack pointer
 @SP
 M=M+1
 
 
 
+//check if equal
+//JEQ comparison
+//get the top two from stack
+//get the top of stack
 @SP
 A=M-1
+
 D=M
+//remove to stack
+//get the top of stack
+@SP
+A=M-1
+
 M=M-D
+//decrement the stack pointer
 @SP
 M=M-1
 
+
+//get the top of stack
 @SP
 A=M-1
+
 
 D=M-D
-@TRUE2
+@jumpLocation2
 D;JEQ
+//decrement the stack pointer
 @SP
 M=M-1
+
 D=0
+//push to stack
 @SP
 A=M
 M=D
+//increment the stack pointer
 @SP
 M=M+1
 
-@ENDCOMP2
+
+//get comparison ops jump
+@locationEnd2
 0;JMP
-(TRUE2)
+//start of jump
+(jumpLocation2)
+//decrement the stack pointer
 @SP
 M=M-1
+
 D=-1
+//push to stack
 @SP
 A=M
 M=D
+//increment the stack pointer
 @SP
 M=M+1
 
-@ENDCOMP2
+
+@locationEnd2
 0;JMP
-(ENDCOMP2)
+
+//end of jump
+(locationEnd2)
 
 
+
+
+//push constant to stack
 @17
 D=A
+//push to stack
 @SP
 A=M
 M=D
+//increment the stack pointer
 @SP
 M=M+1
 
 
 
+//push constant to stack
 @16
 D=A
+//push to stack
 @SP
 A=M
 M=D
+//increment the stack pointer
 @SP
 M=M+1
 
 
 
+//check if equal
+//JEQ comparison
+//get the top two from stack
+//get the top of stack
 @SP
 A=M-1
+
 D=M
+//remove to stack
+//get the top of stack
+@SP
+A=M-1
+
 M=M-D
+//decrement the stack pointer
 @SP
 M=M-1
 
+
+//get the top of stack
 @SP
 A=M-1
+
 
 D=M-D
-@TRUE5
+@jumpLocation5
 D;JEQ
+//decrement the stack pointer
 @SP
 M=M-1
+
 D=0
+//push to stack
 @SP
 A=M
 M=D
+//increment the stack pointer
 @SP
 M=M+1
 
-@ENDCOMP5
+
+//get comparison ops jump
+@locationEnd5
 0;JMP
-(TRUE5)
+//start of jump
+(jumpLocation5)
+//decrement the stack pointer
 @SP
 M=M-1
+
 D=-1
+//push to stack
 @SP
 A=M
 M=D
+//increment the stack pointer
 @SP
 M=M+1
 
-@ENDCOMP5
+
+@locationEnd5
 0;JMP
-(ENDCOMP5)
+
+//end of jump
+(locationEnd5)
 
 
+
+
+//push constant to stack
 @16
 D=A
+//push to stack
 @SP
 A=M
 M=D
+//increment the stack pointer
 @SP
 M=M+1
 
 
 
+//push constant to stack
 @17
 D=A
+//push to stack
 @SP
 A=M
 M=D
+//increment the stack pointer
 @SP
 M=M+1
 
 
 
+//check if equal
+//JEQ comparison
+//get the top two from stack
+//get the top of stack
 @SP
 A=M-1
+
 D=M
+//remove to stack
+//get the top of stack
+@SP
+A=M-1
+
 M=M-D
+//decrement the stack pointer
 @SP
 M=M-1
 
+
+//get the top of stack
 @SP
 A=M-1
 
+
 D=M-D
-@TRUE8
+@jumpLocation8
 D;JEQ
+//decrement the stack pointer
 @SP
 M=M-1
+
 D=0
+//push to stack
 @SP
 A=M
 M=D
+//increment the stack pointer
 @SP
 M=M+1
 
-@ENDCOMP8
+
+//get comparison ops jump
+@locationEnd8
 0;JMP
-(TRUE8)
+//start of jump
+(jumpLocation8)
+//decrement the stack pointer
 @SP
 M=M-1
+
 D=-1
+//push to stack
 @SP
 A=M
 M=D
+//increment the stack pointer
 @SP
 M=M+1
 
-@ENDCOMP8
+
+@locationEnd8
 0;JMP
-(ENDCOMP8)
+
+//end of jump
+(locationEnd8)
 
 
+
+
+//push constant to stack
 @892
 D=A
+//push to stack
 @SP
 A=M
 M=D
+//increment the stack pointer
 @SP
 M=M+1
 
 
 
+//push constant to stack
 @891
 D=A
+//push to stack
 @SP
 A=M
 M=D
+//increment the stack pointer
 @SP
 M=M+1
 
 
 
+//check if less than
+//JLT comparison
+//get the top two from stack
+//get the top of stack
 @SP
 A=M-1
+
 D=M
+//remove to stack
+//get the top of stack
+@SP
+A=M-1
+
 M=M-D
+//decrement the stack pointer
 @SP
 M=M-1
 
+
+//get the top of stack
 @SP
 A=M-1
+
 
 D=M-D
-@TRUE11
+@jumpLocation11
 D;JLT
+//decrement the stack pointer
 @SP
 M=M-1
+
 D=0
+//push to stack
 @SP
 A=M
 M=D
+//increment the stack pointer
 @SP
 M=M+1
 
-@ENDCOMP11
+
+//get comparison ops jump
+@locationEnd11
 0;JMP
-(TRUE11)
+//start of jump
+(jumpLocation11)
+//decrement the stack pointer
 @SP
 M=M-1
+
 D=-1
+//push to stack
 @SP
 A=M
 M=D
+//increment the stack pointer
 @SP
 M=M+1
 
-@ENDCOMP11
+
+@locationEnd11
 0;JMP
-(ENDCOMP11)
+
+//end of jump
+(locationEnd11)
 
 
+
+
+//push constant to stack
 @891
 D=A
+//push to stack
 @SP
 A=M
 M=D
+//increment the stack pointer
 @SP
 M=M+1
 
 
 
+//push constant to stack
 @892
 D=A
+//push to stack
 @SP
 A=M
 M=D
+//increment the stack pointer
 @SP
 M=M+1
 
 
 
+//check if less than
+//JLT comparison
+//get the top two from stack
+//get the top of stack
 @SP
 A=M-1
+
 D=M
+//remove to stack
+//get the top of stack
+@SP
+A=M-1
+
 M=M-D
+//decrement the stack pointer
 @SP
 M=M-1
 
+
+//get the top of stack
 @SP
 A=M-1
+
 
 D=M-D
-@TRUE14
+@jumpLocation14
 D;JLT
+//decrement the stack pointer
 @SP
 M=M-1
+
 D=0
+//push to stack
 @SP
 A=M
 M=D
+//increment the stack pointer
 @SP
 M=M+1
 
-@ENDCOMP14
+
+//get comparison ops jump
+@locationEnd14
 0;JMP
-(TRUE14)
+//start of jump
+(jumpLocation14)
+//decrement the stack pointer
 @SP
 M=M-1
+
 D=-1
+//push to stack
 @SP
 A=M
 M=D
+//increment the stack pointer
 @SP
 M=M+1
 
-@ENDCOMP14
+
+@locationEnd14
 0;JMP
-(ENDCOMP14)
+
+//end of jump
+(locationEnd14)
 
 
+
+
+//push constant to stack
 @891
 D=A
+//push to stack
 @SP
 A=M
 M=D
+//increment the stack pointer
 @SP
 M=M+1
 
 
 
+//push constant to stack
 @891
 D=A
+//push to stack
 @SP
 A=M
 M=D
+//increment the stack pointer
 @SP
 M=M+1
 
 
 
+//check if less than
+//JLT comparison
+//get the top two from stack
+//get the top of stack
 @SP
 A=M-1
+
 D=M
+//remove to stack
+//get the top of stack
+@SP
+A=M-1
+
 M=M-D
+//decrement the stack pointer
 @SP
 M=M-1
 
+
+//get the top of stack
 @SP
 A=M-1
 
+
 D=M-D
-@TRUE17
+@jumpLocation17
 D;JLT
+//decrement the stack pointer
 @SP
 M=M-1
+
 D=0
+//push to stack
 @SP
 A=M
 M=D
+//increment the stack pointer
 @SP
 M=M+1
 
-@ENDCOMP17
+
+//get comparison ops jump
+@locationEnd17
 0;JMP
-(TRUE17)
+//start of jump
+(jumpLocation17)
+//decrement the stack pointer
 @SP
 M=M-1
+
 D=-1
+//push to stack
 @SP
 A=M
 M=D
+//increment the stack pointer
 @SP
 M=M+1
 
-@ENDCOMP17
+
+@locationEnd17
 0;JMP
-(ENDCOMP17)
+
+//end of jump
+(locationEnd17)
 
 
+
+
+//push constant to stack
 @32767
 D=A
+//push to stack
 @SP
 A=M
 M=D
+//increment the stack pointer
 @SP
 M=M+1
 
 
 
+//push constant to stack
 @32766
 D=A
+//push to stack
 @SP
 A=M
 M=D
+//increment the stack pointer
 @SP
 M=M+1
 
 
 
+//check if greater than
+//JGT comparison
+//get the top two from stack
+//get the top of stack
 @SP
 A=M-1
+
 D=M
+//remove to stack
+//get the top of stack
+@SP
+A=M-1
+
 M=M-D
+//decrement the stack pointer
 @SP
 M=M-1
 
+
+//get the top of stack
 @SP
 A=M-1
+
 
 D=M-D
-@TRUE20
+@jumpLocation20
 D;JGT
+//decrement the stack pointer
 @SP
 M=M-1
+
 D=0
+//push to stack
 @SP
 A=M
 M=D
+//increment the stack pointer
 @SP
 M=M+1
 
-@ENDCOMP20
+
+//get comparison ops jump
+@locationEnd20
 0;JMP
-(TRUE20)
+//start of jump
+(jumpLocation20)
+//decrement the stack pointer
 @SP
 M=M-1
+
 D=-1
+//push to stack
 @SP
 A=M
 M=D
+//increment the stack pointer
 @SP
 M=M+1
 
-@ENDCOMP20
+
+@locationEnd20
 0;JMP
-(ENDCOMP20)
+
+//end of jump
+(locationEnd20)
 
 
+
+
+//push constant to stack
 @32766
 D=A
+//push to stack
 @SP
 A=M
 M=D
+//increment the stack pointer
 @SP
 M=M+1
 
 
 
+//push constant to stack
 @32767
 D=A
+//push to stack
 @SP
 A=M
 M=D
+//increment the stack pointer
 @SP
 M=M+1
 
 
 
+//check if greater than
+//JGT comparison
+//get the top two from stack
+//get the top of stack
 @SP
 A=M-1
+
 D=M
+//remove to stack
+//get the top of stack
+@SP
+A=M-1
+
 M=M-D
+//decrement the stack pointer
 @SP
 M=M-1
 
+
+//get the top of stack
 @SP
 A=M-1
+
 
 D=M-D
-@TRUE23
+@jumpLocation23
 D;JGT
+//decrement the stack pointer
 @SP
 M=M-1
+
 D=0
+//push to stack
 @SP
 A=M
 M=D
+//increment the stack pointer
 @SP
 M=M+1
 
-@ENDCOMP23
+
+//get comparison ops jump
+@locationEnd23
 0;JMP
-(TRUE23)
+//start of jump
+(jumpLocation23)
+//decrement the stack pointer
 @SP
 M=M-1
+
 D=-1
+//push to stack
 @SP
 A=M
 M=D
+//increment the stack pointer
 @SP
 M=M+1
 
-@ENDCOMP23
+
+@locationEnd23
 0;JMP
-(ENDCOMP23)
+
+//end of jump
+(locationEnd23)
 
 
+
+
+//push constant to stack
 @32766
 D=A
+//push to stack
 @SP
 A=M
 M=D
+//increment the stack pointer
 @SP
 M=M+1
 
 
 
+//push constant to stack
 @32766
 D=A
+//push to stack
 @SP
 A=M
 M=D
+//increment the stack pointer
 @SP
 M=M+1
 
 
 
+//check if greater than
+//JGT comparison
+//get the top two from stack
+//get the top of stack
 @SP
 A=M-1
+
 D=M
+//remove to stack
+//get the top of stack
+@SP
+A=M-1
+
 M=M-D
+//decrement the stack pointer
 @SP
 M=M-1
 
+
+//get the top of stack
 @SP
 A=M-1
+
 
 D=M-D
-@TRUE26
+@jumpLocation26
 D;JGT
+//decrement the stack pointer
 @SP
 M=M-1
+
 D=0
+//push to stack
 @SP
 A=M
 M=D
+//increment the stack pointer
 @SP
 M=M+1
 
-@ENDCOMP26
+
+//get comparison ops jump
+@locationEnd26
 0;JMP
-(TRUE26)
+//start of jump
+(jumpLocation26)
+//decrement the stack pointer
 @SP
 M=M-1
+
 D=-1
+//push to stack
 @SP
 A=M
 M=D
+//increment the stack pointer
 @SP
 M=M+1
 
-@ENDCOMP26
+
+@locationEnd26
 0;JMP
-(ENDCOMP26)
+
+//end of jump
+(locationEnd26)
 
 
+
+
+//push constant to stack
 @57
 D=A
+//push to stack
 @SP
 A=M
 M=D
+//increment the stack pointer
 @SP
 M=M+1
 
 
 
+//push constant to stack
 @31
 D=A
+//push to stack
 @SP
 A=M
 M=D
+//increment the stack pointer
 @SP
 M=M+1
 
 
 
+//push constant to stack
 @53
 D=A
+//push to stack
 @SP
 A=M
 M=D
+//increment the stack pointer
 @SP
 M=M+1
 
 
 
+//add
+//get the top two from stack
+//get the top of stack
 @SP
 A=M-1
+
 D=M
+//remove to stack
+//get the top of stack
+@SP
+A=M-1
+
 M=M-D
+//decrement the stack pointer
 @SP
 M=M-1
 
+
+//get the top of stack
 @SP
 A=M-1
+
 
 M=D+M
 
+//push constant to stack
 @112
 D=A
+//push to stack
 @SP
 A=M
 M=D
+//increment the stack pointer
 @SP
 M=M+1
 
 
 
+//subtract
+//get the top two from stack
+//get the top of stack
 @SP
 A=M-1
+
 D=M
+//remove to stack
+//get the top of stack
+@SP
+A=M-1
+
 M=M-D
+//decrement the stack pointer
 @SP
 M=M-1
 
+
+//get the top of stack
 @SP
 A=M-1
+
 
 M=M-D
 
+//negate
+//get the top of stack
 @SP
 A=M-1
+
 M=-M
 
+//bit wise and
+//get the top two from stack
+//get the top of stack
 @SP
 A=M-1
+
 D=M
+//remove to stack
+//get the top of stack
+@SP
+A=M-1
+
 M=M-D
+//decrement the stack pointer
 @SP
 M=M-1
 
+
+//get the top of stack
 @SP
 A=M-1
+
 
 D=D&M
+//decrement the stack pointer
 @SP
 M=M-1
+
+//push to stack
 @SP
 A=M
 M=D
+//increment the stack pointer
 @SP
 M=M+1
 
 
+
+//push constant to stack
 @82
 D=A
+//push to stack
 @SP
 A=M
 M=D
+//increment the stack pointer
 @SP
 M=M+1
 
 
 
+//bit wise or
+//get the top two from stack
+//get the top of stack
 @SP
 A=M-1
+
 D=M
+//remove to stack
+//get the top of stack
+@SP
+A=M-1
+
 M=M-D
+//decrement the stack pointer
 @SP
 M=M-1
 
+
+//get the top of stack
 @SP
 A=M-1
+
 
 D=D|M
+//decrement the stack pointer
 @SP
 M=M-1
+
+//push to stack
 @SP
 A=M
 M=D
+//increment the stack pointer
 @SP
 M=M+1
 
 
+
+//bit wise not
+//get the top of stack
 @SP
 A=M-1
+
 D=!M
+//decrement the stack pointer
 @SP
 M=M-1
+
+//push to stack
 @SP
 A=M
 M=D
+//increment the stack pointer
 @SP
 M=M+1
 
 
+
+//end of program infinite loop
 (END)
 @END
 0;JMP
+

@@ -1,90 +1,95 @@
 def initializeProgram()
-    str = "@256"+"\n"+"D=A"+"\n"+"@SP"+"\n"+"M=D"+"\n"+
-        "@300"+"\n"+"D=A"+"\n"+"@LCL"+"\n"+"M=D"+"\n"+
-        "@400"+"\n"+"D=A"+"\n"+"@ARG"+"\n"+"M=D"+"\n"+
-        "@3000"+"\n"+"D=A"+"\n"+"@THIS"+"\n"+"M=D"+"\n"+
-        "@3010"+"\n"+"D=A"+"\n"+"@THAT"+"\n"+"M=D"+"\n"
-    return str
+    str = "//initialize stack segment pointer"+"\n"+
+        "@256"+"\n"+"D=A"+"\n"+"@SP"+"\n"+"M=D"+"\n"+"\n"+
+
+        "//initialize local segment pointer"+"\n"+
+        "@300"+"\n"+"D=A"+"\n"+"@LCL"+"\n"+"M=D"+"\n"+"\n"+
+
+        "//initialize argument segment pointer"+"\n"+
+        "@400"+"\n"+"D=A"+"\n"+"@ARG"+"\n"+"M=D"+"\n"+"\n"+
+
+        "//initialize this segment pointer"+"\n"+
+        "@3000"+"\n"+"D=A"+"\n"+"@THIS"+"\n"+"M=D"+"\n"+"\n"+
+
+        "//initialize that segment pointer"+"\n"+
+        "@3010"+"\n"+"D=A"+"\n"+"@THAT"+"\n"+"M=D"+"\n"+"\n"
+
+    return str+"\n"
 end
 
 
 def endProgram()
-  str = "(END)"+"\n"+"@END"+"\n"+"0;JMP"+"\n"
+  str = "//end of program infinite loop"+"\n"+
+      "(END)"+"\n"+"@END"+"\n"+"0;JMP"+"\n"
+  return str+"\n"
 end
 
 
 def decrementStackPointer()
-  str = "@SP"+"\n"+"M=M-1"+"\n"
-  return str
+  str = "//decrement the stack pointer"+"\n"+
+      "@SP"+"\n"+"M=M-1"+"\n"
+  return str+"\n"
 end
 
 
 def incrementStackPointer()
-  str = "@SP"+"\n"+"M=M+1"+"\n"
-  return str
+  str = "//increment the stack pointer"+"\n"+
+      "@SP"+"\n"+"M=M+1"+"\n"
+  return str+"\n"
 end
 
 
 def getTopOfStack()
-  str = "@SP"+"\n"+"A=M-1"+"\n"
-  return str
+  str = "//get the top of stack"+"\n"+
+      "@SP"+"\n"+"A=M-1"+"\n"
+  return str+"\n"
 end
 
 
 def pushToStack()
-  str = "@SP"+"\n"+"A=M"+"\n"+"M=D"+"\n"+ incrementStackPointer() + "\n"
-  return str
+  str = "//push to stack"+"\n"+
+      "@SP"+"\n"+"A=M"+"\n"+"M=D"+"\n"+ incrementStackPointer()
+  return str+"\n"
 end
 
 
 def removeFromStack()
-  str = +"M=M-D"+"\n"+ decrementStackPointer() + "\n"
-  return str
+  str = "//remove to stack"+"\n"+
+  getTopOfStack()+"M=M-D"+"\n"+ decrementStackPointer()
+  return str+"\n"
 end
 
 
 def getTopTwoFromStack
-  str = getTopOfStack() + "D=M"+"\n" + removeFromStack() + getTopOfStack() + "\n"
-  return str
+  str = "//get the top two from stack"+"\n"+
+      getTopOfStack() + "D=M"+"\n" + removeFromStack() + getTopOfStack()
+  return str+"\n"
 end
 
 
 def jumpLocations(jumpLocation, locationEnd, x)
-  str = "@"+locationEnd+"\n"+"0;JMP"+"\n"+ startOfJump(jumpLocation, locationEnd, x) + endOfJump(locationEnd)
-  return str
+  str = "//get comparison ops jump"+"\n"+
+      "@"+locationEnd+"\n"+"0;JMP"+"\n"+ startOfJump(jumpLocation, locationEnd, x) + endOfJump(locationEnd)
+  return str+"\n"
 end
 
 
 def startOfJump(jumpLocation, locationEnd, x)
-  str = "("+jumpLocation+")"+"\n"+ decrementStackPointer() + "D="+x+"\n" + pushToStack() + "@"+locationEnd+"\n"+"0;JMP"+"\n"
-  return str
+  str = "//start of jump"+"\n"+
+      "("+jumpLocation+")"+"\n"+ decrementStackPointer() + "D="+x+"\n" + pushToStack() + "@"+locationEnd+"\n"+"0;JMP"+"\n"
+  return str+"\n"
 end
 
 
 def endOfJump(locationEnd)
-  str = "(" + locationEnd + ")" + "\n"
-  return str
+  str =  "//end of jump"+"\n"+
+      "(" + locationEnd + ")" + "\n"
+  return str+"\n"
 end
 
 
 def compare(op, locationTrue, locationEnd)
-  str = getTopTwoFromStack() + "D=M-D"+"\n"+"@"+locationTrue+"\n"+"D;"+op+"\n"+ decrementStackPointer() + "D=0"+"\n" + pushToStack() + jumpLocations(locationTrue, locationEnd, "-1")
-  return str
+  str = "//"+op+" comparison"+"\n"+
+  getTopTwoFromStack() + "D=M-D"+"\n"+"@"+locationTrue+"\n"+"D;"+op+"\n"+ decrementStackPointer() + "D=0"+"\n" + pushToStack() + jumpLocations(locationTrue, locationEnd, "-1")
+  return str+"\n"
 end
-
-
-def boolAnd(locationFalse, locationEnd)
-  str = getTopTwoFromStack() + "@"+locationFalse+"\n"+"D;JEQ"+"\n"+"D=M"+"\n"+"@"+locationFalse+"\n"+"D;JEQ"+"\n" + decrementStackPointer() + "D=-1"+"\n" + pushToStack() + jumpLocations(locationFalse, locationEnd, "0")
-end
-
-
-def boolOr(locationTrue, locationEnd)
-  str = getTopTwoFromStack() + "@"+locationTrue+"\n"+"D;JNE"+"\n"+"D=M"+"\n"+"@"+locationTrue+"\n"+"D;JNE"+"\n" + decrementStackPointer() + "D=0"+"\n" + pushToStack() + jumpLocations(locationTrue, locationEnd, "-1")
-end
-
-
-def boolNot(locationTrue, locationEnd)
-  str = getTopOfStack() + "@"+locationTrue+"\n"+"D;JEQ"+"\n" + decrementStackPointer() + "D=0"+"\n" + pushToStack() + jumpLocations(locationTrue, locationEnd, "0")
-  return str
-end
-
