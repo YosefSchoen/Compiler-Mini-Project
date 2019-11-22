@@ -1,4 +1,3 @@
-
 #Utility has various functions which help with the program
 require_relative 'Utility'
 
@@ -9,7 +8,6 @@ def convertSegmentPop(arr)
   cmds = "" #cmds will be the string of hack asm commands
   segment = arr[1] #the segment is the second word in the vm command
   value = arr[2] #the value is the third word in the vm command
-
   case segment
   when "local"
     cmds = "//pop to local segment"+"\n"+
@@ -186,7 +184,15 @@ def translateVmToHack(vmFile, asmFile)
   writeFile(asmFile, lines)
 end
 
-translateVmToHack("Stage1/SimpleAdd/SimpleAdd.vm", "Stage1/SimpleAdd/SimpleAdd.asm")
-translateVmToHack("Stage1/StackTest/StackTest.vm", "Stage1/StackTest/StackTest.asm")
-translateVmToHack("Stage2/BasicTest/BasicTest.vm", "Stage2/BasicTest/BasicTest.asm")
-translateVmToHack("test.vm", "test.asm")
+
+def main()
+  translateVmToHack("test.vm", "test.asm")
+  translateVmToHack("Stage1/SimpleAdd/SimpleAdd.vm", "Stage1/SimpleAdd/SimpleAdd.asm")
+  translateVmToHack("Stage1/StackTest/StackTest.vm", "Stage1/StackTest/StackTest.asm")
+  translateVmToHack("Stage2/BasicTest/BasicTest.vm", "Stage2/BasicTest/BasicTest.asm")
+  translateVmToHack("Stage2/PointerTest/PointerTest.vm", "Stage2/PointerTest/PointerTest.asm")
+  translateVmToHack("Stage2/StaticTest/StaticTest.vm", "Stage2/StaticTest/StaticTest.asm")
+end
+
+
+main()

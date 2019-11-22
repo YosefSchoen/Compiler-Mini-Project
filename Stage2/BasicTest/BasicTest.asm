@@ -49,7 +49,8 @@ D=A
 @0
 D=D+A
 @R13
-M=D//get the top of stack
+M=D
+//get the top of stack
 @SP
 A=M-1
 
@@ -109,7 +110,8 @@ D=A
 @2
 D=D+A
 @R13
-M=D//get the top of stack
+M=D
+//get the top of stack
 @SP
 A=M-1
 
@@ -143,7 +145,8 @@ D=A
 @1
 D=D+A
 @R13
-M=D//get the top of stack
+M=D
+//get the top of stack
 @SP
 A=M-1
 
@@ -190,7 +193,8 @@ D=A
 @6
 D=D+A
 @R13
-M=D//get the top of stack
+M=D
+//get the top of stack
 @SP
 A=M-1
 
@@ -250,7 +254,8 @@ D=A
 @5
 D=D+A
 @R13
-M=D//get the top of stack
+M=D
+//get the top of stack
 @SP
 A=M-1
 
@@ -284,7 +289,8 @@ D=A
 @2
 D=D+A
 @R13
-M=D//get the top of stack
+M=D
+//get the top of stack
 @SP
 A=M-1
 

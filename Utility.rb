@@ -95,15 +95,38 @@ def compare(op, locationTrue, locationEnd)
 end
 
 
+def storeToFreeRegister(segment, value, reg)
+  str = "@"+segment+"\n"+"A=M"+"\n"+"D=A"+"\n"+"@"+value+"\n"+"D=D+A"+"\n"+"@"+reg+"\n"+"M=D"+"\n"
+  return str
+end
+
+
+def freeRegisterToSegment(reg)
+  str = "@"+reg+"\n"+"A=M"+"\n"+"M=D"+"\n"
+  return str
+end
+
+def deleteFreeRegister(reg)
+  str = "@"+reg+"\n"+"D=M"+"\n"+"M=M-D"+"\n"
+  return str
+end
+
+
 def popToSegment(segment, value)
-  str = "@"+segment+"\n"+"A=M"+"\n"+"D=A"+"\n"+"@"+value+"\n"+"D=D+A"+"\n"+"@R13"+"\n"+"M=D"+
-      getTopOfStack() + "D=M"+"\n"+"@R13"+"\n"+"A=M"+"\n"+"M=D"+"\n"+
-      getTopOfStack()+removeFromStack()+"@R13"+"\n"+"D=M"+"\n"+"M=M-D"+"\n"
+  str = storeToFreeRegister(segment, value, "R13") + getTopOfStack() + "D=M"+"\n" + freeRegisterToSegment("R13") +
+      getTopOfStack() + removeFromStack() + deleteFreeRegister("R13")
   return str
 end
 
 
 def pushFromSegment(segment, value)
   str = "@"+value+"\n"+"D=A"+"\n"+"@"+segment+"\n"+"A=D+M"+"\n"+"D=M"+"\n"+pushToStack()
+  return str
+end
+
+
+def popToTempSegment(value)
+  str = "TEMP"+"\n"+"D=A"+"@"+value+"\n"+"D=D+A"+"\n"+"@R13"+"\n"+"M=D"+"\n" +getTopOfStack() + "D=M" + freeRegisterToSegment("R13") +
+    getTopOfStack() + removeFromStack + deleteFreeRegister("R13")
   return str
 end

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e2bbf7f2-661c-4b38-bdc0-4dc1c947d57a" name="Default Changelist" comment="">
+    <list default="true" id="e2bbf7f2-661c-4b38-bdc0-4dc1c947d57a" name="Default Changelist" comment="New Commit">
+      <change afterPath="$PROJECT_DIR$/../Project7/Stage2/PointerTest/PointerTest.asm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Project7/Stage2/StaticTest/StaticTest.asm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Project7/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Project7/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Project7/Stage2/BasicTest/BasicTest.asm" beforeDir="false" afterPath="$PROJECT_DIR$/../Project7/Stage2/BasicTest/BasicTest.asm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Project7/Test.rb" beforeDir="false" afterPath="$PROJECT_DIR$/../Project7/Test.rb" afterDir="false" />
@@ -109,7 +111,7 @@
       <workItem from="1573673879825" duration="1977000" />
       <workItem from="1573729928657" duration="7600000" />
       <workItem from="1573814754201" duration="184000" />
-      <workItem from="1573815022876" duration="72921000" />
+      <workItem from="1573815022876" duration="78734000" />
     </task>
     <task id="LOCAL-00001" summary="New Commit">
       <created>1574256572492</created>
@@ -160,7 +162,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574353109193</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="New Commit">
+      <created>1574373370060</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1574373370060</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -187,7 +196,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/MiniProject@Test.rcov" NAME="Test Coverage Results" MODIFIED="1573607065364" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
-    <SUITE FILE_PATH="coverage/Project7@Test.rcov" NAME="Test Coverage Results" MODIFIED="1574373177761" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="C:\Users\josep\RubymineProjects\Project7" MODULE_NAME="Project7" />
+    <SUITE FILE_PATH="coverage/Project7@Test.rcov" NAME="Test Coverage Results" MODIFIED="1574409149731" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="C:\Users\josep\RubymineProjects\Project7" MODULE_NAME="Project7" />
     <SUITE FILE_PATH="coverage/Project7@Utility.rcov" NAME="Utility Coverage Results" MODIFIED="1574100649750" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Project7" MODULE_NAME="Project7" />
   </component>
 </project>
