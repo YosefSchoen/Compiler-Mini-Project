@@ -89,6 +89,7 @@ def convertCommand(arr, i)
 
   op = arr[0] #the operation is the first word in the vm command
 
+  #creating new jump locations for each conditional command
   jumpLocation = "jumpLocation"+i.to_s()
   locationEnd = "locationEnd"+i.to_s()
 
@@ -134,7 +135,7 @@ def convertCommand(arr, i)
     cmds = "//bit wise not"+"\n" +
         getTopOfStack() + "D=!M"+"\n"+ decrementStackPointer() + pushToStack()+"\n"
 
-  #push and pop vary based on what we are pushing this is handled in there own functions
+  #push and pop vary based on what segment the program is working on, this is handled in there own functions
   when "push"
     cmds = convertSegmentPush(arr)+"\n"
 
@@ -149,6 +150,7 @@ end
 def readFile(fileName)
   lines = []
 
+  #new read only file object with the filename passed above
   inFile = File.new(fileName, "r")
 
   while (line = inFile.gets)
@@ -159,15 +161,21 @@ def readFile(fileName)
   end
 
   inFile.close
+
+  #returns an array each element is a string of a line of the file
   return lines
 end
 
 #writes the lines to a asm file
 def writeFile(fileName, lines)
+
+  #new write only file object with the file name passed above
   outFile = File.new(fileName, "w")
   outFile.syswrite(initializeProgram())
 
+  #i will be used to create new jump locations for the comparison operators
   i = 0
+
   lines.each do |it|  cmd = it.split(' ')
   newCmd = convertCommand(cmd, i)
   outFile.syswrite(newCmd)
@@ -175,8 +183,10 @@ def writeFile(fileName, lines)
     i = i + 1
   end
 
+  #writes the new commands to the output file
   outFile.syswrite(endProgram())
 end
+
 
 #takes in a vm file and translates it to a hack asm file
 def translateVmToHack(vmFile, asmFile)
@@ -185,10 +195,18 @@ def translateVmToHack(vmFile, asmFile)
 end
 
 
+#the main will translate all of the stage 1 and stage 2 test cases
 def main()
+
+  #our own little test file
   translateVmToHack("test.vm", "test.asm")
+
+  #stage 1 is to test simple add and  stack test
   translateVmToHack("Stage1/SimpleAdd/SimpleAdd.vm", "Stage1/SimpleAdd/SimpleAdd.asm")
   translateVmToHack("Stage1/StackTest/StackTest.vm", "Stage1/StackTest/StackTest.asm")
+
+  #stage 2 is to test a basic test with the extra segments (local, argument, this, and that)
+  # then it will test the pointer segment, and finally the static segment
   translateVmToHack("Stage2/BasicTest/BasicTest.vm", "Stage2/BasicTest/BasicTest.asm")
   translateVmToHack("Stage2/PointerTest/PointerTest.vm", "Stage2/PointerTest/PointerTest.asm")
   translateVmToHack("Stage2/StaticTest/StaticTest.vm", "Stage2/StaticTest/StaticTest.asm")
