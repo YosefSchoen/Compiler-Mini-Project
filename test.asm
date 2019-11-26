@@ -29,49 +29,6 @@ D=A
 M=D
 
 
-//push constant to stack
-@50
-D=A
-//push to stack
-@SP
-A=M
-M=D
-//increment the stack pointer
-@SP
-M=M+1
-
-
-
-@3
-D=A
-@0
-D=D+A
-@R13
-M=D
-//get the top of stack
-@SP
-A=M-1
-
-D=M
-@R13
-A=M
-M=D
-@R13
-D=M
-M=M-D
-//remove to stack
-//get the top of stack
-@SP
-A=M-1
-
-D=M
-M=M-D
-//decrement the stack pointer
-@SP
-M=M-1
-
-
-
 //end of program infinite loop
 (END)
 @END
