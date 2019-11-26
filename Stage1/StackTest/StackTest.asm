@@ -68,6 +68,7 @@ D=M
 @SP
 A=M-1
 
+D=M
 M=M-D
 //decrement the stack pointer
 @SP
@@ -158,6 +159,7 @@ D=M
 @SP
 A=M-1
 
+D=M
 M=M-D
 //decrement the stack pointer
 @SP
@@ -248,6 +250,7 @@ D=M
 @SP
 A=M-1
 
+D=M
 M=M-D
 //decrement the stack pointer
 @SP
@@ -338,6 +341,7 @@ D=M
 @SP
 A=M-1
 
+D=M
 M=M-D
 //decrement the stack pointer
 @SP
@@ -428,6 +432,7 @@ D=M
 @SP
 A=M-1
 
+D=M
 M=M-D
 //decrement the stack pointer
 @SP
@@ -518,6 +523,7 @@ D=M
 @SP
 A=M-1
 
+D=M
 M=M-D
 //decrement the stack pointer
 @SP
@@ -608,6 +614,7 @@ D=M
 @SP
 A=M-1
 
+D=M
 M=M-D
 //decrement the stack pointer
 @SP
@@ -698,6 +705,7 @@ D=M
 @SP
 A=M-1
 
+D=M
 M=M-D
 //decrement the stack pointer
 @SP
@@ -788,6 +796,7 @@ D=M
 @SP
 A=M-1
 
+D=M
 M=M-D
 //decrement the stack pointer
 @SP
@@ -890,6 +899,7 @@ D=M
 @SP
 A=M-1
 
+D=M
 M=M-D
 //decrement the stack pointer
 @SP
@@ -927,6 +937,7 @@ D=M
 @SP
 A=M-1
 
+D=M
 M=M-D
 //decrement the stack pointer
 @SP
@@ -959,6 +970,7 @@ D=M
 @SP
 A=M-1
 
+D=M
 M=M-D
 //decrement the stack pointer
 @SP
@@ -1008,6 +1020,7 @@ D=M
 @SP
 A=M-1
 
+D=M
 M=M-D
 //decrement the stack pointer
 @SP

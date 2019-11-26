@@ -1,3 +1,4 @@
+#this will initialize the pointer locations of the stack and all of the segments
 def initializeProgram()
     str = "//initialize stack segment pointer"+"\n"+
         "@256"+"\n"+"D=A"+"\n"+"@SP"+"\n"+"M=D"+"\n"+"\n"+
@@ -18,6 +19,7 @@ def initializeProgram()
 end
 
 
+#this will put the program in an infinite loop at the end of the program as to not run down the ROM for ever
 def endProgram()
   str = "//end of program infinite loop"+"\n"+
       "(END)"+"\n"+"@END"+"\n"+"0;JMP"+"\n"
@@ -25,6 +27,7 @@ def endProgram()
 end
 
 
+#a simple function to decrement the stack pointer
 def decrementStackPointer()
   str = "//decrement the stack pointer"+"\n"+
       "@SP"+"\n"+"M=M-1"+"\n"
@@ -32,6 +35,7 @@ def decrementStackPointer()
 end
 
 
+#a simple function to increment the stack pointer
 def incrementStackPointer()
   str = "//increment the stack pointer"+"\n"+
       "@SP"+"\n"+"M=M+1"+"\n"
@@ -39,6 +43,7 @@ def incrementStackPointer()
 end
 
 
+#a simple function to get the top of the stack
 def getTopOfStack()
   str = "//get the top of stack"+"\n"+
       "@SP"+"\n"+"A=M-1"+"\n"
@@ -46,6 +51,7 @@ def getTopOfStack()
 end
 
 
+#pushes whatever value is stored in D to the the stack and then increments the stack pointer
 def pushToStack()
   str = "//push to stack"+"\n"+
       "@SP"+"\n"+"A=M"+"\n"+"M=D"+"\n"+ incrementStackPointer()
@@ -53,13 +59,15 @@ def pushToStack()
 end
 
 
+#removes the top of the stack and decrements the stack pointer
 def removeFromStack()
   str = "//remove to stack"+"\n"+
-  getTopOfStack()+"M=M-D"+"\n"+ decrementStackPointer()
+  getTopOfStack()+ "D=M"+"\n"+"M=M-D"+"\n"+ decrementStackPointer()
   return str
 end
 
 
+#gets the top two elements from the stack, the top one is stored in D and removed the next one is in M
 def getTopTwoFromStack
   str = "//get the top two from stack"+"\n"+
       getTopOfStack() + "D=M"+"\n" + removeFromStack() + getTopOfStack()
@@ -76,6 +84,8 @@ end
 
 def startOfJump(jumpLocation, locationEnd, x)
   str = "//start of jump"+"\n"+
+  #x will either be set to -1 or zero depending if we want to jump for true or false
+  # x will replace the value from the comparison operators
       "("+jumpLocation+")"+"\n"+ decrementStackPointer() + "D="+x+"\n" + pushToStack() + "@"+locationEnd+"\n"+"0;JMP"+"\n"
   return str+"\n"
 end
@@ -126,7 +136,13 @@ end
 
 
 def popToTempSegment(value)
-  str = "TEMP"+"\n"+"D=A"+"@"+value+"\n"+"D=D+A"+"\n"+"@R13"+"\n"+"M=D"+"\n" +getTopOfStack() + "D=M" + freeRegisterToSegment("R13") +
-    getTopOfStack() + removeFromStack + deleteFreeRegister("R13")
+  str = "@5"+"\n"+"D=A"+"\n"+"@"+value+"\n"+"D=D+A"+"\n"+"@R13"+"\n"+"M=D"+"\n" +getTopOfStack() + "D=M"+"\n" + freeRegisterToSegment("R13") +
+    getTopOfStack() + removeFromStack() + deleteFreeRegister("R13")
   return str
+end
+
+def pushFromTempSegment(value)
+  str = "@"+value+"\n"+"D=A"+"\n"+"@5"+"\n"+"A=A+D"+"\n"+"D=M"+"\n"+ pushToStack()
+  return str
+
 end

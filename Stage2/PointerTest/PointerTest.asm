@@ -42,6 +42,33 @@ M=M+1
 
 
 
+@3
+D=A
+@0
+D=D+A
+@R13
+M=D
+//get the top of stack
+@SP
+A=M-1
+
+D=M
+@R13
+A=M
+M=D
+@R13
+D=M
+M=M-D
+//remove to stack
+//get the top of stack
+@SP
+A=M-1
+
+D=M
+M=M-D
+//decrement the stack pointer
+@SP
+M=M-1
 
 
 
@@ -58,6 +85,33 @@ M=M+1
 
 
 
+@3
+D=A
+@1
+D=D+A
+@R13
+M=D
+//get the top of stack
+@SP
+A=M-1
+
+D=M
+@R13
+A=M
+M=D
+@R13
+D=M
+M=M-D
+//remove to stack
+//get the top of stack
+@SP
+A=M-1
+
+D=M
+M=M-D
+//decrement the stack pointer
+@SP
+M=M-1
 
 
 
@@ -99,6 +153,7 @@ A=M-1
 @SP
 A=M-1
 
+D=M
 M=M-D
 //decrement the stack pointer
 @SP
@@ -147,6 +202,7 @@ A=M-1
 @SP
 A=M-1
 
+D=M
 M=M-D
 //decrement the stack pointer
 @SP
@@ -157,10 +213,34 @@ D=M
 M=M-D
 
 
-//push from pointer segment
+@3
+D=A
+@0
+A=A+D
+D=M
+//push to stack
+@SP
+A=M
+M=D
+//increment the stack pointer
+@SP
+M=M+1
 
 
-//push from pointer segment
+
+@3
+D=A
+@1
+A=A+D
+D=M
+//push to stack
+@SP
+A=M
+M=D
+//increment the stack pointer
+@SP
+M=M+1
+
 
 
 //add
@@ -175,6 +255,7 @@ D=M
 @SP
 A=M-1
 
+D=M
 M=M-D
 //decrement the stack pointer
 @SP
@@ -215,6 +296,7 @@ D=M
 @SP
 A=M-1
 
+D=M
 M=M-D
 //decrement the stack pointer
 @SP
@@ -255,6 +337,7 @@ D=M
 @SP
 A=M-1
 
+D=M
 M=M-D
 //decrement the stack pointer
 @SP

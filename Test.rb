@@ -8,6 +8,7 @@ def convertSegmentPop(arr)
   cmds = "" #cmds will be the string of hack asm commands
   segment = arr[1] #the segment is the second word in the vm command
   value = arr[2] #the value is the third word in the vm command
+
   case segment
   when "local"
     cmds = "//pop to local segment"+"\n"+
@@ -25,7 +26,7 @@ def convertSegmentPop(arr)
         getTopOfStack() + removeFromStack()
 
   when "temp"
-    cmds = "\n"
+    cmds = popToTempSegment(value)
 
   when "this"
     cmds = "//pop to this segment"+"\n"+
@@ -36,9 +37,9 @@ def convertSegmentPop(arr)
        popToSegment("THAT", value)
 
   when "pointer"
-    cmds = "\n"
+    cmds = "@3"+"\n"+"D=A"+"\n"+"@"+value+"\n"+"D=D+A"+"\n"+"@R13"+"\n"+"M=D"+"\n"+ getTopOfStack() + "D=M"+"\n"+"@R13"+"\n"+"A=M"+"\n"+"M=D"+"\n"+
+        deleteFreeRegister("R13") + removeFromStack()
   end
-
   return cmds
 end
 
@@ -66,7 +67,8 @@ def convertSegmentPush(arr)
         "@"+value+"\n"+"D=A"+"\n" + pushToStack()
 
   when "temp"
-    cmds = "//push from temp segment"+"\n"
+    cmds = "//push from temp segment"+"\n"+
+        pushFromTempSegment(value)
 
   when "this"
     cmds = "//push from this segment"+"\n"+
@@ -77,7 +79,7 @@ def convertSegmentPush(arr)
         pushFromSegment("THAT", value)
 
   when "pointer"
-    cmds = "//push from pointer segment"+"\n"
+    cmds = "@3"+"\n"+"D=A"+"\n"+"@"+value+"\n"+"A=A+D"+"\n"+"D=M"+"\n"+ pushToStack()
   end
 
   return cmds

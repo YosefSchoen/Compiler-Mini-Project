@@ -30,7 +30,7 @@ M=D
 
 
 //push constant to stack
-@12
+@50
 D=A
 //push to stack
 @SP
@@ -42,11 +42,9 @@ M=M+1
 
 
 
-//pop to local segment
-@LCL
-A=M
+@3
 D=A
-@2
+@0
 D=D+A
 @R13
 M=D
@@ -58,23 +56,20 @@ D=M
 @R13
 A=M
 M=D
-//get the top of stack
-@SP
-A=M-1
-
+@R13
+D=M
+M=M-D
 //remove to stack
 //get the top of stack
 @SP
 A=M-1
 
+D=M
 M=M-D
 //decrement the stack pointer
 @SP
 M=M-1
 
-@R13
-D=M
-M=M-D
 
 
 //end of program infinite loop
