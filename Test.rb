@@ -3,8 +3,6 @@ require_relative 'Utility'
 
 #this function will convert the vm pop command based on which of the various segments were used
 def convertSegmentPop(arr)
-
-
   cmds = "" #cmds will be the string of hack asm commands
   segment = arr[1] #the segment is the second word in the vm command
   value = arr[2] #the value is the third word in the vm command
@@ -19,7 +17,7 @@ def convertSegmentPop(arr)
         popToSegment("ARG", value)
 
   when "static"
-    cmds = "\n"
+      cmds = getTopOfStack() + "D=M"+"\n"+"@Location."+value+"\n"+"M=D"+"\n"+removeFromStack()
 
   when "constant"
     cmds = "//pop constant"+"\n"+
@@ -60,7 +58,8 @@ def convertSegmentPush(arr)
         pushFromSegment("ARG", value)
 
   when "static"
-    cmds = "//push from static segment"+"\n"
+    cmds = "//push from static segment"+"\n"+
+        "@Location."+value+"\n"+"D=M"+"\n"+pushToStack()
 
   when "constant"
     cmds = "//push constant to stack"+"\n"+
@@ -157,7 +156,7 @@ def readFile(fileName)
 
   while (line = inFile.gets)
     #removing comments and empty lines
-    if (line[0] != "/" and line[1] != "/" and line != "\n")
+    if line[0] != "/" and line[1] != "/" and line != "\n"
       lines << line
     end
   end
@@ -173,7 +172,7 @@ def writeFile(fileName, lines)
 
   #new write only file object with the file name passed above
   outFile = File.new(fileName, "w")
-  outFile.syswrite(initializeProgram())
+  #outFile.syswrite(initializeProgram())
 
   #i will be used to create new jump locations for the comparison operators
   i = 0

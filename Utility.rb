@@ -146,3 +146,20 @@ def pushFromTempSegment(value)
   return str
 
 end
+
+
+def convertFileName(fileName)
+
+  i = 0
+  tempFile = ""
+
+  fileName.each_char do |ch|
+    if ch == '/'
+      tempFile = fileName[i + 1, fileName.size]
+    end
+
+    i = i + 1
+  end
+
+  return tempFile
+end

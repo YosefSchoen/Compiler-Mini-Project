@@ -1,32 +1,27 @@
-//initialize stack segment pointer
-@256
+//push constant to stack
+@5
 D=A
+//push to stack
 @SP
+A=M
 M=D
+//increment the stack pointer
+@SP
+M=M+1
 
-//initialize local segment pointer
-@300
-D=A
-@LCL
-M=D
 
-//initialize argument segment pointer
-@400
-D=A
-@ARG
-M=D
 
-//initialize this segment pointer
-@3000
-D=A
-@THIS
+//push from static segment
+@Location.3
+D=M
+//push to stack
+@SP
+A=M
 M=D
+//increment the stack pointer
+@SP
+M=M+1
 
-//initialize that segment pointer
-@3010
-D=A
-@THAT
-M=D
 
 
 //end of program infinite loop
