@@ -54,22 +54,22 @@ def getTopTwoFromStack
 end
 
 
-def jumpLocations(jumpLocation, locationEnd, x)
+#helper functions to write the jump labels for the comparison operators
+def jumpLocations(jumpLocation, locationEnd)
   str = "//get comparison ops jump"+"\n"+
-      "@"+locationEnd+"\n"+"0;JMP"+"\n"+ startOfJump(jumpLocation, locationEnd, x) + endOfJump(locationEnd)
+      "@"+locationEnd+"\n"+"0;JMP"+"\n"+ startOfJump(jumpLocation, locationEnd) + endOfJump(locationEnd)
   return str
 end
 
-
-def startOfJump(jumpLocation, locationEnd, x)
+# will create a label to jump to if the comparison was true
+def startOfJump(jumpLocation, locationEnd)
   str = "//start of jump"+"\n"+
-  #x will either be set to -1 or zero depending if we want to jump for true or false
-  # x will replace the value from the comparison operators
-      "("+jumpLocation+")"+"\n"+ decrementStackPointer() + "D="+x+"\n" + pushToStack() + "@"+locationEnd+"\n"+"0;JMP"+"\n"
+      "("+jumpLocation+")"+"\n"+ decrementStackPointer() + "D=-1"+"\n" + pushToStack() + "@"+locationEnd+"\n"+"0;JMP"+"\n"
   return str+"\n"
 end
 
-
+# will create a label to jump to after a comparison
+# locationEnd is the jump location after the value is put in the stack
 def endOfJump(locationEnd)
   str =  "//end of jump"+"\n"+
       "(" + locationEnd + ")" + "\n"
@@ -77,37 +77,55 @@ def endOfJump(locationEnd)
 end
 
 
+# function for all comparison operators op is the type of comparison
+# locationTrue is the jump location if the comparison is true
+# locationEnd is the jump location after the value is put in the stack
+# if true -1 will be pushed if false 0 will be push
 def compare(op, locationTrue, locationEnd)
   str = "//"+op+" comparison"+"\n"+
-  getTopTwoFromStack() + "D=M-D"+"\n"+"@"+locationTrue+"\n"+"D;"+op+"\n"+ decrementStackPointer() + "D=0"+"\n" + pushToStack() + jumpLocations(locationTrue, locationEnd, "-1")
+  getTopTwoFromStack() + "D=M-D"+"\n"+"@"+locationTrue+"\n"+"D;"+op+"\n"+
+  decrementStackPointer() + "D=0"+"\n" + pushToStack() + jumpLocations(locationTrue, locationEnd)
   return str
 end
 
 
-
+# function to store information in one of the three free registers for assembler
+# this function is needed to store the location of a memory segment while D holds the stack value
 def storeToFreeRegister(reg)
   str = "@"+reg+"\n"+"M=D"+"\n"
   return str
 end
 
-
+# function to go to a segment location stored in one of the three free registers for assembler
+# this function is needed to store the location of a memory segment while D holds the stack value
 def freeRegisterToSegment(reg)
   str = "@"+reg+"\n"+"A=M"+"\n"+"M=D"+"\n"
   return str
 end
 
+
+# function to delete a value from one of the three free registers for assembler
 def deleteFreeRegister(reg)
   str = "@"+reg+"\n"+"D=M"+"\n"+"M=M-D"+"\n"
   return str
 end
 
 
+# function to get the position in memory of a segment
+# segment is which segment to push from
+# value is the segments value
+# location will be M or A depending if the segment is a pointer to memory location like local
+# or the location itself like temp
 def getSegmentPosition(segment, value, location)
   str = "@"+segment+"\n"+"D="+location+"\n"+"@"+value+"\n"+"D=D+A"+"\n"
   return str
 end
 
-
+# function to pop from the stack to the segment
+# segment is which segment to push from
+# value is the segments value
+# location will be M or A depending if the segment is a pointer to memory location like local
+# or the location itself like temp
 def popToSegment(segment, value, location)
   str = getSegmentPosition(segment, value, location) + storeToFreeRegister("R13") + getTopOfStack() + "D=M"+"\n" +
       freeRegisterToSegment("R13") + removeFromStack() + deleteFreeRegister("R13")
@@ -115,6 +133,11 @@ def popToSegment(segment, value, location)
 end
 
 
+# function to push from a segment to the stack
+# segment is which segment to push from
+# value is the segments value
+# location will be M or A depending if the segment is a pointer to memory location like local
+# or the location itself like temp
 def pushFromSegment(segment, value, location)
   str = getSegmentPosition(segment, value, location)+"A=D"+"\n"+"D=M"+"\n"+pushToStack()
   return str
