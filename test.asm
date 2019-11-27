@@ -24,20 +24,27 @@ M=M+1
 
 
 
+//pop to segment
+//get segment position
 @5
 D=A
 @0
 D=D+A
+
+//store to free register
 @R13
 M=D
+
 //get the top of stack
 @SP
 A=M-1
 
 D=M
+//send to segment from free register
 @R13
 A=M
 M=D
+
 //remove to stack
 //get the top of stack
 @SP
@@ -49,25 +56,34 @@ M=M-D
 @SP
 M=M-1
 
+//delete content from free register
 @R13
 D=M
 M=M-D
 
 
+
+//pop to segment
+//get segment position
 @5
 D=A
 @1
 D=D+A
+
+//store to free register
 @R13
 M=D
+
 //get the top of stack
 @SP
 A=M-1
 
 D=M
+//send to segment from free register
 @R13
 A=M
 M=D
+
 //remove to stack
 //get the top of stack
 @SP
@@ -79,16 +95,21 @@ M=M-D
 @SP
 M=M-1
 
+//delete content from free register
 @R13
 D=M
 M=M-D
+
 
 
 //push from temp segment
+//push from segment
+//get segment position
 @5
 D=A
 @1
 D=D+A
+
 A=D
 D=M
 //push to stack
@@ -102,10 +123,13 @@ M=M+1
 
 
 //push from temp segment
+//push from segment
+//get segment position
 @5
 D=A
 @0
 D=D+A
+
 A=D
 D=M
 //push to stack

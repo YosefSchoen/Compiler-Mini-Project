@@ -92,22 +92,25 @@ end
 # function to store information in one of the three free registers for assembler
 # this function is needed to store the location of a memory segment while D holds the stack value
 def storeToFreeRegister(reg)
-  str = "@"+reg+"\n"+"M=D"+"\n"
-  return str
+  str = "//store to free register"+"\n"+
+      "@"+reg+"\n"+"M=D"+"\n"
+  return str+"\n"
 end
 
 # function to go to a segment location stored in one of the three free registers for assembler
 # this function is needed to store the location of a memory segment while D holds the stack value
 def freeRegisterToSegment(reg)
-  str = "@"+reg+"\n"+"A=M"+"\n"+"M=D"+"\n"
-  return str
+  str = "//send to segment from free register"+"\n"+
+      "@"+reg+"\n"+"A=M"+"\n"+"M=D"+"\n"
+  return str+"\n"
 end
 
 
 # function to delete a value from one of the three free registers for assembler
 def deleteFreeRegister(reg)
-  str = "@"+reg+"\n"+"D=M"+"\n"+"M=M-D"+"\n"
-  return str
+  str = "//delete content from free register"+"\n"+
+      "@"+reg+"\n"+"D=M"+"\n"+"M=M-D"+"\n"
+  return str+"\n"
 end
 
 
@@ -117,8 +120,9 @@ end
 # location will be M or A depending if the segment is a pointer to memory location like local
 # or the location itself like temp
 def getSegmentPosition(segment, value, location)
-  str = "@"+segment+"\n"+"D="+location+"\n"+"@"+value+"\n"+"D=D+A"+"\n"
-  return str
+  str = "//get segment position"+"\n"+
+      "@"+segment+"\n"+"D="+location+"\n"+"@"+value+"\n"+"D=D+A"+"\n"
+  return str+"\n"
 end
 
 # function to pop from the stack to the segment
@@ -127,7 +131,8 @@ end
 # location will be M or A depending if the segment is a pointer to memory location like local
 # or the location itself like temp
 def popToSegment(segment, value, location)
-  str = getSegmentPosition(segment, value, location) + storeToFreeRegister("R13") + getTopOfStack() + "D=M"+"\n" +
+  str = "//pop to segment"+"\n"+
+      getSegmentPosition(segment, value, location) + storeToFreeRegister("R13") + getTopOfStack() + "D=M"+"\n" +
       freeRegisterToSegment("R13") + removeFromStack() + deleteFreeRegister("R13")
   return str
 end
@@ -139,7 +144,8 @@ end
 # location will be M or A depending if the segment is a pointer to memory location like local
 # or the location itself like temp
 def pushFromSegment(segment, value, location)
-  str = getSegmentPosition(segment, value, location)+"A=D"+"\n"+"D=M"+"\n"+pushToStack()
+  str = "//push from segment"+"\n"+
+      getSegmentPosition(segment, value, location)+"A=D"+"\n"+"D=M"+"\n"+pushToStack()
   return str
 end
 
