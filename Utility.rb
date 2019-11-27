@@ -1,24 +1,3 @@
-#this will initialize the pointer locations of the stack and all of the segments
-def initializeProgram()
-    str = "//initialize stack segment pointer"+"\n"+
-        "@256"+"\n"+"D=A"+"\n"+"@SP"+"\n"+"M=D"+"\n"+"\n"+
-
-        "//initialize local segment pointer"+"\n"+
-        "@300"+"\n"+"D=A"+"\n"+"@LCL"+"\n"+"M=D"+"\n"+"\n"+
-
-        "//initialize argument segment pointer"+"\n"+
-        "@400"+"\n"+"D=A"+"\n"+"@ARG"+"\n"+"M=D"+"\n"+"\n"+
-
-        "//initialize this segment pointer"+"\n"+
-        "@3000"+"\n"+"D=A"+"\n"+"@THIS"+"\n"+"M=D"+"\n"+"\n"+
-
-        "//initialize that segment pointer"+"\n"+
-        "@3010"+"\n"+"D=A"+"\n"+"@THAT"+"\n"+"M=D"+"\n"+"\n"
-
-    return str+"\n"
-end
-
-
 #this will put the program in an infinite loop at the end of the program as to not run down the ROM for ever
 def endProgram()
   str = "//end of program infinite loop"+"\n"+
@@ -105,8 +84,9 @@ def compare(op, locationTrue, locationEnd)
 end
 
 
-def storeToFreeRegister(segment, value, reg)
-  str = "@"+segment+"\n"+"A=M"+"\n"+"D=A"+"\n"+"@"+value+"\n"+"D=D+A"+"\n"+"@"+reg+"\n"+"M=D"+"\n"
+
+def storeToFreeRegister(reg)
+  str = "@"+reg+"\n"+"M=D"+"\n"
   return str
 end
 
@@ -122,44 +102,22 @@ def deleteFreeRegister(reg)
 end
 
 
-def popToSegment(segment, value)
-  str = storeToFreeRegister(segment, value, "R13") + getTopOfStack() + "D=M"+"\n" + freeRegisterToSegment("R13") +
-      getTopOfStack() + removeFromStack() + deleteFreeRegister("R13")
+def getSegmentPosition(segment, value, location)
+  str = "@"+segment+"\n"+"D="+location+"\n"+"@"+value+"\n"+"D=D+A"+"\n"
   return str
 end
 
 
-def pushFromSegment(segment, value)
-  str = "@"+value+"\n"+"D=A"+"\n"+"@"+segment+"\n"+"A=D+M"+"\n"+"D=M"+"\n"+pushToStack()
+def popToSegment(segment, value, location)
+  str = getSegmentPosition(segment, value, location) + storeToFreeRegister("R13") + getTopOfStack() + "D=M"+"\n" +
+      freeRegisterToSegment("R13") + removeFromStack() + deleteFreeRegister("R13")
   return str
 end
 
 
-def popToTempSegment(value)
-  str = "@5"+"\n"+"D=A"+"\n"+"@"+value+"\n"+"D=D+A"+"\n"+"@R13"+"\n"+"M=D"+"\n" +getTopOfStack() + "D=M"+"\n" + freeRegisterToSegment("R13") +
-    getTopOfStack() + removeFromStack() + deleteFreeRegister("R13")
+def pushFromSegment(segment, value, location)
+  str = getSegmentPosition(segment, value, location)+"A=D"+"\n"+"D=M"+"\n"+pushToStack()
   return str
 end
 
-def pushFromTempSegment(value)
-  str = "@"+value+"\n"+"D=A"+"\n"+"@5"+"\n"+"A=A+D"+"\n"+"D=M"+"\n"+ pushToStack()
-  return str
 
-end
-
-
-def convertFileName(fileName)
-
-  i = 0
-  tempFile = ""
-
-  fileName.each_char do |ch|
-    if ch == '/'
-      tempFile = fileName[i + 1, fileName.size]
-    end
-
-    i = i + 1
-  end
-
-  return tempFile
-end

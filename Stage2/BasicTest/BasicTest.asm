@@ -13,8 +13,7 @@ M=M+1
 
 //pop to local segment
 @LCL
-A=M
-D=A
+D=M
 @0
 D=D+A
 @R13
@@ -27,10 +26,6 @@ D=M
 @R13
 A=M
 M=D
-//get the top of stack
-@SP
-A=M-1
-
 //remove to stack
 //get the top of stack
 @SP
@@ -75,8 +70,7 @@ M=M+1
 
 //pop to argument segment
 @ARG
-A=M
-D=A
+D=M
 @2
 D=D+A
 @R13
@@ -89,10 +83,6 @@ D=M
 @R13
 A=M
 M=D
-//get the top of stack
-@SP
-A=M-1
-
 //remove to stack
 //get the top of stack
 @SP
@@ -111,8 +101,7 @@ M=M-D
 
 //pop to argument segment
 @ARG
-A=M
-D=A
+D=M
 @1
 D=D+A
 @R13
@@ -125,10 +114,6 @@ D=M
 @R13
 A=M
 M=D
-//get the top of stack
-@SP
-A=M-1
-
 //remove to stack
 //get the top of stack
 @SP
@@ -160,8 +145,7 @@ M=M+1
 
 //pop to this segment
 @THIS
-A=M
-D=A
+D=M
 @6
 D=D+A
 @R13
@@ -174,10 +158,6 @@ D=M
 @R13
 A=M
 M=D
-//get the top of stack
-@SP
-A=M-1
-
 //remove to stack
 //get the top of stack
 @SP
@@ -222,8 +202,7 @@ M=M+1
 
 //pop to that segment
 @THAT
-A=M
-D=A
+D=M
 @5
 D=D+A
 @R13
@@ -236,10 +215,6 @@ D=M
 @R13
 A=M
 M=D
-//get the top of stack
-@SP
-A=M-1
-
 //remove to stack
 //get the top of stack
 @SP
@@ -258,8 +233,7 @@ M=M-D
 
 //pop to that segment
 @THAT
-A=M
-D=A
+D=M
 @2
 D=D+A
 @R13
@@ -272,10 +246,6 @@ D=M
 @R13
 A=M
 M=D
-//get the top of stack
-@SP
-A=M-1
-
 //remove to stack
 //get the top of stack
 @SP
@@ -319,10 +289,6 @@ D=M
 @R13
 A=M
 M=D
-//get the top of stack
-@SP
-A=M-1
-
 //remove to stack
 //get the top of stack
 @SP
@@ -340,10 +306,11 @@ M=M-D
 
 
 //push from local segment
-@0
-D=A
 @LCL
-A=D+M
+D=M
+@0
+D=D+A
+A=D
 D=M
 //push to stack
 @SP
@@ -356,10 +323,11 @@ M=M+1
 
 
 //push from that segment
-@5
-D=A
 @THAT
-A=D+M
+D=M
+@5
+D=D+A
+A=D
 D=M
 //push to stack
 @SP
@@ -397,10 +365,11 @@ M=D+M
 
 
 //push from argument segment
-@1
-D=A
 @ARG
-A=D+M
+D=M
+@1
+D=D+A
+A=D
 D=M
 //push to stack
 @SP
@@ -438,10 +407,11 @@ M=M-D
 
 
 //push from this segment
-@6
-D=A
 @THIS
-A=D+M
+D=M
+@6
+D=D+A
+A=D
 D=M
 //push to stack
 @SP
@@ -454,10 +424,11 @@ M=M+1
 
 
 //push from this segment
-@6
-D=A
 @THIS
-A=D+M
+D=M
+@6
+D=D+A
+A=D
 D=M
 //push to stack
 @SP
@@ -520,10 +491,11 @@ M=M-D
 
 
 //push from temp segment
-@6
-D=A
 @5
-A=A+D
+D=A
+@6
+D=D+A
+A=D
 D=M
 //push to stack
 @SP

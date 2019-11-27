@@ -25,9 +25,6 @@ D=M
 @R13
 A=M
 M=D
-@R13
-D=M
-M=M-D
 //remove to stack
 //get the top of stack
 @SP
@@ -39,6 +36,9 @@ M=M-D
 @SP
 M=M-1
 
+@R13
+D=M
+M=M-D
 
 
 //push constant to stack
@@ -68,9 +68,6 @@ D=M
 @R13
 A=M
 M=D
-@R13
-D=M
-M=M-D
 //remove to stack
 //get the top of stack
 @SP
@@ -82,6 +79,9 @@ M=M-D
 @SP
 M=M-1
 
+@R13
+D=M
+M=M-D
 
 
 //push constant to stack
@@ -99,8 +99,7 @@ M=M+1
 
 //pop to this segment
 @THIS
-A=M
-D=A
+D=M
 @2
 D=D+A
 @R13
@@ -113,10 +112,6 @@ D=M
 @R13
 A=M
 M=D
-//get the top of stack
-@SP
-A=M-1
-
 //remove to stack
 //get the top of stack
 @SP
@@ -148,8 +143,7 @@ M=M+1
 
 //pop to that segment
 @THAT
-A=M
-D=A
+D=M
 @6
 D=D+A
 @R13
@@ -162,10 +156,6 @@ D=M
 @R13
 A=M
 M=D
-//get the top of stack
-@SP
-A=M-1
-
 //remove to stack
 //get the top of stack
 @SP
@@ -185,7 +175,8 @@ M=M-D
 @3
 D=A
 @0
-A=A+D
+D=D+A
+A=D
 D=M
 //push to stack
 @SP
@@ -200,7 +191,8 @@ M=M+1
 @3
 D=A
 @1
-A=A+D
+D=D+A
+A=D
 D=M
 //push to stack
 @SP
@@ -238,10 +230,11 @@ M=D+M
 
 
 //push from this segment
-@2
-D=A
 @THIS
-A=D+M
+D=M
+@2
+D=D+A
+A=D
 D=M
 //push to stack
 @SP
@@ -279,10 +272,11 @@ M=M-D
 
 
 //push from that segment
-@6
-D=A
 @THAT
-A=D+M
+D=M
+@6
+D=D+A
+A=D
 D=M
 //push to stack
 @SP

@@ -2,14 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e2bbf7f2-661c-4b38-bdc0-4dc1c947d57a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../Project7/IO.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Project7/Main.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Project7/Test.tst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Project7/Translator.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Project7/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Project7/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Project7/Stage1/SimpleAdd/SimpleAdd.asm" beforeDir="false" afterPath="$PROJECT_DIR$/../Project7/Stage1/SimpleAdd/SimpleAdd.asm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Project7/Stage1/StackTest/StackTest.asm" beforeDir="false" afterPath="$PROJECT_DIR$/../Project7/Stage1/StackTest/StackTest.asm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project7/Parser.rb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Project7/Stage2/BasicTest/BasicTest.asm" beforeDir="false" afterPath="$PROJECT_DIR$/../Project7/Stage2/BasicTest/BasicTest.asm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Project7/Stage2/PointerTest/PointerTest.asm" beforeDir="false" afterPath="$PROJECT_DIR$/../Project7/Stage2/PointerTest/PointerTest.asm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Project7/Stage2/StaticTest/StaticTest.asm" beforeDir="false" afterPath="$PROJECT_DIR$/../Project7/Stage2/StaticTest/StaticTest.asm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Project7/Test.rb" beforeDir="false" afterPath="$PROJECT_DIR$/../Project7/Test.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project7/Test.rb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Project7/Utility.rb" beforeDir="false" afterPath="$PROJECT_DIR$/../Project7/Utility.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project7/code_writer.rb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Project7/test.asm" beforeDir="false" afterPath="$PROJECT_DIR$/../Project7/test.asm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Project7/test.vm" beforeDir="false" afterPath="$PROJECT_DIR$/../Project7/test.vm" afterDir="false" />
     </list>
@@ -63,8 +66,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Ruby.Test">
-    <configuration name="Test" type="RubyRunConfigurationType" factoryName="Ruby">
+  <component name="RunManager" selected="Ruby.Main">
+    <configuration name="Main" type="RubyRunConfigurationType" factoryName="Ruby">
       <module name="Project7" />
       <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="" />
       <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="C:\Users\josep\RubymineProjects\Project7" />
@@ -74,7 +77,21 @@
       <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
       <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
       <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" />
-      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/../Project7/Test.rb" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/../Project7/Main.rb" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Translator" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
+      <module name="Project7" />
+      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$/../Project7" />
+      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/../Project7/Translator.rb" />
       <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
       <method v="2" />
     </configuration>
@@ -94,6 +111,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Ruby.Translator" />
         <item itemvalue="Ruby.Utility" />
       </list>
     </recent_temporary>
@@ -115,7 +133,7 @@
       <workItem from="1573673879825" duration="1977000" />
       <workItem from="1573729928657" duration="7600000" />
       <workItem from="1573814754201" duration="184000" />
-      <workItem from="1573815022876" duration="103800000" />
+      <workItem from="1573815022876" duration="115388000" />
     </task>
     <task id="LOCAL-00001" summary="New Commit">
       <created>1574256572492</created>
@@ -201,7 +219,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574763434420</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Finished stage 1 and commenting the main file">
+      <created>1574770350526</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1574770350527</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -229,7 +254,8 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/MiniProject@Test.rcov" NAME="Test Coverage Results" MODIFIED="1573607065364" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
-    <SUITE FILE_PATH="coverage/Project7@Test.rcov" NAME="Test Coverage Results" MODIFIED="1574769830954" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="C:\Users\josep\RubymineProjects\Project7" MODULE_NAME="Project7" />
+    <SUITE FILE_PATH="coverage/Project7@Test.rcov" NAME="Main Coverage Results" MODIFIED="1574866752381" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="C:\Users\josep\RubymineProjects\Project7" MODULE_NAME="Project7" />
+    <SUITE FILE_PATH="coverage/Project7@code_writer.rcov" NAME="code_writer Coverage Results" MODIFIED="1574813817501" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Project7" MODULE_NAME="Project7" />
     <SUITE FILE_PATH="coverage/Project7@Utility.rcov" NAME="Utility Coverage Results" MODIFIED="1574100649750" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Project7" MODULE_NAME="Project7" />
   </component>
 </project>
