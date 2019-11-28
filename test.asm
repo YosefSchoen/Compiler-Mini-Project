@@ -10,7 +10,6 @@ M=D
 M=M+1
 
 
-
 //push constant to stack
 @5000
 D=A
@@ -21,7 +20,6 @@ M=D
 //increment the stack pointer
 @SP
 M=M+1
-
 
 
 //pop to segment
@@ -62,7 +60,6 @@ D=M
 M=M-D
 
 
-
 //pop to segment
 //get segment position
 @3
@@ -99,7 +96,6 @@ M=M-1
 @R13
 D=M
 M=M-D
-
 
 
 //end of program infinite loop

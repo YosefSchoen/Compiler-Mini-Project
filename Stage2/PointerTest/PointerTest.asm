@@ -10,7 +10,6 @@ M=D
 M=M+1
 
 
-
 //pop to segment
 //get segment position
 @3
@@ -49,7 +48,6 @@ D=M
 M=M-D
 
 
-
 //push constant to stack
 @3040
 D=A
@@ -60,7 +58,6 @@ M=D
 //increment the stack pointer
 @SP
 M=M+1
-
 
 
 //pop to segment
@@ -101,7 +98,6 @@ D=M
 M=M-D
 
 
-
 //push constant to stack
 @32
 D=A
@@ -112,7 +108,6 @@ M=D
 //increment the stack pointer
 @SP
 M=M+1
-
 
 
 //pop to this segment
@@ -154,7 +149,6 @@ D=M
 M=M-D
 
 
-
 //push constant to stack
 @46
 D=A
@@ -165,7 +159,6 @@ M=D
 //increment the stack pointer
 @SP
 M=M+1
-
 
 
 //pop to that segment
@@ -207,7 +200,6 @@ D=M
 M=M-D
 
 
-
 //push from segment
 //get segment position
 @3
@@ -226,7 +218,6 @@ M=D
 M=M+1
 
 
-
 //push from segment
 //get segment position
 @3
@@ -243,7 +234,6 @@ M=D
 //increment the stack pointer
 @SP
 M=M+1
-
 
 
 //add
@@ -268,7 +258,7 @@ M=M-1
 @SP
 A=M-1
 
-M=D+M
+M=M+D
 
 
 //push from this segment
@@ -288,7 +278,6 @@ M=D
 //increment the stack pointer
 @SP
 M=M+1
-
 
 
 //subtract
@@ -335,7 +324,6 @@ M=D
 M=M+1
 
 
-
 //add
 //get the top two from stack
 //get the top of stack
@@ -358,7 +346,7 @@ M=M-1
 @SP
 A=M-1
 
-M=D+M
+M=M+D
 
 
 //end of program infinite loop

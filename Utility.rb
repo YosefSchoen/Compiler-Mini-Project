@@ -6,6 +6,37 @@ def endProgram()
 end
 
 
+def getOpType(op)
+  arithmeticOp = %w(add sub neg and or not)
+  compareOp = %w(eq lt gt)
+  pushPop = %w(push pop)
+  programFlowOp = %w(label goto if-goto)
+  functionOp = %w(function call return)
+
+  if arithmeticOp.include?(op)
+    opType = "arithmeticOp"
+  end
+
+
+  if compareOp.include?(op)
+    opType = "compareOp"
+  end
+
+  if pushPop.include?(op)
+    opType = "pushPop"
+  end
+
+  if programFlowOp.include?(op)
+    opType = "programFlowOp"
+  end
+
+  if functionOp.include?(op)
+    opType = "functionOp"
+  end
+
+  return opType
+end
+
 #a simple function to decrement the stack pointer
 def decrementStackPointer()
   str = "//decrement the stack pointer"+"\n"+
@@ -77,18 +108,6 @@ def endOfJump(locationEnd)
 end
 
 
-# function for all comparison operators op is the type of comparison
-# locationTrue is the jump location if the comparison is true
-# locationEnd is the jump location after the value is put in the stack
-# if true -1 will be pushed if false 0 will be push
-def compare(op, locationTrue, locationEnd)
-  str = "//"+op+" comparison"+"\n"+
-  getTopTwoFromStack() + "D=M-D"+"\n"+"@"+locationTrue+"\n"+"D;"+op+"\n"+
-  decrementStackPointer() + "D=0"+"\n" + pushToStack() + jumpLocations(locationTrue, locationEnd)
-  return str
-end
-
-
 # function to store information in one of the three free registers for assembler
 # this function is needed to store the location of a memory segment while D holds the stack value
 def storeToFreeRegister(reg)
@@ -123,30 +142,6 @@ def getSegmentPosition(segment, value, location)
   str = "//get segment position"+"\n"+
       "@"+segment+"\n"+"D="+location+"\n"+"@"+value+"\n"+"D=D+A"+"\n"
   return str+"\n"
-end
-
-# function to pop from the stack to the segment
-# segment is which segment to push from
-# value is the segments value
-# location will be M or A depending if the segment is a pointer to memory location like local
-# or the location itself like temp
-def popToSegment(segment, value, location)
-  str = "//pop to segment"+"\n"+
-      getSegmentPosition(segment, value, location) + storeToFreeRegister("R13") + getTopOfStack() + "D=M"+"\n" +
-      freeRegisterToSegment("R13") + removeFromStack() + deleteFreeRegister("R13")
-  return str
-end
-
-
-# function to push from a segment to the stack
-# segment is which segment to push from
-# value is the segments value
-# location will be M or A depending if the segment is a pointer to memory location like local
-# or the location itself like temp
-def pushFromSegment(segment, value, location)
-  str = "//push from segment"+"\n"+
-      getSegmentPosition(segment, value, location)+"A=D"+"\n"+"D=M"+"\n"+pushToStack()
-  return str
 end
 
 

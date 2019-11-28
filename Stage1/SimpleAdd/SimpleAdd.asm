@@ -10,7 +10,6 @@ M=D
 M=M+1
 
 
-
 //push constant to stack
 @8
 D=A
@@ -21,7 +20,6 @@ M=D
 //increment the stack pointer
 @SP
 M=M+1
-
 
 
 //add
@@ -46,7 +44,7 @@ M=M-1
 @SP
 A=M-1
 
-M=D+M
+M=M+D
 
 
 //end of program infinite loop

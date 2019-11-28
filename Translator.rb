@@ -1,40 +1,89 @@
 require_relative 'Utility'
-#this function will convert the vm pop command based on which of the various segments were used
-def convertSegmentPop(arr)
-  cmds = "" #cmds will be the string of hack asm commands
-  segment = arr[1] #the segment is the second word in the vm command
-  value = arr[2] #the value is the third word in the vm command
+def convertArithmetic(op)
+  case op
 
-  case segment
-  when "local"
-    cmds = "//pop to local segment"+"\n"+
-        popToSegment("LCL", value, "M")
+    #basic arithmetic operations
+  when "add"
+    cmds = "//add"+"\n" +
+        arithmeticBinary("+")
 
-  when "argument"
-    cmds = "//pop to argument segment"+"\n"+
-        popToSegment("ARG", value, "M")
+  when "sub"
+    cmds = "//subtract"+"\n" +
+        arithmeticBinary("-")
 
-  when "static"
-    cmds = getTopOfStack() + "D=M"+"\n"+"@Location."+value+"\n"+"M=D"+"\n"+removeFromStack()
+  when "neg"
+    cmds = "//negate"+"\n" +
+        arithmeticUniary("-")
 
-  when "constant"
-    cmds = "//pop constant"+"\n"+
-        getTopOfStack() + removeFromStack()
+    #basic bitwise operations
+  when "and"
+    cmds = "//bit wise and"+"\n" +
+        arithmeticBinary("&")
 
-  when "temp"
-    cmds = popToSegment("5", value, "A")
+  when "or"
+    cmds = "//bit wise or"+"\n" +
+        arithmeticBinary("|")
 
-  when "this"
-    cmds = "//pop to this segment"+"\n"+
-        popToSegment("THIS", value, "M")
+  when "not"
+    cmds = "//bit wise not"+"\n" +
+        arithmeticUniary("!")
+  end
 
-  when "that"
-    cmds = "//pop to that segment"+"\n"+
-        popToSegment("THAT", value, "M")
+  return cmds
+end
 
-  when "pointer"
-    cmds = popToSegment("3", value, "A")
+def arithmeticUniary(op)
+  str = getTopOfStack() + "M="+op+"M"+"\n"
 
+  return str
+end
+
+
+def arithmeticBinary(op)
+  str = getTopTwoFromStack() + "M=M"+op+"D"+"\n"
+
+  return str+"\n"
+end
+
+
+def convertCompare(op, jumpLocation, locationEnd)
+
+  #basic comparison operations they call the compare function
+  case op
+
+  when "eq"
+  cmds = "//check if equal"+"\n" +
+      compare("JEQ", jumpLocation, locationEnd)+"\n"
+
+  when "gt"
+  cmds = "//check if greater than"+"\n" +
+      compare("JGT", jumpLocation, locationEnd)+"\n"
+
+  when "lt"
+  cmds = "//check if less than"+"\n" +
+      compare("JLT", jumpLocation, locationEnd)+"\n"
+  end
+end
+
+# function for all comparison operators op is the type of comparison
+# locationTrue is the jump location if the comparison is true
+# locationEnd is the jump location after the value is put in the stack
+# if true -1 will be pushed if false 0 will be push
+def compare(op, locationTrue, locationEnd)
+  str = "//"+op+" comparison"+"\n"+
+      getTopTwoFromStack() + "D=M-D"+"\n"+"@"+locationTrue+"\n"+"D;"+op+"\n"+
+      decrementStackPointer() + "D=0"+"\n" + pushToStack() + jumpLocations(locationTrue, locationEnd)
+  return str
+end
+
+
+def convertPushPop(op, segment, value)
+
+  if op == "push"
+    cmds = convertSegmentPush(segment, value)
+
+  else
+    cmds = convertSegmentPop(segment, value)
   end
 
   return cmds
@@ -42,10 +91,8 @@ end
 
 
 #this function will convert the vm push command based on which of the various segments were used
-def convertSegmentPush(arr)
+def convertSegmentPush(segment, value)
   cmds = "" #cmds will be the string of hack asm commands
-  segment = arr[1] #the segment is the second word in the vm command
-  value = arr[2] #the value is the third word in the vm command
 
   case segment
   when "local"
@@ -83,64 +130,130 @@ def convertSegmentPush(arr)
   return cmds
 end
 
+# function to push from a segment to the stack
+# segment is which segment to push from
+# value is the segments value
+# location will be M or A depending if the segment is a pointer to memory location like local
+# or the location itself like temp
+def pushFromSegment(segment, value, location)
+  str = "//push from segment"+"\n"+
+      getSegmentPosition(segment, value, location)+"A=D"+"\n"+"D=M"+"\n"+pushToStack()
+  return str
+end
+
+
+#this function will convert the vm pop command based on which of the various segments were used
+def convertSegmentPop(segment, value)
+  cmds = "" #cmds will be the string of hack asm commands
+
+  case segment
+  when "local"
+    cmds = "//pop to local segment"+"\n"+
+        popToSegment("LCL", value, "M")
+
+  when "argument"
+    cmds = "//pop to argument segment"+"\n"+
+        popToSegment("ARG", value, "M")
+
+  when "static"
+    cmds = getTopOfStack() + "D=M"+"\n"+"@Location."+value+"\n"+"M=D"+"\n"+removeFromStack()
+
+  when "constant"
+    cmds = "//pop constant"+"\n"+
+        getTopOfStack() + removeFromStack()
+
+  when "temp"
+    cmds = popToSegment("5", value, "A")
+
+  when "this"
+    cmds = "//pop to this segment"+"\n"+
+        popToSegment("THIS", value, "M")
+
+  when "that"
+    cmds = "//pop to that segment"+"\n"+
+        popToSegment("THAT", value, "M")
+
+  when "pointer"
+    cmds = popToSegment("3", value, "A")
+
+  end
+
+  return cmds
+end
+
+# function to pop from the stack to the segment
+# segment is which segment to push from
+# value is the segments value
+# location will be M or A depending if the segment is a pointer to memory location like local
+# or the location itself like temp
+def popToSegment(segment, value, location)
+  str = "//pop to segment"+"\n"+
+      getSegmentPosition(segment, value, location) + storeToFreeRegister("R13") + getTopOfStack() + "D=M"+"\n" +
+      freeRegisterToSegment("R13") + removeFromStack() + deleteFreeRegister("R13")
+  return str
+end
+
+
+def convertProgramFlow(op)
+  case op
+  when "label"
+    cmds = "\n"
+
+  when "goto"
+    cmds = "\n"
+
+  when "if-goto"
+    cmds = "\n"
+  end
+
+  return cmds
+end
+
+
+def convertFunction(arr)
+  op = arr[0]
+
+  case op
+  when "function"
+    cmds = "\n"
+
+  when "call"
+    cmds = "\n"
+
+  when "return"
+    cmds = "\n"
+  end
+
+  return cmds
+end
+
 
 #the array of strings will be converted to strings of hack asm code
 def convertCommand(arr, i)
-
-  op = arr[0] #the operation is the first word in the vm command
+  op = arr[0] # the operation is the first word in the vm command
+  opType = getOpType(op) # the type of operation each will have there own function
 
   #creating new jump locations for each conditional command
   jumpLocation = "jumpLocation"+i.to_s()
   locationEnd = "locationEnd"+i.to_s()
 
-  #the various commands will be handled case by case each command is the the first word in the array
-  case op
+  case opType
+  when "arithmeticOp"
+    cmds = convertArithmetic(op)
 
-    #basic arithmetic operations
-  when "add"
-    cmds = "//add"+"\n" +
-        getTopTwoFromStack() + "M=D+M"+"\n"+"\n"
+  when "compareOp"
+    cmds = convertCompare(op, jumpLocation, locationEnd)
 
-  when "sub"
-    cmds = "//subtract"+"\n" +
-        getTopTwoFromStack() + "M=M-D"+"\n"+"\n"
+  when "pushPop"
+    segment = arr[1] #the segment is the second word in the vm command
+    value = arr[2] #the value is the third word in the vm command
+    cmds = convertPushPop(op, segment, value)
 
-  when "neg"
-    cmds = "//negate"+"\n" +
-        getTopOfStack() +"M=-M"+"\n"+"\n"
+  when "programFlowOp"
+    cmds = convertProgramFlow(op)
 
-    #basic comparison operations they call the compare function in Utility
-  when "eq"
-    cmds = "//check if equal"+"\n" +
-        compare("JEQ", jumpLocation, locationEnd)+"\n"
-
-  when "gt"
-    cmds = "//check if greater than"+"\n" +
-        compare("JGT", jumpLocation, locationEnd)+"\n"
-
-  when "lt"
-    cmds = "//check if less than"+"\n" +
-        compare("JLT", jumpLocation, locationEnd)+"\n"
-
-    #basic bitwise operations
-  when "and"
-    cmds = "//bit wise and"+"\n" +
-        getTopTwoFromStack() + "D=D&M"+"\n" + decrementStackPointer() + pushToStack()+"\n"
-
-  when "or"
-    cmds = "//bit wise or"+"\n" +
-        getTopTwoFromStack() + "D=D|M"+"\n" + decrementStackPointer() + pushToStack()+"\n"
-
-  when "not"
-    cmds = "//bit wise not"+"\n" +
-        getTopOfStack() + "D=!M"+"\n"+ decrementStackPointer() + pushToStack()+"\n"
-
-    #push and pop vary based on what segment the program is working on, this is handled in there own functions
-  when "push"
-    cmds = convertSegmentPush(arr)+"\n"
-
-  when "pop"
-    cmds = convertSegmentPop(arr)+"\n"
+  when "functionOp"
+    cmds = convertFunction(arr)
   end
 
   return cmds

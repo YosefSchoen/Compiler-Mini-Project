@@ -10,7 +10,6 @@ M=D
 M=M+1
 
 
-
 //push constant to stack
 @17
 D=A
@@ -21,7 +20,6 @@ M=D
 //increment the stack pointer
 @SP
 M=M+1
-
 
 
 //check if equal
@@ -101,7 +99,6 @@ M=D
 M=M+1
 
 
-
 //push constant to stack
 @16
 D=A
@@ -112,7 +109,6 @@ M=D
 //increment the stack pointer
 @SP
 M=M+1
-
 
 
 //check if equal
@@ -192,7 +188,6 @@ M=D
 M=M+1
 
 
-
 //push constant to stack
 @17
 D=A
@@ -203,7 +198,6 @@ M=D
 //increment the stack pointer
 @SP
 M=M+1
-
 
 
 //check if equal
@@ -283,7 +277,6 @@ M=D
 M=M+1
 
 
-
 //push constant to stack
 @891
 D=A
@@ -294,7 +287,6 @@ M=D
 //increment the stack pointer
 @SP
 M=M+1
-
 
 
 //check if less than
@@ -374,7 +366,6 @@ M=D
 M=M+1
 
 
-
 //push constant to stack
 @892
 D=A
@@ -385,7 +376,6 @@ M=D
 //increment the stack pointer
 @SP
 M=M+1
-
 
 
 //check if less than
@@ -465,7 +455,6 @@ M=D
 M=M+1
 
 
-
 //push constant to stack
 @891
 D=A
@@ -476,7 +465,6 @@ M=D
 //increment the stack pointer
 @SP
 M=M+1
-
 
 
 //check if less than
@@ -556,7 +544,6 @@ M=D
 M=M+1
 
 
-
 //push constant to stack
 @32766
 D=A
@@ -567,7 +554,6 @@ M=D
 //increment the stack pointer
 @SP
 M=M+1
-
 
 
 //check if greater than
@@ -647,7 +633,6 @@ M=D
 M=M+1
 
 
-
 //push constant to stack
 @32767
 D=A
@@ -658,7 +643,6 @@ M=D
 //increment the stack pointer
 @SP
 M=M+1
-
 
 
 //check if greater than
@@ -738,7 +722,6 @@ M=D
 M=M+1
 
 
-
 //push constant to stack
 @32766
 D=A
@@ -749,7 +732,6 @@ M=D
 //increment the stack pointer
 @SP
 M=M+1
-
 
 
 //check if greater than
@@ -829,7 +811,6 @@ M=D
 M=M+1
 
 
-
 //push constant to stack
 @31
 D=A
@@ -842,7 +823,6 @@ M=D
 M=M+1
 
 
-
 //push constant to stack
 @53
 D=A
@@ -853,7 +833,6 @@ M=D
 //increment the stack pointer
 @SP
 M=M+1
-
 
 
 //add
@@ -878,7 +857,7 @@ M=M-1
 @SP
 A=M-1
 
-M=D+M
+M=M+D
 
 
 //push constant to stack
@@ -891,7 +870,6 @@ M=D
 //increment the stack pointer
 @SP
 M=M+1
-
 
 
 //subtract
@@ -926,7 +904,6 @@ A=M-1
 
 M=-M
 
-
 //bit wise and
 //get the top two from stack
 //get the top of stack
@@ -949,19 +926,7 @@ M=M-1
 @SP
 A=M-1
 
-D=D&M
-//decrement the stack pointer
-@SP
-M=M-1
-
-//push to stack
-@SP
-A=M
-M=D
-//increment the stack pointer
-@SP
-M=M+1
-
+M=M&D
 
 
 //push constant to stack
@@ -974,7 +939,6 @@ M=D
 //increment the stack pointer
 @SP
 M=M+1
-
 
 
 //bit wise or
@@ -999,19 +963,7 @@ M=M-1
 @SP
 A=M-1
 
-D=D|M
-//decrement the stack pointer
-@SP
-M=M-1
-
-//push to stack
-@SP
-A=M
-M=D
-//increment the stack pointer
-@SP
-M=M+1
-
+M=M|D
 
 
 //bit wise not
@@ -1019,20 +971,7 @@ M=M+1
 @SP
 A=M-1
 
-D=!M
-//decrement the stack pointer
-@SP
-M=M-1
-
-//push to stack
-@SP
-A=M
-M=D
-//increment the stack pointer
-@SP
-M=M+1
-
-
+M=!M
 
 //end of program infinite loop
 (END)
