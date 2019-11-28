@@ -1,3 +1,8 @@
+#Project 07 for Fundamentals of Computer Programming
+# Yosef Schoen - 506429330
+# Saul Rothman - 337923676
+
+
 require_relative 'IO'
 
 #the main will translate all of the stage 1 and stage 2 test cases
