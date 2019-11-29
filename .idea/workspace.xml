@@ -2,16 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e2bbf7f2-661c-4b38-bdc0-4dc1c947d57a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Project8/FunctionCalls/FibonacciElement/FibonacciElement.cmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project8/FunctionCalls/FibonacciElement/FibonacciElement.tst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project8/FunctionCalls/FibonacciElement/FibonacciElementVME.tst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project8/FunctionCalls/FibonacciElement/Main.vm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project8/FunctionCalls/FibonacciElement/Sys.vm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project8/FunctionCalls/NestedCall/NestedCall.cmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project8/FunctionCalls/NestedCall/NestedCall.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project8/FunctionCalls/NestedCall/NestedCall.tst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project8/FunctionCalls/NestedCall/NestedCallStack.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project8/FunctionCalls/NestedCall/NestedCallVME.tst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project8/FunctionCalls/NestedCall/Sys.vm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project8/FunctionCalls/SimpleFunction/SimpleFunction.cmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project8/FunctionCalls/SimpleFunction/SimpleFunction.tst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project8/FunctionCalls/SimpleFunction/SimpleFunction.vm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project8/FunctionCalls/SimpleFunction/SimpleFunctionVME.tst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project8/FunctionCalls/StaticsTest/Class1.vm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project8/FunctionCalls/StaticsTest/Class2.vm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project8/FunctionCalls/StaticsTest/StaticsTest.cmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project8/FunctionCalls/StaticsTest/StaticsTest.tst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project8/FunctionCalls/StaticsTest/StaticsTestVME.tst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project8/FunctionCalls/StaticsTest/Sys.vm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project8/ProgramFlow/BasicLoop/BasicLoop.cmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project8/ProgramFlow/BasicLoop/BasicLoop.tst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project8/ProgramFlow/BasicLoop/BasicLoop.vm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project8/ProgramFlow/BasicLoop/BasicLoopVME.tst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project8/ProgramFlow/FibonacciSeries/FibonacciSeries.cmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project8/ProgramFlow/FibonacciSeries/FibonacciSeries.tst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project8/ProgramFlow/FibonacciSeries/FibonacciSeries.vm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project8/ProgramFlow/FibonacciSeries/FibonacciSeriesVME.tst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stage1/SimpleAdd/SimpleAdd.asm" beforeDir="false" afterPath="$PROJECT_DIR$/Stage1/SimpleAdd/SimpleAdd.asm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stage1/StackTest/StackTest.asm" beforeDir="false" afterPath="$PROJECT_DIR$/Stage1/StackTest/StackTest.asm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stage2/BasicTest/BasicTest.asm" beforeDir="false" afterPath="$PROJECT_DIR$/Stage2/BasicTest/BasicTest.asm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stage2/PointerTest/PointerTest.asm" beforeDir="false" afterPath="$PROJECT_DIR$/Stage2/PointerTest/PointerTest.asm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stage2/PointerTest/PointerTest.out" beforeDir="false" afterPath="$PROJECT_DIR$/Stage2/PointerTest/PointerTest.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stage2/StaticTest/StaticTest.asm" beforeDir="false" afterPath="$PROJECT_DIR$/Stage2/StaticTest/StaticTest.asm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Translator.rb" beforeDir="false" afterPath="$PROJECT_DIR$/Translator.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Utility.rb" beforeDir="false" afterPath="$PROJECT_DIR$/Utility.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.asm" beforeDir="false" afterPath="$PROJECT_DIR$/test.asm" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,21 +57,23 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Project8" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\josep\RubymineProjects\Project7\Stage1\StackTest" />
-      <recent name="C:\Users\josep\RubymineProjects\Project7\Stage1\SimpleAdd" />
-      <recent name="C:\Users\josep\RubymineProjects\MiniProject\Stage1" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\josep\RubymineProjects\Project7\Project8" />
       <recent name="C:\Users\josep\RubymineProjects\Project7\Stage2\StaticTest" />
       <recent name="C:\Users\josep\RubymineProjects\Project7\Stage2\PointerTest" />
       <recent name="C:\Users\josep\RubymineProjects\Project7\Stage2\BasicTest" />
       <recent name="C:\Users\josep\RubymineProjects\MiniProject" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\josep\RubymineProjects" />
+      <recent name="C:\Users\josep\RubymineProjects\Project7\Stage1\StackTest" />
+      <recent name="C:\Users\josep\RubymineProjects\Project7\Stage1\SimpleAdd" />
+      <recent name="C:\Users\josep\RubymineProjects\MiniProject\Stage1" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -132,7 +156,7 @@
       <workItem from="1573729928657" duration="7600000" />
       <workItem from="1573814754201" duration="184000" />
       <workItem from="1573815022876" duration="119242000" />
-      <workItem from="1574945043043" duration="11952000" />
+      <workItem from="1574945043043" duration="14983000" />
     </task>
     <task id="LOCAL-00001" summary="New Commit">
       <created>1574256572492</created>
@@ -267,7 +291,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574954998934</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Beginning stage 3">
+      <created>1574978028214</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1574978028214</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -295,7 +326,8 @@
     <MESSAGE value="Finished stage 1 and commenting the main file" />
     <MESSAGE value="Finished stage 2 and needs more comments" />
     <MESSAGE value="Finished stage 2 and commenting" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished stage 2 and commenting" />
+    <MESSAGE value="Beginning stage 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="Beginning stage 3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/MiniProject@Test.rcov" NAME="Test Coverage Results" MODIFIED="1573607065364" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />

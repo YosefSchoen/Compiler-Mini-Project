@@ -1,5 +1,5 @@
 #this will put the program in an infinite loop at the end of the program as to not run down the ROM for ever
-def endProgram()
+def endProgram
   str = "//end of program infinite loop"+"\n"+
       "(END)"+"\n"+"@END"+"\n"+"0;JMP"+"\n"
   return str+"\n"
@@ -16,7 +16,6 @@ def getOpType(op)
   if arithmeticOp.include?(op)
     opType = "arithmeticOp"
   end
-
 
   if compareOp.include?(op)
     opType = "compareOp"
@@ -38,7 +37,7 @@ def getOpType(op)
 end
 
 #a simple function to decrement the stack pointer
-def decrementStackPointer()
+def decrementStackPointer
   str = "//decrement the stack pointer"+"\n"+
       "@SP"+"\n"+"M=M-1"+"\n"
   return str+"\n"
@@ -46,7 +45,7 @@ end
 
 
 #a simple function to increment the stack pointer
-def incrementStackPointer()
+def incrementStackPointer
   str = "//increment the stack pointer"+"\n"+
       "@SP"+"\n"+"M=M+1"+"\n"
   return str+"\n"
@@ -54,7 +53,7 @@ end
 
 
 #a simple function to get the top of the stack
-def getTopOfStack()
+def getTopOfStack
   str = "//get the top of stack"+"\n"+
       "@SP"+"\n"+"A=M-1"+"\n"
   return str+"\n"
@@ -62,17 +61,17 @@ end
 
 
 #pushes whatever value is stored in D to the the stack and then increments the stack pointer
-def pushToStack()
+def pushToStack
   str = "//push to stack"+"\n"+
-      "@SP"+"\n"+"A=M"+"\n"+"M=D"+"\n"+ incrementStackPointer()
+      "@SP"+"\n"+"A=M"+"\n"+"M=D"+"\n"+ incrementStackPointer
   return str
 end
 
 
 #removes the top of the stack and decrements the stack pointer
-def removeFromStack()
+def removeFromStack
   str = "//remove to stack"+"\n"+
-  getTopOfStack()+ "D=M"+"\n"+"M=M-D"+"\n"+ decrementStackPointer()
+  getTopOfStack + "D=M"+"\n"+"M=M-D"+"\n" + decrementStackPointer
   return str
 end
 
@@ -80,7 +79,7 @@ end
 #gets the top two elements from the stack, the top one is stored in D and removed the next one is in M
 def getTopTwoFromStack
   str = "//get the top two from stack"+"\n"+
-      getTopOfStack() + "D=M"+"\n" + removeFromStack() + getTopOfStack()
+      getTopOfStack + "D=M"+"\n" + removeFromStack + getTopOfStack
   return str
 end
 
@@ -95,7 +94,7 @@ end
 # will create a label to jump to if the comparison was true
 def startOfJump(jumpLocation, locationEnd)
   str = "//start of jump"+"\n"+
-      "("+jumpLocation+")"+"\n"+ decrementStackPointer() + "D=-1"+"\n" + pushToStack() + "@"+locationEnd+"\n"+"0;JMP"+"\n"
+      "("+jumpLocation+")"+"\n"+ decrementStackPointer + "D=-1"+"\n" + pushToStack + "@"+locationEnd+"\n"+"0;JMP"+"\n"
   return str+"\n"
 end
 
@@ -143,5 +142,3 @@ def getSegmentPosition(segment, value, location)
       "@"+segment+"\n"+"D="+location+"\n"+"@"+value+"\n"+"D=D+A"+"\n"
   return str+"\n"
 end
-
-

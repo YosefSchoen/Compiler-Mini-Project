@@ -27,21 +27,21 @@ def convertArithmetic(op)
   when "not"
     cmds = "//bit wise not"+"\n" +
         arithmeticUniary("!")
+  else
+    cmds = "//not a legal command"
   end
 
   return cmds
 end
 
 def arithmeticUniary(op)
-  str = getTopOfStack() + "M="+op+"M"+"\n"
-
+  str = getTopOfStack + "M="+op+"M"+"\n"
   return str
 end
 
 
 def arithmeticBinary(op)
-  str = getTopTwoFromStack() + "M=M"+op+"D"+"\n"
-
+  str = getTopTwoFromStack + "M=M"+op+"D"+"\n"
   return str+"\n"
 end
 
@@ -62,7 +62,11 @@ def convertCompare(op, jumpLocation, locationEnd)
   when "lt"
   cmds = "//check if less than"+"\n" +
       compare("JLT", jumpLocation, locationEnd)+"\n"
+  else
+    cmds = "//not a legal command"
   end
+
+  return cmds
 end
 
 # function for all comparison operators op is the type of comparison
@@ -71,8 +75,8 @@ end
 # if true -1 will be pushed if false 0 will be push
 def compare(op, locationTrue, locationEnd)
   str = "//"+op+" comparison"+"\n"+
-      getTopTwoFromStack() + "D=M-D"+"\n"+"@"+locationTrue+"\n"+"D;"+op+"\n"+
-      decrementStackPointer() + "D=0"+"\n" + pushToStack() + jumpLocations(locationTrue, locationEnd)
+      getTopTwoFromStack + "D=M-D"+"\n"+"@"+locationTrue+"\n"+"D;"+op+"\n"+
+      decrementStackPointer + "D=0"+"\n" + pushToStack + jumpLocations(locationTrue, locationEnd)
   return str
 end
 
@@ -81,8 +85,9 @@ def convertPushPop(op, segment, value)
 
   if op == "push"
     cmds = convertSegmentPush(segment, value)
+  end
 
-  else
+  if op == "pop"
     cmds = convertSegmentPop(segment, value)
   end
 
@@ -92,8 +97,6 @@ end
 
 #this function will convert the vm push command based on which of the various segments were used
 def convertSegmentPush(segment, value)
-  cmds = "" #cmds will be the string of hack asm commands
-
   case segment
   when "local"
     cmds = "//push from local segment"+"\n"+
@@ -105,11 +108,11 @@ def convertSegmentPush(segment, value)
 
   when "static"
     cmds = "//push from static segment"+"\n"+
-        "@Location."+value+"\n"+"D=M"+"\n"+pushToStack()
+        "@Location."+value+"\n"+"D=M"+"\n"+pushToStack
 
   when "constant"
     cmds = "//push constant to stack"+"\n"+
-        "@"+value+"\n"+"D=A"+"\n" + pushToStack()
+        "@"+value+"\n"+"D=A"+"\n" + pushToStack
 
   when "temp"
     cmds = "//push from temp segment"+"\n"+
@@ -125,6 +128,8 @@ def convertSegmentPush(segment, value)
 
   when "pointer"
     cmds = pushFromSegment("3", value, "A")
+  else
+    cmds = "//not a legal command"
   end
 
   return cmds
@@ -137,15 +142,13 @@ end
 # or the location itself like temp
 def pushFromSegment(segment, value, location)
   str = "//push from segment"+"\n"+
-      getSegmentPosition(segment, value, location)+"A=D"+"\n"+"D=M"+"\n"+pushToStack()
+      getSegmentPosition(segment, value, location) + "A=D"+"\n"+"D=M"+"\n" + pushToStack
   return str
 end
 
 
 #this function will convert the vm pop command based on which of the various segments were used
 def convertSegmentPop(segment, value)
-  cmds = "" #cmds will be the string of hack asm commands
-
   case segment
   when "local"
     cmds = "//pop to local segment"+"\n"+
@@ -156,11 +159,11 @@ def convertSegmentPop(segment, value)
         popToSegment("ARG", value, "M")
 
   when "static"
-    cmds = getTopOfStack() + "D=M"+"\n"+"@Location."+value+"\n"+"M=D"+"\n"+removeFromStack()
+    cmds = getTopOfStack + "D=M"+"\n"+"@Location."+value+"\n"+"M=D"+"\n"+removeFromStack
 
   when "constant"
     cmds = "//pop constant"+"\n"+
-        getTopOfStack() + removeFromStack()
+        getTopOfStack + removeFromStack
 
   when "temp"
     cmds = popToSegment("5", value, "A")
@@ -176,10 +179,13 @@ def convertSegmentPop(segment, value)
   when "pointer"
     cmds = popToSegment("3", value, "A")
 
+  else
+    cmds = "//not a legal command"
   end
 
   return cmds
 end
+
 
 # function to pop from the stack to the segment
 # segment is which segment to push from
@@ -188,8 +194,8 @@ end
 # or the location itself like temp
 def popToSegment(segment, value, location)
   str = "//pop to segment"+"\n"+
-      getSegmentPosition(segment, value, location) + storeToFreeRegister("R13") + getTopOfStack() + "D=M"+"\n" +
-      freeRegisterToSegment("R13") + removeFromStack() + deleteFreeRegister("R13")
+      getSegmentPosition(segment, value, location) + storeToFreeRegister("R13") + getTopOfStack + "D=M"+"\n" +
+      freeRegisterToSegment("R13") + removeFromStack + deleteFreeRegister("R13")
   return str
 end
 
@@ -204,6 +210,8 @@ def convertProgramFlow(op)
 
   when "if-goto"
     cmds = "\n"
+  else
+    cmds = "//not a legal command"
   end
 
   return cmds
@@ -222,6 +230,8 @@ def convertFunction(arr)
 
   when "return"
     cmds = "\n"
+  else
+    cmds = "//not a legal command"
   end
 
   return cmds
@@ -234,8 +244,8 @@ def convertCommand(arr, i)
   opType = getOpType(op) # the type of operation each will have there own function
 
   #creating new jump locations for each conditional command
-  jumpLocation = "jumpLocation"+i.to_s()
-  locationEnd = "locationEnd"+i.to_s()
+  jumpLocation = "jumpLocation"+i.to_s
+  locationEnd = "locationEnd"+i.to_s
 
   case opType
   when "arithmeticOp"
@@ -254,6 +264,8 @@ def convertCommand(arr, i)
 
   when "functionOp"
     cmds = convertFunction(arr)
+  else
+    cmds = "//not a legal command"
   end
 
   return cmds
