@@ -203,7 +203,7 @@ end
 def convertProgramFlow(op)
   case op
   when "label"
-    cmds = "\n"
+    cmds = "\n"+"\n"
 
   when "goto"
     cmds = "\n"
