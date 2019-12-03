@@ -6,6 +6,30 @@ def endProgram
 end
 
 
+def error
+  str = "not a vm command"+"\n"
+  return str
+end
+
+
+def getFileName(filename)
+  newFileName = ""
+
+  for i in 0..filename.size do
+    if filename[i] == '/'
+      newFileName = filename[i + 1, filename.size]
+    end
+
+    if filename[i] == '.'
+      newFileName = newFileName[0, newFileName.size - 2]
+    end
+  end
+
+
+
+  return newFileName
+end
+
 def getOpType(op)
   arithmeticOp = %w(add sub neg and or not)
   compareOp = %w(eq lt gt)

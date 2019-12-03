@@ -39,7 +39,7 @@ M=M+1
 A=M-1
 
 D=M
-@Location.8
+@StaticTest.8
 M=D
 //remove to stack
 //get the top of stack
@@ -58,7 +58,7 @@ M=M-1
 A=M-1
 
 D=M
-@Location.3
+@StaticTest.3
 M=D
 //remove to stack
 //get the top of stack
@@ -77,7 +77,7 @@ M=M-1
 A=M-1
 
 D=M
-@Location.1
+@StaticTest.1
 M=D
 //remove to stack
 //get the top of stack
@@ -92,7 +92,7 @@ M=M-1
 
 
 //push from static segment
-@Location.3
+@StaticTest.3
 D=M
 //push to stack
 @SP
@@ -104,7 +104,7 @@ M=M+1
 
 
 //push from static segment
-@Location.1
+@StaticTest.1
 D=M
 //push to stack
 @SP
@@ -141,7 +141,7 @@ M=M-D
 
 
 //push from static segment
-@Location.8
+@StaticTest.8
 D=M
 //push to stack
 @SP

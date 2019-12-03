@@ -23,7 +23,6 @@ M=M+1
 
 
 //check if equal
-//JEQ comparison
 //get the top two from stack
 //get the top of stack
 @SP
@@ -112,7 +111,6 @@ M=M+1
 
 
 //check if equal
-//JEQ comparison
 //get the top two from stack
 //get the top of stack
 @SP
@@ -201,7 +199,6 @@ M=M+1
 
 
 //check if equal
-//JEQ comparison
 //get the top two from stack
 //get the top of stack
 @SP
@@ -290,7 +287,6 @@ M=M+1
 
 
 //check if less than
-//JLT comparison
 //get the top two from stack
 //get the top of stack
 @SP
@@ -379,7 +375,6 @@ M=M+1
 
 
 //check if less than
-//JLT comparison
 //get the top two from stack
 //get the top of stack
 @SP
@@ -468,7 +463,6 @@ M=M+1
 
 
 //check if less than
-//JLT comparison
 //get the top two from stack
 //get the top of stack
 @SP
@@ -557,7 +551,6 @@ M=M+1
 
 
 //check if greater than
-//JGT comparison
 //get the top two from stack
 //get the top of stack
 @SP
@@ -646,7 +639,6 @@ M=M+1
 
 
 //check if greater than
-//JGT comparison
 //get the top two from stack
 //get the top of stack
 @SP
@@ -735,7 +727,6 @@ M=M+1
 
 
 //check if greater than
-//JGT comparison
 //get the top two from stack
 //get the top of stack
 @SP

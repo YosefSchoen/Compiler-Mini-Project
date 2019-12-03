@@ -22,17 +22,16 @@ end
 
 
 #writes the lines to a asm file
-def writeFile(fileName, lines)
-
+def writeFile(vmFileName, asmFileName, lines)
   #new write only file object with the file name passed above
-  outFile = File.new(fileName, "w")
+  outFile = File.new(asmFileName, "w")
   #outFile.syswrite(initializeProgram())
 
   #i will be used to create new jump locations for the comparison operators
   i = 0
-
+  newFileName = getFileName(vmFileName)
   lines.each do |it|  cmd = it.split(' ')
-  newCmd = convertCommand(cmd, i)
+  newCmd = convertCommand(cmd, i, newFileName)
   outFile.syswrite(newCmd)
   outFile.syswrite("\n")
   i = i + 1
@@ -46,5 +45,5 @@ end
 #takes in a vm file and translates it to a hack asm file
 def translateVmToHack(vmFile, asmFile)
   lines = readFile(vmFile)
-  writeFile(asmFile, lines)
+  writeFile(vmFile, asmFile, lines)
 end
