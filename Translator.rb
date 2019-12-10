@@ -4,23 +4,23 @@ def convertArithmetic(op)
 
     #basic arithmetic operations
   when "add"
-    cmds = arithmeticBinary("+")
+    cmds = "//add"+"\n" + arithmeticBinary("+")
 
   when "sub"
-    cmds = arithmeticBinary("-")
+    cmds = "//subtract"+"\n" +arithmeticBinary("-")
 
   when "neg"
-    cmds = arithmeticUnary("-")
+    cmds = "//negate" +"\n"+arithmeticUnary("-")
 
     #basic bitwise operations
   when "and"
-    cmds = arithmeticBinary("&")
+    cmds = "//and" +"\n"+arithmeticBinary("&")
 
   when "or"
-    cmds = arithmeticBinary("|")
+    cmds = "//or" +"\n"+arithmeticBinary("|")
 
   when "not"
-    cmds = arithmeticUnary("!")
+    cmds = "//not" +"\n"+arithmeticUnary("!")
   else
     cmds = "//not a legal command"
   end
@@ -214,34 +214,38 @@ def convertFunction(op, label, n, jumpLocation)
     cmds = "//create function"+"\n"+
         "("+label+")"+"\n"+"D=0"+"\n"
 
-    for i in 0..n
-      cmds = cmds + pushToStack + popToSegment("LCL", i.to_s, "M")
+    for i in 0..n-1
+      cmds = cmds + pushToStack
     end
+
 
   when "call"
     #Need to impliment the @LABEL bit
     cmds = "//call function"+"\n"+
-        "@"+jumpLocation+"\n"+"D=m"+"\n"+pushToStack +
+
+        "@"+jumpLocation+"\n"+"D=A"+"\n"+pushToStack +
         pushSegmentPointer("LCL") +
         pushSegmentPointer("ARG") +
         pushSegmentPointer("THIS") +
         pushSegmentPointer("THAT") +
-        "@SP"+"\n"+"D=M"+"@"+n+"\n"+"D=D-A"+"@5"+"D=D-A"+"\n"+"@ARG"+"\n"+"M=D"+
-        "@SP"+"\n"+"D=M"+"\n"+"@LCL"+"M=D"+"\n"+
+        "@SP"+"\n"+"D=M"+"\n"+"@"+n.to_s+"\n"+"D=D-A"+"\n"+"@5"+"\n"+"D=D-A"+"\n"+"@ARG"+"\n"+"M=D"+"\n"+
+        "@SP"+"\n"+"D=M"+"\n"+"@LCL"+"\n"+"M=D"+"\n"+
         "@"+label+"\n"+"0;JMP"+"\n"+
         "("+jumpLocation+")"+"\n"
 
   when "return"
     cmds = "//return function"+"\n"+
-        "@LCL"+"\n"+"D=A"+"\n"+"@R13"+"\n"+"M=D"+"\n"+
+        "@LCL"+"\n"+"D=M"+"\n"+
+        "@R13"+"\n"+"M=D"+"\n"+
+
         popSegmentPointer("R14", "5") +
         getTopOfStack+ "D=M"+"\n"+"@ARG"+"\n"+"A=M"+"\n"+"M=D"+"\n"+removeFromStack() +
-        "@ARG"+"\n"+"D=A"+"\n"+"@1"+"\n"+"D=D+A"+"\n"+"@SP"+"\n"+"M=D"+"\n"+
+        "@ARG"+"\n"+"D=M"+"\n"+"@1"+"\n"+"D=D+A"+"\n"+"@SP"+"\n"+"M=D"+"\n"+
         popSegmentPointer("THAT", "1") +
         popSegmentPointer("THIS", "2") +
         popSegmentPointer("ARG", "3") +
         popSegmentPointer("LCL", "4") +
-        "@R14"+"\n"+"D=M"+"\n"+"@D"+"\n"+"0;JMP"+"\n"
+        "@R14"+"\n"+"A=M"+"\n"+"\n"+"0;JMP"+"\n"
   else
     cmds = error
   end
@@ -251,12 +255,14 @@ end
 
 
 def pushSegmentPointer(segment)
-  str = "@"+segment+"\n"+"D=M"+"\n"+pushToStack
+  str = "//call segment pointer"+"\n"+
+      "@"+segment+"\n"+"D=M"+"\n"+pushToStack
   return str
 end
 
 def popSegmentPointer(segment, value)
-  str = "@R13"+"\n"+"D=M"+"\n"+"@"+value+"\n"+"D=D-A"+"\n"+"@"+segment+"\n"+"M=D"+"\n"
+  str = "//return segment pointer"+"\n"+
+      "@"+value+"\n"+"D=A"+"\n"+"@R13"+"\n"+"A=M-D"+"\n"+"D=M"+"\n"+"@"+segment+"\n"+"M=D"+"\n"
   return str
 end
 

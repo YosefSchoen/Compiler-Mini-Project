@@ -47,3 +47,17 @@ def translateVmToHack(vmFile, asmFile)
   lines = readFile(vmFile)
   writeFile(vmFile, asmFile, lines)
 end
+
+
+def getFilesInDir()
+  path = 'Project8/FunctionCalls/StaticsTest'
+
+  Dir.foreach(path) do |filename|
+    next if filename == '.' || filename == '..'
+    next unless filename.to_s.include?("vm")
+    file = File.open("#{path}/#{filename}", 'r')
+    file.close
+    # more code
+  end
+end
+

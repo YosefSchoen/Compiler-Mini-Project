@@ -9,43 +9,6 @@ M=D
 @SP
 M=M+1
 
-//pop to segment
-//get segment position
-@LCL
-D=M
-@0
-D=D+A
-
-//store to free register
-@R13
-M=D
-
-//get the top of stack
-@SP
-A=M-1
-
-D=M
-//send to segment from free register
-@R13
-A=M
-M=D
-
-//remove to stack
-//get the top of stack
-@SP
-A=M-1
-
-D=M
-M=M-D
-//decrement the stack pointer
-@SP
-M=M-1
-
-//delete content from free register
-@R13
-D=M
-M=M-D
-
 //push to stack
 @SP
 A=M
@@ -53,88 +16,6 @@ M=D
 //increment the stack pointer
 @SP
 M=M+1
-
-//pop to segment
-//get segment position
-@LCL
-D=M
-@1
-D=D+A
-
-//store to free register
-@R13
-M=D
-
-//get the top of stack
-@SP
-A=M-1
-
-D=M
-//send to segment from free register
-@R13
-A=M
-M=D
-
-//remove to stack
-//get the top of stack
-@SP
-A=M-1
-
-D=M
-M=M-D
-//decrement the stack pointer
-@SP
-M=M-1
-
-//delete content from free register
-@R13
-D=M
-M=M-D
-
-//push to stack
-@SP
-A=M
-M=D
-//increment the stack pointer
-@SP
-M=M+1
-
-//pop to segment
-//get segment position
-@LCL
-D=M
-@2
-D=D+A
-
-//store to free register
-@R13
-M=D
-
-//get the top of stack
-@SP
-A=M-1
-
-D=M
-//send to segment from free register
-@R13
-A=M
-M=D
-
-//remove to stack
-//get the top of stack
-@SP
-A=M-1
-
-D=M
-M=M-D
-//decrement the stack pointer
-@SP
-M=M-1
-
-//delete content from free register
-@R13
-D=M
-M=M-D
 
 
 //push from local segment
@@ -175,6 +56,7 @@ M=D
 M=M+1
 
 
+//add
 //get the top two from stack
 //get the top of stack
 @SP
@@ -199,6 +81,7 @@ A=M-1
 M=M+D
 
 
+//not
 //get the top of stack
 @SP
 A=M-1
@@ -225,6 +108,7 @@ M=D
 M=M+1
 
 
+//add
 //get the top two from stack
 //get the top of stack
 @SP
@@ -268,6 +152,7 @@ M=D
 M=M+1
 
 
+//subtract
 //get the top two from stack
 //get the top of stack
 @SP
@@ -294,13 +179,15 @@ M=M-D
 
 //return function
 @LCL
-D=A
+D=M
 @R13
 M=D
-@R13
-D=M
+//return segment pointer
 @5
-D=D-A
+D=A
+@R13
+A=M-D
+D=M
 @R14
 M=D
 //get the top of stack
@@ -323,38 +210,46 @@ M=M-D
 M=M-1
 
 @ARG
-D=A
+D=M
 @1
 D=D+A
 @SP
 M=D
-@R13
-D=M
+//return segment pointer
 @1
-D=D-A
+D=A
+@R13
+A=M-D
+D=M
 @THAT
 M=D
-@R13
-D=M
+//return segment pointer
 @2
-D=D-A
+D=A
+@R13
+A=M-D
+D=M
 @THIS
 M=D
-@R13
-D=M
+//return segment pointer
 @3
-D=D-A
+D=A
+@R13
+A=M-D
+D=M
 @ARG
 M=D
-@R13
-D=M
+//return segment pointer
 @4
-D=D-A
+D=A
+@R13
+A=M-D
+D=M
 @LCL
 M=D
 @R14
-D=M
-@D
+A=M
+
 0;JMP
 
 //end of program infinite loop

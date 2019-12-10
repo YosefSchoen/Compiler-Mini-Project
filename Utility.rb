@@ -36,8 +36,6 @@ def getFileName(filename)
     end
   end
 
-
-
   return newFileName
 end
 

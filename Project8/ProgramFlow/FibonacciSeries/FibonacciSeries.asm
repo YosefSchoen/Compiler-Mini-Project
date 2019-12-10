@@ -188,6 +188,7 @@ M=D
 M=M+1
 
 
+//subtract
 //get the top two from stack
 //get the top of stack
 @SP
@@ -335,6 +336,7 @@ M=D
 M=M+1
 
 
+//add
 //get the top two from stack
 //get the top of stack
 @SP
@@ -428,6 +430,7 @@ M=D
 M=M+1
 
 
+//add
 //get the top two from stack
 //get the top of stack
 @SP
@@ -521,6 +524,7 @@ M=D
 M=M+1
 
 
+//subtract
 //get the top two from stack
 //get the top of stack
 @SP

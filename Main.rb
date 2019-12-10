@@ -23,6 +23,8 @@ def main()
   translateVmToHack("Project8/ProgramFlow/FibonacciSeries/FibonacciSeries.vm", "Project8/ProgramFlow/FibonacciSeries/FibonacciSeries.asm")
 
   translateVmToHack("Project8/FunctionCalls/SimpleFunction/SimpleFunction.vm", "Project8/FunctionCalls/SimpleFunction/SimpleFunction.asm")
+  translateVmToHack("Project8/FunctionCalls/NestedCall/Sys.vm", "Project8/FunctionCalls/NestedCall/NestedCall.asm")
+
 
 end
 
