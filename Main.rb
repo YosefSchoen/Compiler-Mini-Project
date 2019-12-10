@@ -7,7 +7,6 @@ require_relative 'IO'
 
 #the main will translate all of the stage 1 and stage 2 test cases
 def main()
-  puts getFileName("Project7/Stage2/BasicTest/BasicTest.vm")
   #our own little test file
   translateVmToHack("test.vm", "test.asm")
   #stage 1 is to test simple add and  stack test
@@ -22,6 +21,9 @@ def main()
   #Prgram Flow Test from project8
   translateVmToHack("Project8/ProgramFlow/BasicLoop/BasicLoop.vm", "Project8/ProgramFlow/BasicLoop/BasicLoop.asm")
   translateVmToHack("Project8/ProgramFlow/FibonacciSeries/FibonacciSeries.vm", "Project8/ProgramFlow/FibonacciSeries/FibonacciSeries.asm")
+
+  translateVmToHack("Project8/FunctionCalls/SimpleFunction/SimpleFunction.vm", "Project8/FunctionCalls/SimpleFunction/SimpleFunction.asm")
+
 end
 
 

@@ -22,7 +22,6 @@ M=D
 M=M+1
 
 
-//check if equal
 //get the top two from stack
 //get the top of stack
 @SP
@@ -110,7 +109,6 @@ M=D
 M=M+1
 
 
-//check if equal
 //get the top two from stack
 //get the top of stack
 @SP
@@ -198,7 +196,6 @@ M=D
 M=M+1
 
 
-//check if equal
 //get the top two from stack
 //get the top of stack
 @SP
@@ -286,7 +283,6 @@ M=D
 M=M+1
 
 
-//check if less than
 //get the top two from stack
 //get the top of stack
 @SP
@@ -374,7 +370,6 @@ M=D
 M=M+1
 
 
-//check if less than
 //get the top two from stack
 //get the top of stack
 @SP
@@ -462,7 +457,6 @@ M=D
 M=M+1
 
 
-//check if less than
 //get the top two from stack
 //get the top of stack
 @SP
@@ -550,7 +544,6 @@ M=D
 M=M+1
 
 
-//check if greater than
 //get the top two from stack
 //get the top of stack
 @SP
@@ -638,7 +631,6 @@ M=D
 M=M+1
 
 
-//check if greater than
 //get the top two from stack
 //get the top of stack
 @SP
@@ -726,7 +718,6 @@ M=D
 M=M+1
 
 
-//check if greater than
 //get the top two from stack
 //get the top of stack
 @SP
@@ -826,7 +817,6 @@ M=D
 M=M+1
 
 
-//add
 //get the top two from stack
 //get the top of stack
 @SP
@@ -863,7 +853,6 @@ M=D
 M=M+1
 
 
-//subtract
 //get the top two from stack
 //get the top of stack
 @SP
@@ -888,14 +877,13 @@ A=M-1
 M=M-D
 
 
-//negate
 //get the top of stack
 @SP
 A=M-1
 
 M=-M
 
-//bit wise and
+
 //get the top two from stack
 //get the top of stack
 @SP
@@ -932,7 +920,6 @@ M=D
 M=M+1
 
 
-//bit wise or
 //get the top two from stack
 //get the top of stack
 @SP
@@ -957,12 +944,12 @@ A=M-1
 M=M|D
 
 
-//bit wise not
 //get the top of stack
 @SP
 A=M-1
 
 M=!M
+
 
 //end of program infinite loop
 (END)

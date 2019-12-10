@@ -208,16 +208,40 @@ def convertProgramFlow(op, label)
 end
 
 
-def convertFunction(op, name, args)
+def convertFunction(op, label, n, jumpLocation)
   case op
   when "function"
-    cmds = "\n"
+    cmds = "//create function"+"\n"+
+        "("+label+")"+"\n"+"D=0"+"\n"
+
+    for i in 0..n
+      cmds = cmds + pushToStack + popToSegment("LCL", i.to_s, "M")
+    end
 
   when "call"
-    cmds = "\n"
+    #Need to impliment the @LABEL bit
+    cmds = "//call function"+"\n"+
+        "@"+jumpLocation+"\n"+"D=m"+"\n"+pushToStack +
+        pushSegmentPointer("LCL") +
+        pushSegmentPointer("ARG") +
+        pushSegmentPointer("THIS") +
+        pushSegmentPointer("THAT") +
+        "@SP"+"\n"+"D=M"+"@"+n+"\n"+"D=D-A"+"@5"+"D=D-A"+"\n"+"@ARG"+"\n"+"M=D"+
+        "@SP"+"\n"+"D=M"+"\n"+"@LCL"+"M=D"+"\n"+
+        "@"+label+"\n"+"0;JMP"+"\n"+
+        "("+jumpLocation+")"+"\n"
 
   when "return"
-    cmds = "\n"
+    cmds = "//return function"+"\n"+
+        "@LCL"+"\n"+"D=A"+"\n"+"@R13"+"\n"+"M=D"+"\n"+
+        popSegmentPointer("R14", "5") +
+        getTopOfStack+ "D=M"+"\n"+"@ARG"+"\n"+"A=M"+"\n"+"M=D"+"\n"+removeFromStack() +
+        "@ARG"+"\n"+"D=A"+"\n"+"@1"+"\n"+"D=D+A"+"\n"+"@SP"+"\n"+"M=D"+"\n"+
+        popSegmentPointer("THAT", "1") +
+        popSegmentPointer("THIS", "2") +
+        popSegmentPointer("ARG", "3") +
+        popSegmentPointer("LCL", "4") +
+        "@R14"+"\n"+"D=M"+"\n"+"@D"+"\n"+"0;JMP"+"\n"
   else
     cmds = error
   end
@@ -225,6 +249,16 @@ def convertFunction(op, name, args)
   return cmds
 end
 
+
+def pushSegmentPointer(segment)
+  str = "@"+segment+"\n"+"D=M"+"\n"+pushToStack
+  return str
+end
+
+def popSegmentPointer(segment, value)
+  str = "@R13"+"\n"+"D=M"+"\n"+"@"+value+"\n"+"D=D-A"+"\n"+"@"+segment+"\n"+"M=D"+"\n"
+  return str
+end
 
 #the array of strings will be converted to strings of hack asm code
 def convertCommand(arr, i, fileName)
@@ -252,12 +286,11 @@ def convertCommand(arr, i, fileName)
     cmds = convertProgramFlow(op, label)
 
   when "functionOp"
-    unless name.nil?
-      name = arr[1]
-      args = arr[2]
-    end
+      label = arr[1]
+      n = arr[2].to_i
 
-    cmds = convertFunction(op, name, args)
+    cmds = convertFunction(op, label, n, jumpLocation)
+
   else
     cmds = error
   end

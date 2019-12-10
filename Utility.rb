@@ -1,3 +1,14 @@
+def initializeProgram()
+
+  str =  "@256"+"\n"+"D=A"+"\n"+"@SP"+"\n"+"M=D"+"\n"+
+      "@300"+"\n"+"D=A"+"\n"+"@LCL"+"\n"+"M=D"+"\n"+
+      "@400"+"\n"+"D=A"+"\n"+"@ARG"+"\n"+"M=D"+"\n"+
+      "@3000"+"\n"+"D=A"+"\n"+"@THIS"+"\n"+"M=D"+"\n"+
+      "@3010"+"\n"+"D=A"+"\n"+"@THAT"+"\n"+"M=D"+"\n"
+
+  return str+"\n"
+end
+
 #this will put the program in an infinite loop at the end of the program as to not run down the ROM for ever
 def endProgram
   str = "//end of program infinite loop"+"\n"+
