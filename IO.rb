@@ -18,6 +18,7 @@ def readFile(fileName)
 
   #returns an array each element is a string of a line of the file
   return lines
+
 end
 
 
