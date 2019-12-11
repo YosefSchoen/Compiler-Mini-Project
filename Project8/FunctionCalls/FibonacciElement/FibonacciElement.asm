@@ -1,21 +1,9 @@
-//create function
-(Sys.init)
-D=0
-
-//push constant to stack
-@4
+@256
 D=A
-//push to stack
 @SP
-A=M
 M=D
-//increment the stack pointer
-@SP
-M=M+1
-
-
 //call function
-@Sys$ret.2
+@Sys
 D=A
 //push to stack
 @SP
@@ -71,7 +59,7 @@ M=M+1
 
 @SP
 D=M
-@1
+@0
 D=D-A
 @5
 D=D-A
@@ -81,15 +69,9 @@ M=D
 D=M
 @LCL
 M=D
-@Main.fibonacci
+@Sys.init
 0;JMP
-(Sys$ret.2)
-
-(WHILE)
-
-@WHILE
-0;JMP
-
+(Sys)
 //create function
 (Main.fibonacci)
 D=0
@@ -665,6 +647,98 @@ M=D
 @R14
 A=M
 
+0;JMP
+
+//create function
+(Sys.init)
+D=0
+
+//push constant to stack
+@4
+D=A
+//push to stack
+@SP
+A=M
+M=D
+//increment the stack pointer
+@SP
+M=M+1
+
+
+//call function
+@Sys$ret.2
+D=A
+//push to stack
+@SP
+A=M
+M=D
+//increment the stack pointer
+@SP
+M=M+1
+
+//call segment pointer
+@LCL
+D=M
+//push to stack
+@SP
+A=M
+M=D
+//increment the stack pointer
+@SP
+M=M+1
+
+//call segment pointer
+@ARG
+D=M
+//push to stack
+@SP
+A=M
+M=D
+//increment the stack pointer
+@SP
+M=M+1
+
+//call segment pointer
+@THIS
+D=M
+//push to stack
+@SP
+A=M
+M=D
+//increment the stack pointer
+@SP
+M=M+1
+
+//call segment pointer
+@THAT
+D=M
+//push to stack
+@SP
+A=M
+M=D
+//increment the stack pointer
+@SP
+M=M+1
+
+@SP
+D=M
+@1
+D=D-A
+@5
+D=D-A
+@ARG
+M=D
+@SP
+D=M
+@LCL
+M=D
+@Main.fibonacci
+0;JMP
+(Sys$ret.2)
+
+(WHILE)
+
+@WHILE
 0;JMP
 
 //end of program infinite loop

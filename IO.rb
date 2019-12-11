@@ -28,6 +28,14 @@ def writeFile(asmFile, filesWithLines)
   outFile = File.new(asmFile, "w")
   #outFile.syswrite(initializeProgram())
 
+
+  for i in 0..filesWithLines.size-1
+    if filesWithLines[i][0].include?("Sys.vm")
+      outFile.syswrite(bootStrap)
+    end
+  end
+
+
   for i in 0..filesWithLines.size-1
     fileName = filesWithLines[i][0]
     lines = filesWithLines[i][1]
@@ -74,14 +82,14 @@ def translateVmToHack(vmFilesDirectory, asmFile)
    lines = (readFile(files[i]))
    tuple = [files[i], lines]
 
-   if files[i].include?("Sys.vm")
-    fileWithLines.unshift(tuple)
-   else
     fileWithLines.append(tuple)
-     end
+  # if files[i].include?("Sys.vm")
+   # fileWithLines.unshift(tuple)
+  # else
+   # fileWithLines.append(tuple)
+    # end
   end
 
-  puts fileWithLines
   #will write the strings in the array to the asm file
   writeFile(asmFile, fileWithLines)
 end

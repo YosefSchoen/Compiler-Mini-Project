@@ -1,3 +1,77 @@
+@256
+D=A
+@SP
+M=D
+//call function
+@Sys
+D=A
+//push to stack
+@SP
+A=M
+M=D
+//increment the stack pointer
+@SP
+M=M+1
+
+//call segment pointer
+@LCL
+D=M
+//push to stack
+@SP
+A=M
+M=D
+//increment the stack pointer
+@SP
+M=M+1
+
+//call segment pointer
+@ARG
+D=M
+//push to stack
+@SP
+A=M
+M=D
+//increment the stack pointer
+@SP
+M=M+1
+
+//call segment pointer
+@THIS
+D=M
+//push to stack
+@SP
+A=M
+M=D
+//increment the stack pointer
+@SP
+M=M+1
+
+//call segment pointer
+@THAT
+D=M
+//push to stack
+@SP
+A=M
+M=D
+//increment the stack pointer
+@SP
+M=M+1
+
+@SP
+D=M
+@0
+D=D-A
+@5
+D=D-A
+@ARG
+M=D
+@SP
+D=M
+@LCL
+M=D
+@Sys.init
+0;JMP
+(Sys)
 //create function
 (Sys.init)
 D=0

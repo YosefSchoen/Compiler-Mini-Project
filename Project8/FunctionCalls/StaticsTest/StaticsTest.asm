@@ -1,275 +1,9 @@
-//create function
-(Sys.init)
-D=0
-
-//push constant to stack
-@6
+@256
 D=A
-//push to stack
 @SP
-A=M
 M=D
-//increment the stack pointer
-@SP
-M=M+1
-
-
-//push constant to stack
-@8
-D=A
-//push to stack
-@SP
-A=M
-M=D
-//increment the stack pointer
-@SP
-M=M+1
-
-
 //call function
-@Sys$ret.3
-D=A
-//push to stack
-@SP
-A=M
-M=D
-//increment the stack pointer
-@SP
-M=M+1
-
-//call segment pointer
-@LCL
-D=M
-//push to stack
-@SP
-A=M
-M=D
-//increment the stack pointer
-@SP
-M=M+1
-
-//call segment pointer
-@ARG
-D=M
-//push to stack
-@SP
-A=M
-M=D
-//increment the stack pointer
-@SP
-M=M+1
-
-//call segment pointer
-@THIS
-D=M
-//push to stack
-@SP
-A=M
-M=D
-//increment the stack pointer
-@SP
-M=M+1
-
-//call segment pointer
-@THAT
-D=M
-//push to stack
-@SP
-A=M
-M=D
-//increment the stack pointer
-@SP
-M=M+1
-
-@SP
-D=M
-@2
-D=D-A
-@5
-D=D-A
-@ARG
-M=D
-@SP
-D=M
-@LCL
-M=D
-@Class1.set
-0;JMP
-(Sys$ret.3)
-
-//pop to segment
-//get segment position
-@5
-D=A
-@0
-D=D+A
-
-//store to free register
-@R13
-M=D
-
-//get the top of stack
-@SP
-A=M-1
-
-D=M
-//send to segment from free register
-@R13
-A=M
-M=D
-
-//remove to stack
-//get the top of stack
-@SP
-A=M-1
-
-D=M
-M=M-D
-//decrement the stack pointer
-@SP
-M=M-1
-
-//delete content from free register
-@R13
-D=M
-M=M-D
-
-
-//push constant to stack
-@23
-D=A
-//push to stack
-@SP
-A=M
-M=D
-//increment the stack pointer
-@SP
-M=M+1
-
-
-//push constant to stack
-@15
-D=A
-//push to stack
-@SP
-A=M
-M=D
-//increment the stack pointer
-@SP
-M=M+1
-
-
-//call function
-@Sys$ret.7
-D=A
-//push to stack
-@SP
-A=M
-M=D
-//increment the stack pointer
-@SP
-M=M+1
-
-//call segment pointer
-@LCL
-D=M
-//push to stack
-@SP
-A=M
-M=D
-//increment the stack pointer
-@SP
-M=M+1
-
-//call segment pointer
-@ARG
-D=M
-//push to stack
-@SP
-A=M
-M=D
-//increment the stack pointer
-@SP
-M=M+1
-
-//call segment pointer
-@THIS
-D=M
-//push to stack
-@SP
-A=M
-M=D
-//increment the stack pointer
-@SP
-M=M+1
-
-//call segment pointer
-@THAT
-D=M
-//push to stack
-@SP
-A=M
-M=D
-//increment the stack pointer
-@SP
-M=M+1
-
-@SP
-D=M
-@2
-D=D-A
-@5
-D=D-A
-@ARG
-M=D
-@SP
-D=M
-@LCL
-M=D
-@Class2.set
-0;JMP
-(Sys$ret.7)
-
-//pop to segment
-//get segment position
-@5
-D=A
-@0
-D=D+A
-
-//store to free register
-@R13
-M=D
-
-//get the top of stack
-@SP
-A=M-1
-
-D=M
-//send to segment from free register
-@R13
-A=M
-M=D
-
-//remove to stack
-//get the top of stack
-@SP
-A=M-1
-
-D=M
-M=M-D
-//decrement the stack pointer
-@SP
-M=M-1
-
-//delete content from free register
-@R13
-D=M
-M=M-D
-
-
-//call function
-@Sys$ret.9
+@Sys
 D=A
 //push to stack
 @SP
@@ -335,86 +69,9 @@ M=D
 D=M
 @LCL
 M=D
-@Class1.get
+@Sys.init
 0;JMP
-(Sys$ret.9)
-
-//call function
-@Sys$ret.10
-D=A
-//push to stack
-@SP
-A=M
-M=D
-//increment the stack pointer
-@SP
-M=M+1
-
-//call segment pointer
-@LCL
-D=M
-//push to stack
-@SP
-A=M
-M=D
-//increment the stack pointer
-@SP
-M=M+1
-
-//call segment pointer
-@ARG
-D=M
-//push to stack
-@SP
-A=M
-M=D
-//increment the stack pointer
-@SP
-M=M+1
-
-//call segment pointer
-@THIS
-D=M
-//push to stack
-@SP
-A=M
-M=D
-//increment the stack pointer
-@SP
-M=M+1
-
-//call segment pointer
-@THAT
-D=M
-//push to stack
-@SP
-A=M
-M=D
-//increment the stack pointer
-@SP
-M=M+1
-
-@SP
-D=M
-@0
-D=D-A
-@5
-D=D-A
-@ARG
-M=D
-@SP
-D=M
-@LCL
-M=D
-@Class2.get
-0;JMP
-(Sys$ret.10)
-
-(WHILE)
-
-@WHILE
-0;JMP
-
+(Sys)
 //create function
 (Class1.set)
 D=0
@@ -1011,6 +668,423 @@ M=D
 @R14
 A=M
 
+0;JMP
+
+//create function
+(Sys.init)
+D=0
+
+//push constant to stack
+@6
+D=A
+//push to stack
+@SP
+A=M
+M=D
+//increment the stack pointer
+@SP
+M=M+1
+
+
+//push constant to stack
+@8
+D=A
+//push to stack
+@SP
+A=M
+M=D
+//increment the stack pointer
+@SP
+M=M+1
+
+
+//call function
+@Sys$ret.3
+D=A
+//push to stack
+@SP
+A=M
+M=D
+//increment the stack pointer
+@SP
+M=M+1
+
+//call segment pointer
+@LCL
+D=M
+//push to stack
+@SP
+A=M
+M=D
+//increment the stack pointer
+@SP
+M=M+1
+
+//call segment pointer
+@ARG
+D=M
+//push to stack
+@SP
+A=M
+M=D
+//increment the stack pointer
+@SP
+M=M+1
+
+//call segment pointer
+@THIS
+D=M
+//push to stack
+@SP
+A=M
+M=D
+//increment the stack pointer
+@SP
+M=M+1
+
+//call segment pointer
+@THAT
+D=M
+//push to stack
+@SP
+A=M
+M=D
+//increment the stack pointer
+@SP
+M=M+1
+
+@SP
+D=M
+@2
+D=D-A
+@5
+D=D-A
+@ARG
+M=D
+@SP
+D=M
+@LCL
+M=D
+@Class1.set
+0;JMP
+(Sys$ret.3)
+
+//pop to segment
+//get segment position
+@5
+D=A
+@0
+D=D+A
+
+//store to free register
+@R13
+M=D
+
+//get the top of stack
+@SP
+A=M-1
+
+D=M
+//send to segment from free register
+@R13
+A=M
+M=D
+
+//remove to stack
+//get the top of stack
+@SP
+A=M-1
+
+D=M
+M=M-D
+//decrement the stack pointer
+@SP
+M=M-1
+
+//delete content from free register
+@R13
+D=M
+M=M-D
+
+
+//push constant to stack
+@23
+D=A
+//push to stack
+@SP
+A=M
+M=D
+//increment the stack pointer
+@SP
+M=M+1
+
+
+//push constant to stack
+@15
+D=A
+//push to stack
+@SP
+A=M
+M=D
+//increment the stack pointer
+@SP
+M=M+1
+
+
+//call function
+@Sys$ret.7
+D=A
+//push to stack
+@SP
+A=M
+M=D
+//increment the stack pointer
+@SP
+M=M+1
+
+//call segment pointer
+@LCL
+D=M
+//push to stack
+@SP
+A=M
+M=D
+//increment the stack pointer
+@SP
+M=M+1
+
+//call segment pointer
+@ARG
+D=M
+//push to stack
+@SP
+A=M
+M=D
+//increment the stack pointer
+@SP
+M=M+1
+
+//call segment pointer
+@THIS
+D=M
+//push to stack
+@SP
+A=M
+M=D
+//increment the stack pointer
+@SP
+M=M+1
+
+//call segment pointer
+@THAT
+D=M
+//push to stack
+@SP
+A=M
+M=D
+//increment the stack pointer
+@SP
+M=M+1
+
+@SP
+D=M
+@2
+D=D-A
+@5
+D=D-A
+@ARG
+M=D
+@SP
+D=M
+@LCL
+M=D
+@Class2.set
+0;JMP
+(Sys$ret.7)
+
+//pop to segment
+//get segment position
+@5
+D=A
+@0
+D=D+A
+
+//store to free register
+@R13
+M=D
+
+//get the top of stack
+@SP
+A=M-1
+
+D=M
+//send to segment from free register
+@R13
+A=M
+M=D
+
+//remove to stack
+//get the top of stack
+@SP
+A=M-1
+
+D=M
+M=M-D
+//decrement the stack pointer
+@SP
+M=M-1
+
+//delete content from free register
+@R13
+D=M
+M=M-D
+
+
+//call function
+@Sys$ret.9
+D=A
+//push to stack
+@SP
+A=M
+M=D
+//increment the stack pointer
+@SP
+M=M+1
+
+//call segment pointer
+@LCL
+D=M
+//push to stack
+@SP
+A=M
+M=D
+//increment the stack pointer
+@SP
+M=M+1
+
+//call segment pointer
+@ARG
+D=M
+//push to stack
+@SP
+A=M
+M=D
+//increment the stack pointer
+@SP
+M=M+1
+
+//call segment pointer
+@THIS
+D=M
+//push to stack
+@SP
+A=M
+M=D
+//increment the stack pointer
+@SP
+M=M+1
+
+//call segment pointer
+@THAT
+D=M
+//push to stack
+@SP
+A=M
+M=D
+//increment the stack pointer
+@SP
+M=M+1
+
+@SP
+D=M
+@0
+D=D-A
+@5
+D=D-A
+@ARG
+M=D
+@SP
+D=M
+@LCL
+M=D
+@Class1.get
+0;JMP
+(Sys$ret.9)
+
+//call function
+@Sys$ret.10
+D=A
+//push to stack
+@SP
+A=M
+M=D
+//increment the stack pointer
+@SP
+M=M+1
+
+//call segment pointer
+@LCL
+D=M
+//push to stack
+@SP
+A=M
+M=D
+//increment the stack pointer
+@SP
+M=M+1
+
+//call segment pointer
+@ARG
+D=M
+//push to stack
+@SP
+A=M
+M=D
+//increment the stack pointer
+@SP
+M=M+1
+
+//call segment pointer
+@THIS
+D=M
+//push to stack
+@SP
+A=M
+M=D
+//increment the stack pointer
+@SP
+M=M+1
+
+//call segment pointer
+@THAT
+D=M
+//push to stack
+@SP
+A=M
+M=D
+//increment the stack pointer
+@SP
+M=M+1
+
+@SP
+D=M
+@0
+D=D-A
+@5
+D=D-A
+@ARG
+M=D
+@SP
+D=M
+@LCL
+M=D
+@Class2.get
+0;JMP
+(Sys$ret.10)
+
+(WHILE)
+
+@WHILE
 0;JMP
 
 //end of program infinite loop

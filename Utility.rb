@@ -10,6 +10,13 @@ def initializeProgram()
 end
 
 
+def bootStrap
+  str =  "@256"+"\n"+"D=A"+"\n"+"@SP"+"\n"+"M=D"+"\n"+
+  convertFunction("call", "Sys.init", "0", "Sys")
+  return str
+end
+
+
 #this will put the program in an infinite loop at the end of the program as to not run down the ROM for ever
 def endProgram
   str = "//end of program infinite loop"+"\n"+
