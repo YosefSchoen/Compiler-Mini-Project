@@ -23,19 +23,23 @@ end
 
 
 #writes the lines to a asm file
-def writeFile(asmFileName, lines)
+def writeFile(asmFile, filesWithLines)
   #new write only file object with the file name passed above
-  outFile = File.new(asmFileName, "w")
-  outFile.syswrite(initializeProgram())
+  outFile = File.new(asmFile, "w")
+  #outFile.syswrite(initializeProgram())
 
-  #i will be used to create new jump locations for the comparison operators
-  i = 0
-  newFileName = getFileName(asmFileName)
-  lines.each do |it|  cmd = it.split(' ')
-  newCmd = convertCommand(cmd, i, newFileName)
-  outFile.syswrite(newCmd)
-  outFile.syswrite("\n")
-  i = i + 1
+  for i in 0..filesWithLines.size-1
+    fileName = filesWithLines[i][0]
+    lines = filesWithLines[i][1]
+    #i will be used to create new jump locations for the comparison operators
+    j = 0
+    newFileName = getFileName(fileName)
+    lines.each do |it|  cmd = it.split(' ')
+    newCmd = convertCommand(cmd, j, newFileName)
+    outFile.syswrite(newCmd)
+    outFile.syswrite("\n")
+    j = j + 1
+    end
   end
 
   #writes the new commands to the output file
@@ -43,22 +47,9 @@ def writeFile(asmFileName, lines)
 end
 
 
-#takes in a directory of vm files and translates it to a hack asm file
-def translateVmToHack(vmFilesDirectory, asmFile)
-  #will store all of the code in the input files into an array of strings
-  lines = getFilesInDir(vmFilesDirectory)
-
-  #will write the strings in the array to the asm file
-  writeFile(asmFile, lines)
-end
-
-
-#this function will get all of the files in a specified path and store the contents in an array of strings
+#this function will get all of the files in a specified path and return them in an array
 def getFilesInDir(path)
-
-
-  lines = []
-
+  files = []
 
   Dir.foreach(path) do |filename|
     #dont include parent files
@@ -66,16 +57,31 @@ def getFilesInDir(path)
 
     #dont include files that are not vm files
     next unless filename.to_s.include?("vm")
-
-    #Sys.vm needs to be written first if it exists
-    if filename.to_s.include?("Sys.vm")
-      lines = readFile(path+"/"+filename.to_s).concat(lines)
-
-    else
-    lines.concat((readFile(path+"/"+filename.to_s)))
-    end
+    files.push(path+"/"+filename)
   end
 
-  return lines
+  return files
 end
 
+
+#takes in a directory of vm files and translates it to a hack asm file
+def translateVmToHack(vmFilesDirectory, asmFile)
+  #will store all of the code in the input files into an array of strings
+  files = getFilesInDir(vmFilesDirectory)
+  fileWithLines = []
+
+  for i in 0..files.size-1
+   lines = (readFile(files[i]))
+   tuple = [files[i], lines]
+
+   if files[i].include?("Sys.vm")
+    fileWithLines.unshift(tuple)
+   else
+    fileWithLines.append(tuple)
+     end
+  end
+
+  puts fileWithLines
+  #will write the strings in the array to the asm file
+  writeFile(asmFile, fileWithLines)
+end

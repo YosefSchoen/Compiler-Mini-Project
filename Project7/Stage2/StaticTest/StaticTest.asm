@@ -1,24 +1,3 @@
-@256
-D=A
-@SP
-M=D
-@300
-D=A
-@LCL
-M=D
-@400
-D=A
-@ARG
-M=D
-@3000
-D=A
-@THIS
-M=D
-@3010
-D=A
-@THAT
-M=D
-
 //push constant to stack
 @111
 D=A
@@ -60,7 +39,7 @@ M=M+1
 A=M-1
 
 D=M
-@StaticTest.8
+@StaticTest8
 M=D
 //remove to stack
 //get the top of stack
@@ -79,7 +58,7 @@ M=M-1
 A=M-1
 
 D=M
-@StaticTest.3
+@StaticTest3
 M=D
 //remove to stack
 //get the top of stack
@@ -98,7 +77,7 @@ M=M-1
 A=M-1
 
 D=M
-@StaticTest.1
+@StaticTest1
 M=D
 //remove to stack
 //get the top of stack
@@ -113,7 +92,7 @@ M=M-1
 
 
 //push from static segment
-@StaticTest.3
+@StaticTest3
 D=M
 //push to stack
 @SP
@@ -125,7 +104,7 @@ M=M+1
 
 
 //push from static segment
-@StaticTest.1
+@StaticTest1
 D=M
 //push to stack
 @SP
@@ -162,7 +141,7 @@ M=M-D
 
 
 //push from static segment
-@StaticTest.8
+@StaticTest8
 D=M
 //push to stack
 @SP

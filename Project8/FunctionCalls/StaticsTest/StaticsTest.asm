@@ -1,24 +1,3 @@
-@256
-D=A
-@SP
-M=D
-@300
-D=A
-@LCL
-M=D
-@400
-D=A
-@ARG
-M=D
-@3000
-D=A
-@THIS
-M=D
-@3010
-D=A
-@THAT
-M=D
-
 //create function
 (Sys.init)
 D=0
@@ -48,7 +27,7 @@ M=M+1
 
 
 //call function
-@jumpLocation3
+@Sys$ret.3
 D=A
 //push to stack
 @SP
@@ -116,7 +95,7 @@ D=M
 M=D
 @Class1.set
 0;JMP
-(jumpLocation3)
+(Sys$ret.3)
 
 //pop to segment
 //get segment position
@@ -181,7 +160,7 @@ M=M+1
 
 
 //call function
-@jumpLocation7
+@Sys$ret.7
 D=A
 //push to stack
 @SP
@@ -249,7 +228,7 @@ D=M
 M=D
 @Class2.set
 0;JMP
-(jumpLocation7)
+(Sys$ret.7)
 
 //pop to segment
 //get segment position
@@ -290,7 +269,7 @@ M=M-D
 
 
 //call function
-@jumpLocation9
+@Sys$ret.9
 D=A
 //push to stack
 @SP
@@ -358,10 +337,10 @@ D=M
 M=D
 @Class1.get
 0;JMP
-(jumpLocation9)
+(Sys$ret.9)
 
 //call function
-@jumpLocation10
+@Sys$ret.10
 D=A
 //push to stack
 @SP
@@ -429,7 +408,7 @@ D=M
 M=D
 @Class2.get
 0;JMP
-(jumpLocation10)
+(Sys$ret.10)
 
 (WHILE)
 
@@ -464,7 +443,7 @@ M=M+1
 A=M-1
 
 D=M
-@StaticTests.0
+@Class10
 M=D
 //remove to stack
 //get the top of stack
@@ -502,7 +481,7 @@ M=M+1
 A=M-1
 
 D=M
-@StaticTests.1
+@Class11
 M=D
 //remove to stack
 //get the top of stack
@@ -531,8 +510,10 @@ M=M+1
 //return function
 @LCL
 D=M
+//store to free register
 @R13
 M=D
+
 //return segment pointer
 @5
 D=A
@@ -608,7 +589,7 @@ A=M
 D=0
 
 //push from static segment
-@StaticTests.0
+@Class10
 D=M
 //push to stack
 @SP
@@ -620,7 +601,7 @@ M=M+1
 
 
 //push from static segment
-@StaticTests.1
+@Class11
 D=M
 //push to stack
 @SP
@@ -659,8 +640,10 @@ M=M-D
 //return function
 @LCL
 D=M
+//store to free register
 @R13
 M=D
+
 //return segment pointer
 @5
 D=A
@@ -759,7 +742,7 @@ M=M+1
 A=M-1
 
 D=M
-@StaticTests.0
+@Class20
 M=D
 //remove to stack
 //get the top of stack
@@ -797,7 +780,7 @@ M=M+1
 A=M-1
 
 D=M
-@StaticTests.1
+@Class21
 M=D
 //remove to stack
 //get the top of stack
@@ -826,8 +809,10 @@ M=M+1
 //return function
 @LCL
 D=M
+//store to free register
 @R13
 M=D
+
 //return segment pointer
 @5
 D=A
@@ -903,7 +888,7 @@ A=M
 D=0
 
 //push from static segment
-@StaticTests.0
+@Class20
 D=M
 //push to stack
 @SP
@@ -915,7 +900,7 @@ M=M+1
 
 
 //push from static segment
-@StaticTests.1
+@Class21
 D=M
 //push to stack
 @SP
@@ -954,8 +939,10 @@ M=M-D
 //return function
 @LCL
 D=M
+//store to free register
 @R13
 M=D
+
 //return segment pointer
 @5
 D=A

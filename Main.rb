@@ -8,6 +8,7 @@ require_relative 'IO'
 #the main will translate all of the test cases from project 7 and 8
 def main()
   #our own little test file
+  translateVmToHack("Project7/MyTest", "Project7/MyTest/test.asm")
 
   #project 7
   #stage 1 is to test simple add and  stack test
@@ -29,7 +30,7 @@ def main()
   translateVmToHack("Project8/FunctionCalls/SimpleFunction", "Project8/FunctionCalls/SimpleFunction/SimpleFunction.asm")
   translateVmToHack("Project8/FunctionCalls/NestedCall", "Project8/FunctionCalls/NestedCall/NestedCall.asm")
   translateVmToHack("Project8/FunctionCalls/FibonacciElement", "Project8/FunctionCalls/FibonacciElement/FibonacciElement.asm")
-  translateVmToHack("Project8/FunctionCalls/StaticsTest", "Project8/FunctionCalls/StaticsTest/StaticTests.asm")
+  translateVmToHack("Project8/FunctionCalls/StaticsTest", "Project8/FunctionCalls/StaticsTest/StaticsTest.asm")
 end
 
 

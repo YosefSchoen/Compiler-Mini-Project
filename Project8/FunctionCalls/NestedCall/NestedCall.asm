@@ -1,24 +1,3 @@
-@256
-D=A
-@SP
-M=D
-@300
-D=A
-@LCL
-M=D
-@400
-D=A
-@ARG
-M=D
-@3000
-D=A
-@THIS
-M=D
-@3010
-D=A
-@THAT
-M=D
-
 //create function
 (Sys.init)
 D=0
@@ -124,7 +103,7 @@ M=M-D
 
 
 //call function
-@jumpLocation5
+@Sys$ret.5
 D=A
 //push to stack
 @SP
@@ -192,7 +171,7 @@ D=M
 M=D
 @Sys.main
 0;JMP
-(jumpLocation5)
+(Sys$ret.5)
 
 //pop to segment
 //get segment position
@@ -547,7 +526,7 @@ M=M+1
 
 
 //call function
-@jumpLocation21
+@Sys$ret.21
 D=A
 //push to stack
 @SP
@@ -615,7 +594,7 @@ D=M
 M=D
 @Sys.add12
 0;JMP
-(jumpLocation21)
+(Sys$ret.21)
 
 //pop to segment
 //get segment position
@@ -853,8 +832,10 @@ M=M+D
 //return function
 @LCL
 D=M
+//store to free register
 @R13
 M=D
+
 //return segment pointer
 @5
 D=A
@@ -1088,8 +1069,10 @@ M=M+D
 //return function
 @LCL
 D=M
+//store to free register
 @R13
 M=D
+
 //return segment pointer
 @5
 D=A

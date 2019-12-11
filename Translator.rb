@@ -1,7 +1,7 @@
 require_relative 'Utility'
 
 
-
+#all of the arithmetic operations will be done here
 def convertArithmetic(op)
   case op
 
@@ -31,16 +31,18 @@ def convertArithmetic(op)
   return cmds
 end
 
+#arithmetic operation on a single value
 def arithmeticUnary(op)
   str = getTopOfStack + "M="+op+"M"+"\n"
   return str+"\n"
 end
 
-
+#arithmetic operation on two values
 def arithmeticBinary(op)
   str = getTopTwoFromStack + "M=M"+op+"D"+"\n"
   return str+"\n"
 end
+
 
 
 def convertCompare(op, jumpLocation, locationEnd)
@@ -211,7 +213,7 @@ def convertProgramFlow(op, label)
 end
 
 
-def convertFunction(op, label, n, jumpLocation)
+def convertFunction(op, label, n, returnLocation)
   case op
   when "function"
     cmds = "//create function"+"\n"+
@@ -226,21 +228,19 @@ def convertFunction(op, label, n, jumpLocation)
     #Need to impliment the @LABEL bit
     cmds = "//call function"+"\n"+
 
-        "@"+jumpLocation+"\n"+"D=A"+"\n"+pushToStack +
+        "@"+returnLocation+"\n"+"D=A"+"\n"+pushToStack +
         pushSegmentPointer("LCL") +
         pushSegmentPointer("ARG") +
         pushSegmentPointer("THIS") +
         pushSegmentPointer("THAT") +
-        "@SP"+"\n"+"D=M"+"\n"+"@"+n.to_s+"\n"+"D=D-A"+"\n"+"@5"+"\n"+"D=D-A"+"\n"+"@ARG"+"\n"+"M=D"+"\n"+
-        "@SP"+"\n"+"D=M"+"\n"+"@LCL"+"\n"+"M=D"+"\n"+
+        repositionArg(n) +
+        repositionLCL +
         "@"+label+"\n"+"0;JMP"+"\n"+
-        "("+jumpLocation+")"+"\n"
+        "("+returnLocation+")"+"\n"
 
   when "return"
     cmds = "//return function"+"\n"+
-        "@LCL"+"\n"+"D=M"+"\n"+
-        "@R13"+"\n"+"M=D"+"\n"+
-
+        "@LCL"+"\n"+"D=M"+"\n"+ storeToFreeRegister("R13") +
         popSegmentPointer("R14", "5") +
         getTopOfStack+ "D=M"+"\n"+"@ARG"+"\n"+"A=M"+"\n"+"M=D"+"\n"+removeFromStack() +
         "@ARG"+"\n"+"D=M"+"\n"+"@1"+"\n"+"D=D+A"+"\n"+"@SP"+"\n"+"M=D"+"\n"+
@@ -269,20 +269,30 @@ def popSegmentPointer(segment, value)
   return str
 end
 
+def repositionArg(n)
+  str = "@SP"+"\n"+"D=M"+"\n"+"@"+n.to_s+"\n"+"D=D-A"+"\n"+"@5"+"\n"+"D=D-A"+"\n"+"@ARG"+"\n"+"M=D"+"\n"
+  return str
+end
+
+
+def repositionLCL
+  str = "@SP"+"\n"+"D=M"+"\n"+"@LCL"+"\n"+"M=D"+"\n"
+  return str
+end
+
 #the array of strings will be converted to strings of hack asm code
 def convertCommand(arr, i, fileName)
   op = arr[0] # the operation is the first word in the vm command
   opType = getOpType(op) # the type of operation each will have there own function
-
-  #creating new jump locations for each conditional command
-  jumpLocation = "jumpLocation"+i.to_s
-  locationEnd = "locationEnd"+i.to_s
 
   case opType
   when "arithmeticOp"
     cmds = convertArithmetic(op)
 
   when "compareOp"
+    #creating new jump locations for each conditional command
+    jumpLocation = "jumpLocation"+i.to_s
+    locationEnd = "locationEnd"+i.to_s
     cmds = convertCompare(op, jumpLocation, locationEnd)
 
   when "pushPop"
@@ -297,8 +307,9 @@ def convertCommand(arr, i, fileName)
   when "functionOp"
       label = arr[1]
       n = arr[2].to_i
+      returnLocation = fileName+"$ret."+i.to_s
 
-    cmds = convertFunction(op, label, n, jumpLocation)
+    cmds = convertFunction(op, label, n, returnLocation)
 
   else
     cmds = error

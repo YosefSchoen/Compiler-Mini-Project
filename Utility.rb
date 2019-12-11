@@ -9,6 +9,7 @@ def initializeProgram()
   return str+"\n"
 end
 
+
 #this will put the program in an infinite loop at the end of the program as to not run down the ROM for ever
 def endProgram
   str = "//end of program infinite loop"+"\n"+

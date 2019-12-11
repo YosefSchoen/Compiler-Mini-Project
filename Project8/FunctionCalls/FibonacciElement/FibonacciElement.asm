@@ -1,24 +1,3 @@
-@256
-D=A
-@SP
-M=D
-@300
-D=A
-@LCL
-M=D
-@400
-D=A
-@ARG
-M=D
-@3000
-D=A
-@THIS
-M=D
-@3010
-D=A
-@THAT
-M=D
-
 //create function
 (Sys.init)
 D=0
@@ -36,7 +15,7 @@ M=M+1
 
 
 //call function
-@jumpLocation2
+@Sys$ret.2
 D=A
 //push to stack
 @SP
@@ -104,7 +83,7 @@ D=M
 M=D
 @Main.fibonacci
 0;JMP
-(jumpLocation2)
+(Sys$ret.2)
 
 (WHILE)
 
@@ -168,7 +147,7 @@ M=M-1
 A=M-1
 
 D=M-D
-@jumpLocation8
+@jumpLocation3
 D;JLT
 //decrement the stack pointer
 @SP
@@ -184,10 +163,10 @@ M=D
 M=M+1
 
 //get comparison ops jump
-@locationEnd8
+@locationEnd3
 0;JMP
 //start of jump
-(jumpLocation8)
+(jumpLocation3)
 //decrement the stack pointer
 @SP
 M=M-1
@@ -201,11 +180,11 @@ M=D
 @SP
 M=M+1
 
-@locationEnd8
+@locationEnd3
 0;JMP
 
 //end of jump
-(locationEnd8)
+(locationEnd3)
 
 
 
@@ -256,8 +235,10 @@ M=M+1
 //return function
 @LCL
 D=M
+//store to free register
 @R13
 M=D
+
 //return segment pointer
 @5
 D=A
@@ -387,7 +368,7 @@ M=M-D
 
 
 //call function
-@jumpLocation18
+@Main$ret.13
 D=A
 //push to stack
 @SP
@@ -455,7 +436,7 @@ D=M
 M=D
 @Main.fibonacci
 0;JMP
-(jumpLocation18)
+(Main$ret.13)
 
 //push from argument segment
 //push from segment
@@ -514,7 +495,7 @@ M=M-D
 
 
 //call function
-@jumpLocation22
+@Main$ret.17
 D=A
 //push to stack
 @SP
@@ -582,7 +563,7 @@ D=M
 M=D
 @Main.fibonacci
 0;JMP
-(jumpLocation22)
+(Main$ret.17)
 
 //add
 //get the top two from stack
@@ -612,8 +593,10 @@ M=M+D
 //return function
 @LCL
 D=M
+//store to free register
 @R13
 M=D
+
 //return segment pointer
 @5
 D=A
