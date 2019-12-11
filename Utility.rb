@@ -32,7 +32,7 @@ def getFileName(filename)
     end
 
     if filename[i] == '.'
-      newFileName = newFileName[0, newFileName.size - 2]
+      newFileName = newFileName[0, newFileName.size - 3]
     end
   end
 

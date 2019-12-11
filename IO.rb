@@ -23,14 +23,14 @@ end
 
 
 #writes the lines to a asm file
-def writeFile(vmFileName, asmFileName, lines)
+def writeFile(asmFileName, lines)
   #new write only file object with the file name passed above
   outFile = File.new(asmFileName, "w")
-  #outFile.syswrite(initializeProgram())
+  outFile.syswrite(initializeProgram())
 
   #i will be used to create new jump locations for the comparison operators
   i = 0
-  newFileName = getFileName(vmFileName)
+  newFileName = getFileName(asmFileName)
   lines.each do |it|  cmd = it.split(' ')
   newCmd = convertCommand(cmd, i, newFileName)
   outFile.syswrite(newCmd)
@@ -43,22 +43,39 @@ def writeFile(vmFileName, asmFileName, lines)
 end
 
 
-#takes in a vm file and translates it to a hack asm file
-def translateVmToHack(vmFile, asmFile)
-  lines = readFile(vmFile)
-  writeFile(vmFile, asmFile, lines)
+#takes in a directory of vm files and translates it to a hack asm file
+def translateVmToHack(vmFilesDirectory, asmFile)
+  #will store all of the code in the input files into an array of strings
+  lines = getFilesInDir(vmFilesDirectory)
+
+  #will write the strings in the array to the asm file
+  writeFile(asmFile, lines)
 end
 
 
-def getFilesInDir()
-  path = 'Project8/FunctionCalls/StaticsTest'
+#this function will get all of the files in a specified path and store the contents in an array of strings
+def getFilesInDir(path)
+
+
+  lines = []
+
 
   Dir.foreach(path) do |filename|
+    #dont include parent files
     next if filename == '.' || filename == '..'
+
+    #dont include files that are not vm files
     next unless filename.to_s.include?("vm")
-    file = File.open("#{path}/#{filename}", 'r')
-    file.close
-    # more code
+
+    #Sys.vm needs to be written first if it exists
+    if filename.to_s.include?("Sys.vm")
+      lines = readFile(path+"/"+filename.to_s).concat(lines)
+
+    else
+    lines.concat((readFile(path+"/"+filename.to_s)))
+    end
   end
+
+  return lines
 end
 
