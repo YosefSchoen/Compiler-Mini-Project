@@ -4,8 +4,8 @@
     <shared />
   </component>
   <component name="NewModuleRootManager">
-    <content url="file://$MODULE_DIR$/../HackToVmProject" />
-    <orderEntry type="inheritedJdk" />
+    <content url="file://$MODULE_DIR$" />
+    <orderEntry type="jdk" jdkName="ruby-2.6.5-p114" jdkType="RUBY_SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>

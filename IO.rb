@@ -26,22 +26,28 @@ end
 def writeFile(asmFile, filesWithLines)
   #new write only file object with the file name passed above
   outFile = File.new(asmFile, "w")
-  #outFile.syswrite(initializeProgram())
 
-
+  #checking if the file has an initializing file called Sys.vm
   for i in 0..filesWithLines.size-1
     if filesWithLines[i][0].include?("Sys.vm")
+
+      #implimenting the bootstrap code if it does
       outFile.syswrite(bootStrap)
     end
   end
 
-
+  #will write the files' content file by file
   for i in 0..filesWithLines.size-1
     fileName = filesWithLines[i][0]
     lines = filesWithLines[i][1]
-    #i will be used to create new jump locations for the comparison operators
+
+    #j will be used to create new jump locations for the comparison operators
     j = 0
+
+    #newFileName is the fileName without the path or .vm at the end
     newFileName = getFileName(fileName)
+
+    #will convert the vm commands in each file line by line
     lines.each do |it|  cmd = it.split(' ')
     newCmd = convertCommand(cmd, j, newFileName)
     outFile.syswrite(newCmd)
@@ -59,12 +65,15 @@ end
 def getFilesInDir(path)
   files = []
 
+  #search for all of the files in the directory
   Dir.foreach(path) do |filename|
     #dont include parent files
     next if filename == '.' || filename == '..'
 
     #dont include files that are not vm files
     next unless filename.to_s.include?("vm")
+
+    #push the file to the list
     files.push(path+"/"+filename)
   end
 
@@ -74,20 +83,18 @@ end
 
 #takes in a directory of vm files and translates it to a hack asm file
 def translateVmToHack(vmFilesDirectory, asmFile)
+
   #will store all of the code in the input files into an array of strings
   files = getFilesInDir(vmFilesDirectory)
   fileWithLines = []
 
+  #storing the file's name and its lines of vm commands in a tuple (name, [lines])
   for i in 0..files.size-1
    lines = (readFile(files[i]))
    tuple = [files[i], lines]
 
+   #storing each tuple into  list
     fileWithLines.append(tuple)
-  # if files[i].include?("Sys.vm")
-   # fileWithLines.unshift(tuple)
-  # else
-   # fileWithLines.append(tuple)
-    # end
   end
 
   #will write the strings in the array to the asm file

@@ -263,11 +263,13 @@ def pushSegmentPointer(segment)
   return str
 end
 
+
 def popSegmentPointer(segment, value)
   str = "//return segment pointer"+"\n"+
       "@"+value+"\n"+"D=A"+"\n"+"@R13"+"\n"+"A=M-D"+"\n"+"D=M"+"\n"+"@"+segment+"\n"+"M=D"+"\n"
   return str
 end
+
 
 def repositionArg(n)
   str = "@SP"+"\n"+"D=M"+"\n"+"@"+n.to_s+"\n"+"D=D-A"+"\n"+"@5"+"\n"+"D=D-A"+"\n"+"@ARG"+"\n"+"M=D"+"\n"
