@@ -1,0 +1,54 @@
+
+class Main
+{
+    function void main()
+    {
+        var Player player;
+        var boolean miss;
+        var Ball ball;
+        var Bat bat;
+
+        let player = Player.new(0); // pass in numHits = 0
+        let miss = false;
+
+        while (~miss) 
+        {
+            // all variables declared in the beginning of the function
+            
+            let ball = Ball.new(255, 100);
+            let bat = Bat.new(240, 226);
+            
+            // draw the objects
+            do ball.draw();
+            do Output.moveCursor(22, 7); // put cursor in upper right corner
+            do Output.printInt(player.getNumHits()); // output number of hits
+            do bat.drawVertical();
+
+            // loop for each frame
+            while(true)
+            {
+                if(Keyboard.keyPressed() = 32)
+                {
+                    if(~bat.getIsHorizontal())
+                    {
+                        do bat.eraseVertical();
+                        do bat.drawHorizontal();
+                        if(ball.contact(bat))
+                        {
+                            do player.increaseNumHits();
+                            do Output.moveCursor(22, 7); // put cursor in upper right corner
+                            do Output.printInt(player.getNumHits()); // output number of hits
+                        }
+                        else { let miss = true;}
+                    }
+                }
+
+                do ball.pitch();
+                do Sys.wait(17); //frames/sec inversely proportional 17 * 60 is about 1000
+            }
+
+
+            return;
+        }
+    }
+}

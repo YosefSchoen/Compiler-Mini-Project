@@ -10,6 +10,17 @@ def initializeProgram()
 end
 
 
+def checkForBootStrap(filesWithLines)
+  for i in 0..filesWithLines.size-1
+    if filesWithLines[i][0].include?("Sys.vm")
+      return true
+    end
+  end
+
+    return false
+end
+
+
 def bootStrap
   str =  "@256"+"\n"+"D=A"+"\n"+"@SP"+"\n"+"M=D"+"\n"+
   convertFunction("call", "Sys.init", "0", "Sys")

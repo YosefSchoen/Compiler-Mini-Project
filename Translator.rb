@@ -44,10 +44,8 @@ def arithmeticBinary(op)
 end
 
 
-
+#basic comparison operations they call the compare function
 def convertCompare(op, jumpLocation, locationEnd)
-
-  #basic comparison operations they call the compare function
   case op
 
   when "eq"

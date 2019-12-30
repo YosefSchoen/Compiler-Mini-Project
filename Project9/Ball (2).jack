@@ -1,0 +1,66 @@
+class Ball
+{
+    field int x;
+    field int y;
+
+    constructor Ball new(int _x, int _y)
+    {
+        let x = _x;
+        let y = _y;
+        return this;
+    } 
+
+    // draw to screen
+    method void draw()
+    {
+        do Screen.setColor(true); // when calling functions need do
+        do Screen.drawCircle(x, y, 4);
+        return;
+    }
+    
+    // erase from string
+    method void erase()
+    {
+        do Screen.setColor(false); // when calling functions need do
+        do Screen.drawCircle(x, y, 4);
+        return;
+    }
+
+    // pitch the ball
+    method void pitch()
+    {
+        if(y > 248)
+        {
+            return;
+        }
+        do erase();
+        let y = y + 5; // move down the screen 1 pixel per frame
+        do draw();
+        return;
+    }
+
+    method int distance(int batX, int batY) 
+    {
+        var int xDistance;
+        var int yDistance;
+        var int dist;
+
+        let xDistance = Math.multiply(x - batX, x - batX);
+        let yDistance = Math.multiply(y - batY, y - batY);
+        let dist =  Math.sqrt(xDistance + yDistance);
+        
+        return dist;
+    }
+    
+    method boolean contact(Bat bat) 
+    {
+        if (distance(bat.getX(), bat.getY()) < 10)
+        {
+            return true;
+        }
+
+        return false;
+    }
+    // need to still make different speeds of pitches, and figure out how each pitch will come randomly.
+}
+

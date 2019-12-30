@@ -28,12 +28,9 @@ def writeFile(asmFile, filesWithLines)
   outFile = File.new(asmFile, "w")
 
   #checking if the file has an initializing file called Sys.vm
-  for i in 0..filesWithLines.size-1
-    if filesWithLines[i][0].include?("Sys.vm")
-
-      #implimenting the bootstrap code if it does
-      outFile.syswrite(bootStrap)
-    end
+  if checkForBootStrap(filesWithLines)
+    #implimenting the bootstrap code if it does
+    outFile.syswrite(bootStrap)
   end
 
   #will write the files' content file by file
@@ -54,6 +51,8 @@ def writeFile(asmFile, filesWithLines)
     outFile.syswrite("\n")
     j = j + 1
     end
+
+    puts fileName + " was translated" +"\n"
   end
 
   #writes the new commands to the output file
@@ -81,22 +80,27 @@ def getFilesInDir(path)
 end
 
 
+def getFilesWithLines(files)
+  fileWithLines = []
+
+  #storing the file's name and its lines of vm commands in a tuple (name, [lines])
+  for i in 0..files.size-1
+    lines = (readFile(files[i]))
+    tuple = [files[i], lines]
+    #storing each tuple into  list
+    fileWithLines.append(tuple)
+  end
+
+  return fileWithLines
+end
+
 #takes in a directory of vm files and translates it to a hack asm file
 def translateVmToHack(vmFilesDirectory, asmFile)
 
   #will store all of the code in the input files into an array of strings
   files = getFilesInDir(vmFilesDirectory)
-  fileWithLines = []
 
-  #storing the file's name and its lines of vm commands in a tuple (name, [lines])
-  for i in 0..files.size-1
-   lines = (readFile(files[i]))
-   tuple = [files[i], lines]
-
-   #storing each tuple into  list
-    fileWithLines.append(tuple)
-  end
-
+  fileWithLines = getFilesWithLines(files)
   #will write the strings in the array to the asm file
   writeFile(asmFile, fileWithLines)
 end
