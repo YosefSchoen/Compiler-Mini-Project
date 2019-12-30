@@ -25,7 +25,7 @@ alphabet = [digits, characters]
 #function to check if a character is a number
 def isIntConstant(i)
   if i.class.equal?(Integer)
-    return (i >= 0 and i < 2**15)
+    return (i >= 0 and i < 2**15) # 2^15 is maximum integer in JACK
   end
 
   return false
@@ -34,7 +34,7 @@ end
 #function to check if a character is a string
 def isStringConstant(str)
   if str.class.equal?(String)
-    return (str[0] == '"' and str[str.to_s.size - 1] == '"')
+    return (str[0] == '"' and str[str.to_s.size - 1] == '"') #if statement surrounded by quotation marks of any kinds
 
   end
 
@@ -42,16 +42,23 @@ def isStringConstant(str)
 end
 
 
-##function to check if a string is a legal id
+#function to check if a string is a legal id
+# make sue each id is in our alphabet
 def isIdentifier(str, alphabet, keyWords)
-  digitsOfAlphabet = alphabet[0]
-  charsOfAlphabet = alphabet[1]
+  digitsOfAlphabet = alphabet[0] # if its a digit
+  charsOfAlphabet = alphabet[1] # if a letter
 
-
+  # first character in name cannot be digit
   if digitsOfAlphabet.include?(str[0])
     return false
   end
 
+  # if keyword includes str
+  if keyWords.include?(str)
+    return false
+  end
+
+  # check is in the alphabet
   for i in 1..str.size-1
     character = str[i]
 
@@ -60,25 +67,21 @@ def isIdentifier(str, alphabet, keyWords)
     end
   end
 
-  if keyWords.include?(str)
-    return false
-  end
-
   return true
 end
 
-
+# production rules to make XML files
 def classProduction(cmds, alphabet, keywords, otherClassesNames)
   str = ""
   if cmds[0] == "class" and cmds[2] == "{" and cmds[5] == "}"
     str = str +
         "<class>"+"\n"+
-        "<keyword>" + cmds[0] + "</keyword>"+"\n"+
-        className(cmds[1],  alphabet, keywords) +
-        "<symbol>" + cmds[2] + "</symbol>"+"\n"+
-        classVarDec(cmds[3], alphabet, keywords, otherClassesNames, "") +
-        subRoutineDec(cmds[4], alphabet, keywords, otherClassesNames) +
-        "<symbol>" + cmds[5] + "</symbol>"+"\n"+
+            "<keyword>" + cmds[0] + "</keyword>"+"\n"+
+            className(cmds[1],  alphabet, keywords) +
+            "<symbol>" + cmds[2] + "</symbol>"+"\n"+
+            classVarDec(cmds[3], alphabet, keywords, otherClassesNames, "") +
+            subRoutineDec(cmds[4], alphabet, keywords, otherClassesNames) +
+            "<symbol>" + cmds[5] + "</symbol>"+"\n"+
         "</class>"+"\n"
   end
 
@@ -95,9 +98,9 @@ def classVarDec(cmds, alphabet, keywords, otherClassesNames, str)
   if (cmds[0] == "static" or cmds[0] == "field") and cmds[4] == ";"
     str = str +
         "<classVarDec>"+"\n"+
-        varType(cmds[1], otherClassesNames) +
-        varName(cmds[2], alphabet, keywords) +
-        "<symbol>" + cmds[4] + "</symbol>"+"\n"+
+            varType(cmds[1], otherClassesNames) +
+            varName(cmds[2], alphabet, keywords) +
+            "<symbol>" + cmds[4] + "</symbol>"+"\n"+
         "</classVarDec>"+"\n"
   end
 
@@ -109,7 +112,7 @@ def varType(str, otherClassesNames)
   newStr = ""
 
   if isType(str, otherClassesNames)
-    newStr = "<keyword>" + str + "</keyword>"+"\n"
+    newStr = "<keyword>" + str + "</keyword>"+"\n" # int, boolean, classname
   end
 
   return newStr
@@ -123,13 +126,13 @@ def subRoutineDec(cmds, alphabet, keywords, otherClassesNames)
       if cmds[3] == "(" and cmds[5] == ")"
       str =
           "<subRoutineDec>"+"\n"+
-          "<keyword>" + cmds[0] + "</keyword>"+"\n"+
-          "<keyword>" + cmds[1] + "</keyword>"+"\n"+
-          subroutineName(cmds[2], alphabet, keywords) +
-          "<symbol>"+cmds[3]+"</symbol>"+"\n"+
-          parameterList(cmds[4], alphabet, keywords, otherClassesNames) +
-          "<symbol>"+cmds[5]+"</symbol>"+"\n"+
-          subroutineBody(cmds[6], alphabet, keywords, otherClassesNames)+
+              "<keyword>" + cmds[0] + "</keyword>"+"\n"+
+              "<keyword>" + cmds[1] + "</keyword>"+"\n"+
+              subroutineName(cmds[2], alphabet, keywords) +
+              "<symbol>"+cmds[3]+"</symbol>"+"\n"+
+              parameterList(cmds[4], alphabet, keywords, otherClassesNames) +
+              "<symbol>"+cmds[5]+"</symbol>"+"\n"+
+              subroutineBody(cmds[6], alphabet, keywords, otherClassesNames)+
           "</subRoutineDec>"+"\n"
       end
     end
@@ -142,8 +145,8 @@ end
 def parameterList(cmds, alphabet, keywords, otherClassesNames)
   str =
       "<parameterList>"+"\n"+
-      varType(cmds[0], otherClassesNames) +
-      varName(cmds[1], alphabet, keywords) +
+          varType(cmds[0], otherClassesNames) +
+          varName(cmds[1], alphabet, keywords) +
       "</parameterList>"+"\n"
   return str
 end
@@ -154,10 +157,10 @@ def subroutineBody(cmds, alphabet, keywords, otherClassesNames)
   if cmds[0] == "{" and cmds[3] == "}"
     str =
         "<subroutineBody>"+"\n"+
-        "<symbol>"+cmds[0]+"</symbol>"+"\n"+
-        varDec(cmds[1], alphabet, keywords, otherClassesNames)
-        statements(cmds[2]) +
-        "<symbol>"+cmds[3]+"</symbol>"+"\n"+
+            "<symbol>"+cmds[0]+"</symbol>"+"\n"+
+            varDec(cmds[1], alphabet, keywords, otherClassesNames)
+            statements(cmds[2]) +
+            "<symbol>"+cmds[3]+"</symbol>"+"\n"+
         "<subroutineBody>"+"\n"
   end
 
@@ -171,10 +174,10 @@ def varDec(cmds, alphabet, keywords, otherClassesNames)
   if cmds[0] == "var" and cmds[3] == ";"
     str =
         "<varDec>"+"\n"+
-        "<keyword>" + cmds[0] + "</keyword>"+"\n"+
-        varType(cmds[1], otherClassesNames) +
-        varName(cmds[2], alphabet, keywords)
-        "<symbol>"+cmds[3]+"</symbol>"+"\n"+
+            "<keyword>" + cmds[0] + "</keyword>"+"\n"+
+            varType(cmds[1], otherClassesNames) +
+            varName(cmds[2], alphabet, keywords)
+            "<symbol>"+cmds[3]+"</symbol>"+"\n"+
         "</varDec>"+"\n"
   end
 
@@ -218,20 +221,63 @@ def letStatement(stmt)
 end
 
 def ifStatement(stmt)
-
+  if stmt[0] == "if" and stmt[1] == "(" and stmt[3] == ")" and stmt[4] == "{" and stmt[6] ==  "}"
+    str =
+        "<ifStatement>"+"\n"+
+            "<keyword>" + stmt[0] + "</keyword>"+"\n"+
+            "<symbol>" + stmt[1] + "</symbol"+"\n"+
+            expression(stmt[2])+
+            "<symbol>" + stmt[3] + "</symbol"+"\n"+
+            "<symbol>" + stmt[4] + "</symbol"+"\n"+
+            statements(stmt[5])+
+            "<symbol>" + stmt[6] + "</symbol"+"\n"+
+        "</ifStatement>"
+  end
+  # ********ADD ELSE STATEMENT ******
+  return str
 end
+
 
 def whileStatement(stmt)
+  if stmt[0] == "while" and stmt[1] == "(" and stmt[3] == ")" and stmt[4] == "{" and stmt[6] ==  "}"
+    str =
+        "<whileStatement>"+"\n"+
+            "<keyword>" + stmt[0] + "</keyword>"+"\n"+
+            "<symbol>" + stmt[1] + "</symbol"+"\n"+
+            expression(stmt[2])+
+            "<symbol>" + stmt[3] + "</symbol"+"\n"+
+            "<symbol>" + stmt[4] + "</symbol"+"\n"+
+            statements(stmt[5])+
+            "<symbol>" + stmt[6] + "</symbol"+"\n"+
+        "</whileStatement>"
 
+  end
+  return str
 end
 
-def doStatement(stmt)
 
+def doStatement(stmt)
+  if stmt[0] == "do" and stmt[2] == ";"
+    str =
+        "<doStatement"+"\n"+
+            "<keyword>" + stmt[0] + "</keyword>"+"\n"+
+            subroutineCall(stmt[1])+
+            "<symbol>" + stmt[2] + "</symbol"+"\n"+
+        "</doStatement>"
+  end
 end
 
 
 def ReturnStatement(stmt)
-
+  if stmt[0] == "return" and stmt[2] == ";"
+    str =
+        "<ReturnStatement"+"\n"+
+            "<keyword>" + stmt[0] + "</keyword>"+"\n"+
+            expression(stmt[1]) +
+            "<symbol>" + stmt[2] + "</symbol"+"\n"+
+        "</ReturnStatement>"
+  end
+  return str
 end
 
 
