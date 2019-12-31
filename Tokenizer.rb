@@ -24,8 +24,40 @@ characters = %w(a b c d e f g h i j k l m n o p q r s t u v w x y z _ A B C D E 
 alphabet = [digits, characters]
 
 
-def Tokenize(jackFile, keyWords)
+def readJackFile(fileName)
+  lines = []
 
+  #new read only file object with the filename passed above
+  inFile = File.new(fileName, "r")
+
+  while (line = inFile.gets)
+    lines << line
+  end
+
+  inFile.close
+
+  #returns an array each element is a string of a line of the file
+  return lines
+
+end
+
+
+
+
+def Tokenize(fileName, terminals)
+  tokens = []
+  keyWords = terminals[0]
+  symbols = terminals[1]
+  integerConstants = terminals[2]
+  stringConstants = terminals[3]
+  identifier = terminals[4]
+
+
+  lines = readFile(fileName)
+
+  lines.each do |it|  cmd = it.split(' ')
+
+  end
 
 end
 
