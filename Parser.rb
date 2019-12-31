@@ -194,7 +194,7 @@ def ifStatement(stmt)
     str =
         str + "</ifStatement>"+"\n"
   end
-  # ********ADD ELSE STATEMENT ******
+
   return str
 end
 
@@ -248,7 +248,7 @@ def ReturnStatement(stmt)
         "<ReturnStatement"+"\n"+
             "<keyword>" + stmt[0] + "</keyword>"+"\n"+
             expression(stmt[1]) +
-            "<symbol>" + stmt[2] + "</symbol"+"\n"+
+            "<symbol>" + stmt[2] + "</symbol>"+"\n"+
         "</ReturnStatement>"+"\n"
   end
   return str
@@ -260,8 +260,24 @@ def expression(cmds)
 end
 
 
-def term(cmds)
+def term(cmds, alphabet, keyWords, keyWordsConstant)
 
+
+  str = "<term>"+"\n"
+  case cmds
+  when isIntConstant(cmds)
+    str = str + "<integerConstant>" + cmds + "</integerConstant>"+"\n"
+  when isStringConstant(cmds)
+    str = str + "<StringConstant>" + cmds + "</StringConstant>"+"\n"
+  when boolKeywordConstant(cmds, keyWordsConstant)
+    str = str + KeywordConstant(cmds, keyWordsConstant)
+  when isIdentifier(cmds, alphabet, keyWords)
+
+
+
+  end
+  str = str + "</term>"+"\n"
+  return str
 end
 
 
@@ -294,6 +310,7 @@ def unaryOp(op, ops)
   return str
 end
 
+# return the keywords const
 def KeywordConstant(keyConst, keyConstants)
   str = ""
   if keyConstants.include?(keyConst)
@@ -301,4 +318,12 @@ def KeywordConstant(keyConst, keyConstants)
   end
 
   return str
+end
+
+# check if keyword is a constant
+def boolKeywordConstant(keyConst, keyConstants)
+  if keyConst == "true" or keyConst == "false" or keyConst == "null" or keyConst == "this"
+    return true
+  end
+  return false
 end
