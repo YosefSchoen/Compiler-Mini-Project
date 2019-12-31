@@ -57,28 +57,28 @@ def tokenize(fileName, terminals, alphabet)
     line.each do |str|
 
       if keyWords.include?(str)
-        token = ["keyword", "<keyword>"+str+"</keyword>"+"\n"]
+        token = ["keyword", str]
         tokens.append(token)
-      end
 
-      if symbols.include?(str)
+      elsif symbols.include?(str)
         token = ["symbol", "<symbol>"+str+"</symbol>"+"\n"]
         tokens.append(token)
-      end
 
-      if isIntConstant(str)
+      elsif isIntConstant(str)
         token = ["integerConstants", "<integerConstants>"+str+"</integerConstants>"+"\n"]
         tokens.append(token)
 
-      end
-      if isStringConstant(str)
+      elsif isStringConstant(str)
         token = ["stringConstants", "<stringConstants>"+str+"</stringConstants>"+"\n"]
         tokens.append(token)
-      end
 
-      if isIdentifier(str, alphabet, keyWords)
-        token = ["stringConstants", "<stringConstants>"+str+"</stringConstants>"+"\n"]
+
+      elsif isIdentifier(str, alphabet, keyWords)
+        token = ["identifier", "<identifier>"+str+"</identifier>"+"\n"]
         tokens.append(token)
+
+      else
+        puts("ERROR")
       end
     end
   end
