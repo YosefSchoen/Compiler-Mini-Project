@@ -1,0 +1,6 @@
+class stuff () {
+field var x = 1
+method int add (int a) {
+return a + 1
+}
+}

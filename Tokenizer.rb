@@ -44,27 +44,52 @@ end
 
 
 
-def Tokenize(fileName, terminals)
+def tokenize(fileName, terminals, alphabet)
   tokens = []
   keyWords = terminals[0]
   symbols = terminals[1]
-  integerConstants = terminals[2]
-  stringConstants = terminals[3]
-  identifier = terminals[4]
 
 
-  lines = readFile(fileName)
+  lines = readJackFile(fileName)
 
-  lines.each do |it|  cmd = it.split(' ')
+  lines.each do |line| line = line.split(' ')
 
+    line.each do |str|
+
+      if keyWords.include?(str)
+        token = ["keyword", "<keyword>"+str+"</keyword>"+"\n"]
+        tokens.append(token)
+      end
+
+      if symbols.include?(str)
+        token = ["symbol", "<symbol>"+str+"</symbol>"+"\n"]
+        tokens.append(token)
+      end
+
+      if isIntConstant(str)
+        token = ["integerConstants", "<integerConstants>"+str+"</integerConstants>"+"\n"]
+        tokens.append(token)
+
+      end
+      if isStringConstant(str)
+        token = ["stringConstants", "<stringConstants>"+str+"</stringConstants>"+"\n"]
+        tokens.append(token)
+      end
+
+      if isIdentifier(str, alphabet, keyWords)
+        token = ["stringConstants", "<stringConstants>"+str+"</stringConstants>"+"\n"]
+        tokens.append(token)
+      end
+    end
   end
 
+  return tokens
 end
 
 #function to check if a character is a number
 def isIntConstant(i)
-  if i.class.equal?(Integer)
-    return (i >= 0 and i < 2**15) # 2^15 is maximum integer in JACK
+  if i == "0" or i.to_i > 0
+    return (i.to_i >= 0 and i.to_i < 2**15) # 2^15 is maximum integer in JACK
   end
 
   return false
@@ -73,8 +98,8 @@ end
 #function to check if a character is a string
 def isStringConstant(str)
   if str.class.equal?(String)
-    return (str[0] == '"' and str[str.to_s.size - 1] == '"') #if statement surrounded by quotation marks of any kinds
-
+    puts str[0]
+    return (str[0] == "\"" and str[str.to_s.size - 1] == "\"") #if statement surrounded by quotation marks of any kinds
   end
 
   return false
@@ -109,4 +134,6 @@ def isIdentifier(str, alphabet, keyWords)
   return true
 end
 
-
+tokens = tokenize("JackTest.txt", terminals, alphabet)
+#puts tokens
+puts "\""
