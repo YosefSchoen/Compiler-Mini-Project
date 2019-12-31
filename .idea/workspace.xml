@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e2bbf7f2-661c-4b38-bdc0-4dc1c947d57a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SyntaxAnalyzer.rb" beforeDir="false" afterPath="$PROJECT_DIR$/SyntaxAnalyzer.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +131,7 @@
       <workItem from="1573814754201" duration="184000" />
       <workItem from="1573815022876" duration="119242000" />
       <workItem from="1574945043043" duration="14983000" />
-      <workItem from="1577728508224" duration="5949000" />
+      <workItem from="1577728508224" duration="6559000" />
     </task>
     <task id="LOCAL-00001" summary="New Commit">
       <created>1574256572492</created>
@@ -288,7 +287,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577732516886</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="need to fix helpers">
+      <created>1577776649508</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1577776649508</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -318,13 +324,14 @@
     <MESSAGE value="Finished stage 2 and commenting" />
     <MESSAGE value="Beginning stage 3" />
     <MESSAGE value="Testing Saul" />
-    <option name="LAST_COMMIT_MESSAGE" value="Testing Saul" />
+    <MESSAGE value="need to fix helpers" />
+    <option name="LAST_COMMIT_MESSAGE" value="need to fix helpers" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="297" y="3" key="CommitChangelistDialog2" timestamp="1577732515773">
+    <state x="297" y="3" key="CommitChangelistDialog2" timestamp="1577776647850">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state x="297" y="3" key="CommitChangelistDialog2/0.0.1500.960@0.0.1500.960" timestamp="1577732515773" />
+    <state x="297" y="3" key="CommitChangelistDialog2/0.0.1500.960@0.0.1500.960" timestamp="1577776647850" />
     <state x="244" y="144" key="Vcs.Push.Dialog.v2" timestamp="1577732532009">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
