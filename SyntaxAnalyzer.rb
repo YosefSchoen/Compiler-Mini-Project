@@ -301,7 +301,7 @@ def ReturnStatement(stmt)
         "<ReturnStatement"+"\n"+
             "<keyword>" + stmt[0] + "</keyword>"+"\n"+
             expression(stmt[1]) +
-            "<symbol>" + stmt[2] + "</symbol"+"\n"+
+            "<symbol>" + stmt[2] + "</symbol>"+"\n"+
         "</ReturnStatement>"+"\n"
   end
   return str
