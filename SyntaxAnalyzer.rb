@@ -216,7 +216,18 @@ def statement(stmt)
   end
 end
 
-def letStatement(stmt)
+def letStatement(stmt, alphabet, keywords)
+  str = ""
+  if stmt[0] == "let"  and stmt[3] == "=" and stmt[5] == ";"
+    str =
+        "<letStatement>"+"\n"+
+            "<keyword>" + stmt[0] + "</keyword>"+"\n"+
+            "<identifier>" + varName(stmt[1], alphabet, keywords) + "</identifier"+"\n"+
+            expression(stmt[2])+
+            "<symbol>" + stmt[3] + "</symbol"+"\n"+
+            expression(stmt[4])+
+        "</letStatement>"+"\n"
+  end
 
 end
 
@@ -231,9 +242,25 @@ def ifStatement(stmt)
             "<symbol>" + stmt[4] + "</symbol"+"\n"+
             statements(stmt[5])+
             "<symbol>" + stmt[6] + "</symbol"+"\n"+
-        "</ifStatement>"
+            if stmt[7] == "else"
+              elseStatement(stmt[7])
+            end
+    str =
+        str + "</ifStatement>"+"\n"
   end
   # ********ADD ELSE STATEMENT ******
+  return str
+end
+
+def elseStatement(stmt)
+  str = ''
+  if stmt[0] == "else" and stmt[1] == "{" and stmt[3] == "}"
+    str =
+        "<keyword>" + stmt[0] + "</keyword>"+"\n"+
+        "<symbol>" + stmt[1] + "</symbol"+"\n"+
+        statements(stmt[2]+
+        "<symbol>" + stmt[3] + "</symbol"+"\n"
+  end
   return str
 end
 
@@ -249,7 +276,7 @@ def whileStatement(stmt)
             "<symbol>" + stmt[4] + "</symbol"+"\n"+
             statements(stmt[5])+
             "<symbol>" + stmt[6] + "</symbol"+"\n"+
-        "</whileStatement>"
+        "</whileStatement>"+"\n"
 
   end
   return str
@@ -263,7 +290,7 @@ def doStatement(stmt)
             "<keyword>" + stmt[0] + "</keyword>"+"\n"+
             subroutineCall(stmt[1])+
             "<symbol>" + stmt[2] + "</symbol"+"\n"+
-        "</doStatement>"
+        "</doStatement>"+"\n"
   end
 end
 
@@ -275,7 +302,7 @@ def ReturnStatement(stmt)
             "<keyword>" + stmt[0] + "</keyword>"+"\n"+
             expression(stmt[1]) +
             "<symbol>" + stmt[2] + "</symbol"+"\n"+
-        "</ReturnStatement>"
+        "</ReturnStatement>"+"\n"
   end
   return str
 end

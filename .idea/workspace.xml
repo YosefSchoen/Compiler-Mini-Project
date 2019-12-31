@@ -132,7 +132,7 @@
       <workItem from="1573814754201" duration="184000" />
       <workItem from="1573815022876" duration="119242000" />
       <workItem from="1574945043043" duration="14983000" />
-      <workItem from="1577728508224" duration="3879000" />
+      <workItem from="1577728508224" duration="5949000" />
     </task>
     <task id="LOCAL-00001" summary="New Commit">
       <created>1574256572492</created>
@@ -281,7 +281,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577728620517</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Testing Saul">
+      <created>1577732516886</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1577732516886</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -314,14 +321,14 @@
     <option name="LAST_COMMIT_MESSAGE" value="Testing Saul" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="297" y="3" key="CommitChangelistDialog2" timestamp="1577728619395">
+    <state x="297" y="3" key="CommitChangelistDialog2" timestamp="1577732515773">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state x="297" y="3" key="CommitChangelistDialog2/0.0.1500.960@0.0.1500.960" timestamp="1577728619395" />
-    <state x="244" y="144" key="Vcs.Push.Dialog.v2" timestamp="1577728627132">
+    <state x="297" y="3" key="CommitChangelistDialog2/0.0.1500.960@0.0.1500.960" timestamp="1577732515773" />
+    <state x="244" y="144" key="Vcs.Push.Dialog.v2" timestamp="1577732532009">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state x="244" y="144" key="Vcs.Push.Dialog.v2/0.0.1500.960@0.0.1500.960" timestamp="1577728627132" />
+    <state x="244" y="144" key="Vcs.Push.Dialog.v2/0.0.1500.960@0.0.1500.960" timestamp="1577732532009" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Project7@Test.rcov" NAME="Main Coverage Results" MODIFIED="1574885669794" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="C:\Users\josep\RubymineProjects\Project7" MODULE_NAME="Project7" />
