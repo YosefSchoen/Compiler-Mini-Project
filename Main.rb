@@ -3,7 +3,7 @@
 # Saul Rothman - 337923676
 
 
-require_relative 'IO'
+require_relative 'TranslatorIO'
 
 #the main will translate all of the test cases from project 7 and 8
 def main(directory, asmFileName)
