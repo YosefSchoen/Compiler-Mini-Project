@@ -10,11 +10,14 @@ integerConstants = %w()
 stringConstants = %w()
 identifier = %w()
 terminals = [keyWords, symbols, integerConstants, stringConstants, identifier]
+
+
 #non terminal come in 3 types they will all be stored in an array called nonTerminals
 classNonTerminals = %w(class classVarDec subroutineDec parameterList subroutineBody varDec)
 statementNonTerminals = %w(statements whileStatements ifStatements returnStatements letStatements do Statements)
 expresionNonTerminals = %w(expression term expressionList)
 nonTerminals = [classNonTerminals, statementNonTerminals, expresionNonTerminals]
+
 
 #the alphabet has 2 types they will all be stored in an array called alphabet
 digits = %w(0 1 2 3 4 5 6 7 8 9 )
@@ -70,17 +73,20 @@ def isIdentifier(str, alphabet, keyWords)
   return true
 end
 
+
 # production rules to make XML files
 def classProduction(cmds, alphabet, keywords, otherClassesNames)
+  newCmds = []
+  newCmds.
   str = ""
   if cmds[0] == "class" and cmds[2] == "{" and cmds[5] == "}"
-    str = str +
+    str =
         "<class>"+"\n"+
             "<keyword>" + cmds[0] + "</keyword>"+"\n"+
             className(cmds[1],  alphabet, keywords) +
             "<symbol>" + cmds[2] + "</symbol>"+"\n"+
-            classVarDec(cmds[3], alphabet, keywords, otherClassesNames, "") +
-            subRoutineDec(cmds[4], alphabet, keywords, otherClassesNames) +
+            classVarDec(cmds, alphabet, keywords, otherClassesNames) +
+            subRoutineDec(cmds, alphabet, keywords, otherClassesNames) +
             "<symbol>" + cmds[5] + "</symbol>"+"\n"+
         "</class>"+"\n"
   end
@@ -93,19 +99,35 @@ def isType(str, otherClassesNames)
   return (str == "int" or str =="char" or str == "boolean" or otherClassesNames.include?(str))
 end
 
-def classVarDec(cmds, alphabet, keywords, otherClassesNames, str)
-
+def classVarDec(cmds, alphabet, keywords, otherClassesNames)
   if (cmds[0] == "static" or cmds[0] == "field") and cmds[4] == ";"
-    str = str +
+    str =
         "<classVarDec>"+"\n"+
+            "<keyword>" + cmds[0] + "</keyword>"+"\n"
             varType(cmds[1], otherClassesNames) +
             varName(cmds[2], alphabet, keywords) +
-            "<symbol>" + cmds[4] + "</symbol>"+"\n"+
+            classVarDecT(cmds, alphabet, keywords, 3, "")
+            "<symbol>" + cmds[4] + "</symbol>"+"\n"
         "</classVarDec>"+"\n"
   end
 
   return str
 end
+
+
+def classVarDecT(cmds, alphabet, keywords, i, result)
+  if cmds[i] == ","
+    return result
+  end
+
+  result = result +
+      "<symbol>" + cmds[i] + "</symbol>"+"\n"+
+      varName(cmds[i+1], alphabet, keywords)
+
+
+   return classVarDecT(cmds, alphabet, keywords, i+1, result)
+
+  end
 
 
 def varType(str, otherClassesNames)
