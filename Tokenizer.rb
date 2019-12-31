@@ -122,6 +122,7 @@ def isIdentifier(str, alphabet, keyWords)
     return false
   end
 
+
   # check is in the alphabet
   for i in 1..str.size-1
     character = str[i]
