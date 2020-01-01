@@ -2,12 +2,12 @@ def isType(str, classNames)
   return (str == "int" or str == "char" or str == "boolean" or classNames.include?(str))
 end
 
-
+# what about void
 def isSubRoutineType(str)
   return (str == "constructor" or str == "function" or str == "method")
 end
 
-
+#
 def isOp(str)
   return (str == "+" or str == "-" or str == "*" or str == "/" or
       str == "&" or str == "|" or str == "<" or str == ">" or str == "=")
@@ -83,7 +83,7 @@ end
 
 def compileClassVarDec(tokens, alphabet, keyWords, classNames, i)
   resultList = compileClassVarDecT(tokens, alphabet, keyWords, classNames, i, "")
-  str = resultList[0]
+  str = resultList[0]  # save the result into str and the iterator i to i.
   i = resultList[1]
 
   if isCorrectToken(tokens, i, ";")
@@ -96,50 +96,52 @@ end
 
 
 def compileClassVarDecT(tokens, alphabet, keyWords, classNames, i, result)
+  #if not static or field then return the entry base case
   if !isCorrectToken(tokens, i, "static") or !isCorrectToken(tokens, i, "field")
     return [result, i]
   end
-
+  # if is static o field add to XML
   if isCorrectToken(tokens, i, "static") or isCorrectToken(tokens, i, "field")
     result+= getXMLString(tokens, i)
     i+=1
   end
-
+  # int, bool, char
   if isType(tokens[i][1], classNames)
     result+= getXMLString(tokens, i)
     i+=1
   end
-
+  # add id to xml
   if isIdentifier(tokens[i][1], alphabet, keyWords)
     result+= getXMLString(tokens, i)
     i+=1
   end
-
+  # add var name
   resultList = varNameT(tokens, alphabet, keyWords, i, result)
   result+=resultList[0]
   i = resultList[1]
 
-
+  # recursive call
   resultList = compileClassVarDecT(tokens, alphabet, keyWords, classNames, i, result)
   return resultList
 end
 
 
 def varNameT(tokens, alphabet, keyWords, i, result)
+  # base case
   if !isCorrectToken(tokens, i, ",")
     return [result, i]
   end
-
+  # WHAT? why comma?
   if isCorrectToken(tokens, i, ",")
     result+= getXMLString(tokens, i)
     i+=1
   end
-
+  # add id to xml
   if isIdentifier(tokens[i][1], alphabet, keyWords)
     result+=getXMLString(tokens, i)
     i+=1
   end
-
+  # recursive call
   resultList = varNameT(tokens, alphabet, keyWords, i, result)
   return resultList
 end
