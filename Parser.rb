@@ -8,10 +8,34 @@ def isSubRoutineType(str)
 end
 
 
+def isOp(str)
+  return (str == "+" or str == "-" or str == "*" or str == "/" or
+      str == "&" or str == "|" or str == "<" or str == ">" or str == "=")
+end
+
+
+def isUnaryOP(str)
+  return (str == "-" or str == "~")
+end
+
+
+def isKeywordConst(str)
+  return (str == "true" or str == "false" or str == "null" or str == "this")
+end
+
+
+def isCorrectToken(tokens, i, str)
+  return tokens[i][1] == str
+end
+
+
 def getXMLString(tokens, i)
-  str = "<"+tokens[i][0]+">"+tokens[i+1][1]+"</"+tokens[i][0]+">"+"\n"
+  str = "<"+tokens[i][0]+">"+tokens[i][1]+"</"+tokens[i][0]+">"+"\n"
   return str
 end
+
+
+
 
 
 def compileClass(tokens, alphabet, keyWords, classNames)
@@ -19,7 +43,7 @@ def compileClass(tokens, alphabet, keyWords, classNames)
   str = ""
 
   #terminal class
-  if tokens[i][1] == "class"
+  if isCorrectToken(tokens, i, "class")
     str+= "<class>"+"\n"
     i+=1
   end
@@ -31,7 +55,7 @@ def compileClass(tokens, alphabet, keyWords, classNames)
   end
 
   # terminal {
-  if tokens[i][1] == "{"
+  if isCorrectToken(tokens, i, "{")
     getXMLString(tokens, i)
     i+=1
   end
@@ -47,9 +71,11 @@ def compileClass(tokens, alphabet, keyWords, classNames)
   i = resultList[1]
 
   # terminal }
-  if tokens[i][1] == "}"
+  if isCorrectToken(tokens, i, "}")
     str+= getXMLString(tokens, i)
   end
+
+  str+= "</class>"+"\n"
 
   return str
 end
@@ -60,7 +86,7 @@ def compileClassVarDec(tokens, alphabet, keyWords, classNames, i)
   str = resultList[0]
   i = resultList[1]
 
-  if tokens[i][1] == ";"
+  if isCorrectToken(tokens, i, ";")
     str+= getXMLString(tokens, i)
     i+=1
   end
@@ -70,11 +96,11 @@ end
 
 
 def compileClassVarDecT(tokens, alphabet, keyWords, classNames, i, result)
-  if tokens[i][1] != "static" or tokens[i][1] != "field"
+  if !isCorrectToken(tokens, i, "static") or !isCorrectToken(tokens, i, "field")
     return [result, i]
   end
 
-  if tokens[i][1] == "static" or tokens[i][1] == "field"
+  if isCorrectToken(tokens, i, "static") or isCorrectToken(tokens, i, "field")
     result+= getXMLString(tokens, i)
     i+=1
   end
@@ -89,7 +115,7 @@ def compileClassVarDecT(tokens, alphabet, keyWords, classNames, i, result)
     i+=1
   end
 
-  resultList=varNameT(tokens, alphabet, keyWords, i, result)
+  resultList = varNameT(tokens, alphabet, keyWords, i, result)
   result+=resultList[0]
   i = resultList[1]
 
@@ -98,12 +124,13 @@ def compileClassVarDecT(tokens, alphabet, keyWords, classNames, i, result)
   return resultList
 end
 
+
 def varNameT(tokens, alphabet, keyWords, i, result)
-  if tokens[i][1] != ","
+  if !isCorrectToken(tokens, i, ",")
     return [result, i]
   end
 
-  if tokens[i][1] == ","
+  if isCorrectToken(tokens, i, ",")
     result+= getXMLString(tokens, i)
     i+=1
   end
@@ -125,7 +152,7 @@ def compileSubroutineDec(tokens, alphabet, keyWords, classNames, i)
     i+=1
   end
 
-  if isType(tokens[i][1], classNames) or tokens[i][1] == "void"
+  if isType(tokens[i][1], classNames) or isCorrectToken(tokens, i, "void")
     str+= getXMLString(tokens, i)
     i+=1
   end
@@ -135,7 +162,7 @@ def compileSubroutineDec(tokens, alphabet, keyWords, classNames, i)
     i+=1
   end
 
-  if tokens[i][1] == "("
+  if isCorrectToken(tokens, i, "(")
     str+= getXMLString(tokens, i)
     i+=1
   end
@@ -144,7 +171,7 @@ def compileSubroutineDec(tokens, alphabet, keyWords, classNames, i)
   str += resultList[0]
   i = resultList[1]
 
-  if tokens[i][1] == ")"
+  if isCorrectToken(tokens, i, ")")
     str+= getXMLString(tokens, i)
     i+=1
   end
@@ -160,7 +187,7 @@ end
 def compileSubroutineBody(tokens, alphabet, keyWords, classNames, i)
   str = ""
 
-  if tokens[i][0] == "{"
+  if isCorrectToken(tokens, i, "{")
     str+= getXMLString(tokens, i)
     i+=1
   end
@@ -169,7 +196,7 @@ def compileSubroutineBody(tokens, alphabet, keyWords, classNames, i)
   str += resultList[0]
   i = resultList[1]
 
-  if tokens[i][0] == "}"
+  if isCorrectToken(tokens, i, "}")
     str+= getXMLString(tokens, i)
     i+=1
   end
@@ -198,7 +225,9 @@ def compileParameterListT(tokens, alphabet, keyWords, classNames, i, result)
     i+=1
   end
 
-  result+= varNameT(tokens, alphabet, keyWords, i, result)
+  resultList = varNameT(tokens, alphabet, keyWords, i, result)
+  result += resultList[0]
+  i = resultList[1]
 
   return [result, i]
 end
@@ -207,7 +236,7 @@ end
 def compileVarDec(tokens, alphabet, keyWords, classNames, i)
 
   str = ""
-  if tokens[i][1] == "var"
+  if isCorrectToken(tokens, i, "var")
     str+= getXMLString(tokens, i)
     i+=1
   end
@@ -221,7 +250,7 @@ def compileVarDec(tokens, alphabet, keyWords, classNames, i)
   str+= resultList[0]
   i = resultList[1]
 
-  if tokens[i][1] == ";"
+  if isCorrectToken(tokens, i, ";")
     str+=getXMLString(tokens, i)
     i+=1
   end
@@ -230,17 +259,103 @@ def compileVarDec(tokens, alphabet, keyWords, classNames, i)
 end
 
 def compileStatements(tokens, alphabet, keyWords, i)
+  str = ""
+  case tokens[i][0]
+  when "let"
+    resultList = compileLet(tokens, alphabet, keyWords, i)
+    str+= resultList[0]
+    i = resultList[1]
 
+  when "if"
+    resultList = compileIf(tokens, alphabet, keyWords, i)
+    str+= resultList[0]
+    i = resultList[1]
+
+  when "while"
+    resultList = compileWhile(tokens, alphabet, keyWords, i)
+    str+= resultList[0]
+    i = resultList[1]
+
+  when "do"
+    resultList = compileDo(tokens, alphabet, keyWords, i)
+    str+= resultList[0]
+    i = resultList[1]
+
+  when "return"
+    resultList = compileReturn(token, alphabet, keyWords, i)
+    str+= resultList[0]
+    i = resultList[1]
+
+  else
+
+  end
+
+  return [str, i]
 end
 
 
 def compileDo(tokens, alphabet, keyWords, i)
+  str = ""
 
+  if isCorrectToken(tokens, i, "do")
+    str+= getXMLString(tokens, i)
+    i+=1
+  end
+
+  resultList = compileSubroutineCall(tokens, alphabet, keyWords, i)
+  str+= resultList[0]
+  i = resultList[1]
+
+  if isCorrectToken(tokens, i, ";")
+    str+=getXMLString(tokens, i)
+    i+=1
+  end
+
+  return [str, i]
 end
 
 
 def compileLet(tokens, alphabet, keyWords, i)
+  str = ""
+  if isCorrectToken(tokens, i, "let")
+    str += getXMLString(tokens, i)
+    i+=1
+  end
 
+  if isIdentifier(str, alphabet, keyWords)
+    str += getXMLString(tokens, i)
+    i+=1
+  end
+
+  if isCorrectToken(tokens, i, "[")
+    str+= getXMLString(tokens, i)
+    i+=1
+
+    resultList = compileExpression(tokens,alphabet,keyWords, i)
+    str += resultList[0]
+    i = resultList[1]
+
+    if isCorrectToken(tokens, i, "]")
+      str+= getXMLString(tokens, i)
+      i+=1
+    end
+  end
+
+  if isCorrectToken(tokens, i, "=")
+    str += getXMLString(tokens, i)
+    i+=1
+  end
+
+  resultList = compileExpression(tokens, alphabet, keyWords, i)
+  str += resultList[0]
+  i = resultList[1]
+
+  if isCorrectToken(tokens, i, ";")
+    str+= getXMLString(tokens, i)
+    i+=1
+  end
+
+  return [str, i]
 end
 
 
@@ -250,25 +365,174 @@ end
 
 
 def compileReturn(tokens, alphabet, keyWords, i)
+  str = ""
+  if isCorrectToken(tokens, i, "return")
+    str+= getXMLString(tokens, i)
+    i+=1
+  end
 
+  resultList = compileExpression(tokens, alphabet, keyWords, i)
+  str+= resultList[0]
+  i = resultList[1]
+
+
+  if isCorrectToken(tokens, i, ";")
+    str+= getXMLString(tokens, i)
+    i+=1
+  end
+
+  return [str, i]
 end
 
 
 def compileIf(tokens, alphabet, keyWords, i)
+  str = ""
+  if isCorrectToken(tokens, i, "if")
+    str += getXMLString(tokens, i)
+    i += 1
+  end
 
+  if isCorrectToken(tokens, i, "(")
+    str += getXMLString(tokens, i)
+    i+=1
+  end
+
+  resultList = compileExpression(tokens, alphabet, keyWords, i)
+  str += resultList[0]
+  i = resultList[1]
+
+  if isCorrectToken(tokens, i, "]")
+    str += getXMLString(tokens, i)
+    i += 1
+  end
+
+  if isCorrectToken(tokens, i, "{")
+    str += getXMLString(tokens, i)
+    i+=1
+  end
+
+  resultList = compileStatements(tokens, alphabet, keyWords, i)
+  str += resultList[0]
+  i = resultList[1]
+
+  if isCorrectToken(tokens, i, "}")
+    str += getXMLString(tokens, i)
+    i += 1
+  end
+
+  if isCorrectToken(tokens, i, "else")
+    resultList = compileElse(tokens, alphabet, keyWords, i)
+    str += resultList[0]
+    i = resultList[1]
+  end
+
+  return [str, i]
+end
+
+
+def compileElse(tokens, alphabet, keyWords, i)
+  str = ""
+
+  if isCorrectToken(tokens, i, "else")
+    str += getXMLString(tokens, i)
+    i += 1
+  end
+
+  if isCorrectToken(tokens, i, "{")
+    str += getXMLString(tokens, i)
+    i += 1
+  end
+
+  resultList = compileStatements(tokens, alphabet, keyWords, i)
+  str += resultList[0]
+  i = resultList[1]
+
+  if isCorrectToken(tokens, i, "}")
+    str += getXMLString(tokens, i)
+    i += 1
+  end
+
+  return [str, i]
 end
 
 
 def compileExpression(tokens, alphabet, keyWords, i)
+  str = ""
+
+  resultList = compileTerm(tokens, alphabet, keyWords, i)
+  str += resultList[0]
+  i = resultList[1]
+
+  resultList = compileExpressionT(tokens, alphabet, keyWords, i, "")
+  str+= resultList[0]
+  i = resultList[1]
+
 
 end
 
+def compileExpressionT(tokens, alphabet, keyWords, i, result)
+  if !isOp(tokens[i][1])
+    return [result, i]
+  end
 
+  if isOp(tokens[i][1])
+    result += getXMLString(tokens, i)
+    i += 1
+  end
+
+  resultList = compileTerm(tokens, alphabet, keyWords, i)
+  result += resultList[0]
+  i = resultList[1]
+
+  resultList = compileExpressionT(tokens, alphabet, keyWords, i, result)
+  return resultList
+end
+
+#need to write this function
 def compileTerm(tokens, alphabet, keyWords, i)
+  str = ""
 
+  return [str, i]
+end
+
+
+#need to write this function
+def compileSubroutineCall(tokens, alphabet, keyWords, i)
+  str = ""
+
+  return [str, i]
 end
 
 
 def compileExpressionList(tokens, alphabet, keyWords, i)
+  str = ""
 
+  if isOp(tokens[i][1])
+    resultList = compileExpression(tokens, alphabet, keyWords, i)
+    str += resultList[0]
+    i = resultList[1]
+
+    if isCorrectToken(tokens, i, ",")
+      resultList = compileExpressionListT(tokens, alphabet, keyWords, i, "")
+      str += resultList[0]
+      i = resultList[1]
+    end
+  end
+
+  return [str, i]
+end
+
+
+def compileExpressionListT(tokens, alphabet, keyWords, i, result)
+  if !isCorrectToken(tokens, i, ",")
+    return [result, i]
+  end
+
+  if isCorrectToken(tokens, i, ",")
+    result += getXMLString(tokens, i)
+    i += 1
+  end
+
+  resultList = compileExpressionListT(tokens, alphabet, keyWords, i, result)
+  return resultList
 end
