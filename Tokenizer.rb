@@ -98,7 +98,6 @@ end
 #function to check if a character is a string
 def isStringConstant(str)
   if str.class.equal?(String)
-    puts str[0]
     return (str[0] == "\"" and str[str.to_s.size - 1] == "\"") #if statement surrounded by quotation marks of any kinds
   end
 
@@ -136,5 +135,3 @@ def isIdentifier(str, alphabet, keyWords)
 end
 
 tokens = tokenize("JackTest.txt", terminals, alphabet)
-#puts tokens
-puts "\""
