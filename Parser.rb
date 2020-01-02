@@ -1,30 +1,4 @@
-def isIdentifier(str, alphabet, keyWords)
-  digitsOfAlphabet = alphabet[0] # if its a digit
-  charsOfAlphabet = alphabet[1] # if a letter
-
-  # first character in name cannot be digit
-  if digitsOfAlphabet.include?(str[0])
-    return false
-  end
-
-  # if keyword includes str
-  if keyWords.include?(str)
-    return false
-  end
-
-
-  # check is in the alphabet
-  for i in 1..str.size-1
-    character = str[i]
-
-    unless digitsOfAlphabet.include?(character) or charsOfAlphabet.include?(character)
-      return false
-    end
-  end
-
-  return true
-end
-
+require_relative 'Tokenizer'
 def notToLarge(tokens, i)
   return i < tokens.size
 end
@@ -604,94 +578,68 @@ def compileExpressionListT(tokens, alphabet, keyWords, i, result)
 end
 
 
-
-
-
-
-
-#terminal come in 5 types they will all be stored in an array called terminals
-dataTypes = %w(int char boolean)
-functionTypes = %w(constructor function method)
-classDataTypes = %w(field static)
-keyConstants = %w(true false null this)
-keyWords = %w(class var void  let do if else while return).concat(dataTypes, functionTypes, classDataTypes, keyConstants)
-symbols = %w({ } ( ) [ ] . , ; + - * / & | < > = ~)
-integerConstants = %w()
-stringConstants = %w()
-identifier = %w()
-terminals = [keyWords, symbols, integerConstants, stringConstants, identifier]
-
-
-#non terminal come in 3 types they will all be stored in an array called nonTerminals
-classNonTerminals = %w(class classVarDec subroutineDec parameterList subroutineBody varDec)
-statementNonTerminals = %w(statements whileStatements ifStatements returnStatements letStatements do Statements)
-expresionNonTerminals = %w(expression term expressionList)
-nonTerminals = [classNonTerminals, statementNonTerminals, expresionNonTerminals]
-
-
-#the alphabet has 2 types they will all be stored in an array called alphabet
-digits = %w(0 1 2 3 4 5 6 7 8 9 )
-characters = %w(a b c d e f g h i j k l m n o p q r s t u v w x y z _ A B C D E F G H I J K L M N O P Q R S T U V W X Y Z)
-alphabet = [digits, characters]
-
-
-tokens = []
-token = %w(keywords class)
-tokens.append(token)
-token = %w(identifier foo)
-tokens.append(token)
-token = %w(symbol {)
-tokens.append(token)
-
-token = %w(keywords static)
-tokens.append(token)
-token = %w(keywords int)
-tokens.append(token)
-token = %w(identifier a)
-tokens.append(token)
-token = %w(keywords static)
-tokens.append(token)
-token = %w(keywords int)
-tokens.append(token)
-token = %w(identifier b)
-tokens.append(token)
-token = %w(symbol ;)
-tokens.append(token)
-
-token = %w(keywords constructor)
-tokens.append(token)
-token = %w(keywords void)
-tokens.append(token)
-token = %w(identifier myFoo)
-tokens.append(token)
-token = %w{symbol (}
-tokens.append(token)
-
-#parameterList
-token = %w(keyword char)
-tokens.append(token)
-token = %w(identifier q)
-tokens.append(token)
-token = %w(symbol ,)
-tokens.append(token)
-token = %w(keyword char)
-tokens.append(token)
-token = %w(identifier w)
-tokens.append(token)
-
-token = %w{symbol )}
-tokens.append(token)
-
-#subroutine Body
-token = %w(symbol {)
-tokens.append(token)
-token = %w(symbol })
-
-tokens.append(token)
-token = %w(symbol })
-tokens.append(token)
-
-
-str = compileClass(tokens, alphabet, keyWords, [])
+#testing
+tokens = tokenize("JackTest.txt", getTerminals, getAlphabet)
+str = compileClass(tokens, getAlphabet, getKeywords, [])
 testXmlFile = File.new("testFile.xml", "w")
 testXmlFile.syswrite(str)
+
+
+
+def tempStuff
+  tokens = []
+  token = %w(keywords class)
+  tokens.append(token)
+  token = %w(identifier foo)
+  tokens.append(token)
+  token = %w(symbol {)
+  tokens.append(token)
+
+  token = %w(keywords static)
+  tokens.append(token)
+  token = %w(keywords int)
+  tokens.append(token)
+  token = %w(identifier a)
+  tokens.append(token)
+  token = %w(keywords static)
+  tokens.append(token)
+  token = %w(keywords int)
+  tokens.append(token)
+  token = %w(identifier b)
+  tokens.append(token)
+  token = %w(symbol ;)
+  tokens.append(token)
+
+  token = %w(keywords constructor)
+  tokens.append(token)
+  token = %w(keywords void)
+  tokens.append(token)
+  token = %w(identifier myFoo)
+  tokens.append(token)
+  token = %w{symbol (}
+  tokens.append(token)
+
+#parameterList
+  token = %w(keyword char)
+  tokens.append(token)
+  token = %w(identifier q)
+  tokens.append(token)
+  token = %w(symbol ,)
+  tokens.append(token)
+  token = %w(keyword char)
+  tokens.append(token)
+  token = %w(identifier w)
+  tokens.append(token)
+
+  token = %w{symbol )}
+  tokens.append(token)
+
+#subroutine Body
+  token = %w(symbol {)
+  tokens.append(token)
+  token = %w(symbol })
+
+  tokens.append(token)
+  token = %w(symbol })
+  tokens.append(token)
+end
