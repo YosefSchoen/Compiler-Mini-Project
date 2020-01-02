@@ -1,27 +1,37 @@
 #terminal come in 5 types they will all be stored in an array called terminals
-dataTypes = %w(int char boolean)
-functionTypes = %w(constructor function method)
-classDataTypes = %w(field static)
-keyConstants = %w(true false null this)
-keyWords = %w(class var void  let do if else while return).concat(dataTypes, functionTypes, classDataTypes, keyConstants)
-symbols = %w({ } ( ) [ ] . , ; + - * / & | < > = ~)
-integerConstants = %w()
-stringConstants = %w()
-identifier = %w()
-terminals = [keyWords, symbols, integerConstants, stringConstants, identifier]
+
+def getKeywords
+  dataTypes = %w(int char boolean)
+  functionTypes = %w(constructor function method)
+  classDataTypes = %w(field static)
+  keyConstants = %w(true false null this)
+  otherKeyWords = %w(class var void  let do if else while return)
+  keywords = [].concat(dataTypes, functionTypes, classDataTypes, keyConstants, otherKeyWords)
+  return keywords
+end
 
 
-#non terminal come in 3 types they will all be stored in an array called nonTerminals
-classNonTerminals = %w(class classVarDec subroutineDec parameterList subroutineBody varDec)
-statementNonTerminals = %w(statements whileStatements ifStatements returnStatements letStatements do Statements)
-expresionNonTerminals = %w(expression term expressionList)
-nonTerminals = [classNonTerminals, statementNonTerminals, expresionNonTerminals]
+def getSymbols
+  symbols = %w({ } ( ) [ ] . , ; + - * / & | < > = ~)
+  return symbols
+end
 
 
-#the alphabet has 2 types they will all be stored in an array called alphabet
-digits = %w(0 1 2 3 4 5 6 7 8 9 )
-characters = %w(a b c d e f g h i j k l m n o p q r s t u v w x y z _ A B C D E F G H I J K L M N O P Q R S T U V W X Y Z)
-alphabet = [digits, characters]
+def getTerminals
+  terminals = [getKeywords, getSymbols]
+  return terminals
+end
+
+
+def getAlphabet
+  #the alphabet has 2 types they will all be stored in an array called alphabet
+  digits = %w(0 1 2 3 4 5 6 7 8 9 )
+  characters = %w(a b c d e f g h i j k l m n o p q r s t u v w x y z _ A B C D E F G H I J K L M N O P Q R S T U V W X Y Z)
+  alphabet = [digits, characters]
+  return alphabet
+end
+
+
 
 
 def readJackFile(fileName)
@@ -42,8 +52,6 @@ def readJackFile(fileName)
 end
 
 
-
-
 def tokenize(fileName, terminals, alphabet)
   tokens = []
   keyWords = terminals[0]
@@ -61,24 +69,20 @@ def tokenize(fileName, terminals, alphabet)
         tokens.append(token)
 
       elsif symbols.include?(str)
-        token = ["symbol", "<symbol>"+str+"</symbol>"+"\n"]
+        token = ["symbol", str]
         tokens.append(token)
 
       elsif isIntConstant(str)
-        token = ["integerConstants", "<integerConstants>"+str+"</integerConstants>"+"\n"]
+        token = ["integerConstants", str]
         tokens.append(token)
 
       elsif isStringConstant(str)
-        token = ["stringConstants", "<stringConstants>"+str+"</stringConstants>"+"\n"]
+        token = ["stringConstants", str]
         tokens.append(token)
-
 
       elsif isIdentifier(str, alphabet, keyWords)
-        token = ["identifier", "<identifier>"+str+"</identifier>"+"\n"]
+        token = ["stringConstants", str]
         tokens.append(token)
-
-      else
-        puts("ERROR")
       end
     end
   end
@@ -97,9 +101,7 @@ end
 
 #function to check if a character is a string
 def isStringConstant(str)
-  if str.class.equal?(String)
-    return (str[0] == "\"" and str[str.to_s.size - 1] == "\"") #if statement surrounded by quotation marks of any kinds
-  end
+  return (str[0].to_s == "\"" and str[str.to_s.size - 1].to_s == "\"") #if statement surrounded by quotation marks of any kinds
 
   return false
 end
@@ -134,4 +136,3 @@ def isIdentifier(str, alphabet, keyWords)
   return true
 end
 
-tokens = tokenize("JackTest.txt", terminals, alphabet)
