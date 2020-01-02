@@ -1,35 +1,35 @@
 <class>
-  <keywords>class</keywords>
-  <identifier>foo</identifier>
-  <symbol>{</symbol>
-  <ClassVarDec>
-    <keywords>static</keywords>
-    <keywords>int</keywords>
-    <identifier>a</identifier>
-    <keywords>static</keywords>
-    <keywords>int</keywords>
-    <identifier>b</identifier>
-    <symbol>;</symbol>
-  </ClassVarDec>
-  <subroutineDec>
-    <keywords>constructor</keywords>
-    <keywords>void</keywords>
-    <identifier>myFoo</identifier>
-    <symbol>(</symbol>
-    <parameterList>
-      <keyword>char</keyword>
-      <identifier>q</identifier>
-      <symbol>,</symbol>
-      <keyword>char</keyword>
-      <identifier>w</identifier>
-    </parameterList>
-    <symbol>)</symbol>
-    <subroutineBody>
-      <symbol>{</symbol>
-      <varDec>
-      </varDec>
-      <symbol>}</symbol>
-    </subroutineBody>
-  </subroutineDec>
-  <symbol>}</symbol>
+<keywords>class</keywords>
+<identifier>foo</identifier>
+<symbol>{</symbol>
+<ClassVarDec>
+<keywords>static</keywords>
+<keywords>int</keywords>
+<identifier>a</identifier>
+<keywords>static</keywords>
+<keywords>int</keywords>
+<identifier>b</identifier>
+<symbol>;</symbol>
+</ClassVarDec>
+<subroutineDec>
+<keywords>constructor</keywords>
+<keywords>void</keywords>
+<identifier>myFoo</identifier>
+<symbol>(</symbol>
+<parameterList>
+<keyword>char</keyword>
+<identifier>q</identifier>
+<symbol>,</symbol>
+<keyword>char</keyword>
+<identifier>w</identifier>
+</parameterList>
+<symbol>)</symbol>
+<subroutineBody>
+<symbol>{</symbol>
+<varDec>
+</varDec>
+<symbol>}</symbol>
+</subroutineBody>
+</subroutineDec>
+<symbol>}</symbol>
 </class>

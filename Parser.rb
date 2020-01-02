@@ -1,4 +1,29 @@
-require_relative 'Tokenizer'
+def isIdentifier(str, alphabet, keyWords)
+  digitsOfAlphabet = alphabet[0] # if its a digit
+  charsOfAlphabet = alphabet[1] # if a letter
+
+  # first character in name cannot be digit
+  if digitsOfAlphabet.include?(str[0])
+    return false
+  end
+
+  # if keyword includes str
+  if keyWords.include?(str)
+    return false
+  end
+
+
+  # check is in the alphabet
+  for i in 1..str.size-1
+    character = str[i]
+
+    unless digitsOfAlphabet.include?(character) or charsOfAlphabet.include?(character)
+      return false
+    end
+  end
+
+  return true
+end
 
 def notToLarge(tokens, i)
   return i < tokens.size
@@ -250,7 +275,6 @@ def compileParameterListT(tokens, alphabet, keyWords, classNames, i, result)
     i+=1
   end
 
-  puts getXMLString(tokens, i)
   if notToLarge(tokens, i) and isType(tokens[i][1], classNames)
 
     result+= getXMLString(tokens, i)
@@ -273,7 +297,6 @@ end
 def compileVarDec(tokens, alphabet, keyWords, classNames, i)
 
   str = ""
-  puts tokens[i]
   str += "<varDec>"+"\n"
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, "var")
 

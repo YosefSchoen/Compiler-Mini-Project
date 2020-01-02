@@ -1,3 +1,4 @@
+require_relative 'Parser'
 #terminal come in 5 types they will all be stored in an array called terminals
 dataTypes = %w(int char boolean)
 functionTypes = %w(constructor function method)
@@ -57,27 +58,23 @@ def tokenize(fileName, terminals, alphabet)
     line.each do |str|
 
       if keyWords.include?(str)
-        token = ["keyword", "<keyword>"+str+"</keyword>"+"\n"]
-        tokens.append(token)
-      end
-
-      if symbols.include?(str)
-        token = ["symbol", "<symbol>"+str+"</symbol>"+"\n"]
-        tokens.append(token)
-      end
-
-      if isIntConstant(str)
-        token = ["integerConstants", "<integerConstants>"+str+"</integerConstants>"+"\n"]
+        token = ["keyword", str]
         tokens.append(token)
 
-      end
-      if isStringConstant(str)
-        token = ["stringConstants", "<stringConstants>"+str+"</stringConstants>"+"\n"]
+      elsif symbols.include?(str)
+        token = ["symbol", str]
         tokens.append(token)
-      end
 
-      if isIdentifier(str, alphabet, keyWords)
-        token = ["stringConstants", "<stringConstants>"+str+"</stringConstants>"+"\n"]
+      elsif isIntConstant(str)
+        token = ["integerConstants", str]
+        tokens.append(token)
+
+      elsif isStringConstant(str)
+        token = ["stringConstants", str]
+        tokens.append(token)
+
+      elsif isIdentifier(str, alphabet, keyWords)
+        token = ["stringConstants", str]
         tokens.append(token)
       end
     end
@@ -97,9 +94,7 @@ end
 
 #function to check if a character is a string
 def isStringConstant(str)
-  if str.class.equal?(String)
-    return (str[0] == "\"" and str[str.to_s.size - 1] == "\"") #if statement surrounded by quotation marks of any kinds
-  end
+  return (str[0].to_s == "\"" and str[str.to_s.size - 1].to_s == "\"") #if statement surrounded by quotation marks of any kinds
 
   return false
 end
@@ -135,3 +130,5 @@ def isIdentifier(str, alphabet, keyWords)
 end
 
 tokens = tokenize("JackTest.txt", terminals, alphabet)
+str = compileClass(tokens, alphabet, keyWords, [])
+puts str
