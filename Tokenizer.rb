@@ -52,6 +52,7 @@ def readJackFile(fileName)
 end
 
 
+
 def tokenize(fileName, terminals, alphabet)
   tokens = []
   keyWords = terminals[0]
