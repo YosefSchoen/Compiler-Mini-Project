@@ -569,11 +569,15 @@ end
 #need to write this function
 def compileTerm(tokens, alphabet, keyWords, i)
   str = ""
-  #int/keyword/string Constant and varName
+  #int/keyword/string Constant
   if notToLarge(token, i) and (isIntConstant(tokens[i][1]) or isStringConstant(tokens[i][1]) or
-      isKeywordConst(tokens[i][1]) or isIdentifier(tokens[i][1], alphabet, keyWords))
+      isKeywordConst(tokens[i][1]))
     str += getXMLString(tokens, i)
     i += 1
+
+    #the else is for var name and  subroutine  need to solve this
+  else
+
   end
 
 
