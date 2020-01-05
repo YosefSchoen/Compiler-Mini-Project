@@ -569,8 +569,52 @@ end
 #need to write this function
 def compileTerm(tokens, alphabet, keyWords, i)
   str = ""
+  #int/keyword/string Constant and varName
+  if notToLarge(token, i) and (isIntConstant(tokens[i][1]) or isStringConstant(tokens[i][1]) or
+      isKeywordConst(tokens[i][1]) or isIdentifier(tokens[i][1], alphabet, keyWords))
+    str += getXMLString(tokens, i)
+    i += 1
+  end
 
-  if notToLarge(token, i) and i
+
+  # varName with [ expression ]
+  if notToLarge(tokens, i) and isCorrectToken(tokens, i, "[")
+    str += getXMLString(tokens, i)
+    i += 1
+
+    resultList = compileExpression(tokens, alphabet, keyWords, i)
+    str += resultList[0]
+    i = resultList[1]
+  end
+  if notToLarge(tokens, i) and isCorrectToken(tokens, i, "]")
+    str += getXMLString(tokens, i)
+    i += 1
+  end
+
+  # subroutine Call
+  if notToLarge(tokens, i) and isIdentifier(str, alphabet, keyWords)
+    str += getXMLString(tokens, i)
+    i += 1
+  end
+
+  # ( expression )
+  if notToLarge(tokens, i) and isCorrectToken(tokens, i, "(")
+    str += getXMLString(tokens, i)
+    i += 1
+
+    resultList = compileExpression(tokens, alphabet, keyWords, i)
+    str += resultList[0]
+    i = resultList[1]
+
+    if notToLarge(tokens, i) and isCorrectToken(tokens, i, ")")
+      str += getXMLString(tokens, i)
+      i += 1
+    end
+  end
+  if notToLarge(tokens, i) and isUnaryOP(tokens[i][1])
+    str += getXMLString(tokens, i)
+    i += 1
+  end
   return [str, i]
 end
 
@@ -578,7 +622,7 @@ end
 #need to write this function
 def compileSubroutineCall(tokens, alphabet, keyWords, i)
   str = ""
-
+  if notToLarge(tokens, i) and
   return [str, i]
 end
 

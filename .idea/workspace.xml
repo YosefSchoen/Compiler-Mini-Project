@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e2bbf7f2-661c-4b38-bdc0-4dc1c947d57a" name="Default Changelist" comment="">
+    <list default="true" id="e2bbf7f2-661c-4b38-bdc0-4dc1c947d57a" name="Default Changelist" comment="need to fix helpers">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Parser.rb" beforeDir="false" afterPath="$PROJECT_DIR$/Parser.rb" afterDir="false" />
     </list>
@@ -52,7 +52,7 @@
       <recent name="C:\Users\josep\RubymineProjects\MiniProject\Stage1" />
     </key>
   </component>
-  <component name="RunManager" selected="Ruby.Tokenizer">
+  <component name="RunManager" selected="Ruby.Parser">
     <configuration name="Main" type="RubyRunConfigurationType" factoryName="Ruby">
       <module name="Project7" />
       <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="" />
@@ -64,6 +64,20 @@
       <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
       <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" />
       <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/Main.rb" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Parser" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
+      <module name="Project7" />
+      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/Parser.rb" />
       <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
       <method v="2" />
     </configuration>
@@ -111,6 +125,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Ruby.Parser" />
         <item itemvalue="Ruby.Tokenizer" />
         <item itemvalue="Ruby.Translator" />
         <item itemvalue="Ruby.Utility" />
@@ -148,7 +163,7 @@
       <workItem from="1573814754201" duration="184000" />
       <workItem from="1573815022876" duration="119242000" />
       <workItem from="1574945043043" duration="14983000" />
-      <workItem from="1577728508224" duration="27749000" />
+      <workItem from="1577728508224" duration="30766000" />
     </task>
     <task id="LOCAL-00001" summary="New Commit">
       <created>1574256572492</created>
@@ -353,7 +368,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578240751513</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="need to fix helpers">
+      <created>1578242133970</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1578242133970</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -388,10 +410,10 @@
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="297" y="3" key="CommitChangelistDialog2" timestamp="1578240750875">
+    <state x="297" y="3" key="CommitChangelistDialog2" timestamp="1578245142088">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state x="297" y="3" key="CommitChangelistDialog2/0.0.1500.960@0.0.1500.960" timestamp="1578240750875" />
+    <state x="297" y="3" key="CommitChangelistDialog2/0.0.1500.960@0.0.1500.960" timestamp="1578245142088" />
     <state width="1446" height="3" key="GridCell.Tab.0.bottom" timestamp="1578240732080">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
@@ -420,10 +442,10 @@
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="505" y="125" key="VCS.ChangeListViewerDialog/0.0.1500.960@0.0.1500.960" timestamp="1577778695444" />
-    <state x="244" y="144" key="Vcs.Push.Dialog.v2" timestamp="1578240758756">
+    <state x="244" y="144" key="Vcs.Push.Dialog.v2" timestamp="1578242136553">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state x="244" y="144" key="Vcs.Push.Dialog.v2/0.0.1500.960@0.0.1500.960" timestamp="1578240758756" />
+    <state x="244" y="144" key="Vcs.Push.Dialog.v2/0.0.1500.960@0.0.1500.960" timestamp="1578242136553" />
     <state x="527" y="373" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1577977869333">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
