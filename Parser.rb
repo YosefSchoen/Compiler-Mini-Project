@@ -401,7 +401,42 @@ end
 
 
 def compileWhile(tokens, alphabet, keyWords, i)
+  str = ""
+  # check for while
+  if notToLarge(tokens, i) and isCorrectToken(tokens, i, "while")
+    str += getXMLString(tokens, i)
+    i+=1
+  end
 
+  if notToLarge(tokens, i) and isCorrectToken(tokens, i, "(")
+    str+= getXMLString(tokens, i)
+    i+=1
+
+    resultList = compileExpression(tokens,alphabet,keyWords, i)
+    str += resultList[0]
+    i = resultList[1]
+
+    if notToLarge(tokens, i) and isCorrectToken(tokens, i, ")")
+      str+= getXMLString(tokens, i)
+      i+=1
+    end
+  end
+
+  if notToLarge(tokens, i) and isCorrectToken(tokens, i, "{")
+    str += getXMLString(tokens, i)
+    i+=1
+  end
+
+  resultList = compileStatements(tokens, alphabet, keyWords, i)
+  str += resultList[0]
+  i = resultList[1]
+
+  if notToLarge(tokens, i) and isCorrectToken(tokens, i, "}")
+    str += getXMLString(tokens, i)
+    i += 1
+  end
+
+  return [str, i]
 end
 
 
@@ -442,7 +477,7 @@ def compileIf(tokens, alphabet, keyWords, i)
   str += resultList[0]
   i = resultList[1]
 
-  if notToLarge(tokens, i) and isCorrectToken(tokens, i, "]")
+  if notToLarge(tokens, i) and isCorrectToken(tokens, i, ")")
     str += getXMLString(tokens, i)
     i += 1
   end
