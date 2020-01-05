@@ -50,7 +50,7 @@ def compileClass(tokens, alphabet, keyWords, classNames)
     i+=1
   end
 
-  # terminal className
+  # terminal className, check if legal!
   if notToLarge(tokens, i) and isIdentifier(tokens[i][1], alphabet, keyWords)
     str+= getXMLString(tokens, i)
     i+=1
@@ -63,6 +63,7 @@ def compileClass(tokens, alphabet, keyWords, classNames)
   end
 
   #classVarDec*
+  #
   resultList = compileClassVarDec(tokens, alphabet, keyWords, classNames, i)
   str+= resultList[0]
   i = resultList[1]
@@ -103,6 +104,7 @@ end
 
 
 def compileClassVarDecT(tokens, alphabet, keyWords, classNames, i, result)
+  # if the next token is not a variable, then it wont start with static/field
   if notToLarge(tokens, i) and !(isCorrectToken(tokens, i, "static") or isCorrectToken(tokens, i, "field"))
     return [result, i]
   end
@@ -126,6 +128,7 @@ def compileClassVarDecT(tokens, alphabet, keyWords, classNames, i, result)
   result += resultList[0]
   i = resultList[1]
 
+  # recursively call
   resultList = compileClassVarDecT(tokens, alphabet, keyWords, classNames, i, result)
   return resultList
 end
@@ -153,13 +156,13 @@ end
 
 def compileSubroutineDec(tokens, alphabet, keyWords, classNames, i)
   str = ""
-
+  # if constructor, method, function
   str += "<subroutineDec>"+"\n"
   if notToLarge(tokens, i) and isSubRoutineType(tokens[i][1])
     str+= getXMLString(tokens, i)
     i+=1
   end
-
+  # type of function/method
   if notToLarge(tokens, i) and (isType(tokens[i][1], classNames) or isCorrectToken(tokens, i, "void"))
     str+= getXMLString(tokens, i)
     i+=1
@@ -197,7 +200,7 @@ def compileSubroutineBody(tokens, alphabet, keyWords, classNames, i)
   str = ""
 
   str += "<subroutineBody>"+"\n"
-
+  # if
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, "{")
     str+= getXMLString(tokens, i)
     i+=1
@@ -532,6 +535,7 @@ end
 def compileTerm(tokens, alphabet, keyWords, i)
   str = ""
 
+  if notToLarge(token, i) and i
   return [str, i]
 end
 
