@@ -401,7 +401,42 @@ end
 
 
 def compileWhile(tokens, alphabet, keyWords, i)
+  str = ""
+  # check for while
+  if notToLarge(tokens, i) and isCorrectToken(tokens, i, "while")
+    str += getXMLString(tokens, i)
+    i+=1
+  end
 
+  if notToLarge(tokens, i) and isCorrectToken(tokens, i, "(")
+    str+= getXMLString(tokens, i)
+    i+=1
+
+    resultList = compileExpression(tokens,alphabet,keyWords, i)
+    str += resultList[0]
+    i = resultList[1]
+
+    if notToLarge(tokens, i) and isCorrectToken(tokens, i, ")")
+      str+= getXMLString(tokens, i)
+      i+=1
+    end
+  end
+
+  if notToLarge(tokens, i) and isCorrectToken(tokens, i, "{")
+    str += getXMLString(tokens, i)
+    i+=1
+  end
+
+  resultList = compileStatements(tokens, alphabet, keyWords, i)
+  str += resultList[0]
+  i = resultList[1]
+
+  if notToLarge(tokens, i) and isCorrectToken(tokens, i, "}")
+    str += getXMLString(tokens, i)
+    i += 1
+  end
+
+  return [str, i]
 end
 
 
@@ -442,7 +477,7 @@ def compileIf(tokens, alphabet, keyWords, i)
   str += resultList[0]
   i = resultList[1]
 
-  if notToLarge(tokens, i) and isCorrectToken(tokens, i, "]")
+  if notToLarge(tokens, i) and isCorrectToken(tokens, i, ")")
     str += getXMLString(tokens, i)
     i += 1
   end
@@ -535,8 +570,56 @@ end
 #need to write this function
 def compileTerm(tokens, alphabet, keyWords, i)
   str = ""
+  #int/keyword/string Constant
+  if notToLarge(token, i) and (isIntConstant(tokens[i][1]) or isStringConstant(tokens[i][1]) or
+      isKeywordConst(tokens[i][1]))
+    str += getXMLString(tokens, i)
+    i += 1
 
-  if notToLarge(token, i) and i
+    #the else is for var name and  subroutine  need to solve this
+  else
+
+  end
+
+
+  # varName with [ expression ]
+  if notToLarge(tokens, i) and isCorrectToken(tokens, i, "[")
+    str += getXMLString(tokens, i)
+    i += 1
+
+    resultList = compileExpression(tokens, alphabet, keyWords, i)
+    str += resultList[0]
+    i = resultList[1]
+  end
+  if notToLarge(tokens, i) and isCorrectToken(tokens, i, "]")
+    str += getXMLString(tokens, i)
+    i += 1
+  end
+
+  # subroutine Call
+  if notToLarge(tokens, i) and isIdentifier(str, alphabet, keyWords)
+    str += getXMLString(tokens, i)
+    i += 1
+  end
+
+  # ( expression )
+  if notToLarge(tokens, i) and isCorrectToken(tokens, i, "(")
+    str += getXMLString(tokens, i)
+    i += 1
+
+    resultList = compileExpression(tokens, alphabet, keyWords, i)
+    str += resultList[0]
+    i = resultList[1]
+
+    if notToLarge(tokens, i) and isCorrectToken(tokens, i, ")")
+      str += getXMLString(tokens, i)
+      i += 1
+    end
+  end
+  if notToLarge(tokens, i) and isUnaryOP(tokens[i][1])
+    str += getXMLString(tokens, i)
+    i += 1
+  end
   return [str, i]
   end
 end
