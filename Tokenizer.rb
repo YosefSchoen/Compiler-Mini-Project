@@ -34,7 +34,7 @@ def getAlphabet
 end
 
 
-def tokenize(lines, terminals, alphabet)
+def tokenize(lines)
   tokens = []
 
   lines.each do |line| line = line.split(' ')
@@ -77,6 +77,7 @@ def splitSymbols(str)
   unless newStr.empty?
     strArr.push(newStr)
   end
+
   return strArr
 end
 
@@ -94,7 +95,7 @@ def getToken(str)
   elsif isStringConstant(str)
     token = ["stringConstants", str]
 
-  elsif isIdentifier(str, getAlphabet, getKeywords)
+  elsif isIdentifier(str)
     token = ["stringConstants", str]
   end
 
@@ -123,9 +124,9 @@ end
 
 #function to check if a string is a legal id
 # make sue each id is in our alphabet
-def isIdentifier(str, alphabet, keyWords)
-  digitsOfAlphabet = alphabet[0] # if its a digit
-  charsOfAlphabet = alphabet[1] # if a letter
+def isIdentifier(str)
+  digitsOfAlphabet = getAlphabet[0] # if its a digit
+  charsOfAlphabet = getAlphabet[1] # if a letter
 
   # first character in name cannot be digit
   if digitsOfAlphabet.include?(str[0])
@@ -133,7 +134,7 @@ def isIdentifier(str, alphabet, keyWords)
   end
 
   # if keyword includes str
-  if keyWords.include?(str)
+  if getKeywords.include?(str)
     return false
   end
 

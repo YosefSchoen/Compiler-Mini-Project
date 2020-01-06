@@ -1,23 +1,22 @@
 <class>
 	<keyword>class</keyword>
 	<stringConstants>testClass2</stringConstants>
-<ClassVarDec>
-</ClassVarDec>
-<subroutineDec>
-	<symbol>(</symbol>
-<parameterList>
-	<keyword>int</keyword>
-	<stringConstants>a</stringConstants>
-	<symbol>,</symbol>
-	<keyword>int</keyword>
-	<stringConstants>b</stringConstants>
-	<symbol>,</symbol>
-</parameterList>
-<subroutineBody>
-<varDec>
-	<keyword>char</keyword>
-</varDec>
-
-</subroutineBody>
-</subroutineDec>
+	<ClassVarDec>
+	</ClassVarDec>
+	<subroutineDec>
+		<symbol>(</symbol>
+		<parameterList>
+			<keyword>int</keyword>
+			<stringConstants>a</stringConstants>
+			<symbol>,</symbol>
+			<keyword>int</keyword>
+			<stringConstants>b</stringConstants>
+			<symbol>,</symbol>
+		</parameterList>
+		<subroutineBody>
+			<varDec>
+				<keyword>char</keyword>
+			</varDec>
+		</subroutineBody>
+	</subroutineDec>
 </class>

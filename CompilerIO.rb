@@ -22,8 +22,8 @@ end
 
 
 def writeJackFile(lines, outFile)
-  tokens = tokenize(lines, getTerminals, getAlphabet)
-  str = compileClass(tokens, getAlphabet, getKeywords, [])
+  tokens = tokenize(lines)
+  str = compileClass(tokens, [])
   str = tabXMLTags(str)
   xmLFile = File.new(outFile, "w")
 
@@ -35,19 +35,39 @@ end
 
 def compile(inFile, outFile)
   lines = readJackFile(inFile)
-  writeFile(lines, outFile)
+  writeJackFile(lines, outFile)
 end
-
-#testing
-tokens = tokenize("JackTest.txt", getTerminals, getAlphabet)
-puts tokens
-str = compileClass(tokens, getAlphabet, getKeywords, [])
-testXmlFile = File.new("testFile.xml", "w")
-testXmlFile.syswrite(str)
 
 
 def tabXMLTags(str)
-  puts str
+  lineTabs = []
+  numTabs = 0
+  strArr = str.split("\n")
+
+  for i in 0..strArr.size-1
+    if isEndTag(strArr[i])
+      numTabs -= 1
+    end
+
+    lineTabs.push(numTabs)
+
+    if isStartTag(strArr[i])
+      numTabs += 1
+    end
+  end
+
+  for i in 0..strArr.size-1
+    tabs = ""
+
+    for j in 1..lineTabs[i]
+      tabs += "\t"
+    end
+
+    strArr[i] = tabs+strArr[i]
+  end
+
+  puts strArr.join("\n")
+  return strArr.join("\n")
 end
 
 
@@ -73,7 +93,7 @@ end
 
 
 
-def getEndTag(str)
+def isEndTag(str)
   #a string is a end tag if it is of form </"substr">
   if str[0] == "<" and str[1] == "/"
 
