@@ -3,3 +3,4 @@ method void foo () {
     return a + b
 }
 }
+
