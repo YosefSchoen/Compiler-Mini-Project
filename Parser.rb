@@ -626,7 +626,7 @@ end
 #need to write this function
 def compileSubroutineCall(tokens, alphabet, keyWords, i)
   str = ""
-  if notToLarge(tokens, i) and
+
   return [str, i]
 end
 
