@@ -35,7 +35,7 @@ end
 
 
 def getXMLString(tokens, i)
-  str = "<"+tokens[i][0]+">"+tokens[i][1]+"</"+tokens[i][0]+">"+"\n"
+  str = "\t"+"<"+tokens[i][0]+">"+tokens[i][1]+"</"+tokens[i][0]+">"+"\n"
   return str
 end
 
@@ -531,12 +531,14 @@ def compileExpressionT(tokens, alphabet, keyWords, i, result)
   return resultList
 end
 
+
 #need to write this function
 def compileTerm(tokens, alphabet, keyWords, i)
   str = ""
 
   if notToLarge(token, i) and i
   return [str, i]
+  end
 end
 
 
@@ -579,71 +581,4 @@ def compileExpressionListT(tokens, alphabet, keyWords, i, result)
 
   resultList = compileExpressionListT(tokens, alphabet, keyWords, i, result)
   return resultList
-end
-
-
-#testing
-tokens = tokenize("JackTest.txt", getTerminals, getAlphabet)
-str = compileClass(tokens, getAlphabet, getKeywords, [])
-testXmlFile = File.new("testFile.xml", "w")
-testXmlFile.syswrite(str)
-
-
-
-def tempStuff
-  tokens = []
-  token = %w(keywords class)
-  tokens.append(token)
-  token = %w(identifier foo)
-  tokens.append(token)
-  token = %w(symbol {)
-  tokens.append(token)
-
-  token = %w(keywords static)
-  tokens.append(token)
-  token = %w(keywords int)
-  tokens.append(token)
-  token = %w(identifier a)
-  tokens.append(token)
-  token = %w(keywords static)
-  tokens.append(token)
-  token = %w(keywords int)
-  tokens.append(token)
-  token = %w(identifier b)
-  tokens.append(token)
-  token = %w(symbol ;)
-  tokens.append(token)
-
-  token = %w(keywords constructor)
-  tokens.append(token)
-  token = %w(keywords void)
-  tokens.append(token)
-  token = %w(identifier myFoo)
-  tokens.append(token)
-  token = %w{symbol (}
-  tokens.append(token)
-
-#parameterList
-  token = %w(keyword char)
-  tokens.append(token)
-  token = %w(identifier q)
-  tokens.append(token)
-  token = %w(symbol ,)
-  tokens.append(token)
-  token = %w(keyword char)
-  tokens.append(token)
-  token = %w(identifier w)
-  tokens.append(token)
-
-  token = %w{symbol )}
-  tokens.append(token)
-
-#subroutine Body
-  token = %w(symbol {)
-  tokens.append(token)
-  token = %w(symbol })
-
-  tokens.append(token)
-  token = %w(symbol })
-  tokens.append(token)
 end

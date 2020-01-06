@@ -1,6 +1,5 @@
-class stuff ( ) {
-field var x = 1
-method int add ( int a ) {
-return a + 1
+class testClass2(int a, int b, char c) {
+method void foo () {
+    return a + b
 }
 }

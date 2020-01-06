@@ -1,3 +1,4 @@
+require_relative 'CompilerIO'
 #terminal come in 5 types they will all be stored in an array called terminals
 
 def getKeywords
@@ -32,64 +33,74 @@ def getAlphabet
 end
 
 
-
-
-def readJackFile(fileName)
-  lines = []
-
-  #new read only file object with the filename passed above
-  inFile = File.new(fileName, "r")
-
-  while (line = inFile.gets)
-    lines << line
-  end
-
-  inFile.close
-
-  #returns an array each element is a string of a line of the file
-  return lines
-
-end
-
-
-
-def tokenize(fileName, terminals, alphabet)
+def tokenize(lines, terminals, alphabet)
   tokens = []
-  keyWords = terminals[0]
-  symbols = terminals[1]
-
-
-  lines = readJackFile(fileName)
 
   lines.each do |line| line = line.split(' ')
-
     line.each do |str|
 
-      if keyWords.include?(str)
-        token = ["keyword", str]
-        tokens.append(token)
+      newLine = splitSymbols(str)
+      unless newLine.empty?
+        newLine.each do |i|
+          tokens.push(getToken(i))
+        end
 
-      elsif symbols.include?(str)
-        token = ["symbol", str]
-        tokens.append(token)
+      else tokens.push(getToken(str))
 
-      elsif isIntConstant(str)
-        token = ["integerConstants", str]
-        tokens.append(token)
-
-      elsif isStringConstant(str)
-        token = ["stringConstants", str]
-        tokens.append(token)
-
-      elsif isIdentifier(str, alphabet, keyWords)
-        token = ["stringConstants", str]
-        tokens.append(token)
       end
     end
   end
 
   return tokens
 end
+
+#str = c{aa
+
+def splitSymbols(str)
+  strArr = []
+ newStr = ""
+
+  for i in 0..str.size-1
+    if !getSymbols.include?(str[i])
+      newStr.concat("", str[i])
+
+    else
+      unless newStr.empty?
+        strArr.push(newStr)
+        newStr = ""
+      end
+      strArr.push(str[i])
+    end
+  end
+
+  unless newStr.empty?
+    strArr.push(newStr)
+  end
+  return strArr
+end
+
+def getToken(str)
+  token = []
+  if getKeywords.include?(str)
+    token = ["keyword", str]
+
+  elsif getSymbols.include?(str)
+    token = ["symbol", str]
+
+  elsif isIntConstant(str)
+    token = ["integerConstants", str]
+
+  elsif isStringConstant(str)
+    token = ["stringConstants", str]
+
+  elsif isIdentifier(str, getAlphabet, getKeywords)
+    token = ["stringConstants", str]
+  end
+
+  return token
+end
+
+
 
 #function to check if a character is a number
 def isIntConstant(i)
@@ -99,6 +110,7 @@ def isIntConstant(i)
 
   return false
 end
+
 
 #function to check if a character is a string
 def isStringConstant(str)
@@ -136,4 +148,3 @@ def isIdentifier(str, alphabet, keyWords)
 
   return true
 end
-

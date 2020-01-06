@@ -1,16 +1,21 @@
 <class>
-<keyword>class</keyword>
-<stringConstants>stuff</stringConstants>
+	<keyword>class</keyword>
+	<stringConstants>testClass2</stringConstants>
 <ClassVarDec>
 </ClassVarDec>
 <subroutineDec>
-<symbol>(</symbol>
+	<symbol>(</symbol>
 <parameterList>
-<symbol>)</symbol>
+	<keyword>int</keyword>
+	<stringConstants>a</stringConstants>
+	<symbol>,</symbol>
+	<keyword>int</keyword>
+	<stringConstants>b</stringConstants>
+	<symbol>,</symbol>
 </parameterList>
 <subroutineBody>
-<symbol>{</symbol>
 <varDec>
+	<keyword>char</keyword>
 </varDec>
 </subroutineBody>
 </subroutineDec>
