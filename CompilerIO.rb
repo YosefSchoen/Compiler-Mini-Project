@@ -45,8 +45,8 @@ testXmlFile = File.new("testFile.xml", "w")
 testXmlFile.syswrite(str)
 
 
-def tabXMLTags(file)
-
+def tabXMLTags(str)
+  puts str
 end
 
 
@@ -93,3 +93,4 @@ end
 
 
 
+compile("JackTest.txt", "testFile.xml")
