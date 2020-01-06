@@ -1,5 +1,6 @@
 #terminal come in 5 types they will all be stored in an array called terminals
 
+
 def getKeywords
   dataTypes = %w(int char boolean)
   functionTypes = %w(constructor function method)

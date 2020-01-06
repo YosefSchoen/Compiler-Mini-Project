@@ -20,6 +20,7 @@ def readJackFile(fileName)
 end
 
 
+
 def writeJackFile(lines, outFile)
   tokens = tokenize(lines, getTerminals, getAlphabet)
   str = compileClass(tokens, getAlphabet, getKeywords, [])
