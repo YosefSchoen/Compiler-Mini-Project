@@ -1,14 +1,8 @@
 class foo
 {
-    field int x;
-    field int y;
+    field int x, y;
 
     method void bar(){
-        var int x;
-        var int y;
-    }
-
-    method void barTwo() {
 
     }
 }

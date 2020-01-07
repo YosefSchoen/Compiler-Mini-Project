@@ -180,6 +180,9 @@ end
 
 
 def compileSubroutineDecT(tokens, classNames, i, result)
+  if notToLarge(tokens, i) and !isSubRoutineType(tokens[i][1])
+    return [result, i]
+  end
 
   if notToLarge(tokens, i) and isSubRoutineType(tokens[i][1])
     result+= getXMLString(tokens, i)
@@ -266,9 +269,9 @@ def compileParameterList(tokens, classNames, i)
   end
 
   puts "hello"
-  #resultList = compileParameterListT(tokens, classNames, i, "")
-  #str += resultList[0]
-  #i = resultList[1]
+  resultList = compileParameterListT(tokens, classNames, i, "")
+  str += resultList[0]
+  i = resultList[1]
 
   str+= "</parameterList>"+"\n"
   return [str, i]
@@ -297,7 +300,7 @@ def compileParameterListT(tokens, classNames, i, result)
   end
 
 
-  resultList = paramVarNameT(tokens, classNames, i, result)
+  resultList = compileParameterListT(tokens, classNames, i, result)
   return resultList
 end
 
