@@ -1,19 +1,13 @@
 <class>
 	<keyword>class</keyword>
-	<identifier>foo</identifier>
+	<identifier>Main</identifier>
 	<symbol>{</symbol>
 	<ClassVarDec>
-		<keyword>field</keyword>
-		<keyword>int</keyword>
-		<identifier>x</identifier>
-		<symbol>,</symbol>
-		<identifier>y</identifier>
-		<symbol>;</symbol>
 	</ClassVarDec>
 	<subroutineDec>
-		<keyword>method</keyword>
+		<keyword>function</keyword>
 		<keyword>void</keyword>
-		<identifier>bar</identifier>
+		<identifier>main</identifier>
 		<symbol>(</symbol>
 		<parameterList>
 		</parameterList>
@@ -21,6 +15,8 @@
 		<subroutineBody>
 			<symbol>{</symbol>
 			<varDec>
+				<keyword>var</keyword>
+				<identifier>Array</identifier>
 			</varDec>
 			<statements>
 				<letStatement>
@@ -70,8 +66,6 @@
 					<symbol>}</symbol>
 				</whileStatement>
 			</statements>
-			<symbol>}</symbol>
 		</subroutineBody>
 	</subroutineDec>
-	<symbol>}</symbol>
 </class>
