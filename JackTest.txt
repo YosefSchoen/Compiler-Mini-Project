@@ -4,7 +4,9 @@ class foo {
 
     method void bar() {
         var char a, b, c;
-        var int q;
+
+        let a = b;
+
     }
 }
 

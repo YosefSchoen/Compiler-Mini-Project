@@ -220,9 +220,9 @@ def compileSubroutineBody(tokens, classNames, i)
   str += resultList[0]
   i = resultList[1]
 
-  #resultList = compileStatements(tokens, i)
-  #str += resultList[0]
-  #i = resultList[1]
+  resultList = compileStatements(tokens, i)
+  str += resultList[0]
+  i = resultList[1]
 
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, "}")
     str+= getXMLString(tokens, i)
@@ -339,7 +339,9 @@ end
 
 def compileStatements(tokens, i)
   str = ""
-  case tokens[i][0]
+  str += "<statements>"+"\n"
+
+  case tokens[i][1]
   when "let"
     resultList = compileLet(tokens, i)
     str+= resultList[0]
@@ -361,14 +363,14 @@ def compileStatements(tokens, i)
     i = resultList[1]
 
   when "return"
-    resultList = compileReturn(token, i)
+    resultList = compileReturn(tokens, i)
     str+= resultList[0]
     i = resultList[1]
 
   else
 
   end
-
+  str += "</statements>"+"\n"
   return [str, i]
 end
 
@@ -621,7 +623,7 @@ end
 def compileTerm(tokens, i)
   str = ""
   #int/keyword/string Constant
-  if notToLarge(token, i) and (isIntConstant(tokens[i][1]) or isStringConstant(tokens[i][1]) or
+  if notToLarge(tokens, i) and (isIntConstant(tokens[i][1]) or isStringConstant(tokens[i][1]) or
       isKeywordConst(tokens[i][1]))
     str += getXMLString(tokens, i)
     i += 1

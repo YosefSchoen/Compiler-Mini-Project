@@ -31,13 +31,22 @@
 				<symbol>,</symbol>
 				<identifier>c</identifier>
 				<symbol>;</symbol>
-				<keyword>var</keyword>
-				<keyword>int</keyword>
-				<identifier>q</identifier>
-				<symbol>;</symbol>
 			</varDec>
+			<statements>
+				<keyword>let</keyword>
+				<identifier>a</identifier>
+				<symbol>=</symbol>
+				<identifier>b</identifier>
+				<symbol>;</symbol>
+			</statements>
 			<symbol>}</symbol>
 		</subroutineBody>
 	</subroutineDec>
 	<symbol>}</symbol>
 </class>
+
+
+
+<x>
+  stuff
+</x>
