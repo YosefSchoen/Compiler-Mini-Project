@@ -12,6 +12,7 @@ def isType(str, classNames)
 end
 
 
+
 #check if the subroutine is one of the three types
 def isSubRoutineType(str)
   return (str == "constructor" or str == "function" or str == "method")
