@@ -1,45 +1,56 @@
 require_relative 'Tokenizer'
+
+#function to check if the token currently being checked is not out of range
 def notToLarge(tokens, i)
   return i < tokens.size
 end
 
+
+#check if the type is one of the built in types or a previous class name
 def isType(str, classNames)
   return (str == "int" or str == "char" or str == "boolean" or classNames.include?(str))
 end
 
 
+#check if the subroutine is one of the three types
 def isSubRoutineType(str)
   return (str == "constructor" or str == "function" or str == "method")
 end
 
 
+#checks if the op is one of the binary ops
 def isOp(str)
   return (str == "+" or str == "-" or str == "*" or str == "/" or
       str == "&" or str == "|" or str == "<" or str == ">" or str == "=")
 end
 
 
+#checks if the op is one of the unary ops
 def isUnaryOP(str)
   return (str == "-" or str == "~")
 end
 
 
+#checks if the keyword is one of the keyword constants
 def isKeywordConst(str)
   return (str == "true" or str == "false" or str == "null" or str == "this")
 end
 
 
+#checks the token to see if the value is correct token = [id, value]
 def isCorrectToken(tokens, i, str)
   return tokens[i][1] == str
 end
 
 
+#conversts a token = [id, value] -> <id>value</id>
 def getXMLString(tokens, i)
   str = "<"+tokens[i][0]+">"+tokens[i][1]+"</"+tokens[i][0]+">"+"\n"
   return str
 end
 
 
+#the first function called compiles the file's class
 def compileClass(tokens, classNames)
   i = 0
   str = ""
@@ -63,7 +74,6 @@ def compileClass(tokens, classNames)
   end
 
   #classVarDec*
-  #
   resultList = compileClassVarDec(tokens, classNames, i)
   str+= resultList[0]
   i = resultList[1]
@@ -271,18 +281,19 @@ def compileParameterListT(tokens, classNames, i, result)
 end
 
 
+#has bugs
 def compileVarDec(tokens, classNames, i)
 
   str = ""
   str += "<varDec>"+"\n"
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, "var")
 
-    str+= getXMLString(tokens, i)
+    str += getXMLString(tokens, i)
     i+=1
   end
 
   if notToLarge(tokens, i) and isType(tokens[i][1], classNames)
-    str+= getXMLString(tokens, i)
+    str += getXMLString(tokens, i)
     i+=1
   end
 
@@ -356,7 +367,7 @@ def compileDo(tokens, i)
 end
 
 
-def compileLet(tokens, alphabet, keyWords, i)
+def compileLet(tokens, i)
   str = ""
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, "let")
     str += getXMLString(tokens, i)
@@ -387,7 +398,7 @@ def compileLet(tokens, alphabet, keyWords, i)
     i+=1
   end
 
-  resultList = compileExpression(tokens, alphabet, keyWords, i)
+  resultList = compileExpression(tokens, i)
   str += resultList[0]
   i = resultList[1]
 
@@ -412,7 +423,7 @@ def compileWhile(tokens, i)
     str+= getXMLString(tokens, i)
     i+=1
 
-    resultList = compileExpression(tokens,alphabet,keyWords, i)
+    resultList = compileExpression(tokens, i)
     str += resultList[0]
     i = resultList[1]
 
@@ -422,6 +433,12 @@ def compileWhile(tokens, i)
     end
   end
 
+  resultList = compileSubStatements(tokens, i)
+  return resultList
+end
+
+
+def compileSubStatements(tokens, i)
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, "{")
     str += getXMLString(tokens, i)
     i+=1
@@ -438,7 +455,6 @@ def compileWhile(tokens, i)
 
   return [str, i]
 end
-
 
 def compileReturn(tokens, i)
   str = ""
@@ -514,21 +530,8 @@ def compileElse(tokens, i)
     i += 1
   end
 
-  if notToLarge(tokens, i) and isCorrectToken(tokens, i, "{")
-    str += getXMLString(tokens, i)
-    i += 1
-  end
-
-  resultList = compileStatements(tokens, i)
-  str += resultList[0]
-  i = resultList[1]
-
-  if notToLarge(tokens, i) and isCorrectToken(tokens, i, "}")
-    str += getXMLString(tokens, i)
-    i += 1
-  end
-
-  return [str, i]
+  resultList = compileSubStatements(tokens, i)
+  return resultList
 end
 
 
@@ -566,6 +569,24 @@ def compileExpressionT(tokens, i, result)
   return resultList
 end
 
+
+def compileSubExpression(tokens, i)
+  str += getXMLString(tokens, i)
+  i+=1
+
+  str += getXMLString(tokens, i)
+  i+=1
+
+  # getting expression list
+  resultList = compileExpressionList(tokens, i)
+  str+= resultList[0]
+  i = resultList[1]
+
+  if notToLarge(tokens, i+1 )and isCorrectToken(tokens, i+1, ")")
+    str += getXMLString(tokens, i)
+    i+=1
+  end
+end
 
 #need to write this function
 def compileTerm(tokens, i)
@@ -629,21 +650,9 @@ def compileSubroutineCall(tokens, i)
   # hard coding the lookahead for subroutine call
   if notToLarge(tokens, i) and isIdentifier(tokens[i][1])
     if notToLarge(tokens, i+1 )and isCorrectToken(tokens, i+1, "(")
-      str += getXMLString(tokens, i)
-      i+=1
-
-      str += getXMLString(tokens, i)
-      i+=1
-
-      # getting expression list
-      resultList = compileExpressionList(tokens, i)
-      str+= resultList[0]
+      resultList = compileSubExpression(tokens, i)
+      str += resultList[0]
       i = resultList[1]
-
-      if notToLarge(tokens, i+1 )and isCorrectToken(tokens, i+1, ")")
-        str += getXMLString(tokens, i)
-        i+=1
-      end
 
     elsif notToLarge(tokens, i) and isCorrectToken(tokens, i, ".")
       str+= getXMLString(tokens, i)
@@ -655,21 +664,9 @@ def compileSubroutineCall(tokens, i)
       end
 
       if notToLarge(tokens, i+1 )and isCorrectToken(tokens, i+1, "(")
-        str += getXMLString(tokens, i)
-        i+=1
-
-        str += getXMLString(tokens, i)
-        i+=1
-
-        # getting expression list
-        resultList = compileExpressionList(tokens, i)
-        str+= resultList[0]
+        resultList = compileSubExpression(tokens, i)
+        str += resultList[0]
         i = resultList[1]
-
-        if notToLarge(tokens, i+1 )and isCorrectToken(tokens, i+1, ")")
-          str += getXMLString(tokens, i)
-          i+=1
-        end
       end
     end
   end

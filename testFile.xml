@@ -1,20 +1,32 @@
 <class>
 	<keyword>class</keyword>
-	<stringConstants>testClass2</stringConstants>
+	<stringConstants>foo</stringConstants>
+	<symbol>{</symbol>
 	<ClassVarDec>
+		<keyword>field</keyword>
+		<keyword>int</keyword>
+		<stringConstants>x</stringConstants>
+		<symbol>,</symbol>
+		<stringConstants>y</stringConstants>
+		<keyword>field</keyword>
+		<keyword>char</keyword>
+		<stringConstants>c</stringConstants>
+		<symbol>;</symbol>
 	</ClassVarDec>
 	<subroutineDec>
+		<keyword>method</keyword>
+		<keyword>void</keyword>
+		<stringConstants>bar</stringConstants>
 		<symbol>(</symbol>
 		<parameterList>
 			<keyword>int</keyword>
-			<stringConstants>a</stringConstants>
-			<symbol>,</symbol>
-			<keyword>int</keyword>
-			<stringConstants>b</stringConstants>
-			<symbol>,</symbol>
+			<stringConstants>x</stringConstants>
 		</parameterList>
+		<symbol>)</symbol>
 		<subroutineBody>
+			<symbol>{</symbol>
 			<varDec>
+				<keyword>var</keyword>
 				<keyword>char</keyword>
 			</varDec>
 		</subroutineBody>

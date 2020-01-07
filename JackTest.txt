@@ -1,6 +1,14 @@
-class testClass2(int a, int b, char c) {
-method void foo () {
-    return a + b
-}
+class foo {
+    field int x, y
+    field char c;
+
+    method void bar(int x) {
+        var char q;
+    }
+
+    method void barT {
+
+    }
+
 }
 
