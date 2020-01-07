@@ -431,11 +431,12 @@ def compileLet(tokens, i)
     i+=1
   end
 
-  if notToLarge(tokens, i) and isIdentifier(str)
+  if notToLarge(tokens, i) and isIdentifier(tokens[i][1])
     str += getXMLString(tokens, i)
     i+=1
   end
 
+  puts tokens[i][1]
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, "[")
     str+= getXMLString(tokens, i)
     i+=1
@@ -564,6 +565,7 @@ def compileWhile(tokens, i)
   return [str, i]
 end
 
+
 def compileDo(tokens, i)
   str = ""
 
@@ -643,7 +645,27 @@ def compileExpressionT(tokens, i, result)
 end
 
 
-#need to write this function
+def compileSubExpression(tokens, i)
+  str += getXMLString(tokens, i)
+  i+=1
+
+  str += getXMLString(tokens, i)
+  i+=1
+
+  # getting expression list
+  resultList = compileExpressionList(tokens, i)
+  str+= resultList[0]
+  i = resultList[1]
+
+  if notToLarge(tokens, i+1 )and isCorrectToken(tokens, i+1, ")")
+    str += getXMLString(tokens, i)
+    i+=1
+  end
+
+  return [str, i]
+end
+
+
 def compileTerm(tokens, i)
   str = ""
   #int/keyword/string Constant
@@ -695,27 +717,6 @@ def compileTerm(tokens, i)
     i = resultList[1]
 
   end
-  return [str, i]
-end
-
-
-def compileSubExpression(tokens, i)
-  str += getXMLString(tokens, i)
-  i+=1
-
-  str += getXMLString(tokens, i)
-  i+=1
-
-  # getting expression list
-  resultList = compileExpressionList(tokens, i)
-  str+= resultList[0]
-  i = resultList[1]
-
-  if notToLarge(tokens, i+1 )and isCorrectToken(tokens, i+1, ")")
-    str += getXMLString(tokens, i)
-    i+=1
-  end
-
   return [str, i]
 end
 

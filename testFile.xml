@@ -23,6 +23,52 @@
 			<varDec>
 			</varDec>
 			<statements>
+				<letStatement>
+					<keyword>let</keyword>
+					<identifier>a</identifier>
+					<symbol>[</symbol>
+					<identifier>x</identifier>
+					<symbol>+</symbol>
+					<integerConstants>1</integerConstants>
+					<symbol>]</symbol>
+					<symbol>=</symbol>
+					<identifier>x</identifier>
+				</letStatement>
+			</statements>
+			<symbol>}</symbol>
+		</subroutineBody>
+		<keyword>method</keyword>
+		<keyword>void</keyword>
+		<identifier>bar2</identifier>
+		<symbol>(</symbol>
+		<parameterList>
+		</parameterList>
+		<symbol>)</symbol>
+		<subroutineBody>
+			<symbol>{</symbol>
+			<varDec>
+			</varDec>
+			<statements>
+				<whileStatement>
+					<keyword>while</keyword>
+					<symbol>(</symbol>
+					<identifier>x</identifier>
+					<symbol>&lt;</symbol>
+					<integerConstants>1</integerConstants>
+					<symbol>)</symbol>
+					<symbol>{</symbol>
+					<statements>
+						<letStatement>
+							<keyword>let</keyword>
+							<identifier>x</identifier>
+							<symbol>=</symbol>
+							<identifier>x</identifier>
+							<symbol>+</symbol>
+							<integerConstants>1</integerConstants>
+						</letStatement>
+					</statements>
+					<symbol>}</symbol>
+				</whileStatement>
 			</statements>
 			<symbol>}</symbol>
 		</subroutineBody>

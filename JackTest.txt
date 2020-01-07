@@ -3,6 +3,12 @@ class foo
     field int x, y;
 
     method void bar(){
+        let a[x+1] = x
+    }
 
+    method void bar2(){
+        while(x>1) {
+            let x = x + 1
+        }
     }
 }
