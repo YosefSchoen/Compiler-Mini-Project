@@ -12,7 +12,6 @@ def getKeywords
 end
 
 
-
 def getSymbols
   symbols = %w({ } ( ) [ ] . , ; + - * / & | < > = ~)
   return symbols

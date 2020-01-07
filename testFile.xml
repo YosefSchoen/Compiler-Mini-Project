@@ -35,30 +35,31 @@
 			<statements>
 				<letStatement>
 					<keyword>let</keyword>
-					<identifier>b</identifier>
+					<identifier>a</identifier>
 					<symbol>=</symbol>
-					<identifier>c</identifier>
+					<integerConstants>1</integerConstants>
 					<symbol>;</symbol>
 				</letStatement>
-				<ifStatement>
-					<keyword>if</keyword>
-					<symbol>(</symbol>
-					<identifier>a</identifier>
-					<symbol>&lt;</symbol>
+				<letStatement>
+					<keyword>let</keyword>
 					<identifier>b</identifier>
-					<symbol>)</symbol>
-					<symbol>{</symbol>
-					<statements>
-						<letStatement>
-							<keyword>let</keyword>
-							<identifier>b</identifier>
-							<symbol>=</symbol>
-							<identifier>b</identifier>
-							<symbol>;</symbol>
-						</letStatement>
-					</statements>
-					<symbol>}</symbol>
-				</ifStatement>
+					<symbol>=</symbol>
+					<integerConstants>1</integerConstants>
+					<symbol>+</symbol>
+					<integerConstants>1</integerConstants>
+					<symbol>;</symbol>
+				</letStatement>
+				<letStatement>
+					<keyword>let</keyword>
+					<identifier>c</identifier>
+					<symbol>=</symbol>
+					<integerConstants>1</integerConstants>
+					<symbol>+</symbol>
+					<integerConstants>1</integerConstants>
+					<symbol>+</symbol>
+					<integerConstants>1</integerConstants>
+					<symbol>;</symbol>
+				</letStatement>
 			</statements>
 			<symbol>}</symbol>
 		</subroutineBody>

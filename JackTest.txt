@@ -3,13 +3,8 @@ class foo {
     field char z;
 
     method void bar() {
-        var char a, b, c;
-
-        let b = c;
-
-        if (a < b) {
-            let b = b;
-        }
+        var int y;
+        var int z;
     }
 }
 
