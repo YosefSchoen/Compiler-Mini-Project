@@ -63,7 +63,6 @@ def compileClass(tokens, classNames)
 
   # terminal className, check if legal!
   if notToLarge(tokens, i) and isIdentifier(tokens[i][1])
-    classNames.push(tokens[i][1])
     str+= getXMLString(tokens, i)
     i+=1
   end
@@ -169,8 +168,36 @@ def compileSubroutineDec(tokens, classNames, i)
   str = ""
   # if constructor, method, function
   str += "<subroutineDec>"+"\n"
+  if notToLarge(tokens, i) and isSubRoutineType(tokens[i][1])
+    str+= getXMLString(tokens, i)
+    i+=1
+  end
+  # type of function/method
+  if notToLarge(tokens, i) and (isType(tokens[i][1], classNames) or isCorrectToken(tokens, i, "void"))
+    str+= getXMLString(tokens, i)
+    i+=1
+  end
 
-  resultList = compileSubroutineDecT(tokens, classNames, i, "")
+  if notToLarge(tokens, i) and isIdentifier(tokens[i][1])
+    str+= getXMLString(tokens, i)
+    i+=1
+  end
+
+  if notToLarge(tokens, i) and isCorrectToken(tokens, i, "(")
+    str+= getXMLString(tokens, i)
+    i+=1
+  end
+
+  resultList = compileParameterList(tokens, classNames, i)
+  str += resultList[0]
+  i = resultList[1]
+
+  if notToLarge(tokens, i) and isCorrectToken(tokens, i, ")")
+    str+= getXMLString(tokens, i)
+    i+=1
+  end
+
+  resultList = compileSubroutineBody(tokens, classNames, i)
   str += resultList[0]
   i = resultList[1]
 
@@ -178,44 +205,6 @@ def compileSubroutineDec(tokens, classNames, i)
   return [str, i]
 end
 
-
-def compileSubroutineDecT(tokens, classNames, i, result)
-  if notToLarge(tokens, i) and isSubRoutineType(tokens[i][1])
-    result += getXMLString(tokens, i)
-    i+=1
-  end
-  # type of function/method
-  if notToLarge(tokens, i) and (isType(tokens[i][1], classNames) or isCorrectToken(tokens, i, "void"))
-    result += getXMLString(tokens, i)
-    i+=1
-  end
-
-  if notToLarge(tokens, i) and isIdentifier(tokens[i][1])
-    result += getXMLString(tokens, i)
-    i+=1
-  end
-
-  if notToLarge(tokens, i) and isCorrectToken(tokens, i, "(")
-    result += getXMLString(tokens, i)
-    i+=1
-  end
-
-  resultList = compileParameterList(tokens, classNames, i)
-  result += resultList[0]
-  i = resultList[1]
-
-  if notToLarge(tokens, i) and isCorrectToken(tokens, i, ")")
-    result += getXMLString(tokens, i)
-    i+=1
-  end
-
-  resultList = compileSubroutineBody(tokens, classNames, i)
-  result += resultList[0]
-  i = resultList[1]
-
-  resultList = compileSubroutineDecT(tokens, classNames, i, result)
-  return resultList
-end
 
 def compileSubroutineBody(tokens, classNames, i)
   str = ""
@@ -399,6 +388,7 @@ end
 
 def compileSubStatements(tokens, i)
   str = ""
+
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, "{")
     str += getXMLString(tokens, i)
     i+=1
@@ -514,17 +504,14 @@ end
 
 def compileElse(tokens, i)
   str = ""
-
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, "else")
     str += getXMLString(tokens, i)
     i += 1
   end
 
   resultList = compileSubStatements(tokens, i)
-
   str += resultList[0]
   i = resultList[1]
-
   return [str, i]
 end
 
@@ -614,7 +601,7 @@ def compileExpression(tokens, i)
   i = resultList[1]
 
   resultList = compileExpressionT(tokens, i, "")
-  str+= resultList[0]
+  str += resultList[0]
   i = resultList[1]
 
 

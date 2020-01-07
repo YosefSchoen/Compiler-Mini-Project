@@ -1,10 +1,10 @@
-class foo {
-    field char y;
-    field char z;
+class foo
+{
+    field int x;
+    field int y;
 
-    method void bar() {
+    method void bar(int x){
+        var int x;
         var int y;
-        var int z;
     }
 }
-
