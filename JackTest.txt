@@ -1,14 +1,8 @@
 class foo {
-    field int x, y
-    field char c;
+    field int x, y;
+    field char z;
 
-    method void bar(int x) {
-        var char q;
+    method void bar() {
     }
-
-    method void barT {
-
-    }
-
 }
 

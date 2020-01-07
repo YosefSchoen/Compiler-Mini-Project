@@ -96,17 +96,11 @@ end
 
 def compileClassVarDec(tokens, classNames, i)
   str = ""
-
   str += "<ClassVarDec>"+"\n"
-  resultList = compileClassVarDecT(tokens, classNames, i, "")
 
+  resultList = compileClassVarDecT(tokens, classNames, i, "")
   str += resultList[0]
   i = resultList[1]
-
-  if notToLarge(tokens, i) and isCorrectToken(tokens, i, ";")
-    str += getXMLString(tokens, i)
-    i+=1
-  end
 
   str += "</ClassVarDec>"+"\n"
   return [str, i]
@@ -137,6 +131,12 @@ def compileClassVarDecT(tokens, classNames, i, result)
   resultList = varNameT(tokens, i, "")
   result += resultList[0]
   i = resultList[1]
+
+
+  if notToLarge(tokens, i) and isCorrectToken(tokens, i, ";")
+    result += getXMLString(tokens, i)
+    i += 1
+  end
 
   # recursively call
   resultList = compileClassVarDecT(tokens, classNames, i, result)
@@ -220,6 +220,10 @@ def compileSubroutineBody(tokens, classNames, i)
   str += resultList[0]
   i = resultList[1]
 
+  #resultList = compileStatements(tokens, i)
+  #str += resultList[0]
+  #i = resultList[1]
+
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, "}")
     str+= getXMLString(tokens, i)
     i+=1
@@ -234,6 +238,11 @@ def compileParameterList(tokens, classNames, i)
   str = ""
   str += "<parameterList>"+"\n"
 
+  if notToLarge(tokens, i) and !isType(tokens[i][1], classNames)
+    str+= "</parameterList>"+"\n"
+    return [str, i]
+  end
+
   if notToLarge(tokens, i) and isType(tokens[i][1], classNames)
     str+= getXMLString(tokens, i)
     i+=1
@@ -247,6 +256,7 @@ def compileParameterList(tokens, classNames, i)
   resultList = compileParameterListT(tokens, classNames, i, "")
   str += resultList[0]
   i = resultList[1]
+
 
   str+= "</parameterList>"+"\n"
   return [str, i]
@@ -263,7 +273,6 @@ def compileParameterListT(tokens, classNames, i, result)
   end
 
   if notToLarge(tokens, i) and isType(tokens[i][1], classNames)
-
     result+= getXMLString(tokens, i)
     i+=1
   end
@@ -273,11 +282,9 @@ def compileParameterListT(tokens, classNames, i, result)
     i+=1
   end
 
-  resultList = varNameT(tokens, i, result)
-  result = resultList[0]
-  i = resultList[1]
+  resultList = compileParameterListT(tokens, classNames, i, result)
 
-  return [result, i]
+  return resultList
 end
 
 
@@ -286,29 +293,44 @@ def compileVarDec(tokens, classNames, i)
 
   str = ""
   str += "<varDec>"+"\n"
-  if notToLarge(tokens, i) and isCorrectToken(tokens, i, "var")
 
-    str += getXMLString(tokens, i)
-    i+=1
-  end
-
-  if notToLarge(tokens, i) and isType(tokens[i][1], classNames)
-    str += getXMLString(tokens, i)
-    i+=1
-  end
-
-  resultList = varNameT(tokens, i, "")
-  str+= resultList[0]
+  resultList = compileVarDecT(tokens, classNames, i, "")
+  str += resultList[0]
   i = resultList[1]
-
-  if notToLarge(tokens, i) and isCorrectToken(tokens, i, ";")
-    str+=getXMLString(tokens, i)
-    i+=1
-  end
 
   str += "</varDec>"+"\n"
   return [str, i]
 end
+
+
+def compileVarDecT(tokens, classNames, i, result)
+  if notToLarge(tokens, i) and !isCorrectToken(tokens, i, "var")
+    return [result, i]
+  end
+
+  if notToLarge(tokens, i) and isCorrectToken(tokens, i, "var")
+    result += getXMLString(tokens, i)
+    i += 1
+  end
+
+  if notToLarge(tokens, i) and isType(tokens[i][1], classNames)
+    result += getXMLString(tokens, i)
+    i+=1
+  end
+
+  resultList = varNameT(tokens, i, "")
+  result += resultList[0]
+  i = resultList[1]
+
+  if notToLarge(tokens, i) and isCorrectToken(tokens, i, ";")
+    result+=getXMLString(tokens, i)
+    i+=1
+  end
+
+  resultList = compileVarDecT(tokens, classNames, i, result)
+  return resultList
+end
+
 
 def compileStatements(tokens, i)
   str = ""
@@ -586,6 +608,8 @@ def compileSubExpression(tokens, i)
     str += getXMLString(tokens, i)
     i+=1
   end
+
+  return [str, i]
 end
 
 #need to write this function

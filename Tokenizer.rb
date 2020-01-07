@@ -96,7 +96,7 @@ def getToken(str)
     token = ["stringConstants", str]
 
   elsif isIdentifier(str)
-    token = ["stringConstants", str]
+    token = ["identifier", str]
   end
 
   return token
@@ -150,3 +150,5 @@ def isIdentifier(str)
 
   return true
 end
+
+
