@@ -21,7 +21,7 @@ end
 #checks if the op is one of the binary ops
 def isOp(str)
   return (str == "+" or str == "-" or str == "*" or str == "/" or
-      str == "&" or str == "|" or str == "<" or str == ">" or str == "=")
+      str == "&amp;" or str == "|" or str == "&lt;" or str == "&gt;" or str == "=")
 end
 
 
@@ -262,6 +262,7 @@ def compileParameterList(tokens, classNames, i)
   return [str, i]
 end
 
+
 def compileParameterListT(tokens, classNames, i, result)
   if notToLarge(tokens, i) and !isCorrectToken(tokens, i, ",")
     return [result, i]
@@ -288,7 +289,6 @@ def compileParameterListT(tokens, classNames, i, result)
 end
 
 
-#has bugs
 def compileVarDec(tokens, classNames, i)
 
   str = ""
@@ -341,37 +341,48 @@ def compileStatements(tokens, i)
   str = ""
   str += "<statements>"+"\n"
 
+  resultList = compileStatementT(tokens, i, "")
+  str += resultList[0]
+  i = resultList[1]
+
+  str += "</statements>"+"\n"
+  return [str, i]
+end
+
+
+def compileStatementT(tokens, i, result)
   case tokens[i][1]
   when "let"
     resultList = compileLet(tokens, i)
-    str+= resultList[0]
+    result += resultList[0]
     i = resultList[1]
 
   when "if"
     resultList = compileIf(tokens, i)
-    str+= resultList[0]
+    result += resultList[0]
     i = resultList[1]
 
   when "while"
     resultList = compileWhile(tokens, i)
-    str+= resultList[0]
+    result += resultList[0]
     i = resultList[1]
 
   when "do"
     resultList = compileDo(tokens, i)
-    str+= resultList[0]
+    result += resultList[0]
     i = resultList[1]
 
   when "return"
     resultList = compileReturn(tokens, i)
-    str+= resultList[0]
+    result += resultList[0]
     i = resultList[1]
 
   else
-
+    return [result, i]
   end
-  str += "</statements>"+"\n"
-  return [str, i]
+
+  resultList = compileStatementT(tokens, i, result)
+  return resultList
 end
 
 
@@ -398,6 +409,8 @@ end
 
 def compileLet(tokens, i)
   str = ""
+  str += "<letStatement>\n"
+
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, "let")
     str += getXMLString(tokens, i)
     i+=1
@@ -436,12 +449,15 @@ def compileLet(tokens, i)
     i+=1
   end
 
+  str += "</letStatement>\n"
   return [str, i]
 end
 
 
 def compileWhile(tokens, i)
   str = ""
+  str += "<whileStatement>\n"
+
   # check for while
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, "while")
     str += getXMLString(tokens, i)
@@ -463,7 +479,12 @@ def compileWhile(tokens, i)
   end
 
   resultList = compileSubStatements(tokens, i)
-  return resultList
+
+  str += resultList[0]
+  i = resultList[1]
+
+  str += "</whileStatement>\n"
+  return [str, i]
 end
 
 
@@ -487,6 +508,7 @@ end
 
 def compileReturn(tokens, i)
   str = ""
+  str += "<returnStatement>\n"
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, "return")
     str+= getXMLString(tokens, i)
     i+=1
@@ -502,12 +524,15 @@ def compileReturn(tokens, i)
     i+=1
   end
 
+  str += "</returnStatement>\n"
   return [str, i]
 end
 
 
 def compileIf(tokens, i)
   str = ""
+  str += "<ifStatement>\n"
+
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, "if")
     str += getXMLString(tokens, i)
     i += 1
@@ -547,6 +572,7 @@ def compileIf(tokens, i)
     i = resultList[1]
   end
 
+  str += "</ifStatement>\n"
   return [str, i]
 end
 

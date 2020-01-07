@@ -55,7 +55,6 @@ def tokenize(lines)
   return tokens
 end
 
-#str = c{aa
 
 def splitSymbols(str)
   strArr = []
@@ -87,6 +86,16 @@ def getToken(str)
     token = ["keyword", str]
 
   elsif getSymbols.include?(str)
+    if str == "<"
+      str = "&lt;"
+
+    elsif str == ">"
+      str = "&lt;"
+
+    elsif str == "&"
+      str = "&amp;"
+    end
+
     token = ["symbol", str]
 
   elsif isIntConstant(str)

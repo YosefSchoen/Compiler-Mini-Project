@@ -33,20 +33,35 @@
 				<symbol>;</symbol>
 			</varDec>
 			<statements>
-				<keyword>let</keyword>
-				<identifier>a</identifier>
-				<symbol>=</symbol>
-				<identifier>b</identifier>
-				<symbol>;</symbol>
+				<letStatement>
+					<keyword>let</keyword>
+					<identifier>b</identifier>
+					<symbol>=</symbol>
+					<identifier>c</identifier>
+					<symbol>;</symbol>
+				</letStatement>
+				<ifStatement>
+					<keyword>if</keyword>
+					<symbol>(</symbol>
+					<identifier>a</identifier>
+					<symbol>&lt;</symbol>
+					<identifier>b</identifier>
+					<symbol>)</symbol>
+					<symbol>{</symbol>
+					<statements>
+						<letStatement>
+							<keyword>let</keyword>
+							<identifier>b</identifier>
+							<symbol>=</symbol>
+							<identifier>b</identifier>
+							<symbol>;</symbol>
+						</letStatement>
+					</statements>
+					<symbol>}</symbol>
+				</ifStatement>
 			</statements>
 			<symbol>}</symbol>
 		</subroutineBody>
 	</subroutineDec>
 	<symbol>}</symbol>
 </class>
-
-
-
-<x>
-  stuff
-</x>

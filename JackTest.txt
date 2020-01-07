@@ -5,8 +5,11 @@ class foo {
     method void bar() {
         var char a, b, c;
 
-        let a = b;
+        let b = c;
 
+        if (a < b) {
+            let b = b;
+        }
     }
 }
 
