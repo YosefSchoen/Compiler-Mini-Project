@@ -159,4 +159,3 @@ def isIdentifier(str)
   return true
 end
 
-
