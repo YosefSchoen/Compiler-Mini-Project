@@ -1,30 +1,62 @@
-class Main {
-    function void main() {
-        var Array a;
-        var int length;
-		var int i, sum;
+class Ball
+{
+    field int x;
+    field int y;
 
-		let length = Keyboard.readInt("HOW MANY NUMBERS? ");
-		let a = Array.new(length);
-		let i = 0;
+    constructor Ball(int _x, int _y)
+    {
+        let x = _x;
+        let y = _y;
+        return this;
+    }
 
-		while (i < length) {
-	  	  	let a[i] = Keyboard.readInt("ENTER THE NEXT NUMBER: ");
-	  	 	let i = i + 1;
-		}
+    method void draw()
+    {
+        do Screen.setColor(true);
+        do Screen.drawCircle(x, y, 4);
+        return;
+    }
 
-		let i = 0;
-		let sum = 0;
+    method void erase()
+    {
+        do Screen.setColor(false);
+        do Screen.drawCircle(x, y, 4);
+        return;
+    }
 
-		while (i < length) {
-		    let sum = sum + a[i];
-	 	   	let i = i + 1;
-		}
+    method void pitch()
+    {
+        if(y > 248)
+        {
+            return;
+        }
+        do erase();
+        let y = y + 5;
+        do draw();
+        return;
+    }
 
-		do Output.printString("THE AVERAGE IS: ");
-		do Output.printInt(sum / length);
-		do Output.println();
+    method int distance(int batX, int batY)
+    {
+        var int xDistance;
+        var int yDistance;
+        var int dist;
 
-		return;
+        let xDistance = Math.multiply(x - batX, x - batX);
+        let yDistance = Math.multiply(y - batY, y - batY);
+        let dist =  Math.sqrt(xDistance + yDistance);
+
+        return dist;
+    }
+
+    method boolean contact(Bat bat)
+    {
+        if (distance(bat.getX(), bat.getY()) < 10)
+        {
+            return true;
+        }
+
+        return false;
     }
 }
+

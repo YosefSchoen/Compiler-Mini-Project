@@ -6,7 +6,7 @@ def getKeywords
   functionTypes = %w(constructor function method)
   classDataTypes = %w(field static)
   keyConstants = %w(true false null this)
-  otherKeyWords = %w(class var void  let do if else while return)
+  otherKeyWords = %w(class var void  let do if else while return new)
   keywords = [].concat(dataTypes, functionTypes, classDataTypes, keyConstants, otherKeyWords)
   return keywords
 end

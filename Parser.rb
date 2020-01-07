@@ -185,8 +185,8 @@ def compileSubroutineDecT(tokens, classNames, i, result)
   end
 
   if notToLarge(tokens, i) and isSubRoutineType(tokens[i][1])
-    result+= getXMLString(tokens, i)
-    i+=1
+      result+= getXMLString(tokens, i)
+      i+=1
   end
   # type of function/method
   if notToLarge(tokens, i) and (isType(tokens[i][1], classNames) or isCorrectToken(tokens, i, "void"))
