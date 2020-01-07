@@ -1,8 +1,10 @@
 class foo {
-    field int x, y;
+    field char y;
     field char z;
 
     method void bar() {
+        var char a, b, c;
+        var int q;
     }
 }
 

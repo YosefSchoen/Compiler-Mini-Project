@@ -318,6 +318,11 @@ def compileVarDecT(tokens, classNames, i, result)
     i+=1
   end
 
+  if notToLarge(tokens, i) and isIdentifier(tokens[i][1])
+    result += getXMLString(tokens, i)
+    i += 1
+  end
+
   resultList = varNameT(tokens, i, "")
   result += resultList[0]
   i = resultList[1]

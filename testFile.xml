@@ -4,9 +4,7 @@
 	<symbol>{</symbol>
 	<ClassVarDec>
 		<keyword>field</keyword>
-		<keyword>int</keyword>
-		<identifier>x</identifier>
-		<symbol>,</symbol>
+		<keyword>char</keyword>
 		<identifier>y</identifier>
 		<symbol>;</symbol>
 		<keyword>field</keyword>
@@ -25,6 +23,18 @@
 		<subroutineBody>
 			<symbol>{</symbol>
 			<varDec>
+				<keyword>var</keyword>
+				<keyword>char</keyword>
+				<identifier>a</identifier>
+				<symbol>,</symbol>
+				<identifier>b</identifier>
+				<symbol>,</symbol>
+				<identifier>c</identifier>
+				<symbol>;</symbol>
+				<keyword>var</keyword>
+				<keyword>int</keyword>
+				<identifier>q</identifier>
+				<symbol>;</symbol>
 			</varDec>
 			<symbol>}</symbol>
 		</subroutineBody>
