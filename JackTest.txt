@@ -1,15 +1,10 @@
-class foo {
-    field char y;
-    field char z;
+class foo
+{
+    field int x;
+    field int y;
 
-    method void bar() {
-        var char a, b, c;
-
-        let b = c;
-
-        if (a < b) {
-            let b = b;
-        }
+    method void bar(int x){
+        var int x;
+        var int y;
     }
 }
-

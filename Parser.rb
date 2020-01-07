@@ -387,6 +387,8 @@ end
 
 
 def compileSubStatements(tokens, i)
+  str = ""
+
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, "{")
     str += getXMLString(tokens, i)
     i+=1
@@ -502,14 +504,15 @@ end
 
 def compileElse(tokens, i)
   str = ""
-
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, "else")
     str += getXMLString(tokens, i)
     i += 1
   end
 
   resultList = compileSubStatements(tokens, i)
-  return resultList
+  str += resultList[0]
+  i = resultList[1]
+  return [str, i]
 end
 
 
@@ -598,7 +601,7 @@ def compileExpression(tokens, i)
   i = resultList[1]
 
   resultList = compileExpressionT(tokens, i, "")
-  str+= resultList[0]
+  str += resultList[0]
   i = resultList[1]
 
 

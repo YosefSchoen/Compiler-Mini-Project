@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e2bbf7f2-661c-4b38-bdc0-4dc1c947d57a" name="Default Changelist" comment="">
+    <list default="true" id="e2bbf7f2-661c-4b38-bdc0-4dc1c947d57a" name="Default Changelist" comment="need to fix helpers">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JackTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/JackTest.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Parser.rb" beforeDir="false" afterPath="$PROJECT_DIR$/Parser.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testFile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testFile.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +61,21 @@
       <recent name="C:\Users\josep\RubymineProjects\MiniProject\Stage1" />
     </key>
   </component>
-  <component name="RunManager" selected="Ruby.Parser">
+  <component name="RunManager" selected="Ruby.CompilerIO">
+    <configuration name="CompilerIO" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
+      <module name="Project7" />
+      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/CompilerIO.rb" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Main" type="RubyRunConfigurationType" factoryName="Ruby">
       <module name="Project7" />
       <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="" />
@@ -132,6 +148,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Ruby.CompilerIO" />
         <item itemvalue="Ruby.Parser" />
         <item itemvalue="Ruby.Tokenizer" />
         <item itemvalue="Ruby.Translator" />
@@ -170,7 +187,7 @@
       <workItem from="1573814754201" duration="184000" />
       <workItem from="1573815022876" duration="119242000" />
       <workItem from="1574945043043" duration="14983000" />
-      <workItem from="1577728508224" duration="37119000" />
+      <workItem from="1577728508224" duration="45770000" />
     </task>
     <task id="LOCAL-00001" summary="New Commit">
       <created>1574256572492</created>
@@ -410,7 +427,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578331824102</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="need to fix helpers">
+      <created>1578334887586</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1578334887586</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -445,46 +469,46 @@
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="297" y="3" key="CommitChangelistDialog2" timestamp="1578331822653">
+    <state x="297" y="3" key="CommitChangelistDialog2" timestamp="1578407668186">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state x="297" y="3" key="CommitChangelistDialog2/0.0.1500.960@0.0.1500.960" timestamp="1578331822653" />
-    <state width="1446" height="3" key="GridCell.Tab.0.bottom" timestamp="1578240732080">
+    <state x="297" y="3" key="CommitChangelistDialog2/0.0.1500.960@0.0.1500.960" timestamp="1578407668186" />
+    <state width="1446" height="3" key="GridCell.Tab.0.bottom" timestamp="1578407760639">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1446" height="3" key="GridCell.Tab.0.bottom/0.0.1500.960@0.0.1500.960" timestamp="1578240732080" />
-    <state width="1446" height="3" key="GridCell.Tab.0.center" timestamp="1578240732080">
+    <state width="1446" height="3" key="GridCell.Tab.0.bottom/0.0.1500.960@0.0.1500.960" timestamp="1578407760639" />
+    <state width="1446" height="3" key="GridCell.Tab.0.center" timestamp="1578407760637">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1446" height="3" key="GridCell.Tab.0.center/0.0.1500.960@0.0.1500.960" timestamp="1578240732080" />
-    <state width="1446" height="3" key="GridCell.Tab.0.left" timestamp="1578240732080">
+    <state width="1446" height="3" key="GridCell.Tab.0.center/0.0.1500.960@0.0.1500.960" timestamp="1578407760637" />
+    <state width="1446" height="3" key="GridCell.Tab.0.left" timestamp="1578407760634">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1446" height="3" key="GridCell.Tab.0.left/0.0.1500.960@0.0.1500.960" timestamp="1578240732080" />
-    <state width="1446" height="3" key="GridCell.Tab.0.right" timestamp="1578240732080">
+    <state width="1446" height="3" key="GridCell.Tab.0.left/0.0.1500.960@0.0.1500.960" timestamp="1578407760634" />
+    <state width="1446" height="3" key="GridCell.Tab.0.right" timestamp="1578407760638">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1446" height="3" key="GridCell.Tab.0.right/0.0.1500.960@0.0.1500.960" timestamp="1578240732080" />
-    <state x="145" y="72" key="MergeDialog" timestamp="1577977881448">
+    <state width="1446" height="3" key="GridCell.Tab.0.right/0.0.1500.960@0.0.1500.960" timestamp="1578407760638" />
+    <state x="145" y="72" key="MergeDialog" timestamp="1578405806894">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state x="145" y="72" key="MergeDialog/0.0.1500.960@0.0.1500.960" timestamp="1577977881448" />
-    <state x="396" y="121" key="MultipleFileMergeDialog" timestamp="1577977884172">
+    <state x="145" y="72" key="MergeDialog/0.0.1500.960@0.0.1500.960" timestamp="1578405806894" />
+    <state x="396" y="121" key="MultipleFileMergeDialog" timestamp="1578405808879">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state x="396" y="121" key="MultipleFileMergeDialog/0.0.1500.960@0.0.1500.960" timestamp="1577977884172" />
+    <state x="396" y="121" key="MultipleFileMergeDialog/0.0.1500.960@0.0.1500.960" timestamp="1578405808879" />
     <state x="505" y="125" key="VCS.ChangeListViewerDialog" timestamp="1577778695444">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="505" y="125" key="VCS.ChangeListViewerDialog/0.0.1500.960@0.0.1500.960" timestamp="1577778695444" />
-    <state x="244" y="144" key="Vcs.Push.Dialog.v2" timestamp="1578331825747">
+    <state x="244" y="144" key="Vcs.Push.Dialog.v2" timestamp="1578334889607">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state x="244" y="144" key="Vcs.Push.Dialog.v2/0.0.1500.960@0.0.1500.960" timestamp="1578331825747" />
-    <state x="527" y="373" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1578332128571">
+    <state x="244" y="144" key="Vcs.Push.Dialog.v2/0.0.1500.960@0.0.1500.960" timestamp="1578334889607" />
+    <state x="527" y="373" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1578405781761">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state x="527" y="373" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1500.960@0.0.1500.960" timestamp="1578332128571" />
+    <state x="527" y="373" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1500.960@0.0.1500.960" timestamp="1578405781761" />
     <state x="325" y="218" key="run.anything.popup" timestamp="1578333463765">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
@@ -499,7 +523,9 @@
     <SUITE FILE_PATH="coverage/Project7@Test.rcov" NAME="Main Coverage Results" MODIFIED="1574885669794" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="C:\Users\josep\RubymineProjects\Project7" MODULE_NAME="Project7" />
     <SUITE FILE_PATH="coverage/Project7@code_writer.rcov" NAME="code_writer Coverage Results" MODIFIED="1574813817501" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
     <SUITE FILE_PATH="coverage/Project7@Utility.rcov" NAME="Utility Coverage Results" MODIFIED="1574100649750" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
+    <SUITE FILE_PATH="coverage/Project7@Parser.rcov" NAME="Parser Coverage Results" MODIFIED="1578402315711" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
     <SUITE FILE_PATH="coverage/MiniProject@Test.rcov" NAME="Test Coverage Results" MODIFIED="1573607065364" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
     <SUITE FILE_PATH="coverage/Project7@Main.rcov" NAME="Main Coverage Results" MODIFIED="1574977972793" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
+    <SUITE FILE_PATH="coverage/Project7@CompilerIO.rcov" NAME="CompilerIO Coverage Results" MODIFIED="1578407760605" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
   </component>
 </project>

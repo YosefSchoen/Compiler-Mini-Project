@@ -4,12 +4,12 @@
 	<symbol>{</symbol>
 	<ClassVarDec>
 		<keyword>field</keyword>
-		<keyword>char</keyword>
-		<identifier>y</identifier>
+		<keyword>int</keyword>
+		<identifier>x</identifier>
 		<symbol>;</symbol>
 		<keyword>field</keyword>
-		<keyword>char</keyword>
-		<identifier>z</identifier>
+		<keyword>int</keyword>
+		<identifier>y</identifier>
 		<symbol>;</symbol>
 	</ClassVarDec>
 	<subroutineDec>
@@ -18,47 +18,23 @@
 		<identifier>bar</identifier>
 		<symbol>(</symbol>
 		<parameterList>
+			<keyword>int</keyword>
+			<identifier>x</identifier>
 		</parameterList>
 		<symbol>)</symbol>
 		<subroutineBody>
 			<symbol>{</symbol>
 			<varDec>
 				<keyword>var</keyword>
-				<keyword>char</keyword>
-				<identifier>a</identifier>
-				<symbol>,</symbol>
-				<identifier>b</identifier>
-				<symbol>,</symbol>
-				<identifier>c</identifier>
+				<keyword>int</keyword>
+				<identifier>x</identifier>
+				<symbol>;</symbol>
+				<keyword>var</keyword>
+				<keyword>int</keyword>
+				<identifier>y</identifier>
 				<symbol>;</symbol>
 			</varDec>
 			<statements>
-				<letStatement>
-					<keyword>let</keyword>
-					<identifier>b</identifier>
-					<symbol>=</symbol>
-					<identifier>c</identifier>
-					<symbol>;</symbol>
-				</letStatement>
-				<ifStatement>
-					<keyword>if</keyword>
-					<symbol>(</symbol>
-					<identifier>a</identifier>
-					<symbol>&lt;</symbol>
-					<identifier>b</identifier>
-					<symbol>)</symbol>
-					<symbol>{</symbol>
-					<statements>
-						<letStatement>
-							<keyword>let</keyword>
-							<identifier>b</identifier>
-							<symbol>=</symbol>
-							<identifier>b</identifier>
-							<symbol>;</symbol>
-						</letStatement>
-					</statements>
-					<symbol>}</symbol>
-				</ifStatement>
 			</statements>
 			<symbol>}</symbol>
 		</subroutineBody>
