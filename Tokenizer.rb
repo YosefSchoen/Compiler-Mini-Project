@@ -50,12 +50,21 @@ def tokenize(lines)
         break
       end
 
-      if str[0] == "\"" and str[str.size-1] != "\""
+
+      if str[0] == "\"" and str[str.size-2] != "\""
         strConst = str
         buildingStrConst = true
-      end
 
-      if str[str.size-2] == "\""
+
+      elsif buildingStrConst and str == " "
+        strConst = strConst+str
+        puts str
+
+
+      elsif buildingStrConst and str[str.size-2] != "\""
+        strConst = strConst+" "+str
+
+      elsif str[str.size-2] == "\""
         str = strConst+" "+str
         buildingStrConst = false
         strConst = ""
@@ -188,4 +197,10 @@ def isIdentifier(str)
   end
 
   return true
+end
+
+
+
+def fixStrConst(str)
+
 end

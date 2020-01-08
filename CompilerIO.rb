@@ -66,7 +66,6 @@ def compile(path)
     tokens = tokenize(lines)
     writeCompiledXMLFile(tokens, classNames, compiledFileName)
     writeTokensXMLFile(tokens, tokensFileName)
-    puts tokens
   end
 end
 
@@ -176,7 +175,7 @@ def getFilesWithLines2(files)
   return fileWithLines
 end
 
-path = "Project10/Square"
-#path = "Project10/ArrayTest"
+#path = "Project10/Square"
+path = "Project10/ArrayTest"
 #path = "C:/Users/josep/RubymineProjects/HackToVmProject"
 compile(path)

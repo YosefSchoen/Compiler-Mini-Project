@@ -850,6 +850,6 @@ end
 def isExpression(tokens, i)
   str = tokens[i][1]
 
-  return (notToLarge(tokens, i) and (isIntConstant(str) or isStringConstant(str) or
+  return (notToLarge(tokens, i) and (isIntConstant(str) or tokens[i][0] == "stringConstant" or
       isKeywordConst(str) or isIdentifier(str) or isUnaryOP(str)))
 end
