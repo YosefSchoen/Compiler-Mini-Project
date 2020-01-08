@@ -35,28 +35,6 @@
 			<statements>
 				<letStatement>
 					<keyword> let </keyword>
-					<identifier> length </identifier>
-					<symbol> = </symbol>
-					<expression>
-						<term>
-							<identifier> Keyboard </identifier>
-							<symbol> . </symbol>
-							<identifier> readInt </identifier>
-							<symbol> ( </symbol>
-							<expressionList>
-								<expression>
-									<term>
-										<stringConstants> "HOW_MANY_NUMBERS?_" </stringConstants>
-									</term>
-								</expression>
-							</expressionList>
-							<symbol> ) </symbol>
-						</term>
-					</expression>
-					<symbol> ; </symbol>
-				</letStatement>
-				<letStatement>
-					<keyword> let </keyword>
 					<identifier> a </identifier>
 					<symbol> = </symbol>
 					<expression>
@@ -83,7 +61,7 @@
 					<symbol> = </symbol>
 					<expression>
 						<term>
-							<integerConstants> 0 </integerConstants>
+							<integerConstant> 0 </integerConstant>
 						</term>
 					</expression>
 					<symbol> ; </symbol>
@@ -105,35 +83,6 @@
 					<statements>
 						<letStatement>
 							<keyword> let </keyword>
-							<identifier> a </identifier>
-							<symbol> [ </symbol>
-							<expression>
-								<term>
-									<identifier> i </identifier>
-								</term>
-							</expression>
-							<symbol> ] </symbol>
-							<symbol> = </symbol>
-							<expression>
-								<term>
-									<identifier> Keyboard </identifier>
-									<symbol> . </symbol>
-									<identifier> readInt </identifier>
-									<symbol> ( </symbol>
-									<expressionList>
-										<expression>
-											<term>
-												<stringConstants> "ENTER_THE_NEXT_NUMBER:_" </stringConstants>
-											</term>
-										</expression>
-									</expressionList>
-									<symbol> ) </symbol>
-								</term>
-							</expression>
-							<symbol> ; </symbol>
-						</letStatement>
-						<letStatement>
-							<keyword> let </keyword>
 							<identifier> i </identifier>
 							<symbol> = </symbol>
 							<expression>
@@ -142,7 +91,7 @@
 								</term>
 								<symbol> + </symbol>
 								<term>
-									<integerConstants> 1 </integerConstants>
+									<integerConstant> 1 </integerConstant>
 								</term>
 							</expression>
 							<symbol> ; </symbol>
@@ -156,7 +105,7 @@
 					<symbol> = </symbol>
 					<expression>
 						<term>
-							<integerConstants> 0 </integerConstants>
+							<integerConstant> 0 </integerConstant>
 						</term>
 					</expression>
 					<symbol> ; </symbol>
@@ -167,7 +116,7 @@
 					<symbol> = </symbol>
 					<expression>
 						<term>
-							<integerConstants> 0 </integerConstants>
+							<integerConstant> 0 </integerConstant>
 						</term>
 					</expression>
 					<symbol> ; </symbol>
@@ -219,7 +168,7 @@
 								</term>
 								<symbol> + </symbol>
 								<term>
-									<integerConstants> 1 </integerConstants>
+									<integerConstant> 1 </integerConstant>
 								</term>
 							</expression>
 							<symbol> ; </symbol>
@@ -227,22 +176,6 @@
 					</statements>
 					<symbol> } </symbol>
 				</whileStatement>
-				<doStatement>
-					<keyword> do </keyword>
-					<identifier> Output </identifier>
-					<symbol> . </symbol>
-					<identifier> printString </identifier>
-					<symbol> ( </symbol>
-					<expressionList>
-						<expression>
-							<term>
-								<stringConstants> "THE_AVERAGE_IS:_" </stringConstants>
-							</term>
-						</expression>
-					</expressionList>
-					<symbol> ) </symbol>
-					<symbol> ; </symbol>
-				</doStatement>
 				<doStatement>
 					<keyword> do </keyword>
 					<identifier> Output </identifier>

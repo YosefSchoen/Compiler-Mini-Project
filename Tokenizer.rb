@@ -59,7 +59,6 @@ def tokenize(lines)
         str = strConst+" "+str
         buildingStrConst = false
         strConst = ""
-
       end
 
 
