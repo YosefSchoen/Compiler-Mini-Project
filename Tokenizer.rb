@@ -117,6 +117,7 @@ def getToken(str)
     token = ["integerConstants", str]
 
   elsif isStringConstant(str)
+    str = str.delete("\"")
     token = ["stringConstants", str]
 
   elsif isIdentifier(str)
@@ -174,4 +175,3 @@ def isIdentifier(str)
 
   return true
 end
-
