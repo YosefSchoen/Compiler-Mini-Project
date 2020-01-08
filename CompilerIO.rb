@@ -20,22 +20,46 @@ def readJackFile(fileName)
 end
 
 
-
-def writeJackFile(lines, outFile)
-  tokens = tokenize(lines)
+def writeCompiledXMLFile(tokens, outFile)
   str = compileClass(tokens, [])
   str = tabXMLTags(str)
-  xmLFile = File.new(outFile, "w")
+  xmlFile = File.new(outFile, "w")
 
 
-  xmLFile.syswrite(str)
+  xmlFile.syswrite(str)
 end
 
 
+def writeTokensXMLFile(tokens, outFile)
+  str = "<tokens>\n"
+  for i in 0..tokens.size-1
+    str += getXMLString(tokens, i)
+  end
+  str += "</tokens>\n"
+  str = tabXMLTags(str)
 
-def compile(inFile, outFile)
-  lines = readJackFile(inFile)
-  writeJackFile(lines, outFile)
+  xmlFile = File.new(outFile, "w")
+  xmlFile.syswrite(str)
+end
+
+
+def compile(path)
+  files = getFilesInDir2(path)
+
+  filesWithLines = getFilesWithLines2(files)
+
+  for i in 0..filesWithLines.size-1
+    fSize = filesWithLines[i][0].size
+
+    #renaming the
+    compiledFileName = filesWithLines[i][0][0, fSize-5]+"Out.xml"
+    tokensFileName = filesWithLines[i][0][0, fSize-5]+"TOut.xml"
+
+    lines = filesWithLines[i][1]
+    tokens = tokenize(lines)
+    writeCompiledXMLFile(tokens, compiledFileName)
+    writeTokensXMLFile(tokens, tokensFileName)
+  end
 end
 
 
@@ -66,7 +90,6 @@ def tabXMLTags(str)
     strArr[i] = tabs+strArr[i]
   end
 
-  puts strArr.join("\n")
   return strArr.join("\n")
 end
 
@@ -92,7 +115,6 @@ def isStartTag(str)
 end
 
 
-
 def isEndTag(str)
   #a string is a end tag if it is of form </"substr">
   if str[0] == "<" and str[1] == "/"
@@ -113,5 +135,37 @@ def isEndTag(str)
 end
 
 
+#this function will get all of the files in a specified path and return them in an array
+def getFilesInDir2(path)
+  files = []
+  #search for all of the files in the directory
+  Dir.foreach(path) do |filename|
+    #dont include parent files
+    next if filename == '.' || filename == '..'
 
-compile("JackTest.txt", "testFile.xml")
+    #dont include files that are not vm files
+    next unless filename.to_s.include?("jack")
+
+    #push the file to the list
+    files.push(path+"/"+filename)
+  end
+
+  return files
+end
+
+
+def getFilesWithLines2(files)
+  fileWithLines = []
+
+  #storing the file's name and its lines of vm commands in a tuple (name, [lines])
+  for i in 0..files.size-1
+    lines = (readJackFile(files[i]))
+    tuple = [files[i], lines]
+    #storing each tuple into  list
+    fileWithLines.append(tuple)
+  end
+
+  return fileWithLines
+end
+
+compile("Project10/ExpressionLessSquare")

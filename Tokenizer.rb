@@ -39,9 +39,8 @@ def tokenize(lines)
 
   lines.each do |line| line = line.split(' ')
     line.each do |str|
-
-      if str[0] == "*" and str[1] == "/"
-        isMultiLineComment = false
+      if str[0] == "/" and str[1] == "*"
+        isMultiLineComment = true
       end
 
       if str[0] == "/" and str[1] == "/"
@@ -60,12 +59,12 @@ def tokenize(lines)
           tokens.push(getToken(str))
         end
       end
-      if str[0] == "/" and str[1] == "*"
-        isMultiLineComment = true
+
+      if str[0] == "*" and str[1] == "/"
+        isMultiLineComment = false
       end
     end
   end
-
 
   return tokens
 end

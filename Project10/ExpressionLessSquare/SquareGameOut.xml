@@ -1,10 +1,11 @@
 <class>
 	<keyword>class</keyword>
-	<identifier>foo</identifier>
+	<identifier>SquareGame</identifier>
 	<symbol>{</symbol>
 	<ClassVarDec>
+		<keyword>field</keyword>
+		<identifier>Square</identifier>
 	</ClassVarDec>
 	<subroutineDec>
 	</subroutineDec>
-	<symbol>}</symbol>
 </class>

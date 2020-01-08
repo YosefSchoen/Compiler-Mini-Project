@@ -65,9 +65,8 @@ end
 #the first function called compiles the file's class
 def compileClass(tokens, classNames)
 
+  str = ""
   i = 0
-  str = "<file>\n"
-  str += writeTokens(tokens)
 
   #terminal class
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, "class")
@@ -102,7 +101,7 @@ def compileClass(tokens, classNames)
     str+= getXMLString(tokens, i)
   end
 
-  str+= "</class>"+"\n"+"</file>\n"
+  str+= "</class>"+"\n"
 
   return str
 end
