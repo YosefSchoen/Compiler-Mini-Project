@@ -6,7 +6,7 @@ def getKeywords
   functionTypes = %w(constructor function method)
   classDataTypes = %w(field static)
   keyConstants = %w(true false null this)
-  otherKeyWords = %w(class var void  let do if else while return new)
+  otherKeyWords = %w(class var void  let do if else while return)
   keywords = [].concat(dataTypes, functionTypes, classDataTypes, keyConstants, otherKeyWords)
   return keywords
 end
@@ -36,9 +36,12 @@ end
 def tokenize(lines)
   tokens = []
   isMultiLineComment = false
+  buildingStrConst = false
+  strConst =""
 
   lines.each do |line| line = line.split(' ')
     line.each do |str|
+
       if str[0] == "/" and str[1] == "*"
         isMultiLineComment = true
       end
@@ -47,8 +50,20 @@ def tokenize(lines)
         break
       end
 
+      if str[0] == "\"" and str[str.size-1] != "\""
+        strConst = str
+        buildingStrConst = true
+      end
 
-      if !isMultiLineComment
+      if str[str.size-2] == "\""
+        str = strConst+" "+str
+        buildingStrConst = false
+        strConst = ""
+
+      end
+
+
+      if !isMultiLineComment and !buildingStrConst
         newLine = splitSymbols(str)
         unless newLine.empty?
           newLine.each do |i|
@@ -114,11 +129,11 @@ def getToken(str)
     token = ["symbol", str]
 
   elsif isIntConstant(str)
-    token = ["integerConstants", str]
+    token = ["integerConstant", str]
 
   elsif isStringConstant(str)
     str = str.delete("\"")
-    token = ["stringConstants", str]
+    token = ["stringConstant", str]
 
   elsif isIdentifier(str)
     token = ["identifier", str]

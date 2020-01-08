@@ -1,0 +1,7 @@
+<tokens>
+	<keyword> class </keyword>
+	<identifier> foo </identifier>
+	<symbol> { </symbol>
+	<stringConstants> hello world </stringConstants>
+	<symbol> } </symbol>
+</tokens>

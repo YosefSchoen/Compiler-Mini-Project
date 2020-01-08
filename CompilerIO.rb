@@ -20,8 +20,8 @@ def readJackFile(fileName)
 end
 
 
-def writeCompiledXMLFile(tokens, outFile)
-  str = compileClass(tokens, [])
+def writeCompiledXMLFile(tokens, classNames, outFile)
+  str = compileClass(tokens, classNames)
   str = tabXMLTags(str)
   xmlFile = File.new(outFile, "w")
 
@@ -44,10 +44,16 @@ end
 
 
 def compile(path)
-
+  classNames = []
   files = getFilesInDir2(path)
 
   filesWithLines = getFilesWithLines2(files)
+
+  for i in 0..filesWithLines.size-1
+    lines = filesWithLines[i][1]
+    tokens = tokenize(lines)
+    classNames.push(tokens[1][1])
+  end
 
   for i in 0..filesWithLines.size-1
     fSize = filesWithLines[i][0].size
@@ -58,8 +64,9 @@ def compile(path)
 
     lines = filesWithLines[i][1]
     tokens = tokenize(lines)
-    writeCompiledXMLFile(tokens, compiledFileName)
+    writeCompiledXMLFile(tokens, classNames, compiledFileName)
     writeTokensXMLFile(tokens, tokensFileName)
+    puts tokens
   end
 end
 
@@ -169,4 +176,6 @@ def getFilesWithLines2(files)
   return fileWithLines
 end
 
-compile("Project10/ExpressionLessSquare")
+path = "Project10/Square"
+#path = "C:/Users/josep/RubymineProjects/HackToVmProject"
+compile(path)
