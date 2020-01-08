@@ -175,7 +175,11 @@ def getFilesWithLines2(files)
   return fileWithLines
 end
 
-#path = "Project10/Square"
+path = "Project10/Square"
+compile(path)
+
 path = "Project10/ArrayTest"
-#path = "C:/Users/josep/RubymineProjects/HackToVmProject"
+compile(path)
+
+path = "C:/Users/josep/RubymineProjects/HackToVmProject"
 compile(path)

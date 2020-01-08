@@ -2,6 +2,41 @@
 	<keyword> class </keyword>
 	<identifier> foo </identifier>
 	<symbol> { </symbol>
-	<stringConstants> hello world </stringConstants>
+	<keyword> field </keyword>
+	<keyword> int </keyword>
+	<identifier> x </identifier>
+	<symbol> ; </symbol>
+	<keyword> field </keyword>
+	<keyword> int </keyword>
+	<identifier> y </identifier>
+	<symbol> ; </symbol>
+	<keyword> method </keyword>
+	<keyword> void </keyword>
+	<identifier> bar </identifier>
+	<symbol> ( </symbol>
+	<keyword> int </keyword>
+	<identifier> a </identifier>
+	<symbol> , </symbol>
+	<keyword> int </keyword>
+	<identifier> b </identifier>
+	<symbol> ) </symbol>
+	<symbol> { </symbol>
+	<keyword> let </keyword>
+	<identifier> x </identifier>
+	<symbol> = </symbol>
+	<identifier> a </identifier>
+	<keyword> let </keyword>
+	<identifier> y </identifier>
+	<symbol> = </symbol>
+	<identifier> b </identifier>
+	<symbol> [ </symbol>
+	<integerConstant> 0 </integerConstant>
+	<symbol> ] </symbol>
+	<keyword> let </keyword>
+	<identifier> c </identifier>
+	<symbol> = </symbol>
+	<stringConstant> hello </stringConstant>
+	<symbol> ; </symbol>
+	<symbol> } </symbol>
 	<symbol> } </symbol>
 </tokens>
