@@ -63,6 +63,7 @@ def tokenize(lines)
       if str[0] == "*" and str[1] == "/"
         isMultiLineComment = false
       end
+
     end
   end
 

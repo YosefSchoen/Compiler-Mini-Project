@@ -44,6 +44,7 @@ end
 
 
 def compile(path)
+
   files = getFilesInDir2(path)
 
   filesWithLines = getFilesWithLines2(files)

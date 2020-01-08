@@ -2,28 +2,26 @@
 	<keyword>class</keyword>
 	<identifier>Main</identifier>
 	<symbol>{</symbol>
-	<ClassVarDec>
+	<classVarDec>
 		<keyword>static</keyword>
 		<keyword>boolean</keyword>
 		<identifier>test</identifier>
 		<symbol>;</symbol>
-	</ClassVarDec>
+	</classVarDec>
 	<subroutineDec>
 		<keyword>function</keyword>
 		<keyword>void</keyword>
 		<identifier>main</identifier>
 		<symbol>(</symbol>
-		<parameterList>
-		</parameterList>
+		<parameterList> </parameterList>
 		<symbol>)</symbol>
 		<subroutineBody>
 			<symbol>{</symbol>
 			<varDec>
 				<keyword>var</keyword>
 				<identifier>SquareGame</identifier>
-			</varDec>
-			<statements>
-			</statements>
-		</subroutineBody>
-	</subroutineDec>
-</class>
+				<statements>
+				</statements>
+			</subroutineBody>
+		</subroutineDec>
+	</class>
