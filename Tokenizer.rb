@@ -35,21 +35,37 @@ end
 
 def tokenize(lines)
   tokens = []
+  isMultiLineComment = false
 
   lines.each do |line| line = line.split(' ')
     line.each do |str|
 
-      newLine = splitSymbols(str)
-      unless newLine.empty?
-        newLine.each do |i|
-          tokens.push(getToken(i))
+      if str[0] == "*" and str[1] == "/"
+        isMultiLineComment = false
+      end
+
+      if str[0] == "/" and str[1] == "/"
+        break
+      end
+
+
+      if !isMultiLineComment
+        newLine = splitSymbols(str)
+        unless newLine.empty?
+          newLine.each do |i|
+            tokens.push(getToken(i))
+          end
+
+        else
+          tokens.push(getToken(str))
         end
-
-      else tokens.push(getToken(str))
-
+      end
+      if str[0] == "/" and str[1] == "*"
+        isMultiLineComment = true
       end
     end
   end
+
 
   return tokens
 end

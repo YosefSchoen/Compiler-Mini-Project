@@ -1,62 +1,8 @@
-class Ball
-{
-    field int x;
-    field int y;
+// comment line
+not comment line
+line with comment //this is the comment
 
-    constructor Ball(int _x, int _y)
-    {
-        let x = _x;
-        let y = _y;
-        return this;
-    }
-
-    method void draw()
-    {
-        do Screen.setColor(true);
-        do Screen.drawCircle(x, y, 4);
-        return;
-    }
-
-    method void erase()
-    {
-        do Screen.setColor(false);
-        do Screen.drawCircle(x, y, 4);
-        return;
-    }
-
-    method void pitch()
-    {
-        if(y > 248)
-        {
-            return;
-        }
-        do erase();
-        let y = y + 5;
-        do draw();
-        return;
-    }
-
-    method int distance(int batX, int batY)
-    {
-        var int xDistance;
-        var int yDistance;
-        var int dist;
-
-        let xDistance = Math.multiply(x - batX, x - batX);
-        let yDistance = Math.multiply(y - batY, y - batY);
-        let dist =  Math.sqrt(xDistance + yDistance);
-
-        return dist;
-    }
-
-    method boolean contact(Bat bat)
-    {
-        if (distance(bat.getX(), bat.getY()) < 10)
-        {
-            return true;
-        }
-
-        return false;
-    }
-}
-
+multi line comment
+/* here is the multi line comment
+as you can see it has multiple lines
+*/

@@ -12,7 +12,6 @@ def isType(str, classNames)
 end
 
 
-
 #check if the subroutine is one of the three types
 def isSubRoutineType(str)
   return (str == "constructor" or str == "function" or str == "method")
@@ -61,6 +60,7 @@ def writeTokens(tokens)
   str += "</tokens>\n"
   return str
 end
+
 
 #the first function called compiles the file's class
 def compileClass(tokens, classNames)
@@ -234,6 +234,7 @@ def compileSubroutineDecT(tokens, classNames, i, result)
   return resultList
 end
 
+
 def compileSubroutineBody(tokens, classNames, i)
   str = ""
 
@@ -281,7 +282,6 @@ def compileParameterList(tokens, classNames, i)
     i+=1
   end
 
-  puts "hello"
   resultList = compileParameterListT(tokens, classNames, i, "")
   str += resultList[0]
   i = resultList[1]
@@ -316,6 +316,7 @@ def compileParameterListT(tokens, classNames, i, result)
   resultList = compileParameterListT(tokens, classNames, i, result)
   return resultList
 end
+
 
 def compileVarDec(tokens, classNames, i)
 
@@ -577,6 +578,7 @@ def compileWhile(tokens, i)
   return [str, i]
 end
 
+
 def compileDo(tokens, i)
   str = ""
 
@@ -712,7 +714,6 @@ def compileTerm(tokens, i)
 end
 
 
-
 #need to write this function
 def compileSubroutineCall(tokens, i)
   str = ""
@@ -738,7 +739,7 @@ def compileSubroutineCall(tokens, i)
     str += getXMLString(tokens, i)
     i += 1
   end
-  puts"here"
+
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, "(")
     str += getXMLString(tokens, i)
     i += 1
@@ -754,7 +755,6 @@ def compileSubroutineCall(tokens, i)
   end
   return [str, i]
 end
-
 
 
 def compileExpressionList(tokens, i)

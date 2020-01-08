@@ -9,6 +9,7 @@ def readJackFile(fileName)
   inFile = File.new(fileName, "r")
 
   while (line = inFile.gets)
+
     lines << line
   end
 
@@ -16,7 +17,6 @@ def readJackFile(fileName)
 
   #returns an array each element is a string of a line of the file
   return lines
-
 end
 
 
