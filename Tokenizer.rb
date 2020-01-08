@@ -41,25 +41,35 @@ def tokenize(lines)
 
   lines.each do |line| line = line.split(' ')
     line.each do |str|
+
+      #checks for multi line comment will not tokenize until the comment is finished
       if str[0] == "/" and str[2] == "*"
         isMultiLineComment = true
       end
 
+
+      #will not tokenize inline comment
       if str[0] == "/" and str[1] == "/"
         break
       end
 
+      #if the token starts with " it will save in a new string
+      # will set buildingStrConst to true and wont tokenize until it finds the ending "
       if str[0] == "\"" and str[str.size-2] != "\""
         strConst = str
         buildingStrConst = true
 
+      #if there is a space in the string ie "hello world"
       elsif buildingStrConst and str == " "
         strConst = strConst+str
 
 
+      #if there are multiple words in string ie "hello world"
+      # size-2 is there because it will always be str = "string";
       elsif buildingStrConst and str[str.size-2] != "\""
         strConst = strConst+" "+str
 
+      #if the string got to the end ie world"
       elsif buildingStrConst and str[str.size-2] == "\""
         str = strConst+" "+str
         buildingStrConst = false
@@ -67,6 +77,7 @@ def tokenize(lines)
       end
 
 
+      #only tokenize if it is not a comment or incomplete string
       if !isMultiLineComment and !buildingStrConst
         newLine = splitSymbols(str)
         unless newLine.empty?
