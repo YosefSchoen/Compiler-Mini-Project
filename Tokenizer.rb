@@ -1,6 +1,5 @@
 #terminal come in 5 types they will all be stored in an array called terminals
 
-
 def getKeywords
   dataTypes = %w(int char boolean)
   functionTypes = %w(constructor function method)
@@ -31,132 +30,6 @@ def getAlphabet
   alphabet = [digits, characters]
   return alphabet
 end
-
-
-def tokenize(lines)
-  tokens = []
-  isMultiLineComment = false
-  buildingStrConst = false
-  strConst =""
-
-  lines.each do |line| line = line.split(' ')
-    line.each do |str|
-
-      #checks for multi line comment will not tokenize until the comment is finished
-      if str[0] == "/" and str[2] == "*"
-        isMultiLineComment = true
-      end
-
-
-      #will not tokenize inline comment
-      if str[0] == "/" and str[1] == "/"
-        break
-      end
-
-      #if the token starts with " it will save in a new string
-      # will set buildingStrConst to true and wont tokenize until it finds the ending "
-      if str[0] == "\"" and str[str.size-2] != "\""
-        strConst = str
-        buildingStrConst = true
-
-      #if there is a space in the string ie "hello world"
-      elsif buildingStrConst and str == " "
-        strConst = strConst+str
-
-
-      #if there are multiple words in string ie "hello world"
-      # size-2 is there because it will always be str = "string";
-      elsif buildingStrConst and str[str.size-2] != "\""
-        strConst = strConst+" "+str
-
-      #if the string got to the end ie world"
-      elsif buildingStrConst and str[str.size-2] == "\""
-        str = strConst+" "+str
-        buildingStrConst = false
-        strConst = ""
-      end
-
-
-      #only tokenize if it is not a comment or incomplete string
-      if !isMultiLineComment and !buildingStrConst
-        newLine = splitSymbols(str)
-        unless newLine.empty?
-          newLine.each do |i|
-            tokens.push(getToken(i))
-          end
-
-        else
-          tokens.push(getToken(str))
-        end
-      end
-
-      if str[0] == "*" and str[1] == "/"
-        isMultiLineComment = false
-      end
-
-    end
-  end
-
-  return tokens
-end
-
-
-def splitSymbols(str)
-  strArr = []
- newStr = ""
-
-  for i in 0..str.size-1
-    if !getSymbols.include?(str[i])
-      newStr.concat("", str[i])
-
-    else
-      unless newStr.empty?
-        strArr.push(newStr)
-        newStr = ""
-      end
-      strArr.push(str[i])
-    end
-  end
-
-  unless newStr.empty?
-    strArr.push(newStr)
-  end
-
-  return strArr
-end
-
-def getToken(str)
-  token = []
-  if getKeywords.include?(str)
-    token = ["keyword", str]
-
-  elsif getSymbols.include?(str)
-    if str == "<"
-      str = "&lt;"
-
-    elsif str == ">"
-      str = "&lt;"
-
-    elsif str == "&"
-      str = "&amp;"
-    end
-
-    token = ["symbol", str]
-
-  elsif isIntConstant(str)
-    token = ["integerConstant", str]
-
-  elsif isStringConstant(str)
-    str = str.delete("\"")
-    token = ["stringConstant", str]
-
-  elsif isIdentifier(str)
-    token = ["identifier", str]
-  end
-
-  return token
-end
-
 
 
 #function to check if a character is a number
@@ -204,4 +77,48 @@ def isIdentifier(str)
   end
 
   return true
+end
+
+
+def tokenize(lines)
+  tokens = []
+  for i in 0..lines.size-1
+    token = getToken(lines[i])
+    tokens.push(token)
+  end
+
+  return tokens
+end
+
+
+def getToken(str)
+  token = []
+  if getKeywords.include?(str)
+    token = ["keyword", str]
+
+  elsif getSymbols.include?(str)
+    if str == "<"
+      str = "&lt;"
+
+    elsif str == ">"
+      str = "&lt;"
+
+    elsif str == "&"
+      str = "&amp;"
+    end
+
+    token = ["symbol", str]
+
+  elsif isIntConstant(str)
+    token = ["integerConstant", str]
+
+  elsif isStringConstant(str)
+    str = str.delete("\"")
+    token = ["stringConstant", str]
+
+  elsif isIdentifier(str)
+    token = ["identifier", str]
+  end
+
+  return token
 end

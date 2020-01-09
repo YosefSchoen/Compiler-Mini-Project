@@ -43,17 +43,127 @@ def writeTokensXMLFile(tokens, outFile)
 end
 
 
-def compile(path)
+def getClassNames(filesWithLines)
   classNames = []
-  files = getFilesInDir2(path)
-
-  filesWithLines = getFilesWithLines2(files)
-
   for i in 0..filesWithLines.size-1
     lines = filesWithLines[i][1]
     tokens = tokenize(lines)
     classNames.push(tokens[1][1])
   end
+  return classNames
+end
+
+
+def removeComments(lines)
+  newLines = []
+  multiLineComment = false
+
+  for i in 0..lines.size-1
+    line = lines[i].split(" ")
+    newLine = []
+    for j in 0..line.size-1
+      str = line[j]
+
+      if str.size > 1 and str[0] == "/" and str[1] == "/"
+        break
+      end
+
+      if str.size > 1 and str[0] == "/" and str[1] == "*"
+        multiLineComment = true
+      end
+
+      unless multiLineComment
+        newLine.push(str)
+      end
+
+      if str.size > 1 and str[0] == "*" and str[1] == "/"
+        multiLineComment = false
+      end
+    end
+
+    unless newLine.empty?
+      newLines.push(newLine)
+    end
+  end
+
+  return newLines
+end
+
+
+def spaceSymbols(lines)
+  newLines = []
+
+  for i in 0..lines.size-1
+    line = lines[i]
+    newLine = []
+
+    for j in 0..line.size-1
+      str = line[j]
+      newStr = ""
+
+      for k in 0..str.size-1
+        if getSymbols.include?(str[k])
+          newStr = newStr + " "+str[k]+" "
+
+        else
+          newStr += str[k]
+        end
+      end
+
+      newStr = newStr.split(" ")
+
+      newLine.concat(newStr)
+    end
+
+    newLines.concat(newLine)
+  end
+
+  return newLines
+end
+
+
+def getStrConst(lines)
+  newLines = []
+  buildingString = false
+  strConst = ""
+  for i in 0..lines.size-1
+    str = lines[i]
+
+    if str[0] == "\""
+      buildingString = true
+      strConst = str
+
+    elsif buildingString
+      strConst = strConst + " " + str
+    end
+
+    if !buildingString
+      newLines.push(str)
+    end
+
+    if str[str.size-1] == "\""
+      newLines.push(strConst)
+      buildingString = false
+    end
+  end
+
+  return newLines
+end
+
+
+def getLines(lines)
+  lines = removeComments(lines)
+  lines = spaceSymbols(lines)
+  lines = getStrConst(lines)
+  return lines
+end
+
+
+def compile(path)
+  files = getFilesInDir2(path)
+  filesWithLines = getFilesWithLines2(files)
+  classNames = getClassNames(filesWithLines)
+
 
   for i in 0..filesWithLines.size-1
     fSize = filesWithLines[i][0].size
@@ -61,8 +171,8 @@ def compile(path)
     #renaming the
     compiledFileName = filesWithLines[i][0][0, fSize-5]+"Out.xml"
     tokensFileName = filesWithLines[i][0][0, fSize-5]+"TOut.xml"
-
     lines = filesWithLines[i][1]
+    lines = getLines(lines)
     tokens = tokenize(lines)
     writeCompiledXMLFile(tokens, classNames, compiledFileName)
     writeTokensXMLFile(tokens, tokensFileName)
