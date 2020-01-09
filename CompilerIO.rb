@@ -160,8 +160,8 @@ end
 
 
 def compile(path)
-  files = getFilesInDir2(path)
-  filesWithLines = getFilesWithLines2(files)
+  files = getFilesInDirCompiler(path)
+  filesWithLines = getFilesWithLinesCompiler(files)
   classNames = getClassNames(filesWithLines)
 
 
@@ -253,7 +253,7 @@ end
 
 
 #this function will get all of the files in a specified path and return them in an array
-def getFilesInDir2(path)
+def getFilesInDirCompiler(path)
   files = []
   #search for all of the files in the directory
   Dir.foreach(path) do |filename|
@@ -271,7 +271,8 @@ def getFilesInDir2(path)
 end
 
 
-def getFilesWithLines2(files)
+
+def getFilesWithLinesCompiler(files)
   fileWithLines = []
 
   #storing the file's name and its lines of vm commands in a tuple (name, [lines])

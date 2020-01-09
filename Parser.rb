@@ -50,7 +50,6 @@ def getXMLString(tokens, i)
 end
 
 
-
 #the first function called compiles the file's class
 def compileClass(tokens, classNames)
 
