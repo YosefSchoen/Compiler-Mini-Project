@@ -2,8 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e2bbf7f2-661c-4b38-bdc0-4dc1c947d57a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompilerIO.rb" beforeDir="false" afterPath="$PROJECT_DIR$/CompilerIO.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project10/ArrayTest/MainTOut.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project11/Average/Main.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project11/ComplexArrays/Main.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project11/ConvertToBin/Main.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project11/Pong/Ball.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project11/Pong/Bat.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project11/Pong/Main.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project11/Pong/PongGame.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project11/Seven/Main.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project11/Square/Main.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project11/Square/Square.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project11/Square/SquareGame.jack" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,7 +51,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Project11" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
@@ -187,7 +197,7 @@
       <workItem from="1573815022876" duration="119242000" />
       <workItem from="1574945043043" duration="14983000" />
       <workItem from="1577728508224" duration="52117000" />
-      <workItem from="1578517304087" duration="11119000" />
+      <workItem from="1578517304087" duration="11373000" />
     </task>
     <task id="LOCAL-00001" summary="New Commit">
       <created>1574256572492</created>
@@ -455,7 +465,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578564552298</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Need to clean up">
+      <created>1578569125498</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1578569125498</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
