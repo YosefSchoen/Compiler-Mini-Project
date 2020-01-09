@@ -2,18 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e2bbf7f2-661c-4b38-bdc0-4dc1c947d57a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Project10/ArrayTest/MainTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project11/Average/Main.jack" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project11/ComplexArrays/Main.jack" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project11/ConvertToBin/Main.jack" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project11/Pong/Ball.jack" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project11/Pong/Bat.jack" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project11/Pong/Main.jack" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project11/Pong/PongGame.jack" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project11/Seven/Main.jack" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project11/Square/Main.jack" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project11/Square/Square.jack" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project11/Square/SquareGame.jack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CompilerIO.rb" beforeDir="false" afterPath="$PROJECT_DIR$/CompilerIO.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JackTest.jack" beforeDir="false" afterPath="$PROJECT_DIR$/JackTest.jack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JackTestOut.xml" beforeDir="false" afterPath="$PROJECT_DIR$/JackTestOut.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JackTestTOut.xml" beforeDir="false" afterPath="$PROJECT_DIR$/JackTestTOut.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project10/ArrayTest/MainOut.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Project10/ArrayTest/MainOut.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project10/ArrayTest/MainTOut.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Project10/ArrayTest/MainTOut.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -56,18 +51,18 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\josep\RubymineProjects\Project7\Project8" />
-      <recent name="C:\Users\josep\RubymineProjects\Project7\Stage2\StaticTest" />
-      <recent name="C:\Users\josep\RubymineProjects\Project7\Stage2\PointerTest" />
-      <recent name="C:\Users\josep\RubymineProjects\Project7\Stage2\BasicTest" />
-      <recent name="C:\Users\josep\RubymineProjects\MiniProject" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\josep\RubymineProjects" />
       <recent name="C:\Users\josep\RubymineProjects\Project7\Stage1\StackTest" />
       <recent name="C:\Users\josep\RubymineProjects\Project7\Stage1\SimpleAdd" />
       <recent name="C:\Users\josep\RubymineProjects\MiniProject\Stage1" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\josep\RubymineProjects\HackToVmProject\Project11" />
+      <recent name="C:\Users\josep\RubymineProjects\Project7\Project8" />
+      <recent name="C:\Users\josep\RubymineProjects\Project7\Stage2\StaticTest" />
+      <recent name="C:\Users\josep\RubymineProjects\Project7\Stage2\PointerTest" />
+      <recent name="C:\Users\josep\RubymineProjects\Project7\Stage2\BasicTest" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -197,7 +192,7 @@
       <workItem from="1573815022876" duration="119242000" />
       <workItem from="1574945043043" duration="14983000" />
       <workItem from="1577728508224" duration="52117000" />
-      <workItem from="1578517304087" duration="11373000" />
+      <workItem from="1578517304087" duration="12902000" />
     </task>
     <task id="LOCAL-00001" summary="New Commit">
       <created>1574256572492</created>
@@ -472,7 +467,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578569125498</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Need to clean up">
+      <created>1578569280966</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1578569280966</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -561,7 +563,7 @@
     <SUITE FILE_PATH="coverage/Project7@Parser.rcov" NAME="Parser Coverage Results" MODIFIED="1578402315711" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
     <SUITE FILE_PATH="coverage/MiniProject@Test.rcov" NAME="Test Coverage Results" MODIFIED="1573607065364" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
     <SUITE FILE_PATH="coverage/Project7@Test.rcov" NAME="Main Coverage Results" MODIFIED="1574885669794" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="C:\Users\josep\RubymineProjects\Project7" MODULE_NAME="Project7" />
-    <SUITE FILE_PATH="coverage/Project7@CompilerIO.rcov" NAME="CompilerIO Coverage Results" MODIFIED="1578569100397" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
+    <SUITE FILE_PATH="coverage/Project7@CompilerIO.rcov" NAME="CompilerIO Coverage Results" MODIFIED="1578570797751" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
     <SUITE FILE_PATH="coverage/Project7@Tokenizer.rcov" NAME="Tokenizer Coverage Results" MODIFIED="1578563816695" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
     <SUITE FILE_PATH="coverage/Project7@code_writer.rcov" NAME="code_writer Coverage Results" MODIFIED="1574813817501" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
     <SUITE FILE_PATH="coverage/Project7@Utility.rcov" NAME="Utility Coverage Results" MODIFIED="1574100649750" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />

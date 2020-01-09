@@ -128,6 +128,9 @@ def getStrConst(lines)
   strConst = ""
   for i in 0..lines.size-1
     str = lines[i]
+    if str == "\""
+      str = " "+str
+    end
 
     if str[0] == "\""
       buildingString = true
@@ -176,6 +179,8 @@ def compile(path)
     tokens = tokenize(lines)
     writeCompiledXMLFile(tokens, classNames, compiledFileName)
     writeTokensXMLFile(tokens, tokensFileName)
+
+    testStrings(tokens)
   end
 end
 
@@ -285,6 +290,15 @@ def getFilesWithLinesCompiler(files)
 
   return fileWithLines
 end
+
+
+def testStrings(tokens)
+  for i in 0..tokens.size-1
+    if tokens[i][0] == "stringConstant"
+    end
+  end
+end
+
 
 path = "Project10/Square"
 compile(path)

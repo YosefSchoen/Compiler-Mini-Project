@@ -1,11 +1,6 @@
 class foo {
-    field int x;
-    field int y;
-
     method void bar(int a, int b) {
-        let x = a
-        let y = b[0]
-
-        let c = "hello";
+        let x = "hello ";
+        let y = "hello";
     }
 }

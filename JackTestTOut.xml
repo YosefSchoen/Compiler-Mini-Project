@@ -2,14 +2,6 @@
 	<keyword> class </keyword>
 	<identifier> foo </identifier>
 	<symbol> { </symbol>
-	<keyword> field </keyword>
-	<keyword> int </keyword>
-	<identifier> x </identifier>
-	<symbol> ; </symbol>
-	<keyword> field </keyword>
-	<keyword> int </keyword>
-	<identifier> y </identifier>
-	<symbol> ; </symbol>
 	<keyword> method </keyword>
 	<keyword> void </keyword>
 	<identifier> bar </identifier>
@@ -24,16 +16,10 @@
 	<keyword> let </keyword>
 	<identifier> x </identifier>
 	<symbol> = </symbol>
-	<identifier> a </identifier>
+	<stringConstant> hello   </stringConstant>
+	<symbol> ; </symbol>
 	<keyword> let </keyword>
 	<identifier> y </identifier>
-	<symbol> = </symbol>
-	<identifier> b </identifier>
-	<symbol> [ </symbol>
-	<integerConstant> 0 </integerConstant>
-	<symbol> ] </symbol>
-	<keyword> let </keyword>
-	<identifier> c </identifier>
 	<symbol> = </symbol>
 	<stringConstant> hello </stringConstant>
 	<symbol> ; </symbol>
