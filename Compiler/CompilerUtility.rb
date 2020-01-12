@@ -1,4 +1,4 @@
-
+#function to get all the class names to use later for the compiler
 def getClassNames(filesWithLines)
   classNames = []
   for i in 0..filesWithLines.size-1
@@ -9,7 +9,7 @@ def getClassNames(filesWithLines)
   return classNames
 end
 
-
+#remove comments from a jack file
 def removeComments(lines)
   newLines = []
   multiLineComment = false
