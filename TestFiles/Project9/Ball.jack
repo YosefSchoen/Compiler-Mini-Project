@@ -1,0 +1,204 @@
+// SAUL ROTHMAN 337923676
+// YOSEF SCHOEN 506429330
+// 
+class Ball
+{
+    field int x;
+    field int y;
+    field boolean stillPitching;
+
+
+    constructor Ball new(int _x, int _y, boolean _still)
+    {
+        let x = _x;
+        let y = _y;
+        let stillPitching = _still;
+        return this;
+    } 
+
+    method int getY()
+    {
+        return y;
+    }
+    // getter and setter for stillPitching
+    method boolean getStillPitching()
+    {
+        return stillPitching;
+    }
+
+    method void setStillPitching(boolean sp)
+    {
+        let stillPitching = sp;
+        return;
+    }
+
+    // draw to screen
+    method void draw()
+    {
+        do Screen.setColor(true); // when calling functions need do
+        do Screen.drawCircle(x, y, 4);
+        return;
+    }
+    
+    // erase from screen
+    method void erase()
+    {
+        do Screen.setColor(false); // when calling functions need do
+        do Screen.drawCircle(x, y, 4);
+        return;
+    }
+
+    method void pitch(int i, Vertex left, Vertex right)
+    {
+        if(i = 0)
+        {
+            do pitchFast();
+        }
+        if(i = 1)
+        {
+            do pitchSlow();
+        }
+        if(i = 2)
+        {
+            do pitchCurveLeft(left);
+        }
+        if(i = 3)
+        {
+            do pitchCurveRight(right);
+        }
+        return;
+    }
+
+    // pitch the ball
+    method void pitchFast()
+    {
+        if(y > 248)
+        {
+            let stillPitching = false;
+            return;
+        }
+        do erase();
+        let y = y + 5; // move down the screen 5 pixel per frame
+        do draw();
+        return;
+    }
+// Slow pitch
+    method void pitchSlow()
+    {
+        if(y > 245) // may need to change back to 246
+        {
+            let stillPitching = false;
+            return;
+        }
+        do erase();
+        let y = y + 2; // move down the screen 1 pixel per frame
+        do draw();
+        return;
+    }
+
+    method void resetBall()
+    {
+        do erase();
+        let x = 255;
+        let y = 100;
+    
+        do Sys.wait(600);
+        do draw();
+        return;
+    }
+
+    // distance formula for bat and ball
+    method int distance(int batX, int batY) 
+    {
+        var int xDistance;
+        var int yDistance;
+        var int dist;
+
+        let xDistance = Math.multiply(x - batX, x - batX);
+        let yDistance = Math.multiply(y - batY, y - batY);
+        let dist =  Math.sqrt(xDistance + yDistance);
+        
+        return dist;
+    }
+    
+    // check if the bat and ball made contact
+    method boolean contact(Bat bat) 
+    {
+        if(bat.getY() < y) // swing and miss, ball got passed the bat
+        {
+            do bat.drawHorizontal();
+            return false;
+        }
+        if (distance(bat.getX(), bat.getY()) > 49)
+        {
+            do bat.drawHorizontal();
+            return false;
+        }
+
+        return true;
+    }
+
+    
+    method void pitchCurveLeft(Vertex vertex)
+    {
+        if(y > 247)
+        {
+            let stillPitching = false;
+            return;
+        }
+        do erase();
+        let y = y + 4;
+        if(y < vertex.getY())
+        {
+            let x = x - 4;
+
+        }
+        else
+
+        
+        {
+            let x= x + 4;
+        }
+        do draw();
+        return;
+    }
+    
+// right curve
+    method void pitchCurveRight(Vertex vertex)
+    {
+        if(y > 247)
+        {
+            let stillPitching = false;
+            return;
+        }
+        do erase();
+        let y = y + 4;
+        if(y < vertex.getY())
+        {
+            let x = x + 4;
+
+        }
+        else
+        {
+            let x = x - 4;
+        }
+        do draw();
+        return;
+    }
+    
+    method int calcXLeft(Vertex vertex)
+    {
+        var int xCoord;
+        var int yAxis;
+        let yAxis = y - vertex.getY();
+        let xCoord = Math.multiply(yAxis, yAxis) + vertex.getX();
+        return xCoord;
+    }
+    method void dispose()
+    {
+        do Memory.dealloc(this);
+        return;
+    }
+    
+}
+

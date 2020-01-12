@@ -1,0 +1,83 @@
+// SAUL ROTHMAN 337923676
+// YOSEF SCHOEN 506429330
+class Bat
+{
+    field int x;
+    field int y;
+    field boolean isHorizontal;
+    field boolean swungBat;
+
+
+    constructor Bat new(int _x, int _y)
+    {
+        let x = _x;
+        let y = _y;
+        let isHorizontal = false;
+        let swungBat = false;
+        return this;
+    }
+
+    method boolean getIsHorizontal()
+    {
+        return isHorizontal;
+    }
+    
+    method boolean getSwungBat()
+    {
+        return swungBat;
+    }
+
+    method int getX()
+    {
+        return x;
+    }
+
+    method int getY()
+    {
+        return y;
+    }
+    method void drawVertical()
+    {
+        do Screen.setColor(true); // when calling functions need do
+        do Screen.drawRectangle(x, y, x+6, y+24);
+        let isHorizontal = false;
+        return;
+    }
+    
+    method void drawHorizontal()
+    {
+        do Screen.setColor(true); // when calling functions need do
+        do Screen.drawRectangle(x, y, x+24, y+6);
+        let isHorizontal = true;
+        return;
+    }
+
+    method void eraseVertical()
+    {
+        do Screen.setColor(false); // when calling functions need do
+        do Screen.drawRectangle(x, y, x+6, y+24);
+        return;
+    }
+
+    method void eraseHorizontal()
+    {
+        do Screen.setColor(false); // when calling functions need do
+        do Screen.drawRectangle(x, y, x+24, y+6);
+        return;
+    }
+
+    method void resetBat()
+    {
+        do eraseHorizontal();
+        do drawVertical();
+        return;
+    }
+
+    // destructor
+    method void dispose()
+    {
+        do Memory.dealloc(this);
+        return;
+    }
+}
+

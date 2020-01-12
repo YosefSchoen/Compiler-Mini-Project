@@ -2,7 +2,225 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e2bbf7f2-661c-4b38-bdc0-4dc1c947d57a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Compiler/CompilerUtility.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project9/Ball.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project9/Ball.vm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project9/BallOut.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project9/BallTOut.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project9/BatOut.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project9/BatTOut.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project9/Main.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project9/Main.vm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project9/MainOut.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project9/MainTOut.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project9/PlayerOut.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project9/PlayerTOut.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project9/Random.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project9/Random.vm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project9/RandomOut.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project9/RandomTOut.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project9/Vertex.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project9/Vertex.vm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project9/VertexOut.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project9/VertexTOut.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project9/bin/CPU Emulator.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project9/bin/Virtual Machine Emulator.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CompilerIO.rb" beforeDir="false" afterPath="$PROJECT_DIR$/Compiler/CompilerIO.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JackTest.jack" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project10/MyTest/JackTest.jack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JackTestOut.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project10/MyTest/JackTestOut.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JackTestTOut.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project10/MyTest/JackTestTOut.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.rb" beforeDir="false" afterPath="$PROJECT_DIR$/Main.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parser.rb" beforeDir="false" afterPath="$PROJECT_DIR$/Compiler/Parser.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project10/ArrayTest/Main.jack" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project10/ArrayTest/Main.jack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project10/ArrayTest/Main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project10/ArrayTest/Main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project10/ArrayTest/MainOut.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project10/ArrayTest/MainOut.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project10/ArrayTest/MainT.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project10/ArrayTest/MainT.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project10/ArrayTest/MainTOut.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project10/ArrayTest/MainTOut.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project10/ExpressionLessSquare/Main.jack" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project10/ExpressionLessSquare/Main.jack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project10/ExpressionLessSquare/Main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project10/ExpressionLessSquare/Main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project10/ExpressionLessSquare/MainOut.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project10/ExpressionLessSquare/MainOut.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project10/ExpressionLessSquare/MainT.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project10/ExpressionLessSquare/MainT.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project10/ExpressionLessSquare/MainTOut.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project10/ExpressionLessSquare/MainTOut.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project10/ExpressionLessSquare/Square.jack" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project10/ExpressionLessSquare/Square.jack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project10/ExpressionLessSquare/Square.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project10/ExpressionLessSquare/Square.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project10/ExpressionLessSquare/SquareGame.jack" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project10/ExpressionLessSquare/SquareGame.jack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project10/ExpressionLessSquare/SquareGame.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project10/ExpressionLessSquare/SquareGame.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project10/ExpressionLessSquare/SquareGameOut.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project10/ExpressionLessSquare/SquareGameOut.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project10/ExpressionLessSquare/SquareGameT.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project10/ExpressionLessSquare/SquareGameT.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project10/ExpressionLessSquare/SquareGameTOut.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project10/ExpressionLessSquare/SquareGameTOut.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project10/ExpressionLessSquare/SquareOut.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project10/ExpressionLessSquare/SquareOut.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project10/ExpressionLessSquare/SquareT.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project10/ExpressionLessSquare/SquareT.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project10/ExpressionLessSquare/SquareTOut.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project10/ExpressionLessSquare/SquareTOut.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project10/Square/Main.jack" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project10/Square/Main.jack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project10/Square/Main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project10/Square/Main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project10/Square/MainOut.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project10/Square/MainOut.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project10/Square/MainT.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project10/Square/MainT.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project10/Square/MainTOut.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project10/Square/MainTOut.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project10/Square/Square.jack" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project10/Square/Square.jack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project10/Square/Square.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project10/Square/Square.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project10/Square/SquareGame.jack" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project10/Square/SquareGame.jack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project10/Square/SquareGame.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project10/Square/SquareGame.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project10/Square/SquareGameOut.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project10/Square/SquareGameOut.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project10/Square/SquareGameT.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project10/Square/SquareGameT.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project10/Square/SquareGameTOut.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project10/Square/SquareGameTOut.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project10/Square/SquareOut.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project10/Square/SquareOut.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project10/Square/SquareT.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project10/Square/SquareT.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project10/Square/SquareTOut.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project10/Square/SquareTOut.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project11/Average/Main.jack" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project11/Average/Main.jack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project11/ComplexArrays/Main.jack" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project11/ComplexArrays/Main.jack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project11/ConvertToBin/Main.jack" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project11/ConvertToBin/Main.jack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project11/Pong/Ball.jack" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project11/Pong/Ball.jack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project11/Pong/Bat.jack" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project11/Pong/Bat.jack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project11/Pong/Main.jack" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project11/Pong/Main.jack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project11/Pong/PongGame.jack" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project11/Pong/PongGame.jack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project11/Seven/Main.jack" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project11/Seven/Main.jack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project11/Square/Main.jack" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project11/Square/Main.jack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project11/Square/Square.jack" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project11/Square/Square.jack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project11/Square/SquareGame.jack" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project11/Square/SquareGame.jack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project7/MyTest/Test.tst" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project7/MyTest/Test.tst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project7/MyTest/test.asm" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project7/MyTest/test.asm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project7/MyTest/test.vm" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project7/MyTest/test.vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project7/Stage1/SimpleAdd/SimpleAdd.asm" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project7/Stage1/SimpleAdd/SimpleAdd.asm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project7/Stage1/SimpleAdd/SimpleAdd.cmp" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project7/Stage1/SimpleAdd/SimpleAdd.cmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project7/Stage1/SimpleAdd/SimpleAdd.out" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project7/Stage1/SimpleAdd/SimpleAdd.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project7/Stage1/SimpleAdd/SimpleAdd.tst" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project7/Stage1/SimpleAdd/SimpleAdd.tst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project7/Stage1/SimpleAdd/SimpleAdd.vm" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project7/Stage1/SimpleAdd/SimpleAdd.vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project7/Stage1/SimpleAdd/SimpleAddVME.tst" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project7/Stage1/SimpleAdd/SimpleAddVME.tst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project7/Stage1/StackTest/StackTest.asm" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project7/Stage1/StackTest/StackTest.asm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project7/Stage1/StackTest/StackTest.cmp" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project7/Stage1/StackTest/StackTest.cmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project7/Stage1/StackTest/StackTest.out" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project7/Stage1/StackTest/StackTest.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project7/Stage1/StackTest/StackTest.tst" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project7/Stage1/StackTest/StackTest.tst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project7/Stage1/StackTest/StackTest.vm" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project7/Stage1/StackTest/StackTest.vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project7/Stage1/StackTest/StackTestVME.tst" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project7/Stage1/StackTest/StackTestVME.tst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project7/Stage2/BasicTest/BasicTest.asm" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project7/Stage2/BasicTest/BasicTest.asm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project7/Stage2/BasicTest/BasicTest.cmp" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project7/Stage2/BasicTest/BasicTest.cmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project7/Stage2/BasicTest/BasicTest.out" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project7/Stage2/BasicTest/BasicTest.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project7/Stage2/BasicTest/BasicTest.tst" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project7/Stage2/BasicTest/BasicTest.tst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project7/Stage2/BasicTest/BasicTest.vm" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project7/Stage2/BasicTest/BasicTest.vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project7/Stage2/BasicTest/BasicTestVME.tst" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project7/Stage2/BasicTest/BasicTestVME.tst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project7/Stage2/PointerTest/PointerTest.asm" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project7/Stage2/PointerTest/PointerTest.asm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project7/Stage2/PointerTest/PointerTest.cmp" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project7/Stage2/PointerTest/PointerTest.cmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project7/Stage2/PointerTest/PointerTest.out" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project7/Stage2/PointerTest/PointerTest.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project7/Stage2/PointerTest/PointerTest.tst" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project7/Stage2/PointerTest/PointerTest.tst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project7/Stage2/PointerTest/PointerTest.vm" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project7/Stage2/PointerTest/PointerTest.vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project7/Stage2/PointerTest/PointerTestVME.tst" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project7/Stage2/PointerTest/PointerTestVME.tst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project7/Stage2/StaticTest/StaticTest.asm" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project7/Stage2/StaticTest/StaticTest.asm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project7/Stage2/StaticTest/StaticTest.cmp" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project7/Stage2/StaticTest/StaticTest.cmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project7/Stage2/StaticTest/StaticTest.out" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project7/Stage2/StaticTest/StaticTest.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project7/Stage2/StaticTest/StaticTest.tst" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project7/Stage2/StaticTest/StaticTest.tst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project7/Stage2/StaticTest/StaticTest.vm" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project7/Stage2/StaticTest/StaticTest.vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project7/Stage2/StaticTest/StaticTestVME.tst" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project7/Stage2/StaticTest/StaticTestVME.tst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project8/FunctionCalls/FibonacciElement/FibonacciElement.asm" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project8/FunctionCalls/FibonacciElement/FibonacciElement.asm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project8/FunctionCalls/FibonacciElement/FibonacciElement.cmp" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project8/FunctionCalls/FibonacciElement/FibonacciElement.cmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project8/FunctionCalls/FibonacciElement/FibonacciElement.out" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project8/FunctionCalls/FibonacciElement/FibonacciElement.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project8/FunctionCalls/FibonacciElement/FibonacciElement.tst" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project8/FunctionCalls/FibonacciElement/FibonacciElement.tst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project8/FunctionCalls/FibonacciElement/FibonacciElementVME.tst" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project8/FunctionCalls/FibonacciElement/FibonacciElementVME.tst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project8/FunctionCalls/FibonacciElement/Main.vm" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project8/FunctionCalls/FibonacciElement/Main.vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project8/FunctionCalls/FibonacciElement/Sys.vm" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project8/FunctionCalls/FibonacciElement/Sys.vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project8/FunctionCalls/NestedCall/NestedCall.asm" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project8/FunctionCalls/NestedCall/NestedCall.asm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project8/FunctionCalls/NestedCall/NestedCall.cmp" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project8/FunctionCalls/NestedCall/NestedCall.cmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project8/FunctionCalls/NestedCall/NestedCall.html" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project8/FunctionCalls/NestedCall/NestedCall.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project8/FunctionCalls/NestedCall/NestedCall.out" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project8/FunctionCalls/NestedCall/NestedCall.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project8/FunctionCalls/NestedCall/NestedCall.tst" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project8/FunctionCalls/NestedCall/NestedCall.tst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project8/FunctionCalls/NestedCall/NestedCallStack.html" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project8/FunctionCalls/NestedCall/NestedCallStack.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project8/FunctionCalls/NestedCall/NestedCallVME.tst" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project8/FunctionCalls/NestedCall/NestedCallVME.tst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project8/FunctionCalls/NestedCall/Sys.vm" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project8/FunctionCalls/NestedCall/Sys.vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project8/FunctionCalls/SimpleFunction/SimpleFunction.asm" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project8/FunctionCalls/SimpleFunction/SimpleFunction.asm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project8/FunctionCalls/SimpleFunction/SimpleFunction.cmp" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project8/FunctionCalls/SimpleFunction/SimpleFunction.cmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project8/FunctionCalls/SimpleFunction/SimpleFunction.out" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project8/FunctionCalls/SimpleFunction/SimpleFunction.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project8/FunctionCalls/SimpleFunction/SimpleFunction.tst" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project8/FunctionCalls/SimpleFunction/SimpleFunction.tst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project8/FunctionCalls/SimpleFunction/SimpleFunction.vm" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project8/FunctionCalls/SimpleFunction/SimpleFunction.vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project8/FunctionCalls/SimpleFunction/SimpleFunctionVME.tst" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project8/FunctionCalls/SimpleFunction/SimpleFunctionVME.tst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project8/FunctionCalls/StaticsTest/Class1.vm" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project8/FunctionCalls/StaticsTest/Class1.vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project8/FunctionCalls/StaticsTest/Class2.vm" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project8/FunctionCalls/StaticsTest/Class2.vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project8/FunctionCalls/StaticsTest/StaticsTest.asm" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project8/FunctionCalls/StaticsTest/StaticsTest.asm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project8/FunctionCalls/StaticsTest/StaticsTest.cmp" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project8/FunctionCalls/StaticsTest/StaticsTest.cmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project8/FunctionCalls/StaticsTest/StaticsTest.out" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project8/FunctionCalls/StaticsTest/StaticsTest.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project8/FunctionCalls/StaticsTest/StaticsTest.tst" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project8/FunctionCalls/StaticsTest/StaticsTest.tst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project8/FunctionCalls/StaticsTest/StaticsTestVME.tst" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project8/FunctionCalls/StaticsTest/StaticsTestVME.tst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project8/FunctionCalls/StaticsTest/StaticsTestasm" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project8/FunctionCalls/StaticsTest/StaticsTestasm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project8/FunctionCalls/StaticsTest/Sys.vm" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project8/FunctionCalls/StaticsTest/Sys.vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project8/ProgramFlow/BasicLoop/BasicLoop.asm" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project8/ProgramFlow/BasicLoop/BasicLoop.asm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project8/ProgramFlow/BasicLoop/BasicLoop.cmp" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project8/ProgramFlow/BasicLoop/BasicLoop.cmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project8/ProgramFlow/BasicLoop/BasicLoop.out" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project8/ProgramFlow/BasicLoop/BasicLoop.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project8/ProgramFlow/BasicLoop/BasicLoop.tst" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project8/ProgramFlow/BasicLoop/BasicLoop.tst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project8/ProgramFlow/BasicLoop/BasicLoop.vm" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project8/ProgramFlow/BasicLoop/BasicLoop.vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project8/ProgramFlow/BasicLoop/BasicLoopVME.tst" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project8/ProgramFlow/BasicLoop/BasicLoopVME.tst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project8/ProgramFlow/FibonacciSeries/FibonacciSeries.asm" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project8/ProgramFlow/FibonacciSeries/FibonacciSeries.asm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project8/ProgramFlow/FibonacciSeries/FibonacciSeries.cmp" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project8/ProgramFlow/FibonacciSeries/FibonacciSeries.cmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project8/ProgramFlow/FibonacciSeries/FibonacciSeries.out" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project8/ProgramFlow/FibonacciSeries/FibonacciSeries.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project8/ProgramFlow/FibonacciSeries/FibonacciSeries.tst" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project8/ProgramFlow/FibonacciSeries/FibonacciSeries.tst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project8/ProgramFlow/FibonacciSeries/FibonacciSeries.vm" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project8/ProgramFlow/FibonacciSeries/FibonacciSeries.vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project8/ProgramFlow/FibonacciSeries/FibonacciSeriesVME.tst" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project8/ProgramFlow/FibonacciSeries/FibonacciSeriesVME.tst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project9/Ball (2).jack" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project9/Ball (2).vm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project9/Bat (2).jack" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project9/Bat.jack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project9/Bat (2).vm" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project9/Bat.vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project9/JackCompiler.bat" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project9/JackCompiler.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project9/Main (2).jack" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project9/Main (2).vm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project9/Player.jack" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project9/Player.jack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project9/Player.vm" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project9/Player.vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project9/bin/Assembler.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project9/bin/CPU Emulator.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project9/bin/Hardware Simulator.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project9/bin/Virtual Machine Emulator.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project9/bin/classes/CPUEmulatorMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project9/bin/classes/CPUEmulatorMain.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project9/bin/classes/HackAssemblerMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project9/bin/classes/HackAssemblerMain.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project9/bin/classes/HardwareSimulatorMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project9/bin/classes/HardwareSimulatorMain.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project9/bin/classes/TextComparer.class" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project9/bin/classes/TextComparer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project9/bin/classes/VMEmulatorMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project9/bin/classes/VMEmulatorMain.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project9/bin/help/asmAbout.html" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project9/bin/help/asmAbout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project9/bin/help/asmUsage.html" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project9/bin/help/asmUsage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project9/bin/help/compiler.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project9/bin/help/compiler.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project9/bin/help/cpuAbout.html" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project9/bin/help/cpuAbout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project9/bin/help/cpuUsage.html" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project9/bin/help/cpuUsage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project9/bin/help/hwAbout.html" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project9/bin/help/hwAbout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project9/bin/help/hwUsage.html" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project9/bin/help/hwUsage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project9/bin/help/vmAbout.html" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project9/bin/help/vmAbout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project9/bin/help/vmUsage.html" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project9/bin/help/vmUsage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project9/bin/images/arrow2.gif" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project9/bin/images/arrow2.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project9/bin/images/calculator2.gif" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project9/bin/images/calculator2.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project9/bin/images/cancel.gif" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project9/bin/images/cancel.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project9/bin/images/chip.gif" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project9/bin/images/chip.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project9/bin/images/clock2.gif" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project9/bin/images/clock2.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project9/bin/images/equal.gif" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project9/bin/images/equal.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project9/bin/images/find.gif" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project9/bin/images/find.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project9/bin/images/hex.gif" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project9/bin/images/hex.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project9/bin/images/keyboard.gif" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project9/bin/images/keyboard.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project9/bin/images/ok.gif" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project9/bin/images/ok.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project9/bin/images/ok2.gif" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project9/bin/images/ok2.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project9/bin/images/open.gif" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project9/bin/images/open.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project9/bin/images/open2.gif" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project9/bin/images/open2.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project9/bin/images/opendoc.gif" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project9/bin/images/opendoc.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project9/bin/images/redflag.gif" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project9/bin/images/redflag.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project9/bin/images/save.gif" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project9/bin/images/save.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project9/bin/images/scroll.gif" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project9/bin/images/scroll.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project9/bin/images/smallcancel.gif" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project9/bin/images/smallcancel.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project9/bin/images/smallequal.gif" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project9/bin/images/smallequal.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project9/bin/images/smallminus.gif" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project9/bin/images/smallminus.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project9/bin/images/smallnew.gif" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project9/bin/images/smallnew.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project9/bin/images/smallok.gif" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project9/bin/images/smallok.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project9/bin/images/smallplus.gif" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project9/bin/images/smallplus.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project9/bin/images/vcrfastforward.gif" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project9/bin/images/vcrfastforward.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project9/bin/images/vcrforward.gif" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project9/bin/images/vcrforward.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project9/bin/images/vcrrewind.gif" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project9/bin/images/vcrrewind.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project9/bin/images/vcrstop.gif" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project9/bin/images/vcrstop.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project9/bin/lib/AssemblerGUI.jar" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project9/bin/lib/AssemblerGUI.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project9/bin/lib/Compilers.jar" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project9/bin/lib/Compilers.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project9/bin/lib/Hack.jar" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project9/bin/lib/Hack.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project9/bin/lib/HackGUI.jar" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project9/bin/lib/HackGUI.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project9/bin/lib/Simulators.jar" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project9/bin/lib/Simulators.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project9/bin/lib/SimulatorsGUI.jar" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project9/bin/lib/SimulatorsGUI.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project9/bin/lib/TranslatorsGUI.jar" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project9/bin/lib/TranslatorsGUI.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project9/bin/scripts/defaultCPU.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project9/bin/scripts/defaultCPU.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project9/bin/scripts/defaultHW.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project9/bin/scripts/defaultHW.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project9/bin/scripts/defaultVM.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project9/bin/scripts/defaultVM.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tokenizer.rb" beforeDir="false" afterPath="$PROJECT_DIR$/Compiler/Tokenizer.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Translator.rb" beforeDir="false" afterPath="$PROJECT_DIR$/Translator/Translator.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TranslatorIO.rb" beforeDir="false" afterPath="$PROJECT_DIR$/Translator/TranslatorIO.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Utility.rb" beforeDir="false" afterPath="$PROJECT_DIR$/Translator/TranslatorUtility.rb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,23 +258,24 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Project11" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Project9" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\josep\RubymineProjects" />
-      <recent name="C:\Users\josep\RubymineProjects\Project7\Stage1\StackTest" />
-      <recent name="C:\Users\josep\RubymineProjects\Project7\Stage1\SimpleAdd" />
-      <recent name="C:\Users\josep\RubymineProjects\MiniProject\Stage1" />
+      <recent name="C:\Users\josep\RubymineProjects\HackToVmProject\TestFiles\Project10\MyTest" />
+      <recent name="C:\Users\josep\RubymineProjects\HackToVmProject\TestFiles" />
+      <recent name="C:\Users\josep\RubymineProjects\HackToVmProject\Translator" />
+      <recent name="C:\Users\josep\RubymineProjects\HackToVmProject\Compiler" />
+      <recent name="C:\Users\josep\RubymineProjects\HackToVmProject" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\josep\RubymineProjects\HackToVmProject\Project9" />
       <recent name="C:\Users\josep\RubymineProjects\HackToVmProject\Project11" />
       <recent name="C:\Users\josep\RubymineProjects\Project7\Project8" />
       <recent name="C:\Users\josep\RubymineProjects\Project7\Stage2\StaticTest" />
       <recent name="C:\Users\josep\RubymineProjects\Project7\Stage2\PointerTest" />
-      <recent name="C:\Users\josep\RubymineProjects\Project7\Stage2\BasicTest" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -71,7 +290,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Ruby.CompilerIO">
+  <component name="RunManager" selected="Ruby.Main">
     <configuration name="CompilerIO" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
       <module name="Project7" />
       <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="" />
@@ -82,7 +301,7 @@
       <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
       <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
       <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" />
-      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/CompilerIO.rb" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/Compiler/CompilerIO.rb" />
       <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
       <method v="2" />
     </configuration>
@@ -110,7 +329,7 @@
       <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
       <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
       <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" />
-      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/Parser.rb" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/Compiler/Parser.rb" />
       <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
       <method v="2" />
     </configuration>
@@ -124,7 +343,7 @@
       <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
       <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
       <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" />
-      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/Tokenizer.rb" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/Compiler/Tokenizer.rb" />
       <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
       <method v="2" />
     </configuration>
@@ -138,11 +357,11 @@
       <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
       <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
       <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" />
-      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/Translator.rb" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/Translator/Translator.rb" />
       <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
       <method v="2" />
     </configuration>
-    <configuration name="Utility" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
+    <configuration name="TranslatorUtility" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
       <module name="Project7" />
       <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="" />
       <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$" />
@@ -152,7 +371,7 @@
       <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
       <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
       <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" />
-      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/Utility.rb" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/Translator/TranslatorUtility.rb" />
       <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
       <method v="2" />
     </configuration>
@@ -162,7 +381,7 @@
         <item itemvalue="Ruby.Tokenizer" />
         <item itemvalue="Ruby.Parser" />
         <item itemvalue="Ruby.Translator" />
-        <item itemvalue="Ruby.Utility" />
+        <item itemvalue="Ruby.TranslatorUtility" />
       </list>
     </recent_temporary>
   </component>
@@ -186,7 +405,7 @@
       <workItem from="1573815022876" duration="119242000" />
       <workItem from="1574945043043" duration="14983000" />
       <workItem from="1577728508224" duration="52117000" />
-      <workItem from="1578517304087" duration="13480000" />
+      <workItem from="1578517304087" duration="18120000" />
     </task>
     <task id="LOCAL-00001" summary="New Commit">
       <created>1574256572492</created>
@@ -475,7 +694,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578570817707</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Need to clean up">
+      <created>1578582131068</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1578582131068</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -564,10 +790,10 @@
     <SUITE FILE_PATH="coverage/Project7@Parser.rcov" NAME="Parser Coverage Results" MODIFIED="1578402315711" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
     <SUITE FILE_PATH="coverage/MiniProject@Test.rcov" NAME="Test Coverage Results" MODIFIED="1573607065364" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
     <SUITE FILE_PATH="coverage/Project7@Test.rcov" NAME="Main Coverage Results" MODIFIED="1574885669794" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="C:\Users\josep\RubymineProjects\Project7" MODULE_NAME="Project7" />
-    <SUITE FILE_PATH="coverage/Project7@CompilerIO.rcov" NAME="CompilerIO Coverage Results" MODIFIED="1578570797751" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
+    <SUITE FILE_PATH="coverage/Project7@CompilerIO.rcov" NAME="CompilerIO Coverage Results" MODIFIED="1578837956366" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
     <SUITE FILE_PATH="coverage/Project7@Tokenizer.rcov" NAME="Tokenizer Coverage Results" MODIFIED="1578563816695" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
     <SUITE FILE_PATH="coverage/Project7@code_writer.rcov" NAME="code_writer Coverage Results" MODIFIED="1574813817501" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
     <SUITE FILE_PATH="coverage/Project7@Utility.rcov" NAME="Utility Coverage Results" MODIFIED="1574100649750" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
-    <SUITE FILE_PATH="coverage/Project7@Main.rcov" NAME="Main Coverage Results" MODIFIED="1574977972793" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
+    <SUITE FILE_PATH="coverage/Project7@Main.rcov" NAME="Main Coverage Results" MODIFIED="1578840107461" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
   </component>
 </project>

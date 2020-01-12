@@ -1,0 +1,102 @@
+// SAUL ROTHMAN 337923676
+// YOSEF SCHOEN 506429330
+// the game is essentially batting practice, how many times in a row can you hit the ball?
+class Main
+{
+    
+
+    function void main()
+    {
+        var Player player;
+        var Ball ball;
+        var Bat bat;
+        var Vertex vertexLeft;
+        var Vertex vertexRight;
+        var String end;
+        var boolean flag;
+        var int i;
+
+        let flag = true;
+        let end = "Game Over!";
+        let player = Player.new(0); // pass in numHits = 0
+        let i = 0; // for pitching
+        
+
+    
+        // all variables declared in the beginning of the function
+        
+        let ball = Ball.new(255, 100, true);
+        let vertexLeft = Vertex.new(200, 163);
+        let vertexRight = Vertex.new(310, 163);
+        
+        let bat = Bat.new(240, 226);
+        
+        // draw the objects
+        do Random.init(777);
+        do ball.draw();
+        
+        do Output.moveCursor(22, 7); // put cursor in upper right corner
+        do Output.printInt(player.getNumHits()); // output number of hits
+        do bat.drawVertical();
+
+
+        // loop for each frame
+        while(flag)
+        {
+            
+            if(ball.getStillPitching() = false)
+            {
+                 let i = Random.nextInt();
+                 do ball.setStillPitching(true);
+            }
+            do Output.moveCursor(8,7);
+            do Output.printInt(i);
+            while(ball.getStillPitching())
+            {
+                if(Keyboard.keyPressed() = 32)
+                {
+                    do ball.setStillPitching(false);
+                    if(~bat.getIsHorizontal())
+                    {
+                        do bat.eraseVertical();
+                        do bat.drawHorizontal();
+                        if(ball.contact(bat))
+                        {
+                            do bat.drawHorizontal();
+                            do player.increaseNumHits();
+                            do Output.moveCursor(22, 7); // put cursor in upper right corner
+                            do Output.printInt(player.getNumHits()); // output number of hits
+                            do Sys.wait(250);
+                            do bat.resetBat();
+                            do ball.resetBall();
+                            
+                            
+                        }
+                        else 
+                        { 
+                            do bat.drawHorizontal();
+                            do Output.moveCursor(5,7);
+                            do Output.printString(end);
+                            do bat.drawHorizontal();
+                            let flag = false;
+                        }
+                    }
+                }
+                //do ball.pitchCurveRight(vertexRight);
+                do ball.pitch(i, vertexLeft, vertexRight);
+                do Sys.wait(17); //frames/sec inversely proportional 17 * 60 is about 1000
+                if(ball.getY() > 246)
+                {
+                    do Output.moveCursor(5,7);
+                    do Output.printString(end);
+                    let flag = false;
+                }
+            }   
+        }
+        do ball.dispose();
+        do bat.dispose();
+        do player.dispose();
+        do vertexLeft.dispose();
+        return;
+    }
+}

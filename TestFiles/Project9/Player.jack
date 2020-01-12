@@ -1,0 +1,27 @@
+class Player
+{
+    field int numHits;
+    
+    constructor Player new(int _numHits)
+    {
+        let numHits = _numHits;
+        return this;
+    }
+
+    method int getNumHits()
+    {
+        return numHits;
+    }
+
+    method void increaseNumHits()
+    {
+        let numHits = numHits + 1;
+        return;
+    }
+
+    method void dispose()
+    {
+        do Memory.dealloc(this);
+        return;
+    }
+}

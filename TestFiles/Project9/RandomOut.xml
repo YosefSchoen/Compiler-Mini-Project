@@ -1,0 +1,406 @@
+<class>
+	<keyword> class </keyword>
+	<identifier> Random </identifier>
+	<symbol> { </symbol>
+	<classVarDec>
+		<keyword> static </keyword>
+		<keyword> int </keyword>
+		<identifier> previous </identifier>
+		<symbol> ; </symbol>
+	</classVarDec>
+	<classVarDec>
+		<keyword> static </keyword>
+		<keyword> int </keyword>
+		<identifier> a </identifier>
+		<symbol> ; </symbol>
+	</classVarDec>
+	<classVarDec>
+		<keyword> static </keyword>
+		<keyword> int </keyword>
+		<identifier> b </identifier>
+		<symbol> ; </symbol>
+	</classVarDec>
+	<classVarDec>
+		<keyword> static </keyword>
+		<keyword> int </keyword>
+		<identifier> m </identifier>
+		<symbol> ; </symbol>
+	</classVarDec>
+	<subroutineDec>
+		<keyword> function </keyword>
+		<keyword> void </keyword>
+		<identifier> init </identifier>
+		<symbol> ( </symbol>
+		<parameterList>
+			<keyword> int </keyword>
+			<identifier> seed </identifier>
+		</parameterList>
+		<symbol> ) </symbol>
+		<subroutineBody>
+			<symbol> { </symbol>
+			<statements>
+				<letStatement>
+					<keyword> let </keyword>
+					<identifier> a </identifier>
+					<symbol> = </symbol>
+					<expression>
+						<term>
+							<integerConstant> 100 </integerConstant>
+						</term>
+					</expression>
+					<symbol> ; </symbol>
+				</letStatement>
+				<letStatement>
+					<keyword> let </keyword>
+					<identifier> b </identifier>
+					<symbol> = </symbol>
+					<expression>
+						<term>
+							<integerConstant> 2345s </integerConstant>
+						</term>
+					</expression>
+					<symbol> ; </symbol>
+				</letStatement>
+				<letStatement>
+					<keyword> let </keyword>
+					<identifier> m </identifier>
+					<symbol> = </symbol>
+					<expression>
+						<term>
+							<integerConstant> 4 </integerConstant>
+						</term>
+					</expression>
+					<symbol> ; </symbol>
+				</letStatement>
+				<letStatement>
+					<keyword> let </keyword>
+					<identifier> previous </identifier>
+					<symbol> = </symbol>
+					<expression>
+						<term>
+							<identifier> Random </identifier>
+							<symbol> . </symbol>
+							<identifier> mod </identifier>
+							<symbol> ( </symbol>
+							<expressionList>
+								<expression>
+									<term>
+										<identifier> seed </identifier>
+									</term>
+								</expression>
+								<symbol> , </symbol>
+								<expression>
+									<term>
+										<identifier> m </identifier>
+									</term>
+								</expression>
+							</expressionList>
+							<symbol> ) </symbol>
+						</term>
+					</expression>
+					<symbol> ; </symbol>
+				</letStatement>
+				<returnStatement>
+					<keyword> return </keyword>
+					<symbol> ; </symbol>
+				</returnStatement>
+			</statements>
+			<symbol> } </symbol>
+		</subroutineBody>
+	</subroutineDec>
+	<subroutineDec>
+		<keyword> function </keyword>
+		<keyword> int </keyword>
+		<identifier> mod </identifier>
+		<symbol> ( </symbol>
+		<parameterList>
+			<keyword> int </keyword>
+			<identifier> a </identifier>
+			<symbol> , </symbol>
+			<keyword> int </keyword>
+			<identifier> y </identifier>
+		</parameterList>
+		<symbol> ) </symbol>
+		<subroutineBody>
+			<symbol> { </symbol>
+			<statements>
+				<letStatement>
+					<keyword> let </keyword>
+					<identifier> a </identifier>
+					<symbol> = </symbol>
+					<expression>
+						<term>
+							<identifier> Math </identifier>
+							<symbol> . </symbol>
+							<identifier> abs </identifier>
+							<symbol> ( </symbol>
+							<expressionList>
+								<expression>
+									<term>
+										<identifier> a </identifier>
+									</term>
+								</expression>
+							</expressionList>
+							<symbol> ) </symbol>
+						</term>
+					</expression>
+					<symbol> ; </symbol>
+				</letStatement>
+				<letStatement>
+					<keyword> let </keyword>
+					<identifier> y </identifier>
+					<symbol> = </symbol>
+					<expression>
+						<term>
+							<identifier> Math </identifier>
+							<symbol> . </symbol>
+							<identifier> abs </identifier>
+							<symbol> ( </symbol>
+							<expressionList>
+								<expression>
+									<term>
+										<identifier> y </identifier>
+									</term>
+								</expression>
+							</expressionList>
+							<symbol> ) </symbol>
+						</term>
+					</expression>
+					<symbol> ; </symbol>
+				</letStatement>
+				<returnStatement>
+					<keyword> return </keyword>
+					<expression>
+						<term>
+							<identifier> a </identifier>
+						</term>
+						<symbol> - </symbol>
+						<term>
+							<symbol> ( </symbol>
+							<expression>
+								<term>
+									<identifier> y </identifier>
+								</term>
+								<symbol> * </symbol>
+								<term>
+									<identifier> Math </identifier>
+									<symbol> . </symbol>
+									<identifier> divide </identifier>
+									<symbol> ( </symbol>
+									<expressionList>
+										<expression>
+											<term>
+												<identifier> a </identifier>
+											</term>
+										</expression>
+										<symbol> , </symbol>
+										<expression>
+											<term>
+												<identifier> y </identifier>
+											</term>
+										</expression>
+									</expressionList>
+									<symbol> ) </symbol>
+								</term>
+							</expression>
+							<symbol> ) </symbol>
+						</term>
+					</expression>
+					<symbol> ; </symbol>
+				</returnStatement>
+			</statements>
+			<symbol> } </symbol>
+		</subroutineBody>
+	</subroutineDec>
+	<subroutineDec>
+		<keyword> function </keyword>
+		<keyword> int </keyword>
+		<identifier> nextInt </identifier>
+		<symbol> ( </symbol>
+		<parameterList>
+		</parameterList>
+		<symbol> ) </symbol>
+		<subroutineBody>
+			<symbol> { </symbol>
+			<statements>
+				<letStatement>
+					<keyword> let </keyword>
+					<identifier> previous </identifier>
+					<symbol> = </symbol>
+					<expression>
+						<term>
+							<identifier> Random </identifier>
+							<symbol> . </symbol>
+							<identifier> mod </identifier>
+							<symbol> ( </symbol>
+							<expressionList>
+								<expression>
+									<term>
+										<symbol> ( </symbol>
+										<expression>
+											<term>
+												<identifier> previous </identifier>
+											</term>
+											<symbol> * </symbol>
+											<term>
+												<identifier> a </identifier>
+											</term>
+										</expression>
+										<symbol> ) </symbol>
+									</term>
+									<symbol> + </symbol>
+									<term>
+										<identifier> b </identifier>
+									</term>
+								</expression>
+								<symbol> , </symbol>
+								<expression>
+									<term>
+										<identifier> m </identifier>
+									</term>
+								</expression>
+							</expressionList>
+							<symbol> ) </symbol>
+						</term>
+					</expression>
+					<symbol> ; </symbol>
+				</letStatement>
+				<letStatement>
+					<keyword> let </keyword>
+					<identifier> a </identifier>
+					<symbol> = </symbol>
+					<expression>
+						<term>
+							<identifier> previous </identifier>
+						</term>
+						<symbol> + </symbol>
+						<term>
+							<integerConstant> 1 </integerConstant>
+						</term>
+					</expression>
+					<symbol> ; </symbol>
+				</letStatement>
+				<letStatement>
+					<keyword> let </keyword>
+					<identifier> previous </identifier>
+					<symbol> = </symbol>
+					<expression>
+						<term>
+							<identifier> Random </identifier>
+							<symbol> . </symbol>
+							<identifier> mod </identifier>
+							<symbol> ( </symbol>
+							<expressionList>
+								<expression>
+									<term>
+										<symbol> ( </symbol>
+										<expression>
+											<term>
+												<identifier> previous </identifier>
+											</term>
+											<symbol> * </symbol>
+											<term>
+												<identifier> a </identifier>
+											</term>
+										</expression>
+										<symbol> ) </symbol>
+									</term>
+									<symbol> + </symbol>
+									<term>
+										<identifier> b </identifier>
+									</term>
+								</expression>
+								<symbol> , </symbol>
+								<expression>
+									<term>
+										<identifier> m </identifier>
+									</term>
+								</expression>
+							</expressionList>
+							<symbol> ) </symbol>
+						</term>
+					</expression>
+					<symbol> ; </symbol>
+				</letStatement>
+				<letStatement>
+					<keyword> let </keyword>
+					<identifier> b </identifier>
+					<symbol> = </symbol>
+					<expression>
+						<term>
+							<symbol> ( </symbol>
+							<expression>
+								<term>
+									<identifier> previous </identifier>
+								</term>
+								<symbol> + </symbol>
+								<term>
+									<integerConstant> 1 </integerConstant>
+								</term>
+							</expression>
+							<symbol> ) </symbol>
+						</term>
+						<symbol> * </symbol>
+						<term>
+							<integerConstant> 3 </integerConstant>
+						</term>
+					</expression>
+					<symbol> ; </symbol>
+				</letStatement>
+				<letStatement>
+					<keyword> let </keyword>
+					<identifier> previous </identifier>
+					<symbol> = </symbol>
+					<expression>
+						<term>
+							<identifier> Random </identifier>
+							<symbol> . </symbol>
+							<identifier> mod </identifier>
+							<symbol> ( </symbol>
+							<expressionList>
+								<expression>
+									<term>
+										<symbol> ( </symbol>
+										<expression>
+											<term>
+												<identifier> previous </identifier>
+											</term>
+											<symbol> * </symbol>
+											<term>
+												<identifier> a </identifier>
+											</term>
+										</expression>
+										<symbol> ) </symbol>
+									</term>
+									<symbol> + </symbol>
+									<term>
+										<identifier> b </identifier>
+									</term>
+								</expression>
+								<symbol> , </symbol>
+								<expression>
+									<term>
+										<identifier> m </identifier>
+									</term>
+								</expression>
+							</expressionList>
+							<symbol> ) </symbol>
+						</term>
+					</expression>
+					<symbol> ; </symbol>
+				</letStatement>
+				<returnStatement>
+					<keyword> return </keyword>
+					<expression>
+						<term>
+							<identifier> previous </identifier>
+						</term>
+					</expression>
+					<symbol> ; </symbol>
+				</returnStatement>
+			</statements>
+			<symbol> } </symbol>
+		</subroutineBody>
+	</subroutineDec>
+	<symbol> } </symbol>
+</class>
