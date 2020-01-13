@@ -1,7 +1,45 @@
 require_relative 'CompilerUtility'
 
-#terminal come in 5 types they will all be stored in an array called terminals
+class Token
+  def initialize(type, value)
+    @type = type
+    @value = value
+  end
 
+  def type
+    @type
+  end
+
+  def value
+    @value
+  end
+end
+
+class Tokenizer
+  @@dataTypes = %w(int char boolean)
+  @@functionTypes = %w(constructor function method)
+  @@classDataTypes = %w(field static)
+  @@keyConstants = %w(true false null this)
+  @@keywords = %w(class var void  let do if else while return).concat(@@dataTypes, @@functionTypes, @@classDataTypes, @@keyConstants)
+
+  @@symbols = %w({ } ( ) [ ] . , ; + - * / & | < > = ~)
+  @@terminals = [@@keywords, @@symbols]
+
+  def keyWordConstant
+    @@keyConstants end
+  
+  def keywords
+    @@keywords end
+
+  def symbols
+    @@symbols end
+
+  def terminals
+    @@terminals
+  end
+end
+
+#terminal come in 5 types they will all be stored in an array called terminals
 def getKeywords
   dataTypes = %w(int char boolean)
   functionTypes = %w(constructor function method)
@@ -103,7 +141,7 @@ def getToken(str)
       str = "&lt;"
 
     elsif str == ">"
-      str = "&lt;"
+      str = "&gt;"
 
     elsif str == "&"
       str = "&amp;"
