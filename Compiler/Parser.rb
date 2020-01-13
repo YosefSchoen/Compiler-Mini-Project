@@ -651,7 +651,7 @@ def compileTerm(tokens, i)
     i = resultList[1]
     str += "</term>\n"
 
-  # ( expression )
+    # ( expression )
   elsif notToLarge(tokens, i) and isCorrectToken(tokens, i, "(")
     str += getXMLString(tokens, i)
     i += 1
@@ -665,9 +665,9 @@ def compileTerm(tokens, i)
       i += 1
     end
 
-  #int/keyword/string Constant
+    #int/keyword/string Constant
   elsif notToLarge(tokens, i) and (isIntConstant(tokens[i][1]) or isKeywordConst(tokens[i][1]) or
-  tokens[i][0] == "stringConstant")
+      tokens[i][0] == "stringConstant")
     str += getXMLString(tokens, i)
     i += 1
 

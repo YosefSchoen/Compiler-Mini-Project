@@ -1,44 +1,5 @@
 require_relative 'CompilerUtility'
 
-class Token
-  def initialize(type, value)
-    @type = type
-    @value = value
-  end
-
-  def type
-    @type
-  end
-
-  def value
-    @value
-  end
-end
-
-class Tokenizer
-  @@dataTypes = %w(int char boolean)
-  @@functionTypes = %w(constructor function method)
-  @@classDataTypes = %w(field static)
-  @@keyConstants = %w(true false null this)
-  @@keywords = %w(class var void  let do if else while return).concat(@@dataTypes, @@functionTypes, @@classDataTypes, @@keyConstants)
-
-  @@symbols = %w({ } ( ) [ ] . , ; + - * / & | < > = ~)
-  @@terminals = [@@keywords, @@symbols]
-
-  def keyWordConstant
-    @@keyConstants end
-  
-  def keywords
-    @@keywords end
-
-  def symbols
-    @@symbols end
-
-  def terminals
-    @@terminals
-  end
-end
-
 #terminal come in 5 types they will all be stored in an array called terminals
 def getKeywords
   dataTypes = %w(int char boolean)
@@ -119,7 +80,6 @@ def isIdentifier(str)
   return true
 end
 
-
 def tokenize(lines)
   tokens = []
   for i in 0..lines.size-1
@@ -128,37 +88,4 @@ def tokenize(lines)
   end
 
   return tokens
-end
-
-
-def getToken(str)
-  token = []
-  if getKeywords.include?(str)
-    token = ["keyword", str]
-
-  elsif getSymbols.include?(str)
-    if str == "<"
-      str = "&lt;"
-
-    elsif str == ">"
-      str = "&gt;"
-
-    elsif str == "&"
-      str = "&amp;"
-    end
-
-    token = ["symbol", str]
-
-  elsif isIntConstant(str)
-    token = ["integerConstant", str]
-
-  elsif isStringConstant(str)
-    str = str.delete("\"")
-    token = ["stringConstant", str]
-
-  elsif isIdentifier(str)
-    token = ["identifier", str]
-  end
-
-  return token
 end

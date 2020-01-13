@@ -3,8 +3,11 @@ def getClassNames(filesWithLines)
   classNames = []
   for i in 0..filesWithLines.size-1
     lines = filesWithLines[i][1]
-    tokens = tokenize(lines)
-    classNames.push(tokens[1][1])
+
+    tokenizer = Tokenizer.new
+    tokenizer.tokenize(lines)
+    tokens = tokenizer.tokens
+    classNames.push(tokens[1].value)
   end
   return classNames
 end
@@ -46,7 +49,7 @@ def removeComments(lines)
 end
 
 
-def spaceSymbols(lines)
+def spaceSymbols(lines, tokenizer)
   newLines = []
 
   for i in 0..lines.size-1
@@ -58,7 +61,7 @@ def spaceSymbols(lines)
       newStr = ""
 
       for k in 0..str.size-1
-        if getSymbols.include?(str[k])
+        if tokenizer.symbols.include?(str[k])
           newStr = newStr + " "+str[k]+" "
 
         else
@@ -110,9 +113,9 @@ def getStrConst(lines)
 end
 
 
-def getLines(lines)
+def getLines(lines, tokenizer)
   lines = removeComments(lines)
-  lines = spaceSymbols(lines)
+  lines = spaceSymbols(lines, tokenizer)
   lines = getStrConst(lines)
   return lines
 end
@@ -198,8 +201,8 @@ end
 
 
 #check if the type is one of the built in types or a previous class name
-def isType(str, classNames)
-  return (str == "int" or str == "char" or str == "boolean" or classNames.include?(str))
+def isType(str, tokenizer)
+  return (str == "int" or str == "char" or str == "boolean" or tokenizer.classDataTypes.include?(str))
 end
 
 
@@ -208,34 +211,15 @@ def isSubRoutineType(str)
   return (str == "constructor" or str == "function" or str == "method")
 end
 
-
-#checks if the op is one of the binary ops
-def isOp(str)
-  return (str == "+" or str == "-" or str == "*" or str == "/" or
-      str == "&amp;" or str == "|" or str == "&lt;" or str == "&gt;" or str == "=")
-end
-
-
-#checks if the op is one of the unary ops
-def isUnaryOP(str)
-  return (str == "-" or str == "~")
-end
-
-
-#checks if the keyword is one of the keyword constants
-def isKeywordConst(str)
-  return (str == "true" or str == "false" or str == "null" or str == "this")
-end
-
-
 #checks the token to see if the value is correct token = [id, value]
 def isCorrectToken(tokens, i, str)
-  return tokens[i][1] == str
+  return tokens[i].value == str
 end
 
 
 #converts a token = [id, value] -> <id>value</id>
 def getXMLString(tokens, i)
-  str = "<"+tokens[i][0]+">"+" "+tokens[i][1]+" "+"</"+tokens[i][0]+">"+"\n"
+  token = tokens[i]
+  str = "<"+token.type+">"+" "+token.value+" "+"</"+token.type+">"+"\n"
   return str
 end
