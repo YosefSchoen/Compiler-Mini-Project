@@ -80,6 +80,8 @@ def isIdentifier(str)
   return true
 end
 def getToken(str)
+  token = []
+
   if getKeywords.include?(str)
     token = ["keyword", str]
 

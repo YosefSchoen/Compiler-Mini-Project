@@ -3,10 +3,11 @@ def getClassNames(filesWithLines)
   classNames = []
   for i in 0..filesWithLines.size-1
     lines = filesWithLines[i][1]
+    lines = getLines(lines)
     tokens = tokenize(lines)
-    puts tokens
-    #classNames.push(tokens[1][1])
+    classNames.push(tokens[1][1])
   end
+
   return classNames
 end
 
