@@ -3,11 +3,9 @@ def getClassNames(filesWithLines)
   classNames = []
   for i in 0..filesWithLines.size-1
     lines = filesWithLines[i][1]
-
-    tokenizer = Tokenizer.new
-    tokenizer.tokenize(lines)
-    tokens = tokenizer.tokens
-    classNames.push(tokens[1].value)
+    tokens = tokenize(lines)
+    puts tokens
+    #classNames.push(tokens[1][1])
   end
   return classNames
 end
@@ -49,7 +47,7 @@ def removeComments(lines)
 end
 
 
-def spaceSymbols(lines, tokenizer)
+def spaceSymbols(lines)
   newLines = []
 
   for i in 0..lines.size-1
@@ -61,7 +59,7 @@ def spaceSymbols(lines, tokenizer)
       newStr = ""
 
       for k in 0..str.size-1
-        if tokenizer.symbols.include?(str[k])
+        if getSymbols.include?(str[k])
           newStr = newStr + " "+str[k]+" "
 
         else
@@ -113,9 +111,9 @@ def getStrConst(lines)
 end
 
 
-def getLines(lines, tokenizer)
+def getLines(lines)
   lines = removeComments(lines)
-  lines = spaceSymbols(lines, tokenizer)
+  lines = spaceSymbols(lines)
   lines = getStrConst(lines)
   return lines
 end
@@ -201,8 +199,8 @@ end
 
 
 #check if the type is one of the built in types or a previous class name
-def isType(str, tokenizer)
-  return (str == "int" or str == "char" or str == "boolean" or tokenizer.classDataTypes.include?(str))
+def isType(str, classNames)
+  return (str == "int" or str == "char" or str == "boolean" or classNames.include?(str))
 end
 
 
@@ -211,15 +209,28 @@ def isSubRoutineType(str)
   return (str == "constructor" or str == "function" or str == "method")
 end
 
+
+def isKeywordConst(str)
+  return (str == "true" or str == "false" or str == "null" or str == "this")
+end
+
+def isOp(str)
+  return (str == "+" or str == "-" or str == "*" or str == "/" or str == "amp&;" or str == "|" or str == "&lt;" or str == "&gt;" or str == "=")
+end
+
+def isUnaryOP(str)
+  return (str == "-" or str == "~")
+end
+
 #checks the token to see if the value is correct token = [id, value]
 def isCorrectToken(tokens, i, str)
-  return tokens[i].value == str
+  return tokens[i][1] == str
 end
 
 
 #converts a token = [id, value] -> <id>value</id>
 def getXMLString(tokens, i)
   token = tokens[i]
-  str = "<"+token.type+">"+" "+token.value+" "+"</"+token.type+">"+"\n"
+  str = "<"+token[0]+">"+" "+token[1]+" "+"</"+token[0]+">"+"\n"
   return str
 end

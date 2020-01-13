@@ -79,6 +79,36 @@ def isIdentifier(str)
 
   return true
 end
+def getToken(str)
+  if getKeywords.include?(str)
+    token = ["keyword", str]
+
+  elsif getSymbols.include?(str)
+    if str == "<"
+      str = "&lt;"
+
+    elsif str == ">"
+      str = "&gt;"
+
+    elsif str == "&"
+      str = "&amp;"
+    end
+
+    token = ["symbol", str]
+
+  elsif isIntConstant(str)
+    token = ["integerConstant", str]
+
+  elsif isStringConstant(str)
+    str = str.delete("\"")
+    token = ["stringConstant", str]
+
+  elsif isIdentifier(str)
+    token = ["identifier", str]
+  end
+
+  return token
+end
 
 def tokenize(lines)
   tokens = []

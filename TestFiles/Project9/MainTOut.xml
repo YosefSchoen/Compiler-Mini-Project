@@ -401,7 +401,7 @@
 	<identifier> getY </identifier>
 	<symbol> ( </symbol>
 	<symbol> ) </symbol>
-	<symbol> &lt; </symbol>
+	<symbol> &gt; </symbol>
 	<integerConstant> 246 </integerConstant>
 	<symbol> ) </symbol>
 	<symbol> { </symbol>

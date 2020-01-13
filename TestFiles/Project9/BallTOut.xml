@@ -221,7 +221,7 @@
 	<keyword> if </keyword>
 	<symbol> ( </symbol>
 	<identifier> y </identifier>
-	<symbol> &lt; </symbol>
+	<symbol> &gt; </symbol>
 	<integerConstant> 248 </integerConstant>
 	<symbol> ) </symbol>
 	<symbol> { </symbol>
@@ -262,7 +262,7 @@
 	<keyword> if </keyword>
 	<symbol> ( </symbol>
 	<identifier> y </identifier>
-	<symbol> &lt; </symbol>
+	<symbol> &gt; </symbol>
 	<integerConstant> 245 </integerConstant>
 	<symbol> ) </symbol>
 	<symbol> { </symbol>
@@ -448,7 +448,7 @@
 	<symbol> ( </symbol>
 	<symbol> ) </symbol>
 	<symbol> ) </symbol>
-	<symbol> &lt; </symbol>
+	<symbol> &gt; </symbol>
 	<integerConstant> 49 </integerConstant>
 	<symbol> ) </symbol>
 	<symbol> { </symbol>
@@ -478,7 +478,7 @@
 	<keyword> if </keyword>
 	<symbol> ( </symbol>
 	<identifier> y </identifier>
-	<symbol> &lt; </symbol>
+	<symbol> &gt; </symbol>
 	<integerConstant> 247 </integerConstant>
 	<symbol> ) </symbol>
 	<symbol> { </symbol>
@@ -550,7 +550,7 @@
 	<keyword> if </keyword>
 	<symbol> ( </symbol>
 	<identifier> y </identifier>
-	<symbol> &lt; </symbol>
+	<symbol> &gt; </symbol>
 	<integerConstant> 247 </integerConstant>
 	<symbol> ) </symbol>
 	<symbol> { </symbol>

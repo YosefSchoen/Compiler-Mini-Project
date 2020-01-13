@@ -786,7 +786,7 @@
 											</expressionList>
 											<symbol> ) </symbol>
 										</term>
-										<symbol> &lt; </symbol>
+										<symbol> &gt; </symbol>
 										<term>
 											<integerConstant> 246 </integerConstant>
 										</term>

@@ -21,8 +21,8 @@ def readJackFile(fileName)
 end
 
 
-def writeCompiledXMLFile(tokens, outFile)
-  str = compileClass(tokens)
+def writeCompiledXMLFile(tokens, classNames, outFile)
+  str = compileClass(tokens, classNames)
   str = tabXMLTags(str)
   xmlFile = File.new(outFile, "w")
 
@@ -45,7 +45,6 @@ end
 
 
 def compile(path)
-  tokenizer = Tokenizer.new
   files = getFilesInDirCompiler(path)
   filesWithLines = getFilesWithLinesCompiler(files)
   classNames = getClassNames(filesWithLines)
@@ -58,10 +57,9 @@ def compile(path)
     compiledFileName = filesWithLines[i][0][0, fSize-5]+"Out.xml"
     tokensFileName = filesWithLines[i][0][0, fSize-5]+"TOut.xml"
     lines = filesWithLines[i][1]
-    lines = getLines(lines, tokenizer)
-    tokenizer.tokenize(lines)
-    tokens = tokenizer.tokens
-    writeCompiledXMLFile(tokens, compiledFileName)
+    lines = getLines(lines)
+    tokens = tokenize(lines)
+    writeCompiledXMLFile(tokens, classNames, compiledFileName)
     writeTokensXMLFile(tokens, tokensFileName)
 
     puts filesWithLines[i][0] + " was tokenized and compiled" +"\n"
