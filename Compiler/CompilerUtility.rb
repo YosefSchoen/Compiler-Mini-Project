@@ -216,7 +216,7 @@ def isKeywordConst(str)
 end
 
 def isOp(str)
-  return (str == "+" or str == "-" or str == "*" or str == "/" or str == "amp&;" or str == "|" or str == "&lt;" or str == "&gt;" or str == "=")
+  return (str == "+" or str == "-" or str == "*" or str == "/" or str == "&amp;" or str == "|" or str == "&lt;" or str == "&gt;" or str == "=")
 end
 
 def isUnaryOP(str)
