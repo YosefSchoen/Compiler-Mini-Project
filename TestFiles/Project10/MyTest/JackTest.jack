@@ -1,6 +1,19 @@
 class foo {
-    method void bar(int a, int b) {
-        let x = "hello ";
-        let y = "hello";
+    field int x, y;
+    static int z;
+    field char a;
+
+
+    method int bank(int x, int y, int z) {
+        var int a;
+        var int b;
+        var int c;
+
+        return;
+    }
+
+    method int bank2(int x2) {
+        var int a2;
+        return;
     }
 }

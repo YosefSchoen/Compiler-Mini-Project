@@ -2,44 +2,110 @@
 	<keyword> class </keyword>
 	<identifier> foo </identifier>
 	<symbol> { </symbol>
+	<classVarDec>
+		<keyword> field </keyword>
+		<keyword> int </keyword>
+		<identifier> x </identifier>
+		<symbol> , </symbol>
+		<identifier> y </identifier>
+		<symbol> , </symbol>
+		<identifier> er </identifier>
+		<symbol> , </symbol>
+		<identifier> ty </identifier>
+		<symbol> , </symbol>
+		<identifier> ui </identifier>
+		<symbol> ; </symbol>
+	</classVarDec>
+	<classVarDec>
+		<keyword> static </keyword>
+		<keyword> int </keyword>
+		<identifier> z </identifier>
+		<symbol> ; </symbol>
+	</classVarDec>
+	<classVarDec>
+		<keyword> field </keyword>
+		<keyword> char </keyword>
+		<identifier> a </identifier>
+		<symbol> , </symbol>
+		<identifier> bc </identifier>
+		<symbol> ; </symbol>
+	</classVarDec>
 	<subroutineDec>
 		<keyword> method </keyword>
-		<keyword> void </keyword>
-		<identifier> bar </identifier>
+		<keyword> int </keyword>
+		<identifier> bank </identifier>
 		<symbol> ( </symbol>
 		<parameterList>
 			<keyword> int </keyword>
-			<identifier> a </identifier>
+			<identifier> x </identifier>
 			<symbol> , </symbol>
 			<keyword> int </keyword>
-			<identifier> b </identifier>
+			<identifier> y </identifier>
+			<symbol> , </symbol>
+			<keyword> int </keyword>
+			<identifier> z </identifier>
 		</parameterList>
 		<symbol> ) </symbol>
 		<subroutineBody>
 			<symbol> { </symbol>
+			<varDec>
+				<keyword> var </keyword>
+				<keyword> int </keyword>
+				<identifier> a </identifier>
+				<symbol> , </symbol>
+				<identifier> aaa </identifier>
+				<symbol> ; </symbol>
+			</varDec>
+			<varDec>
+				<keyword> var </keyword>
+				<keyword> int </keyword>
+				<identifier> b </identifier>
+				<symbol> ; </symbol>
+			</varDec>
+			<varDec>
+				<keyword> var </keyword>
+				<keyword> int </keyword>
+				<identifier> c </identifier>
+				<symbol> ; </symbol>
+			</varDec>
 			<statements>
-				<letStatement>
-					<keyword> let </keyword>
-					<identifier> x </identifier>
-					<symbol> = </symbol>
-					<expression>
-						<term>
-							<stringConstant> hello   </stringConstant>
-						</term>
-					</expression>
+				<returnStatement>
+					<keyword> return </keyword>
 					<symbol> ; </symbol>
-				</letStatement>
-				<letStatement>
-					<keyword> let </keyword>
-					<identifier> y </identifier>
-					<symbol> = </symbol>
-					<expression>
-						<term>
-							<stringConstant> hello </stringConstant>
-						</term>
-					</expression>
+				</returnStatement>
+			</statements>
+			<symbol> } </symbol>
+		</subroutineBody>
+	</subroutineDec>
+	<subroutineDec>
+		<keyword> method </keyword>
+		<keyword> int </keyword>
+		<identifier> bank2 </identifier>
+		<symbol> ( </symbol>
+		<parameterList>
+			<keyword> int </keyword>
+			<identifier> x2 </identifier>
+		</parameterList>
+		<symbol> ) </symbol>
+		<subroutineBody>
+			<symbol> { </symbol>
+			<varDec>
+				<keyword> var </keyword>
+				<keyword> int </keyword>
+				<identifier> a2 </identifier>
+				<symbol> ; </symbol>
+			</varDec>
+			<varDec>
+				<keyword> var </keyword>
+				<keyword> int </keyword>
+				<identifier> b2 </identifier>
+				<symbol> ; </symbol>
+			</varDec>
+			<statements>
+				<returnStatement>
+					<keyword> return </keyword>
 					<symbol> ; </symbol>
-				</letStatement>
+				</returnStatement>
 			</statements>
 			<symbol> } </symbol>
 		</subroutineBody>

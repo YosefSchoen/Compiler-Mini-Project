@@ -1,6 +1,7 @@
 require_relative 'CompilerUtility'
 require_relative 'Tokenizer'
 require_relative 'Parser'
+require_relative 'SymbolsTable'
 
 
 def readJackFile(fileName)
@@ -61,7 +62,6 @@ def compile(path)
     tokens = tokenize(lines)
     writeCompiledXMLFile(tokens, classNames, compiledFileName)
     writeTokensXMLFile(tokens, tokensFileName)
-
     puts filesWithLines[i][0] + " was tokenized and compiled" +"\n"
   end
 end
@@ -75,7 +75,7 @@ def getFilesInDirCompiler(path)
     #dont include parent files
     next if filename == '.' || filename == '..'
 
-    #dont include files that are not vm files
+    #dont include files that are not jack files
     next unless filename.to_s.include?("jack")
 
     #push the file to the list
