@@ -28,9 +28,15 @@ end
 
 class SymbolDef
   def initialize(name, type, kind, number)
+    #find the symbol in table using its name
     @name = name
+
     @type = type
+
+    #for vm local arg, ..
     @kind = kind
+
+    #offset for vm local 1. local 2....
     @number = number
   end
 

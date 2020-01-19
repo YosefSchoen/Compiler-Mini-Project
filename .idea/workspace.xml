@@ -5,9 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Compiler/SymbolsTable.rb" beforeDir="false" afterPath="$PROJECT_DIR$/Compiler/SymbolsTable.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Compiler/vmWriter.rb" beforeDir="false" afterPath="$PROJECT_DIR$/Compiler/vmWriter.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestFiles/Project10/MyTest/JackTest.jack" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project10/MyTest/JackTest.jack" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestFiles/Project10/MyTest/JackTestOut.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project10/MyTest/JackTestOut.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestFiles/Project10/MyTest/JackTestTOut.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project10/MyTest/JackTestTOut.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -193,13 +190,7 @@
       <workItem from="1574945043043" duration="14983000" />
       <workItem from="1577728508224" duration="52117000" />
       <workItem from="1578517304087" duration="81436000" />
-    </task>
-    <task id="LOCAL-00003" summary="New Commit">
-      <created>1574318096673</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1574318096673</updated>
+      <workItem from="1579451276315" duration="4600000" />
     </task>
     <task id="LOCAL-00004" summary="New Commit">
       <created>1574326833480</created>
@@ -537,7 +528,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579107390550</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="wrote the symbols table">
+      <created>1579451351049</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1579451351049</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -623,6 +621,20 @@
     </state>
     <state x="330" y="1" width="840" height="1034" key="search.everywhere.popup/0.0.1500.960@0.0.1500.960" timestamp="1578415769651" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="ruby-line">
+          <url>file://$PROJECT_DIR$/Compiler/Parser.rb</url>
+          <line>5</line>
+          <properties a="-1">
+            <option name="block-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Project7@Parser.rcov" NAME="Parser Coverage Results" MODIFIED="1578402315711" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
     <SUITE FILE_PATH="coverage/MiniProject@Test.rcov" NAME="Test Coverage Results" MODIFIED="1573607065364" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
@@ -630,7 +642,7 @@
     <SUITE FILE_PATH="coverage/Project7@Test.rcov" NAME="Main Coverage Results" MODIFIED="1574885669794" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="C:\Users\josep\RubymineProjects\Project7" MODULE_NAME="Project7" />
     <SUITE FILE_PATH="coverage/Project7@CompilerIO.rcov" NAME="CompilerIO Coverage Results" MODIFIED="1579012728358" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
     <SUITE FILE_PATH="coverage/Project7@SymbolsTable.rcov" NAME="SymbolsTable Coverage Results" MODIFIED="1579112223493" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Compiler" MODULE_NAME="Project7" />
-    <SUITE FILE_PATH="coverage/Project7@Parser2.rcov" NAME="Parser2 Coverage Results" MODIFIED="1579170012000" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Compiler" MODULE_NAME="Project7" />
+    <SUITE FILE_PATH="coverage/Project7@Parser2.rcov" NAME="Parser2 Coverage Results" MODIFIED="1579455732635" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Compiler" MODULE_NAME="Project7" />
     <SUITE FILE_PATH="coverage/Project7@Tokenizer.rcov" NAME="Tokenizer Coverage Results" MODIFIED="1578563816695" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
     <SUITE FILE_PATH="coverage/Project7@code_writer.rcov" NAME="code_writer Coverage Results" MODIFIED="1574813817501" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
     <SUITE FILE_PATH="coverage/Project7@Utility.rcov" NAME="Utility Coverage Results" MODIFIED="1574100649750" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
