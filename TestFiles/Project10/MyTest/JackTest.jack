@@ -9,6 +9,6 @@ class foo {
         var int xyz, xyz2;
         var char abc;
 
-        let xyz = x2 + y2 * z2;
+        let xyz = x2 + (y2 * z2);
     }
 }

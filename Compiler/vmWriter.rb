@@ -1,13 +1,13 @@
 require_relative '../Compiler/SymbolsTable'
 require_relative '../Compiler/Tokenizer'
 def writePush(segment, index)
- str = "push " + segment + index
+ str = "push " + segment + " " + index + "\n"
   return str
 end
 
 
 def writePop(segment, index)
-  str = "pop " + segment + index
+  str = "pop " + segment + " " + index + "\n"
   return str
 end
 
@@ -15,6 +15,9 @@ end
 def writeArithmetic(cmd)
   str = ""
   case cmd
+  when "*"
+    str = "mult\n"
+
   when "+"
     str = "add\n"
 

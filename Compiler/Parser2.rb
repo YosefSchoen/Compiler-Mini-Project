@@ -295,16 +295,16 @@ def compileSubroutineBody(tokens, classNames, i, table)
   table = resultList[0]
   i = resultList[1]
 
+
   #need to update everything from here
-  #resultList = compileStatements(tokens, i, table)
-  #str += resultList[0]
-  #i = resultList[1]
+  resultList = compileStatements(tokens, i, table)
+  str += resultList[0]
+  i = resultList[1]
 
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, "}")
     i+=1
   end
 
-  puts str
   return [table, i]
 end
 
@@ -356,6 +356,7 @@ end
 
 
 def compileStatements(tokens, i, table)
+  str = ""
   resultList = compileStatementT(tokens, i, "", table)
   str += resultList[0]
   i = resultList[1]
@@ -421,20 +422,17 @@ end
 
 def compileLet(tokens, i, table)
   str = ""
-  str += "<letStatement>\n"
 
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, "let")
-    str += getXMLString(tokens, i)
     i+=1
   end
 
   if notToLarge(tokens, i) and isIdentifier(tokens[i][1])
-    term  = findSymbol(tokens[i][1], table)
+    term = table.findSymbol(tokens[i][1])
     i+=1
   end
 
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, "[")
-    str+= getXMLString(tokens, i)
     i+=1
 
     resultList = compileExpression(tokens, i, table)
@@ -453,6 +451,7 @@ def compileLet(tokens, i, table)
 
   resultList = compileExpression(tokens, i, table)
   str += resultList[0]
+
   i = resultList[1]
 
   str += writePop(term.kind, term.number)
@@ -619,7 +618,7 @@ def compileExpression(tokens, i, table)
   str = ""
 
   resultList = compileTerm(tokens, i, table)
-  term = findSymbol(resultList[0], table)
+  term = table.findSymbol(resultList[0])
   str += writePush(term.kind, term.number)
   i = resultList[1]
 
@@ -643,9 +642,12 @@ def compileExpressionT(tokens, i, table, result)
 
 
   resultList = compileTerm(tokens, i, table)
-  term = findSymbol(resultList[0], table)
-  result += writePush(term.kind, term.number)
-  i = resultList[1]
+
+  if table.findSymbol(resultList[0] != null)
+    term = table.findSymbol(resultList[0])
+    result += writePush(term.kind, term.number)
+    i = resultList[1]
+  end
 
   result += writeArithmetic(op)
 
@@ -663,7 +665,7 @@ def compileTerm(tokens, i, table)
     op = tokens[i][1]
     i += 1
     resultList = compileTerm(tokens, i, table)
-    term = findSymbol(resultList[0], table)
+    term = table.findSymbol(resultList[0])
     str += writePush(term.kind, term)
     str += writeArithmeticUnary(op)
     i = resultList[1]

@@ -2,6 +2,10 @@
 	<keyword> class </keyword>
 	<identifier> foo </identifier>
 	<symbol> { </symbol>
+	<keyword> static </keyword>
+	<keyword> int </keyword>
+	<identifier> b </identifier>
+	<symbol> ; </symbol>
 	<keyword> field </keyword>
 	<keyword> int </keyword>
 	<identifier> x </identifier>
@@ -21,27 +25,35 @@
 	<identifier> bank </identifier>
 	<symbol> ( </symbol>
 	<keyword> int </keyword>
-	<identifier> x </identifier>
+	<identifier> x2 </identifier>
 	<symbol> , </symbol>
 	<keyword> int </keyword>
-	<identifier> y </identifier>
+	<identifier> y2 </identifier>
 	<symbol> , </symbol>
 	<keyword> int </keyword>
-	<identifier> z </identifier>
+	<identifier> z2 </identifier>
 	<symbol> ) </symbol>
 	<symbol> { </symbol>
 	<keyword> var </keyword>
 	<keyword> int </keyword>
 	<identifier> xyz </identifier>
+	<symbol> , </symbol>
+	<identifier> xyz2 </identifier>
+	<symbol> ; </symbol>
+	<keyword> var </keyword>
+	<keyword> char </keyword>
+	<identifier> abc </identifier>
 	<symbol> ; </symbol>
 	<keyword> let </keyword>
 	<identifier> xyz </identifier>
 	<symbol> = </symbol>
-	<identifier> x </identifier>
+	<identifier> x2 </identifier>
 	<symbol> + </symbol>
-	<identifier> y </identifier>
+	<symbol> ( </symbol>
+	<identifier> y2 </identifier>
 	<symbol> * </symbol>
-	<identifier> z </identifier>
+	<identifier> z2 </identifier>
+	<symbol> ) </symbol>
 	<symbol> ; </symbol>
 	<symbol> } </symbol>
 	<symbol> } </symbol>

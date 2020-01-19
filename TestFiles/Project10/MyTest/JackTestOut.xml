@@ -3,6 +3,12 @@
 	<identifier> foo </identifier>
 	<symbol> { </symbol>
 	<classVarDec>
+		<keyword> static </keyword>
+		<keyword> int </keyword>
+		<identifier> b </identifier>
+		<symbol> ; </symbol>
+	</classVarDec>
+	<classVarDec>
 		<keyword> field </keyword>
 		<keyword> int </keyword>
 		<identifier> x </identifier>
@@ -29,13 +35,13 @@
 		<symbol> ( </symbol>
 		<parameterList>
 			<keyword> int </keyword>
-			<identifier> x </identifier>
+			<identifier> x2 </identifier>
 			<symbol> , </symbol>
 			<keyword> int </keyword>
-			<identifier> y </identifier>
+			<identifier> y2 </identifier>
 			<symbol> , </symbol>
 			<keyword> int </keyword>
-			<identifier> z </identifier>
+			<identifier> z2 </identifier>
 		</parameterList>
 		<symbol> ) </symbol>
 		<subroutineBody>
@@ -44,6 +50,14 @@
 				<keyword> var </keyword>
 				<keyword> int </keyword>
 				<identifier> xyz </identifier>
+				<symbol> , </symbol>
+				<identifier> xyz2 </identifier>
+				<symbol> ; </symbol>
+			</varDec>
+			<varDec>
+				<keyword> var </keyword>
+				<keyword> char </keyword>
+				<identifier> abc </identifier>
 				<symbol> ; </symbol>
 			</varDec>
 			<statements>
@@ -53,15 +67,21 @@
 					<symbol> = </symbol>
 					<expression>
 						<term>
-							<identifier> x </identifier>
+							<identifier> x2 </identifier>
 						</term>
 						<symbol> + </symbol>
 						<term>
-							<identifier> y </identifier>
-						</term>
-						<symbol> * </symbol>
-						<term>
-							<identifier> z </identifier>
+							<symbol> ( </symbol>
+							<expression>
+								<term>
+									<identifier> y2 </identifier>
+								</term>
+								<symbol> * </symbol>
+								<term>
+									<identifier> z2 </identifier>
+								</term>
+							</expression>
+							<symbol> ) </symbol>
 						</term>
 					</expression>
 					<symbol> ; </symbol>
