@@ -1,19 +1,14 @@
 class foo {
+    static int b;
     field int x, y;
     static int z;
     field char a;
 
 
-    method int bank(int x, int y, int z) {
-        var int a;
-        var int b;
-        var int c;
+    method int bank(int x2, int y2, int z2) {
+        var int xyz, xyz2;
+        var char abc;
 
-        return;
-    }
-
-    method int bank2(int x2) {
-        var int a2;
-        return;
+        let xyz = x2 + y2 * z2;
     }
 }

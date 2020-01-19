@@ -8,12 +8,6 @@
 		<identifier> x </identifier>
 		<symbol> , </symbol>
 		<identifier> y </identifier>
-		<symbol> , </symbol>
-		<identifier> er </identifier>
-		<symbol> , </symbol>
-		<identifier> ty </identifier>
-		<symbol> , </symbol>
-		<identifier> ui </identifier>
 		<symbol> ; </symbol>
 	</classVarDec>
 	<classVarDec>
@@ -26,8 +20,6 @@
 		<keyword> field </keyword>
 		<keyword> char </keyword>
 		<identifier> a </identifier>
-		<symbol> , </symbol>
-		<identifier> bc </identifier>
 		<symbol> ; </symbol>
 	</classVarDec>
 	<subroutineDec>
@@ -51,61 +43,29 @@
 			<varDec>
 				<keyword> var </keyword>
 				<keyword> int </keyword>
-				<identifier> a </identifier>
-				<symbol> , </symbol>
-				<identifier> aaa </identifier>
-				<symbol> ; </symbol>
-			</varDec>
-			<varDec>
-				<keyword> var </keyword>
-				<keyword> int </keyword>
-				<identifier> b </identifier>
-				<symbol> ; </symbol>
-			</varDec>
-			<varDec>
-				<keyword> var </keyword>
-				<keyword> int </keyword>
-				<identifier> c </identifier>
+				<identifier> xyz </identifier>
 				<symbol> ; </symbol>
 			</varDec>
 			<statements>
-				<returnStatement>
-					<keyword> return </keyword>
+				<letStatement>
+					<keyword> let </keyword>
+					<identifier> xyz </identifier>
+					<symbol> = </symbol>
+					<expression>
+						<term>
+							<identifier> x </identifier>
+						</term>
+						<symbol> + </symbol>
+						<term>
+							<identifier> y </identifier>
+						</term>
+						<symbol> * </symbol>
+						<term>
+							<identifier> z </identifier>
+						</term>
+					</expression>
 					<symbol> ; </symbol>
-				</returnStatement>
-			</statements>
-			<symbol> } </symbol>
-		</subroutineBody>
-	</subroutineDec>
-	<subroutineDec>
-		<keyword> method </keyword>
-		<keyword> int </keyword>
-		<identifier> bank2 </identifier>
-		<symbol> ( </symbol>
-		<parameterList>
-			<keyword> int </keyword>
-			<identifier> x2 </identifier>
-		</parameterList>
-		<symbol> ) </symbol>
-		<subroutineBody>
-			<symbol> { </symbol>
-			<varDec>
-				<keyword> var </keyword>
-				<keyword> int </keyword>
-				<identifier> a2 </identifier>
-				<symbol> ; </symbol>
-			</varDec>
-			<varDec>
-				<keyword> var </keyword>
-				<keyword> int </keyword>
-				<identifier> b2 </identifier>
-				<symbol> ; </symbol>
-			</varDec>
-			<statements>
-				<returnStatement>
-					<keyword> return </keyword>
-					<symbol> ; </symbol>
-				</returnStatement>
+				</letStatement>
 			</statements>
 			<symbol> } </symbol>
 		</subroutineBody>

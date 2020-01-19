@@ -32,32 +32,16 @@
 	<symbol> { </symbol>
 	<keyword> var </keyword>
 	<keyword> int </keyword>
-	<identifier> a </identifier>
+	<identifier> xyz </identifier>
 	<symbol> ; </symbol>
-	<keyword> var </keyword>
-	<keyword> int </keyword>
-	<identifier> b </identifier>
-	<symbol> ; </symbol>
-	<keyword> var </keyword>
-	<keyword> int </keyword>
-	<identifier> c </identifier>
-	<symbol> ; </symbol>
-	<keyword> return </keyword>
-	<symbol> ; </symbol>
-	<symbol> } </symbol>
-	<keyword> method </keyword>
-	<keyword> int </keyword>
-	<identifier> bank2 </identifier>
-	<symbol> ( </symbol>
-	<keyword> int </keyword>
-	<identifier> x2 </identifier>
-	<symbol> ) </symbol>
-	<symbol> { </symbol>
-	<keyword> var </keyword>
-	<keyword> int </keyword>
-	<identifier> a2 </identifier>
-	<symbol> ; </symbol>
-	<keyword> return </keyword>
+	<keyword> let </keyword>
+	<identifier> xyz </identifier>
+	<symbol> = </symbol>
+	<identifier> x </identifier>
+	<symbol> + </symbol>
+	<identifier> y </identifier>
+	<symbol> * </symbol>
+	<identifier> z </identifier>
 	<symbol> ; </symbol>
 	<symbol> } </symbol>
 	<symbol> } </symbol>

@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="e2bbf7f2-661c-4b38-bdc0-4dc1c947d57a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compiler/CompilerIO.rb" beforeDir="false" afterPath="$PROJECT_DIR$/Compiler/CompilerIO.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Compiler/SymbolsTable.rb" beforeDir="false" afterPath="$PROJECT_DIR$/Compiler/SymbolsTable.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compiler/vmWriter.rb" beforeDir="false" afterPath="$PROJECT_DIR$/Compiler/vmWriter.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TestFiles/Project10/MyTest/JackTest.jack" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project10/MyTest/JackTest.jack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TestFiles/Project10/MyTest/JackTestOut.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project10/MyTest/JackTestOut.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TestFiles/Project10/MyTest/JackTestTOut.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project10/MyTest/JackTestTOut.xml" afterDir="false" />
@@ -77,7 +77,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Ruby.SymbolsTable">
+  <component name="RunManager" selected="Ruby.Parser2">
     <configuration name="CompilerIO" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
       <module name="Project7" />
       <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="" />
@@ -106,17 +106,17 @@
       <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
       <method v="2" />
     </configuration>
-    <configuration name="Parser" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
+    <configuration name="Parser2" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
       <module name="Project7" />
       <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="" />
-      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$/Compiler" />
       <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
       <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
       <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
       <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
       <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
       <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" />
-      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/Compiler/Parser.rb" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/Compiler/Parser2.rb" />
       <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
       <method v="2" />
     </configuration>
@@ -148,27 +148,27 @@
       <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
       <method v="2" />
     </configuration>
-    <configuration name="Translator" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
+    <configuration name="vmWriter" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
       <module name="Project7" />
       <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="" />
-      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$/Compiler" />
       <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
       <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
       <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
       <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
       <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
       <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" />
-      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/Translator/Translator.rb" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/Compiler/vmWriter.rb" />
       <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Ruby.Parser2" />
+        <item itemvalue="Ruby.vmWriter" />
         <item itemvalue="Ruby.SymbolsTable" />
         <item itemvalue="Ruby.CompilerIO" />
         <item itemvalue="Ruby.Tokenizer" />
-        <item itemvalue="Ruby.Parser" />
-        <item itemvalue="Ruby.Translator" />
       </list>
     </recent_temporary>
   </component>
@@ -192,14 +192,7 @@
       <workItem from="1573815022876" duration="119242000" />
       <workItem from="1574945043043" duration="14983000" />
       <workItem from="1577728508224" duration="52117000" />
-      <workItem from="1578517304087" duration="66099000" />
-    </task>
-    <task id="LOCAL-00002" summary="New Commit">
-      <created>1574317878375</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1574317878375</updated>
+      <workItem from="1578517304087" duration="81436000" />
     </task>
     <task id="LOCAL-00003" summary="New Commit">
       <created>1574318096673</created>
@@ -537,7 +530,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578939749556</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="wrote the symbols table">
+      <created>1579107390487</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1579107390550</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -569,7 +569,8 @@
     <MESSAGE value="Testing Saul" />
     <MESSAGE value="need to fix helpers" />
     <MESSAGE value="Need to clean up" />
-    <option name="LAST_COMMIT_MESSAGE" value="Need to clean up" />
+    <MESSAGE value="wrote the symbols table" />
+    <option name="LAST_COMMIT_MESSAGE" value="wrote the symbols table" />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -625,12 +626,14 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Project7@Parser.rcov" NAME="Parser Coverage Results" MODIFIED="1578402315711" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
     <SUITE FILE_PATH="coverage/MiniProject@Test.rcov" NAME="Test Coverage Results" MODIFIED="1573607065364" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
+    <SUITE FILE_PATH="coverage/Project7@vmWriter.rcov" NAME="vmWriter Coverage Results" MODIFIED="1579114161258" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Compiler" MODULE_NAME="Project7" />
     <SUITE FILE_PATH="coverage/Project7@Test.rcov" NAME="Main Coverage Results" MODIFIED="1574885669794" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="C:\Users\josep\RubymineProjects\Project7" MODULE_NAME="Project7" />
     <SUITE FILE_PATH="coverage/Project7@CompilerIO.rcov" NAME="CompilerIO Coverage Results" MODIFIED="1579012728358" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
-    <SUITE FILE_PATH="coverage/Project7@SymbolsTable.rcov" NAME="SymbolsTable Coverage Results" MODIFIED="1579107347309" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Compiler" MODULE_NAME="Project7" />
+    <SUITE FILE_PATH="coverage/Project7@SymbolsTable.rcov" NAME="SymbolsTable Coverage Results" MODIFIED="1579112223493" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Compiler" MODULE_NAME="Project7" />
+    <SUITE FILE_PATH="coverage/Project7@Parser2.rcov" NAME="Parser2 Coverage Results" MODIFIED="1579170012000" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Compiler" MODULE_NAME="Project7" />
     <SUITE FILE_PATH="coverage/Project7@Tokenizer.rcov" NAME="Tokenizer Coverage Results" MODIFIED="1578563816695" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
     <SUITE FILE_PATH="coverage/Project7@code_writer.rcov" NAME="code_writer Coverage Results" MODIFIED="1574813817501" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
     <SUITE FILE_PATH="coverage/Project7@Utility.rcov" NAME="Utility Coverage Results" MODIFIED="1574100649750" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
-    <SUITE FILE_PATH="coverage/Project7@Main.rcov" NAME="Main Coverage Results" MODIFIED="1579041240598" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
+    <SUITE FILE_PATH="coverage/Project7@Main.rcov" NAME="Main Coverage Results" MODIFIED="1579113321391" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
   </component>
 </project>
