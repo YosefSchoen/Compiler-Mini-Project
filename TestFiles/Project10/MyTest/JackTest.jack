@@ -5,10 +5,16 @@ class foo {
     field char a;
 
 
-    method int bank(int x2, int y2, int z2) {
-        var int xyz, xyz2;
+    method int bank(int x1, int y1, int z1) {
+        var int xyz, xyz1;
         var char abc;
 
-        let xyz = x2 + (y2 * z2);
+        let xyz1 = x1 + y1
+    }
+
+    method int bank2(int x2) {
+        var int xyz, xyz1
+        let xyz1 = x2 + 1;
+        let xyz = 2 / xyz1;
     }
 }

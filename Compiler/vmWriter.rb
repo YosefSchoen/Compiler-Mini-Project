@@ -7,6 +7,13 @@ end
 
 
 def writePop(segment, index)
+  case segment
+  when "var"
+    segment = "local"
+
+  when "field"
+    segment = "local"
+  end
   str = "pop " + segment + " " + index + "\n"
   return str
 end
@@ -39,9 +46,6 @@ def writeArithmetic(cmd)
   when "|"
     str = "or\n"
 
-  when "~"
-    str = "not\n"
-
   else
     # type code here
   end
@@ -51,7 +55,14 @@ end
 
 
 def writeArithmeticUnary(str)
+  if str == "-"
+    str = "neg\n"
 
+  elsif str == "~"
+    str = "not\n"
+  end
+
+  return str
 end
 
 def writeLabel(label)
@@ -81,7 +92,7 @@ end
 
 
 def writeFunction(name, nLocals)
-  str = "function " + name + " " + nLocals
+  str = "function " + name + " " + nLocals + "\n"
   return str
 end
 

@@ -9,6 +9,7 @@ class SymbolsTable
   end
 
   def findSymbol(varName)
+    #puts "testing"
     for i in 0..symbols.size-1
       if varName == symbols[i].name
         return symbols[i]

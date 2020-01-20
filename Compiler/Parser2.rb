@@ -21,9 +21,9 @@ end
 
 #the first function called compiles the file's class
 def compileClass(tokens, classNames)
+  str = ""
   table = SymbolsTable.new([])
   i = 0
-
   #terminal class
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, "class")
     i+=1
@@ -48,14 +48,15 @@ def compileClass(tokens, classNames)
 
   #subroutineDec*
   resultList = compileSubroutineDec(tokens, classNames, i, this)
-  methodsTableList = resultList[0]
-  i = resultList[1]
+  str += resultList[0]
+  methodsTableList = resultList[1]
+  i = resultList[2]
 
   # terminal }
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, "}")
   end
 
-
+  puts str
   return [table, methodsTableList]
 end
 
@@ -141,7 +142,7 @@ def varNameT(tokens, i, table, index, kind, type)
     i+=1
   end
 
-  symbol = SymbolDef.new(name, kind, type, index.to_s)
+  symbol = SymbolDef.new(name, type, kind, index.to_s)
   table.symbols.append(symbol)
   index += 1
 
@@ -153,16 +154,16 @@ end
 def compileSubroutineDec(tokens, classNames, i, this)
   # if constructor, method, function
 
-  resultList = compileSubroutineDecT(tokens, classNames, i, this, [])
+  resultList = compileSubroutineDecT(tokens, classNames, i, this, [], "")
   return resultList
 end
 
 
-def compileSubroutineDecT(tokens, classNames, i, this, tableList)
+def compileSubroutineDecT(tokens, classNames, i, this, tableList, result)
   index = 0
   table = SymbolsTable.new([])
   if notToLarge(tokens, i) and !isSubRoutineType(tokens[i][1])
-    return [tableList, i]
+    return [result, tableList, i]
   end
 
   if false
@@ -198,6 +199,7 @@ def compileSubroutineDecT(tokens, classNames, i, this, tableList)
   end
 
   if notToLarge(tokens, i) and isIdentifier(tokens[i][1])
+    name = tokens[1][1]+"."+tokens[i][1]
     i+=1
   end
 
@@ -217,12 +219,15 @@ def compileSubroutineDecT(tokens, classNames, i, this, tableList)
   end
 
   resultList = compileSubroutineBody(tokens, classNames, i, table)
-  table = resultList[0]
-  i = resultList[1]
 
+  nLocals = resultList[3]
+  result += writeFunction(name, nLocals.to_s)
 
+  result += resultList[0]
+  table = resultList[1]
+  i = resultList[2]
   tableList.append(table)
-  resultList = compileSubroutineDecT(tokens, classNames, i, this, tableList)
+  resultList = compileSubroutineDecT(tokens, classNames, i, this, tableList, result)
   return resultList
 end
 
@@ -294,7 +299,7 @@ def compileSubroutineBody(tokens, classNames, i, table)
   resultList = compileVarDec(tokens, classNames, i, table)
   table = resultList[0]
   i = resultList[1]
-
+  nLocal = resultList[2]
 
   #need to update everything from here
   resultList = compileStatements(tokens, i, table)
@@ -305,7 +310,7 @@ def compileSubroutineBody(tokens, classNames, i, table)
     i+=1
   end
 
-  return [table, i]
+  return [str, table, i, nLocal]
 end
 
 
@@ -314,14 +319,14 @@ def compileVarDec(tokens, classNames, i, table)
   resultList = compileVarDecT(tokens, classNames, i, table, index)
   table = resultList[0]
   i = resultList[1]
-
-  return [table, i]
+  nLocals = resultList[2]
+  return [table, i, nLocals]
 end
 
 
 def compileVarDecT(tokens, classNames, i, table, index)
   if notToLarge(tokens, i) and !isCorrectToken(tokens, i, "var")
-    return [table, i]
+    return [table, i, index]
   end
 
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, "var")
@@ -528,11 +533,9 @@ end
 
 def compileWhile(tokens, i, table)
   str = ""
-  str += "<whileStatement>\n"
 
   # check for while
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, "while")
-    str += getXMLString(tokens, i)
     i+=1
   end
 
@@ -555,29 +558,25 @@ def compileWhile(tokens, i, table)
   str += resultList[0]
   i = resultList[1]
 
-  str += "</whileStatement>\n"
   return [str, i]
 end
 
 
 def compileDo(tokens, i, table)
   str = ""
-  str += "<doStatement>\n"
+
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, "do")
-    str+= getXMLString(tokens, i)
     i+=1
   end
 
   resultList = compileSubroutineCall(tokens, i, table)
-  str+= resultList[0]
+  str += resultList[0]
   i = resultList[1]
 
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, ";")
-    str+=getXMLString(tokens, i)
     i+=1
   end
 
-  str += "</doStatement>\n"
   return [str, i]
 end
 
@@ -618,8 +617,7 @@ def compileExpression(tokens, i, table)
   str = ""
 
   resultList = compileTerm(tokens, i, table)
-  term = table.findSymbol(resultList[0])
-  str += writePush(term.kind, term.number)
+  str += resultList[0]
   i = resultList[1]
 
   resultList = compileExpressionT(tokens, i, table, "")
@@ -642,12 +640,11 @@ def compileExpressionT(tokens, i, table, result)
 
 
   resultList = compileTerm(tokens, i, table)
+  result += resultList[0]
+  i = resultList[1]
+  #term = table.findSymbol(resultList[0])
+  #result += writePush(term.kind, term.number)
 
-  if table.findSymbol(resultList[0] != null)
-    term = table.findSymbol(resultList[0])
-    result += writePush(term.kind, term.number)
-    i = resultList[1]
-  end
 
   result += writeArithmetic(op)
 
@@ -665,11 +662,9 @@ def compileTerm(tokens, i, table)
     op = tokens[i][1]
     i += 1
     resultList = compileTerm(tokens, i, table)
-    term = table.findSymbol(resultList[0])
-    str += writePush(term.kind, term)
+    str += resultList[0]
     str += writeArithmeticUnary(op)
     i = resultList[1]
-
 
     # ( expression )
   elsif notToLarge(tokens, i) and isCorrectToken(tokens, i, "(")
@@ -684,8 +679,7 @@ def compileTerm(tokens, i, table)
     end
 
     #int/keyword/string Constant
-  elsif notToLarge(tokens, i) and (isIntConstant(tokens[i][1]) or isKeywordConst(tokens[i][1]) or
-      tokens[i][0] == "stringConstant")
+  elsif notToLarge(tokens, i) and (isIntConstant(tokens[i][1]) or isKeywordConst(tokens[i][1]) or tokens[i][0] == "stringConstant")
     term = tokens[i][1]
 
     str += writePush("constant", term)
@@ -708,14 +702,14 @@ def compileTerm(tokens, i, table)
       end
 
     elsif notToLarge(tokens, i+1) and (isCorrectToken(tokens, i+1, "(") or isCorrectToken(tokens, i+1, "."))
-      resultList = compileSubroutineCall(tokens, i)
-      term = resultList[0]
+      resultList = compileSubroutineCall(tokens, i, table)
+      str += resultList[0]
       i = resultList[1]
 
     else
-      term = tokens[i][1]
+      term = table.findSymbol(tokens[i][1])
+      str += writePush(term.kind, term.number)
       i += 1
-      return [term, i]
     end
   end
 
@@ -724,8 +718,9 @@ end
 
 
 #need to write this function
-def compileSubroutineCall(tokens, i)
+def compileSubroutineCall(tokens, i, table)
   str = ""
+  name = ""
   flag = true
   # if flag is false then it is not the . call
   if notToLarge(tokens, i) and isCorrectToken(tokens, i+1, "(")
@@ -735,84 +730,84 @@ def compileSubroutineCall(tokens, i)
   # # if flag is false,
   if flag
     if notToLarge(tokens, i) and isIdentifier(tokens[i][1])
-      str += getXMLString(tokens, i)
+      name = tokens[i][1]
       i += 1
     end
     if notToLarge(tokens, i) and isCorrectToken(tokens, i, ".")
-      str += getXMLString(tokens, i)
+      name += tokens[i][1]
       i += 1
     end
 
     if notToLarge(tokens, i) and isCorrectToken(tokens, i, "new")
-      str += getXMLString(tokens, i)
+      name += tokens[i][1]
       i += 1
     end
   end
   # now that we took care of this . call
   if notToLarge(tokens, i) and isIdentifier(tokens[i][1])
-    str += getXMLString(tokens, i)
+    name += tokens[i][1]
+    puts name
     i += 1
   end
 
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, "(")
-    str += getXMLString(tokens, i)
     i += 1
   end
 
-  resultList = compileExpressionList(tokens, i)
+  resultList = compileExpressionList(tokens, i, table)
   str += resultList[0]
   i = resultList[1]
+  nArgs = resultList[2]
 
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, ")")
-    str += getXMLString(tokens, i)
     i += 1
   end
+
+  str += writeCall(name, nArgs)
   return [str, i]
 end
 
 
-def compileExpressionList(tokens, i)
+def compileExpressionList(tokens, i, table)
   str = ""
-  str += "<expressionList>\n"
-
+  nArgs = 0
   #if no parameters
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, ")")
-    str += "</expressionList>\n"
-    return [str, i]
+    return [str, i, nArgs]
   end
 
   if notToLarge(tokens, i) and isExpression(tokens, i)
-    resultList = compileExpression(tokens, i)
+    resultList = compileExpression(tokens, i, table)
     str += resultList[0]
     i = resultList[1]
+    nArgs += 1
 
     if notToLarge(tokens, i) and isCorrectToken(tokens, i, ",")
-      resultList = compileExpressionListT(tokens, i, "")
+      resultList = compileExpressionListT(tokens, i, table, nArgs, "")
       str += resultList[0]
       i = resultList[1]
     end
   end
 
-  str += "</expressionList>\n"
   return [str, i]
 end
 
 
-def compileExpressionListT(tokens, i, result)
+def compileExpressionListT(tokens, i, nArgs, table, result)
   if notToLarge(tokens, i) and !isCorrectToken(tokens, i, ",")
-    return [result, i]
+    return [result, i, nArgs]
   end
 
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, ",")
-    result += getXMLString(tokens, i)
     i += 1
   end
 
   resultList = compileExpression(tokens, i, table)
   result += resultList[0]
   i = resultList[1]
+  nArgs += 1
 
-  resultList = compileExpressionListT(tokens, i, result)
+  resultList = compileExpressionListT(tokens, i, nArgs, table, result)
   return resultList
 end
 
