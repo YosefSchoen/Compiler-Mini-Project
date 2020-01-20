@@ -56,7 +56,7 @@ def compileClass(tokens, classNames)
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, "}")
   end
 
-  puts str
+  #puts str
   return [table, methodsTableList]
 end
 
@@ -167,35 +167,26 @@ def compileSubroutineDecT(tokens, classNames, i, this, classTable, tableList, re
     return [result, tableList, i]
   end
 
-  if false
-    if notToLarge(tokens, i) and isSubRoutineType(tokens[i][1]) and isCorrectToken(tokens, i, "constructor")
-      result += getXMLString(tokens, i)
-      i +=1
+  if notToLarge(tokens, i) and isSubRoutineType(tokens[i][1]) and isCorrectToken(tokens, i, "constructor")
+    type = tokens[i][1]
+    i +=1
 
-      if notToLarge(tokens, i) and isIdentifier(tokens[i][1]) and isCorrectToken(tokens, i+1, "new")
-        result+= getXMLString(tokens, i)
-        i+=1
+    if notToLarge(tokens, i) and isIdentifier(tokens[i][1]) and isCorrectToken(tokens, i+1, "new")
+      name += tokens[i][1]
+      i+=1
 
-        result += getXMLString(tokens, i)
-        i += 1
-
-      end
-      # take care of new
-
-
-    elsif notToLarge(tokens, i) and isSubRoutineType(tokens[i][1]) and (isCorrectToken(tokens, i, "function") or
-        isCorrectToken(tokens, i, "method"))
-      result += getXMLString(tokens, i)
-      i +=1
+      name += tokens[i][1]
+      i += 1
     end
+      # take care of new
   end
 
-  if notToLarge(tokens, i) and isCorrectToken(tokens, i, "method")
+  if notToLarge(tokens, i) and isSubRoutineType(tokens[i][1])
+    type = tokens[i][1]
     i += 1
   end
 
   if notToLarge(tokens, i) and (isType(tokens[i][1], classNames) or isCorrectToken(tokens, i, "void"))
-    type = tokens[i][1]
     i+=1
   end
 
@@ -207,6 +198,7 @@ def compileSubroutineDecT(tokens, classNames, i, this, classTable, tableList, re
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, "(")
     i+=1
   end
+
   symbol = SymbolDef.new("this", this, "argument", index.to_s)
   table.symbols.append(symbol)
   index += 1
@@ -223,8 +215,11 @@ def compileSubroutineDecT(tokens, classNames, i, this, classTable, tableList, re
 
   nLocals = resultList[3]
   result += writeFunction(name, nLocals.to_s)
-  result+= writePush(symbol.kind, symbol.number)
-  result += writePop("pointer", "0")
+
+  if type == "method"
+    result+= writePush(symbol.kind, symbol.number)
+    result += writePop("pointer", "0")
+  end
 
   result += resultList[0]
   table = resultList[1]
@@ -693,7 +688,6 @@ def compileTerm(tokens, i, table)
     #the else is for var name and  subroutine  need to solve this
   elsif isIdentifier(tokens[i][1])
     if notToLarge(tokens, i+1) and isCorrectToken(tokens, i+1, "[")
-      puts tokens[i][1]
       term = table.findSymbol(tokens[i][1])
       str += writePush(term.kind, term.number)
       i += 2
@@ -752,7 +746,6 @@ def compileSubroutineCall(tokens, i, table)
   # now that we took care of this . call
   if notToLarge(tokens, i) and isIdentifier(tokens[i][1])
     name += tokens[i][1]
-    puts name
     i += 1
   end
 
