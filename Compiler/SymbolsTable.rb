@@ -1,11 +1,26 @@
 class SymbolsTable
-  def initialize(symbols)
+  def initialize(symbols, parentSymbols = [])
     #symbols is an array of symbolDef Objects
     @symbols = symbols
+    @parentSymbols = parentSymbols
+    setParentSymbolKind
   end
 
   def symbols
     @symbols
+  end
+
+  def setParentSymbolKind
+    for i in 0..parentSymbols.size-1
+      if parentSymbols[i].kind == "field"
+        symbol = parentSymbols[i]
+        parentSymbols[i] = SymbolDef.new(symbol.name, symbol.type, "this", symbol.number)
+      end
+    end
+  end
+
+  def parentSymbols
+    @parentSymbols
   end
 
   def findSymbol(varName)
@@ -16,12 +31,23 @@ class SymbolsTable
       end
     end
 
+    for i in 0..parentSymbols.size-1
+      if varName == parentSymbols[i].name
+        return parentSymbols[i]
+      end
+    end
+
     return null
   end
 
   def printTable
-    for i in 0.. @symbols.size-1
+    for i in 0..@symbols.size-1
       @symbols[i].printSymbol
+      puts "\n"
+    end
+
+    for i in 0..@parentSymbols.size-1
+      @parentSymbols[i].printSymbol
       puts "\n"
     end
   end

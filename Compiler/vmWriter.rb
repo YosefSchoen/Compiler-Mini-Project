@@ -1,6 +1,14 @@
 require_relative '../Compiler/SymbolsTable'
 require_relative '../Compiler/Tokenizer'
 def writePush(segment, index)
+  case segment
+  when "var"
+    segment = "local"
+
+  when "field"
+    segment = "local"
+  end
+
  str = "push " + segment + " " + index + "\n"
   return str
 end

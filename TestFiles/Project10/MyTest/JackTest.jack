@@ -9,12 +9,12 @@ class foo {
         var int xyz, xyz1;
         var char abc;
 
-        let xyz1 = x1 + y1
+        let xyz = bank2.foo(x1, y1, z1) + 3;
     }
 
     method int bank2(int x2) {
-        var int xyz, xyz1
-        let xyz1 = x2 + 1;
-        let xyz = 2 / xyz1;
+        var int xyz;
+
+        let xyz = x2;
     }
 }
