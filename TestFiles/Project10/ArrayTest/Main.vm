@@ -1,0 +1,91 @@
+function Main.main 4
+push constant HOW MANY NUMBERS?  
+call Keyboard.readInt 1
+pop temp 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 1
+call Array.new 1
+pop temp 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+label true.48
+push local 2
+push local 1
+not
+if-goto end.48
+push local 0
+push local 2
+add
+push constant ENTER THE NEXT NUMBER:  
+call Keyboard.readInt 1
+pop temp 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 2
+push constant 1
+not
+add
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+label end.48
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+label true.86
+push local 2
+push local 1
+not
+if-goto end.86
+push local 3
+push local 0
+push local 2
+add
+pop pointer 1
+push that 0
+add
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 2
+push constant 1
+not
+add
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+label end.86
+push constant THE AVERAGE IS:  
+call Output.printString 1
+pop temp 0
+push local 3
+push local 1
+call Math.divide 2
+call Output.printInt 1
+pop temp 0
+call Output.println 0
+pop temp 0
+push constant 0
+return
