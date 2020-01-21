@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e2bbf7f2-661c-4b38-bdc0-4dc1c947d57a" name="Default Changelist" comment="">
+    <list default="true" id="e2bbf7f2-661c-4b38-bdc0-4dc1c947d57a" name="Default Changelist" comment="Need to finish writing if, else, while, and do">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Compiler/Parser2.rb" beforeDir="false" afterPath="$PROJECT_DIR$/Compiler/Parser2.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compiler/SymbolsTable.rb" beforeDir="false" afterPath="$PROJECT_DIR$/Compiler/SymbolsTable.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compiler/Tokenizer.rb" beforeDir="false" afterPath="$PROJECT_DIR$/Compiler/Tokenizer.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TestFiles/Project10/MyTest/JackTest.jack" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project10/MyTest/JackTest.jack" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -190,14 +192,7 @@
       <workItem from="1574945043043" duration="14983000" />
       <workItem from="1577728508224" duration="52117000" />
       <workItem from="1578517304087" duration="81436000" />
-      <workItem from="1579451276315" duration="39564000" />
-    </task>
-    <task id="LOCAL-00011" summary="Finished stage 1 and commenting the main file">
-      <created>1574761150655</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1574761150655</updated>
+      <workItem from="1579451276315" duration="50111000" />
     </task>
     <task id="LOCAL-00012" summary="Finished stage 1 and commenting the main file">
       <created>1574763434420</created>
@@ -535,7 +530,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579572599723</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="Need to finish writing if, else, while, and do">
+      <created>1579573792648</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1579573792648</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -643,7 +645,7 @@
     <SUITE FILE_PATH="coverage/Project7@Test.rcov" NAME="Main Coverage Results" MODIFIED="1574885669794" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="C:\Users\josep\RubymineProjects\Project7" MODULE_NAME="Project7" />
     <SUITE FILE_PATH="coverage/Project7@CompilerIO.rcov" NAME="CompilerIO Coverage Results" MODIFIED="1579012728358" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
     <SUITE FILE_PATH="coverage/Project7@SymbolsTable.rcov" NAME="SymbolsTable Coverage Results" MODIFIED="1579112223493" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Compiler" MODULE_NAME="Project7" />
-    <SUITE FILE_PATH="coverage/Project7@Parser2.rcov" NAME="Parser2 Coverage Results" MODIFIED="1579573670958" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Compiler" MODULE_NAME="Project7" />
+    <SUITE FILE_PATH="coverage/Project7@Parser2.rcov" NAME="Parser2 Coverage Results" MODIFIED="1579618277464" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Compiler" MODULE_NAME="Project7" />
     <SUITE FILE_PATH="coverage/Project7@Tokenizer.rcov" NAME="Tokenizer Coverage Results" MODIFIED="1578563816695" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
     <SUITE FILE_PATH="coverage/Project7@code_writer.rcov" NAME="code_writer Coverage Results" MODIFIED="1574813817501" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
     <SUITE FILE_PATH="coverage/Project7@Utility.rcov" NAME="Utility Coverage Results" MODIFIED="1574100649750" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />

@@ -37,7 +37,7 @@ class SymbolsTable
       end
     end
 
-    return null
+    return nil
   end
 
   def printTable

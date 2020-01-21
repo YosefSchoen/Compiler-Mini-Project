@@ -172,50 +172,75 @@ def compileSubroutineDecT(tokens, classNames, i, this, classTable, tableList, re
   if notToLarge(tokens, i) and isSubRoutineType(tokens[i][1])
     type = tokens[i][1]
     i += 1
+
+    if type == "constructor"
+      if notToLarge(tokens, i) and isCorrectToken(tokens, i, tokens[1][1])
+        name += tokens[i][1]
+        i += 1
+      end
+
+      allocSize = 0
+      for j in 0..classTable.symbols.size-1
+        if classTable.symbols[j].kind == "this"
+          allocSize += 1
+        end
+      end
+
+
+    elsif type == "method"
+      symbol = SymbolDef.new("this", this, "argument", index.to_s)
+      table.symbols.append(symbol)
+      index += 1
+
+    elsif type == "function"
+
+    end
+
+    if notToLarge(tokens, i) and (isType(tokens[i][1], classNames) or isCorrectToken(tokens, i, "void"))
+      i+=1
+    end
+
+    if notToLarge(tokens, i) and isIdentifier(tokens[i][1])
+      name = tokens[1][1]+"."+tokens[i][1]
+      i+=1
+    end
+
+    if notToLarge(tokens, i) and isCorrectToken(tokens, i, "(")
+      i+=1
+    end
+
+    resultList = compileParameterList(tokens, classNames, i, table, index)
+    table = resultList[0]
+    i = resultList[1]
+
+    if notToLarge(tokens, i) and isCorrectToken(tokens, i, ")")
+      i+=1
+    end
+
+    resultList = compileSubroutineBody(tokens, classNames, i, table)
+
+    nLocals = resultList[3]
+    result += writeFunction(name, nLocals.to_s)
+
+    if type == "method"
+      result+= writePush(symbol.kind, symbol.number)
+      result += writePop("pointer", "0")
+
+    elsif type == "constructor"
+      result += writePush("constant", allocSize.to_s)
+      result += writeCall("Memory.alloc", "1")
+      result += writePop("pointer", "0")
+    end
+
+
+
+    result += resultList[0]
+    table = resultList[1]
+    i = resultList[2]
+    tableList.append(table)
+    resultList = compileSubroutineDecT(tokens, classNames, i, this, classTable, tableList, result)
+    return resultList
   end
-
-  if notToLarge(tokens, i) and (isType(tokens[i][1], classNames) or isCorrectToken(tokens, i, "void"))
-    i+=1
-  end
-
-  if notToLarge(tokens, i) and isIdentifier(tokens[i][1])
-    name = tokens[1][1]+"."+tokens[i][1]
-    i+=1
-  end
-
-  if notToLarge(tokens, i) and isCorrectToken(tokens, i, "(")
-    i+=1
-  end
-
-  if type == "method"
-    symbol = SymbolDef.new("this", this, "argument", index.to_s)
-    table.symbols.append(symbol)
-    index += 1
-  end
-  resultList = compileParameterList(tokens, classNames, i, table, index)
-  table = resultList[0]
-  i = resultList[1]
-
-  if notToLarge(tokens, i) and isCorrectToken(tokens, i, ")")
-    i+=1
-  end
-
-  resultList = compileSubroutineBody(tokens, classNames, i, table)
-
-  nLocals = resultList[3]
-  result += writeFunction(name, nLocals.to_s)
-
-  if type == "method"
-    result+= writePush(symbol.kind, symbol.number)
-    result += writePop("pointer", "0")
-  end
-
-  result += resultList[0]
-  table = resultList[1]
-  i = resultList[2]
-  tableList.append(table)
-  resultList = compileSubroutineDecT(tokens, classNames, i, this, classTable, tableList, result)
-  return resultList
 end
 
 
@@ -698,6 +723,7 @@ def compileTerm(tokens, i, table)
         i += 1
       end
 
+
     elsif notToLarge(tokens, i+1) and (isCorrectToken(tokens, i+1, "(") or isCorrectToken(tokens, i+1, "."))
       resultList = compileSubroutineCall(tokens, i, table)
       str += resultList[0]
@@ -727,8 +753,17 @@ def compileSubroutineCall(tokens, i, table)
   # # if flag is false,
   if flag
     if notToLarge(tokens, i) and isIdentifier(tokens[i][1])
-      name = tokens[i][1]
+      if table.findSymbol(tokens[i][1])
+        symbol = table.findSymbol(tokens[i][1])
+        str += writePush(symbol.kind, symbol.number)
+        name += symbol.type
+
+      else
+        name += tokens[i][1]
+      end
+
       i += 1
+
     end
     if notToLarge(tokens, i) and isCorrectToken(tokens, i, ".")
       name += tokens[i][1]
