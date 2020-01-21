@@ -29,7 +29,6 @@ push temp 0
 pop that 0
 push local 3
 push constant 1
-not
 add
 push local 3
 push constant 2

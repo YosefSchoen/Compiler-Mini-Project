@@ -19,7 +19,6 @@ push argument 0
 pop pointer 0
 push this 0
 push constant 1
-not
 add
 pop temp 0
 pop pointer 1

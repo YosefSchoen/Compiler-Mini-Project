@@ -35,7 +35,6 @@ push temp 0
 pop that 0
 push local 2
 push constant 1
-not
 add
 pop temp 0
 pop pointer 1
@@ -70,7 +69,6 @@ push temp 0
 pop that 0
 push local 2
 push constant 1
-not
 add
 pop temp 0
 pop pointer 1

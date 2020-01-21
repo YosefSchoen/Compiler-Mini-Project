@@ -2,53 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e2bbf7f2-661c-4b38-bdc0-4dc1c947d57a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ArrayTest/Main.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ExpressionLessSquare/Main.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ExpressionLessSquare/MainOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ExpressionLessSquare/MainTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ExpressionLessSquare/Square.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ExpressionLessSquare/SquareGame.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ExpressionLessSquare/SquareGameOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ExpressionLessSquare/SquareGameTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ExpressionLessSquare/SquareOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ExpressionLessSquare/SquareTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/MyTest/JackTest.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/Square/Main.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/Square/Square.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/Square/SquareGame.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Average/Main.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Average/MainOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Average/MainTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ComplexArrays/Main.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ComplexArrays/MainOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ComplexArrays/MainTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ConvertToBin/Main.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ConvertToBin/MainOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ConvertToBin/MainTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Pong/Ball.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Pong/BallOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Pong/BallTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Pong/Bat.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Pong/BatOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Pong/BatTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Pong/Main.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Pong/MainOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Pong/MainTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Pong/PongGame.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Pong/PongGameOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Pong/PongGameTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Seven/Main.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Seven/MainOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Seven/MainTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Square/Main.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Square/MainOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Square/MainTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Square/Square.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Square/SquareGame.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Square/SquareGameOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Square/SquareGameTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Square/SquareOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Square/SquareTOut.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compiler/Parser2.rb" beforeDir="false" afterPath="$PROJECT_DIR$/Compiler/Parser2.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestFiles/Project10/ArrayTest/Main.vm" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project10/ArrayTest/Main.vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestFiles/Project10/Square/Main.vm" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project10/Square/Main.vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestFiles/Project10/Square/Square.vm" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project10/Square/Square.vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestFiles/Project10/Square/SquareGame.vm" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project10/Square/SquareGame.vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestFiles/Project11/Average/Main.vm" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project11/Average/Main.vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestFiles/Project11/ComplexArrays/Main.vm" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project11/ComplexArrays/Main.vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestFiles/Project11/ConvertToBin/Main.vm" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project11/ConvertToBin/Main.vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestFiles/Project11/Pong/Ball.vm" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project11/Pong/Ball.vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestFiles/Project11/Pong/Bat.vm" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project11/Pong/Bat.vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestFiles/Project11/Pong/PongGame.vm" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project11/Pong/PongGame.vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestFiles/Project11/Seven/Main.vm" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project11/Seven/Main.vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestFiles/Project11/Square/Square.vm" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project11/Square/Square.vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestFiles/Project11/Square/SquareGame.vm" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project11/Square/SquareGame.vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestFiles/Project9/Ball.vm" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project9/Ball.vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestFiles/Project9/Player.vm" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project9/Player.vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestFiles/Project9/Random.vm" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project9/Random.vm" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -234,14 +205,7 @@
       <workItem from="1574945043043" duration="14983000" />
       <workItem from="1577728508224" duration="52117000" />
       <workItem from="1578517304087" duration="81436000" />
-      <workItem from="1579451276315" duration="61634000" />
-    </task>
-    <task id="LOCAL-00014" summary="Finished stage 2 and needs more comments">
-      <created>1574866891642</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1574866891642</updated>
+      <workItem from="1579451276315" duration="63022000" />
     </task>
     <task id="LOCAL-00015" summary="Finished stage 2 and needs more comments">
       <created>1574867140838</created>
@@ -579,7 +543,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579632229104</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="Maybe needs some debug">
+      <created>1579632456367</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1579632456368</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -692,6 +663,6 @@
     <SUITE FILE_PATH="coverage/Project7@Tokenizer.rcov" NAME="Tokenizer Coverage Results" MODIFIED="1578563816695" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
     <SUITE FILE_PATH="coverage/Project7@code_writer.rcov" NAME="code_writer Coverage Results" MODIFIED="1574813817501" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
     <SUITE FILE_PATH="coverage/Project7@Utility.rcov" NAME="Utility Coverage Results" MODIFIED="1574100649750" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
-    <SUITE FILE_PATH="coverage/Project7@Main.rcov" NAME="Main Coverage Results" MODIFIED="1579631972460" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
+    <SUITE FILE_PATH="coverage/Project7@Main.rcov" NAME="Main Coverage Results" MODIFIED="1579633125112" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
   </component>
 </project>

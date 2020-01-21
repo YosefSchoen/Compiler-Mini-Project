@@ -33,7 +33,6 @@ push argument 0
 pop pointer 0
 push this 1
 push constant 1
-not
 eq
 not
 if-goto false.70
@@ -151,7 +150,6 @@ eq
 not
 if-goto false.231
 push constant 1
-not
 pop temp 0
 pop pointer 1
 push temp 0

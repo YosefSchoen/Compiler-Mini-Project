@@ -128,7 +128,6 @@ not
 if-goto false.274
 push this 0
 push constant 1
-not
 call Bat.setDirection 2
 pop temp 0
 goto end.274
@@ -281,7 +280,6 @@ add
 not
 if-goto false.519
 push constant 1
-not
 neg
 pop temp 0
 pop pointer 1
@@ -296,7 +294,6 @@ sub
 not
 if-goto false.539
 push constant 1
-not
 pop temp 0
 pop pointer 1
 push temp 0
@@ -318,7 +315,6 @@ call Bat.setWidth 2
 pop temp 0
 push this 4
 push constant 1
-not
 add
 pop temp 0
 pop pointer 1

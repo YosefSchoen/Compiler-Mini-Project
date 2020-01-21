@@ -81,7 +81,6 @@ label false.156
 label end.156
 push argument 1
 push constant 1
-not
 eq
 not
 if-goto false.169

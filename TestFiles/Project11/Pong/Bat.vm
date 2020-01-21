@@ -115,7 +115,6 @@ push argument 0
 pop pointer 0
 push this 4
 push constant 1
-not
 eq
 not
 if-goto false.228
@@ -145,7 +144,6 @@ push this 0
 push this 2
 add
 push constant 1
-not
 add
 push this 1
 push this 0
@@ -206,7 +204,6 @@ sub
 push this 1
 push this 0
 push constant 1
-not
 sub
 push this 1
 push this 3

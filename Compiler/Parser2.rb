@@ -687,6 +687,7 @@ def compileTerm2(tokens, i, table)
 
     #int/keyword/string Constant
   elsif notToLarge(tokens, i) and (isIntConstant(tokens[i][1]) or isKeywordConst(tokens[i][1]) or tokens[i][0] == "stringConstant")
+    trueStr = ""
     kind = "constant"
     term = tokens[i][1]
 
@@ -699,12 +700,11 @@ def compileTerm2(tokens, i, table)
 
     elsif tokens[i][1] == "true"
       term = "1"
+      trueStr += writeArithmeticUnary("~")
     end
 
-    str += writePush(kind, term)
-    if term == "1"
-      str += writeArithmeticUnary("~")
-    end
+    str += writePush(kind, term)+trueStr
+
     i += 1
 
     #the else is for var name and  subroutine  need to solve this

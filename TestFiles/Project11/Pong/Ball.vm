@@ -332,7 +332,6 @@ not
 not
 if-goto false.526
 push constant 1
-not
 pop temp 0
 pop pointer 1
 push temp 0
@@ -436,13 +435,11 @@ push constant 0
 not
 push argument 1
 push constant 1
-not
 eq
 push this 2
 push constant 0
 push argument 1
 push constant 1
-not
 neg
 eq
 or
@@ -464,7 +461,6 @@ label end.668
 label end.653
 push this 14
 push constant 1
-not
 eq
 not
 if-goto false.720
