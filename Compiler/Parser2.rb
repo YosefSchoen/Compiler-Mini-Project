@@ -56,7 +56,7 @@ def compileClass(tokens, classNames)
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, "}")
   end
 
-  #puts str
+  puts str
   return [table, methodsTableList]
 end
 
@@ -161,25 +161,13 @@ end
 
 def compileSubroutineDecT(tokens, classNames, i, this, classTable, tableList, result)
   index = 0
-
+  name = ""
   table = SymbolsTable.new([], classTable.symbols)
+
   if notToLarge(tokens, i) and !isSubRoutineType(tokens[i][1])
     return [result, tableList, i]
   end
 
-  if notToLarge(tokens, i) and isSubRoutineType(tokens[i][1]) and isCorrectToken(tokens, i, "constructor")
-    type = tokens[i][1]
-    i +=1
-
-    if notToLarge(tokens, i) and isIdentifier(tokens[i][1]) and isCorrectToken(tokens, i+1, "new")
-      name += tokens[i][1]
-      i+=1
-
-      name += tokens[i][1]
-      i += 1
-    end
-      # take care of new
-  end
 
   if notToLarge(tokens, i) and isSubRoutineType(tokens[i][1])
     type = tokens[i][1]
@@ -199,10 +187,11 @@ def compileSubroutineDecT(tokens, classNames, i, this, classTable, tableList, re
     i+=1
   end
 
-  symbol = SymbolDef.new("this", this, "argument", index.to_s)
-  table.symbols.append(symbol)
-  index += 1
-
+  if type == "method"
+    symbol = SymbolDef.new("this", this, "argument", index.to_s)
+    table.symbols.append(symbol)
+    index += 1
+  end
   resultList = compileParameterList(tokens, classNames, i, table, index)
   table = resultList[0]
   i = resultList[1]
@@ -407,7 +396,6 @@ def compileSubStatements(tokens, i, table)
   str = ""
 
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, "{")
-    str += getXMLString(tokens, i)
     i+=1
   end
 
@@ -471,15 +459,13 @@ end
 
 def compileIf(tokens, i, table)
   str = ""
-  str += "<ifStatement>\n"
 
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, "if")
-    str += getXMLString(tokens, i)
+    labelNumber = i.to_s
     i += 1
   end
 
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, "(")
-    str += getXMLString(tokens, i)
     i+=1
   end
 
@@ -487,13 +473,14 @@ def compileIf(tokens, i, table)
   str += resultList[0]
   i = resultList[1]
 
+  str += writeArithmeticUnary("~")
+  str += writeIf("false."+labelNumber)
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, ")")
-    str += getXMLString(tokens, i)
     i += 1
   end
 
+
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, "{")
-    str += getXMLString(tokens, i)
     i+=1
   end
 
@@ -501,18 +488,20 @@ def compileIf(tokens, i, table)
   str += resultList[0]
   i = resultList[1]
 
+  str += writeGoTo("end."+labelNumber)
+
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, "}")
-    str += getXMLString(tokens, i)
     i += 1
   end
 
+  str += writeLabel("false."+labelNumber)
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, "else")
-    resultList = compileElse(tokens, i)
+    resultList = compileElse(tokens, i, table)
     str += resultList[0]
     i = resultList[1]
   end
 
-  str += "</ifStatement>\n"
+  str += writeLabel("end."+labelNumber)
   return [str, i]
 end
 
@@ -520,7 +509,6 @@ end
 def compileElse(tokens, i, table)
   str = ""
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, "else")
-    str += getXMLString(tokens, i)
     i += 1
   end
 
@@ -533,6 +521,8 @@ end
 
 def compileWhile(tokens, i, table)
   str = ""
+  labelNumber = i.to_s
+  str += writeLabel("true."+labelNumber)
 
   # check for while
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, "while")
@@ -540,23 +530,25 @@ def compileWhile(tokens, i, table)
   end
 
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, "(")
-    str+= getXMLString(tokens, i)
     i+=1
 
     resultList = compileExpression(tokens, i, table)
     str += resultList[0]
     i = resultList[1]
 
+    str += writeArithmeticUnary("~")
+
     if notToLarge(tokens, i) and isCorrectToken(tokens, i, ")")
-      str+= getXMLString(tokens, i)
       i+=1
     end
   end
 
+  str += writeIf("end."+labelNumber)
   resultList = compileSubStatements(tokens, i, table)
-
   str += resultList[0]
   i = resultList[1]
+
+  str += writeLabel("end."+labelNumber)
 
   return [str, i]
 end
