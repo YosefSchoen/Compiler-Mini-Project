@@ -34,3 +34,56 @@ call Memory.dealloc 1
 pop temp 0
 push constant 0
 return
+
+
+//class symbol table
+//name: numHits
+//type: int
+//kind: this
+//number: 0
+
+
+//method's symbol table
+//name: _numHits
+//type: int
+//kind: argument
+//number: 0
+//name: numHits
+//type: int
+//kind: this
+//number: 0
+
+
+//method's symbol table
+//name: this
+//type: Player
+//kind: argument
+//number: 0
+//name: numHits
+//type: int
+//kind: this
+//number: 0
+
+
+//method's symbol table
+//name: this
+//type: Player
+//kind: argument
+//number: 0
+//name: numHits
+//type: int
+//kind: this
+//number: 0
+
+
+//method's symbol table
+//name: this
+//type: Player
+//kind: argument
+//number: 0
+//name: numHits
+//type: int
+//kind: this
+//number: 0
+
+

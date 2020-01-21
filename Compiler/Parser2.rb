@@ -42,7 +42,7 @@ def compileClass2(tokens, classNames)
   end
 
 
-  return str
+  return [str, table, methodsTableList]
 end
 
 
@@ -226,6 +226,7 @@ def compileSubroutineDecT2(tokens, classNames, i, this, classTable, tableList, r
     table = resultList[1]
     i = resultList[2]
     tableList.append(table)
+    puts table.printTable
     resultList = compileSubroutineDecT2(tokens, classNames, i, this, classTable, tableList, result)
     return resultList
   end
@@ -426,7 +427,7 @@ end
 
 def compileLet2(tokens, i, table)
   str = ""
-
+  isArray = false
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, "let")
     i+=1
   end
@@ -437,8 +438,8 @@ def compileLet2(tokens, i, table)
   end
 
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, "[")
-    i+=1
     str += writePush(term.kind, term.number)
+    i+=1
 
     resultList = compileExpression2(tokens, i, table)
     str += resultList[0]
@@ -459,12 +460,15 @@ def compileLet2(tokens, i, table)
   str += resultList[0]
   i = resultList[1]
 
-  str += writePop("temp", "0")
-  str += writePop("pointer", "1")
-  str += writePush("temp", "0")
-  term = SymbolDef.new(term.name, term.type, "that", "0")
-  str += writePop(term.kind, term.number)
+  if isArray
+    str += writePop("temp", "0")
+    str += writePop("pointer", "1")
+    str += writePush("temp", "0")
+    termThat = SymbolDef.new(term.name, term.type, "that", "0")
+    str += writePop(termThat.kind, termThat.number)
+  end
 
+  str += writePop(term.kind, term.number)
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, ";")
     i+=1
   end

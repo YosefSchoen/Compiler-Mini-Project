@@ -321,3 +321,202 @@ label false.478
 label end.478
 push constant 0
 return
+
+
+//class symbol table
+//name: size
+//type: int
+//kind: this
+//number: 2
+
+
+//method's symbol table
+//name: Asize
+//type: int
+//kind: argument
+//number: 2
+//name: x
+//type: int
+//kind: this
+//number: 0
+//name: y
+//type: int
+//kind: this
+//number: 1
+//name: size
+//type: int
+//kind: this
+//number: 2
+
+
+//method's symbol table
+//name: this
+//type: Square
+//kind: argument
+//number: 0
+//name: x
+//type: int
+//kind: this
+//number: 0
+//name: y
+//type: int
+//kind: this
+//number: 1
+//name: size
+//type: int
+//kind: this
+//number: 2
+
+
+//method's symbol table
+//name: this
+//type: Square
+//kind: argument
+//number: 0
+//name: x
+//type: int
+//kind: this
+//number: 0
+//name: y
+//type: int
+//kind: this
+//number: 1
+//name: size
+//type: int
+//kind: this
+//number: 2
+
+
+//method's symbol table
+//name: this
+//type: Square
+//kind: argument
+//number: 0
+//name: x
+//type: int
+//kind: this
+//number: 0
+//name: y
+//type: int
+//kind: this
+//number: 1
+//name: size
+//type: int
+//kind: this
+//number: 2
+
+
+//method's symbol table
+//name: this
+//type: Square
+//kind: argument
+//number: 0
+//name: x
+//type: int
+//kind: this
+//number: 0
+//name: y
+//type: int
+//kind: this
+//number: 1
+//name: size
+//type: int
+//kind: this
+//number: 2
+
+
+//method's symbol table
+//name: this
+//type: Square
+//kind: argument
+//number: 0
+//name: x
+//type: int
+//kind: this
+//number: 0
+//name: y
+//type: int
+//kind: this
+//number: 1
+//name: size
+//type: int
+//kind: this
+//number: 2
+
+
+//method's symbol table
+//name: this
+//type: Square
+//kind: argument
+//number: 0
+//name: x
+//type: int
+//kind: this
+//number: 0
+//name: y
+//type: int
+//kind: this
+//number: 1
+//name: size
+//type: int
+//kind: this
+//number: 2
+
+
+//method's symbol table
+//name: this
+//type: Square
+//kind: argument
+//number: 0
+//name: x
+//type: int
+//kind: this
+//number: 0
+//name: y
+//type: int
+//kind: this
+//number: 1
+//name: size
+//type: int
+//kind: this
+//number: 2
+
+
+//method's symbol table
+//name: this
+//type: Square
+//kind: argument
+//number: 0
+//name: x
+//type: int
+//kind: this
+//number: 0
+//name: y
+//type: int
+//kind: this
+//number: 1
+//name: size
+//type: int
+//kind: this
+//number: 2
+
+
+//method's symbol table
+//name: this
+//type: Square
+//kind: argument
+//number: 0
+//name: x
+//type: int
+//kind: this
+//number: 0
+//name: y
+//type: int
+//kind: this
+//number: 1
+//name: size
+//type: int
+//kind: this
+//number: 2
+
+

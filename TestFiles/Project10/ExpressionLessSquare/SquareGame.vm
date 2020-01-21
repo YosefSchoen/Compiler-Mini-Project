@@ -181,3 +181,68 @@ label end.245
 label end.143
 push constant 0
 return
+
+
+//class symbol table
+//name: direction
+//type: int
+//kind: this
+//number: 1
+
+
+//method's symbol table
+//name: square
+//type: Square
+//kind: this
+//number: 0
+//name: direction
+//type: int
+//kind: this
+//number: 1
+
+
+//method's symbol table
+//name: this
+//type: SquareGame
+//kind: argument
+//number: 0
+//name: square
+//type: Square
+//kind: this
+//number: 0
+//name: direction
+//type: int
+//kind: this
+//number: 1
+
+
+//method's symbol table
+//name: this
+//type: SquareGame
+//kind: argument
+//number: 0
+//name: square
+//type: Square
+//kind: this
+//number: 0
+//name: direction
+//type: int
+//kind: this
+//number: 1
+
+
+//method's symbol table
+//name: exit
+//type: boolean
+//kind: var
+//number: 1
+//name: square
+//type: Square
+//kind: this
+//number: 0
+//name: direction
+//type: int
+//kind: this
+//number: 1
+
+

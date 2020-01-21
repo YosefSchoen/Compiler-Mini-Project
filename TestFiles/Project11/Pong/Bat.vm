@@ -231,3 +231,282 @@ pop temp 0
 label end.228
 push constant 0
 return
+
+
+//class symbol table
+//name: direction
+//type: int
+//kind: this
+//number: 4
+
+
+//method's symbol table
+//name: Aheight
+//type: int
+//kind: argument
+//number: 3
+//name: x
+//type: int
+//kind: this
+//number: 0
+//name: y
+//type: int
+//kind: this
+//number: 1
+//name: width
+//type: int
+//kind: this
+//number: 2
+//name: height
+//type: int
+//kind: this
+//number: 3
+//name: direction
+//type: int
+//kind: this
+//number: 4
+
+
+//method's symbol table
+//name: this
+//type: Bat
+//kind: argument
+//number: 0
+//name: x
+//type: int
+//kind: this
+//number: 0
+//name: y
+//type: int
+//kind: this
+//number: 1
+//name: width
+//type: int
+//kind: this
+//number: 2
+//name: height
+//type: int
+//kind: this
+//number: 3
+//name: direction
+//type: int
+//kind: this
+//number: 4
+
+
+//method's symbol table
+//name: this
+//type: Bat
+//kind: argument
+//number: 0
+//name: x
+//type: int
+//kind: this
+//number: 0
+//name: y
+//type: int
+//kind: this
+//number: 1
+//name: width
+//type: int
+//kind: this
+//number: 2
+//name: height
+//type: int
+//kind: this
+//number: 3
+//name: direction
+//type: int
+//kind: this
+//number: 4
+
+
+//method's symbol table
+//name: this
+//type: Bat
+//kind: argument
+//number: 0
+//name: x
+//type: int
+//kind: this
+//number: 0
+//name: y
+//type: int
+//kind: this
+//number: 1
+//name: width
+//type: int
+//kind: this
+//number: 2
+//name: height
+//type: int
+//kind: this
+//number: 3
+//name: direction
+//type: int
+//kind: this
+//number: 4
+
+
+//method's symbol table
+//name: this
+//type: Bat
+//kind: argument
+//number: 0
+//name: x
+//type: int
+//kind: this
+//number: 0
+//name: y
+//type: int
+//kind: this
+//number: 1
+//name: width
+//type: int
+//kind: this
+//number: 2
+//name: height
+//type: int
+//kind: this
+//number: 3
+//name: direction
+//type: int
+//kind: this
+//number: 4
+
+
+//method's symbol table
+//name: Adirection
+//type: int
+//kind: argument
+//number: 1
+//name: x
+//type: int
+//kind: this
+//number: 0
+//name: y
+//type: int
+//kind: this
+//number: 1
+//name: width
+//type: int
+//kind: this
+//number: 2
+//name: height
+//type: int
+//kind: this
+//number: 3
+//name: direction
+//type: int
+//kind: this
+//number: 4
+
+
+//method's symbol table
+//name: this
+//type: Bat
+//kind: argument
+//number: 0
+//name: x
+//type: int
+//kind: this
+//number: 0
+//name: y
+//type: int
+//kind: this
+//number: 1
+//name: width
+//type: int
+//kind: this
+//number: 2
+//name: height
+//type: int
+//kind: this
+//number: 3
+//name: direction
+//type: int
+//kind: this
+//number: 4
+
+
+//method's symbol table
+//name: this
+//type: Bat
+//kind: argument
+//number: 0
+//name: x
+//type: int
+//kind: this
+//number: 0
+//name: y
+//type: int
+//kind: this
+//number: 1
+//name: width
+//type: int
+//kind: this
+//number: 2
+//name: height
+//type: int
+//kind: this
+//number: 3
+//name: direction
+//type: int
+//kind: this
+//number: 4
+
+
+//method's symbol table
+//name: Awidth
+//type: int
+//kind: argument
+//number: 1
+//name: x
+//type: int
+//kind: this
+//number: 0
+//name: y
+//type: int
+//kind: this
+//number: 1
+//name: width
+//type: int
+//kind: this
+//number: 2
+//name: height
+//type: int
+//kind: this
+//number: 3
+//name: direction
+//type: int
+//kind: this
+//number: 4
+
+
+//method's symbol table
+//name: this
+//type: Bat
+//kind: argument
+//number: 0
+//name: x
+//type: int
+//kind: this
+//number: 0
+//name: y
+//type: int
+//kind: this
+//number: 1
+//name: width
+//type: int
+//kind: this
+//number: 2
+//name: height
+//type: int
+//kind: this
+//number: 3
+//name: direction
+//type: int
+//kind: this
+//number: 4
+
+

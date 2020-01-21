@@ -342,3 +342,234 @@ label false.427
 label end.427
 push constant 0
 return
+
+
+//class symbol table
+//name: batWidth
+//type: int
+//kind: this
+//number: 6
+
+
+//method's symbol table
+//name: instance
+//type: PongGame
+//kind: static
+//number: 0
+//name: bat
+//type: Bat
+//kind: this
+//number: 0
+//name: ball
+//type: Ball
+//kind: this
+//number: 1
+//name: wall
+//type: int
+//kind: this
+//number: 2
+//name: exit
+//type: boolean
+//kind: this
+//number: 3
+//name: score
+//type: int
+//kind: this
+//number: 4
+//name: lastWall
+//type: int
+//kind: this
+//number: 5
+//name: batWidth
+//type: int
+//kind: this
+//number: 6
+
+
+//method's symbol table
+//name: this
+//type: PongGame
+//kind: argument
+//number: 0
+//name: instance
+//type: PongGame
+//kind: static
+//number: 0
+//name: bat
+//type: Bat
+//kind: this
+//number: 0
+//name: ball
+//type: Ball
+//kind: this
+//number: 1
+//name: wall
+//type: int
+//kind: this
+//number: 2
+//name: exit
+//type: boolean
+//kind: this
+//number: 3
+//name: score
+//type: int
+//kind: this
+//number: 4
+//name: lastWall
+//type: int
+//kind: this
+//number: 5
+//name: batWidth
+//type: int
+//kind: this
+//number: 6
+
+
+//method's symbol table
+//name: instance
+//type: PongGame
+//kind: static
+//number: 0
+//name: bat
+//type: Bat
+//kind: this
+//number: 0
+//name: ball
+//type: Ball
+//kind: this
+//number: 1
+//name: wall
+//type: int
+//kind: this
+//number: 2
+//name: exit
+//type: boolean
+//kind: this
+//number: 3
+//name: score
+//type: int
+//kind: this
+//number: 4
+//name: lastWall
+//type: int
+//kind: this
+//number: 5
+//name: batWidth
+//type: int
+//kind: this
+//number: 6
+
+
+//method's symbol table
+//name: instance
+//type: PongGame
+//kind: static
+//number: 0
+//name: bat
+//type: Bat
+//kind: this
+//number: 0
+//name: ball
+//type: Ball
+//kind: this
+//number: 1
+//name: wall
+//type: int
+//kind: this
+//number: 2
+//name: exit
+//type: boolean
+//kind: this
+//number: 3
+//name: score
+//type: int
+//kind: this
+//number: 4
+//name: lastWall
+//type: int
+//kind: this
+//number: 5
+//name: batWidth
+//type: int
+//kind: this
+//number: 6
+
+
+//method's symbol table
+//name: key
+//type: char
+//kind: var
+//number: 0
+//name: instance
+//type: PongGame
+//kind: static
+//number: 0
+//name: bat
+//type: Bat
+//kind: this
+//number: 0
+//name: ball
+//type: Ball
+//kind: this
+//number: 1
+//name: wall
+//type: int
+//kind: this
+//number: 2
+//name: exit
+//type: boolean
+//kind: this
+//number: 3
+//name: score
+//type: int
+//kind: this
+//number: 4
+//name: lastWall
+//type: int
+//kind: this
+//number: 5
+//name: batWidth
+//type: int
+//kind: this
+//number: 6
+
+
+//method's symbol table
+//name: ballRight
+//type: int
+//kind: var
+//number: 4
+//name: instance
+//type: PongGame
+//kind: static
+//number: 0
+//name: bat
+//type: Bat
+//kind: this
+//number: 0
+//name: ball
+//type: Ball
+//kind: this
+//number: 1
+//name: wall
+//type: int
+//kind: this
+//number: 2
+//name: exit
+//type: boolean
+//kind: this
+//number: 3
+//name: score
+//type: int
+//kind: this
+//number: 4
+//name: lastWall
+//type: int
+//kind: this
+//number: 5
+//name: batWidth
+//type: int
+//kind: this
+//number: 6
+
+

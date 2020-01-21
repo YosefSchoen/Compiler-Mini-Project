@@ -8,10 +8,7 @@ pop temp 0
 push constant 8000
 call Memory.peek 1
 pop temp 0
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop local 0
 push local 0
 call Main.convert 1
 pop temp 0
@@ -20,10 +17,7 @@ return
 function Main.convert 3
 push constant 1
 not
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop local 2
 label true.70
 push local 2
 not
@@ -31,17 +25,11 @@ if-goto end.70
 push local 1
 push constant 1
 add
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop local 1
 push local 0
 call Main.nextMask 1
 pop temp 0
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop local 0
 push local 1
 push constant 16
 not
@@ -72,10 +60,7 @@ label end.102
 goto end.92
 label false.92
 push constant 0
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop local 2
 label end.92
 label end.70
 push constant 0
@@ -108,17 +93,64 @@ pop temp 0
 push argument 1
 push constant 1
 sub
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop argument 1
 push argument 0
 push constant 1
 add
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop argument 0
 label end.199
 push constant 0
 return
+
+
+//class symbol table
+
+
+//method's symbol table
+//name: value
+//type: int
+//kind: var
+//number: 0
+
+
+//method's symbol table
+//name: value
+//type: int
+//kind: argument
+//number: 0
+//name: mask
+//type: int
+//kind: var
+//number: 0
+//name: position
+//type: int
+//kind: var
+//number: 1
+//name: loop
+//type: boolean
+//kind: var
+//number: 2
+
+
+//method's symbol table
+//name: mask
+//type: int
+//kind: argument
+//number: 0
+
+
+//method's symbol table
+//name: startAddress
+//type: int
+//kind: argument
+//number: 0
+//name: length
+//type: int
+//kind: argument
+//number: 1
+//name: value
+//type: int
+//kind: argument
+//number: 2
+
+

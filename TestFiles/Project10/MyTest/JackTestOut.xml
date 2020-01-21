@@ -1,29 +1,18 @@
 <class>
 	<keyword> class </keyword>
-	<identifier> Point </identifier>
+	<identifier> foo </identifier>
 	<symbol> { </symbol>
-	<classVarDec>
-		<keyword> field </keyword>
-		<keyword> int </keyword>
-		<identifier> x </identifier>
-		<symbol> , </symbol>
-		<identifier> y </identifier>
-		<symbol> ; </symbol>
-	</classVarDec>
-	<classVarDec>
-		<keyword> static </keyword>
-		<keyword> int </keyword>
-		<identifier> pointCount </identifier>
-		<symbol> ; </symbol>
-	</classVarDec>
 	<subroutineDec>
 		<keyword> method </keyword>
 		<keyword> int </keyword>
-		<identifier> distance </identifier>
+		<identifier> bar </identifier>
 		<symbol> ( </symbol>
 		<parameterList>
 			<keyword> int </keyword>
-			<identifier> i </identifier>
+			<identifier> p </identifier>
+			<symbol> , </symbol>
+			<keyword> int </keyword>
+			<identifier> x </identifier>
 		</parameterList>
 		<symbol> ) </symbol>
 		<subroutineBody>
@@ -31,45 +20,47 @@
 			<varDec>
 				<keyword> var </keyword>
 				<keyword> int </keyword>
-				<identifier> a </identifier>
-				<symbol> , </symbol>
-				<identifier> b </identifier>
-				<statements>
-					<letStatement>
-						<keyword> let </keyword>
-						<identifier> a </identifier>
-						<symbol> [ </symbol>
-						<expression>
-							<term>
-								<integerConstant> 2 </integerConstant>
-							</term>
-						</expression>
-						<symbol> ] </symbol>
-						<symbol> = </symbol>
-						<expression>
-							<term>
-								<identifier> b </identifier>
-								<symbol> [ </symbol>
+				<identifier> p1 </identifier>
+				<symbol> ; </symbol>
+			</varDec>
+			<statements>
+				<letStatement>
+					<keyword> let </keyword>
+					<identifier> p1 </identifier>
+					<symbol> = </symbol>
+					<expression>
+						<term>
+							<identifier> p </identifier>
+							<symbol> . </symbol>
+							<identifier> distance </identifier>
+							<symbol> ( </symbol>
+							<expressionList>
 								<expression>
 									<term>
-										<identifier> a </identifier>
-										<symbol> [ </symbol>
-										<expression>
-											<term>
-												<integerConstant> 3 </integerConstant>
-											</term>
-										</expression>
-										<symbol> ] </symbol>
+										<identifier> x </identifier>
 									</term>
 								</expression>
-								<symbol> ] </symbol>
-							</term>
-						</expression>
-						<symbol> ; </symbol>
-					</letStatement>
-				</statements>
-				<symbol> } </symbol>
-			</subroutineBody>
-		</subroutineDec>
-		<symbol> } </symbol>
-	</class>
+								<symbol> , </symbol>
+								<expression>
+									<term>
+										<identifier> x </identifier>
+									</term>
+								</expression>
+								<symbol> , </symbol>
+								<expression>
+									<term>
+										<identifier> x </identifier>
+									</term>
+								</expression>
+							</expressionList>
+							<symbol> ) </symbol>
+						</term>
+					</expression>
+					<symbol> ; </symbol>
+				</letStatement>
+			</statements>
+			<symbol> } </symbol>
+		</subroutineBody>
+	</subroutineDec>
+	<symbol> } </symbol>
+</class>

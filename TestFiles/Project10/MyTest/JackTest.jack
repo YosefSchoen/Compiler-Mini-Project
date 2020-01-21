@@ -1,11 +1,9 @@
-class  Point {
-    field int x, y;
-    static int pointCount;
+class foo {
 
-    method int distance(int i) {
-        var int a, b
+    method int bar(int p, int x) {
+        var int p1;
 
-        let a[2] = b[a[3]];
+        let p1 = p.distance(x, x, x);
+    }
 
-     }
 }

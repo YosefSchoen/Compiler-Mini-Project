@@ -237,3 +237,15 @@ call Vertex.dispose 1
 pop temp 0
 push constant 0
 return
+
+
+//class symbol table
+
+
+//method's symbol table
+//name: i
+//type: int
+//kind: var
+//number: 7
+
+

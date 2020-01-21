@@ -8,3 +8,11 @@ call Output.printInt 1
 pop temp 0
 push constant 0
 return
+
+
+//class symbol table
+
+
+//method's symbol table
+
+

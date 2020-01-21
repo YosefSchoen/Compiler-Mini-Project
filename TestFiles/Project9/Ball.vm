@@ -400,3 +400,316 @@ call Memory.dealloc 1
 pop temp 0
 push constant 0
 return
+
+
+//class symbol table
+//name: stillPitching
+//type: boolean
+//kind: this
+//number: 2
+
+
+//method's symbol table
+//name: _still
+//type: boolean
+//kind: argument
+//number: 2
+//name: x
+//type: int
+//kind: this
+//number: 0
+//name: y
+//type: int
+//kind: this
+//number: 1
+//name: stillPitching
+//type: boolean
+//kind: this
+//number: 2
+
+
+//method's symbol table
+//name: this
+//type: Ball
+//kind: argument
+//number: 0
+//name: x
+//type: int
+//kind: this
+//number: 0
+//name: y
+//type: int
+//kind: this
+//number: 1
+//name: stillPitching
+//type: boolean
+//kind: this
+//number: 2
+
+
+//method's symbol table
+//name: this
+//type: Ball
+//kind: argument
+//number: 0
+//name: x
+//type: int
+//kind: this
+//number: 0
+//name: y
+//type: int
+//kind: this
+//number: 1
+//name: stillPitching
+//type: boolean
+//kind: this
+//number: 2
+
+
+//method's symbol table
+//name: sp
+//type: boolean
+//kind: argument
+//number: 1
+//name: x
+//type: int
+//kind: this
+//number: 0
+//name: y
+//type: int
+//kind: this
+//number: 1
+//name: stillPitching
+//type: boolean
+//kind: this
+//number: 2
+
+
+//method's symbol table
+//name: this
+//type: Ball
+//kind: argument
+//number: 0
+//name: x
+//type: int
+//kind: this
+//number: 0
+//name: y
+//type: int
+//kind: this
+//number: 1
+//name: stillPitching
+//type: boolean
+//kind: this
+//number: 2
+
+
+//method's symbol table
+//name: this
+//type: Ball
+//kind: argument
+//number: 0
+//name: x
+//type: int
+//kind: this
+//number: 0
+//name: y
+//type: int
+//kind: this
+//number: 1
+//name: stillPitching
+//type: boolean
+//kind: this
+//number: 2
+
+
+//method's symbol table
+//name: right
+//type: Vertex
+//kind: argument
+//number: 3
+//name: x
+//type: int
+//kind: this
+//number: 0
+//name: y
+//type: int
+//kind: this
+//number: 1
+//name: stillPitching
+//type: boolean
+//kind: this
+//number: 2
+
+
+//method's symbol table
+//name: this
+//type: Ball
+//kind: argument
+//number: 0
+//name: x
+//type: int
+//kind: this
+//number: 0
+//name: y
+//type: int
+//kind: this
+//number: 1
+//name: stillPitching
+//type: boolean
+//kind: this
+//number: 2
+
+
+//method's symbol table
+//name: this
+//type: Ball
+//kind: argument
+//number: 0
+//name: x
+//type: int
+//kind: this
+//number: 0
+//name: y
+//type: int
+//kind: this
+//number: 1
+//name: stillPitching
+//type: boolean
+//kind: this
+//number: 2
+
+
+//method's symbol table
+//name: this
+//type: Ball
+//kind: argument
+//number: 0
+//name: x
+//type: int
+//kind: this
+//number: 0
+//name: y
+//type: int
+//kind: this
+//number: 1
+//name: stillPitching
+//type: boolean
+//kind: this
+//number: 2
+
+
+//method's symbol table
+//name: dist
+//type: int
+//kind: var
+//number: 2
+//name: x
+//type: int
+//kind: this
+//number: 0
+//name: y
+//type: int
+//kind: this
+//number: 1
+//name: stillPitching
+//type: boolean
+//kind: this
+//number: 2
+
+
+//method's symbol table
+//name: bat
+//type: Bat
+//kind: argument
+//number: 1
+//name: x
+//type: int
+//kind: this
+//number: 0
+//name: y
+//type: int
+//kind: this
+//number: 1
+//name: stillPitching
+//type: boolean
+//kind: this
+//number: 2
+
+
+//method's symbol table
+//name: vertex
+//type: Vertex
+//kind: argument
+//number: 1
+//name: x
+//type: int
+//kind: this
+//number: 0
+//name: y
+//type: int
+//kind: this
+//number: 1
+//name: stillPitching
+//type: boolean
+//kind: this
+//number: 2
+
+
+//method's symbol table
+//name: vertex
+//type: Vertex
+//kind: argument
+//number: 1
+//name: x
+//type: int
+//kind: this
+//number: 0
+//name: y
+//type: int
+//kind: this
+//number: 1
+//name: stillPitching
+//type: boolean
+//kind: this
+//number: 2
+
+
+//method's symbol table
+//name: yAxis
+//type: int
+//kind: var
+//number: 1
+//name: x
+//type: int
+//kind: this
+//number: 0
+//name: y
+//type: int
+//kind: this
+//number: 1
+//name: stillPitching
+//type: boolean
+//kind: this
+//number: 2
+
+
+//method's symbol table
+//name: this
+//type: Ball
+//kind: argument
+//number: 0
+//name: x
+//type: int
+//kind: this
+//number: 0
+//name: y
+//type: int
+//kind: this
+//number: 1
+//name: stillPitching
+//type: boolean
+//kind: this
+//number: 2
+
+

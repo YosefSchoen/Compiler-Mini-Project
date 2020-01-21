@@ -1,10 +1,10 @@
 class SymbolsTable
-  def initialize(symbols, parentSymbols = [], isVoid = false)
+  def initialize(symbols, parentSymbols = [])
     #symbols is an array of symbolDef Objects
     @symbols = symbols
     @parentSymbols = parentSymbols
     setParentSymbolKind
-    @isVoid = isVoid
+    @isVoid = false
   end
 
   def symbols
@@ -50,15 +50,16 @@ class SymbolsTable
   end
 
   def printTable
+    str = ""
     for i in 0..@symbols.size-1
-      @symbols[i].printSymbol
-      puts "\n"
+      str += @symbols[i].printSymbol
     end
 
     for i in 0..@parentSymbols.size-1
-      @parentSymbols[i].printSymbol
-      puts "\n"
+      str += @parentSymbols[i].printSymbol
     end
+
+    return str
   end
 end
 
@@ -89,9 +90,12 @@ class SymbolDef
     @number end
 
   def printSymbol
-    puts "name: " + @name
-    puts "type: " + @type
-    puts "kind: " + @kind
-    puts "number: " + @number
+    str = ""
+    str += "//name: " + @name +"\n"
+    str += "//type: " + @type +"\n"
+    str += "//kind: " + @kind +"\n"
+    str += "//number: " + @number +"\n"
+
+    return str
   end
 end

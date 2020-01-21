@@ -97,3 +97,77 @@ push temp 0
 pop that 0
 push static 0
 return
+
+
+//class symbol table
+//name: m
+//type: int
+//kind: static
+//number: 3
+
+
+//method's symbol table
+//name: seed
+//type: int
+//kind: argument
+//number: 0
+//name: previous
+//type: int
+//kind: static
+//number: 0
+//name: a
+//type: int
+//kind: static
+//number: 1
+//name: b
+//type: int
+//kind: static
+//number: 2
+//name: m
+//type: int
+//kind: static
+//number: 3
+
+
+//method's symbol table
+//name: y
+//type: int
+//kind: argument
+//number: 1
+//name: previous
+//type: int
+//kind: static
+//number: 0
+//name: a
+//type: int
+//kind: static
+//number: 1
+//name: b
+//type: int
+//kind: static
+//number: 2
+//name: m
+//type: int
+//kind: static
+//number: 3
+
+
+//method's symbol table
+//name: previous
+//type: int
+//kind: static
+//number: 0
+//name: a
+//type: int
+//kind: static
+//number: 1
+//name: b
+//type: int
+//kind: static
+//number: 2
+//name: m
+//type: int
+//kind: static
+//number: 3
+
+

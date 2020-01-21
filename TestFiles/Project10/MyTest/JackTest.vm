@@ -1,19 +1,33 @@
-function Point.distance 2
+function foo.bar 1
 push argument 0
 pop pointer 0
-push local 0
-push constant 2
-add
-push local 1
-push local 0
-push constant 3
-add
-pop pointer 1
-push that 0
-add
-pop pointer 1
-push that 0
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+push argument 1
+push argument 2
+push argument 2
+push argument 2
+call int.distance 4
+pop local 0
+
+
+//class symbol table
+
+
+//method's symbol table
+//name: this
+//type: foo
+//kind: argument
+//number: 0
+//name: p
+//type: int
+//kind: argument
+//number: 1
+//name: x
+//type: int
+//kind: argument
+//number: 2
+//name: p1
+//type: int
+//kind: var
+//number: 0
+
+

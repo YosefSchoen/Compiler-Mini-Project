@@ -263,3 +263,25 @@ push constant 2
 call Math.multiply 2
 return
 function Main.fill 0
+
+
+//class symbol table
+
+
+//method's symbol table
+//name: c
+//type: Array
+//kind: var
+//number: 2
+
+
+//method's symbol table
+//name: a
+//type: int
+//kind: argument
+//number: 0
+
+
+//method's symbol table
+
+

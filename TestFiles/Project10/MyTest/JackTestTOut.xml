@@ -1,43 +1,35 @@
 <tokens>
 	<keyword> class </keyword>
-	<identifier> Point </identifier>
+	<identifier> foo </identifier>
 	<symbol> { </symbol>
-	<keyword> field </keyword>
-	<keyword> int </keyword>
-	<identifier> x </identifier>
-	<symbol> , </symbol>
-	<identifier> y </identifier>
-	<symbol> ; </symbol>
-	<keyword> static </keyword>
-	<keyword> int </keyword>
-	<identifier> pointCount </identifier>
-	<symbol> ; </symbol>
 	<keyword> method </keyword>
 	<keyword> int </keyword>
-	<identifier> distance </identifier>
+	<identifier> bar </identifier>
 	<symbol> ( </symbol>
 	<keyword> int </keyword>
-	<identifier> i </identifier>
+	<identifier> p </identifier>
+	<symbol> , </symbol>
+	<keyword> int </keyword>
+	<identifier> x </identifier>
 	<symbol> ) </symbol>
 	<symbol> { </symbol>
 	<keyword> var </keyword>
 	<keyword> int </keyword>
-	<identifier> a </identifier>
-	<symbol> , </symbol>
-	<identifier> b </identifier>
+	<identifier> p1 </identifier>
+	<symbol> ; </symbol>
 	<keyword> let </keyword>
-	<identifier> a </identifier>
-	<symbol> [ </symbol>
-	<integerConstant> 2 </integerConstant>
-	<symbol> ] </symbol>
+	<identifier> p1 </identifier>
 	<symbol> = </symbol>
-	<identifier> b </identifier>
-	<symbol> [ </symbol>
-	<identifier> a </identifier>
-	<symbol> [ </symbol>
-	<integerConstant> 3 </integerConstant>
-	<symbol> ] </symbol>
-	<symbol> ] </symbol>
+	<identifier> p </identifier>
+	<symbol> . </symbol>
+	<identifier> distance </identifier>
+	<symbol> ( </symbol>
+	<identifier> x </identifier>
+	<symbol> , </symbol>
+	<identifier> x </identifier>
+	<symbol> , </symbol>
+	<identifier> x </identifier>
+	<symbol> ) </symbol>
 	<symbol> ; </symbol>
 	<symbol> } </symbol>
 	<symbol> } </symbol>

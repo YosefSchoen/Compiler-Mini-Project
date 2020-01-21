@@ -15,3 +15,15 @@ call PongGame.dispose 1
 pop temp 0
 push constant 0
 return
+
+
+//class symbol table
+
+
+//method's symbol table
+//name: game
+//type: PongGame
+//kind: var
+//number: 0
+
+

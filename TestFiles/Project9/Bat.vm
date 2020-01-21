@@ -146,3 +146,265 @@ call Memory.dealloc 1
 pop temp 0
 push constant 0
 return
+
+
+//class symbol table
+//name: swungBat
+//type: boolean
+//kind: this
+//number: 3
+
+
+//method's symbol table
+//name: _y
+//type: int
+//kind: argument
+//number: 1
+//name: x
+//type: int
+//kind: this
+//number: 0
+//name: y
+//type: int
+//kind: this
+//number: 1
+//name: isHorizontal
+//type: boolean
+//kind: this
+//number: 2
+//name: swungBat
+//type: boolean
+//kind: this
+//number: 3
+
+
+//method's symbol table
+//name: this
+//type: Bat
+//kind: argument
+//number: 0
+//name: x
+//type: int
+//kind: this
+//number: 0
+//name: y
+//type: int
+//kind: this
+//number: 1
+//name: isHorizontal
+//type: boolean
+//kind: this
+//number: 2
+//name: swungBat
+//type: boolean
+//kind: this
+//number: 3
+
+
+//method's symbol table
+//name: this
+//type: Bat
+//kind: argument
+//number: 0
+//name: x
+//type: int
+//kind: this
+//number: 0
+//name: y
+//type: int
+//kind: this
+//number: 1
+//name: isHorizontal
+//type: boolean
+//kind: this
+//number: 2
+//name: swungBat
+//type: boolean
+//kind: this
+//number: 3
+
+
+//method's symbol table
+//name: this
+//type: Bat
+//kind: argument
+//number: 0
+//name: x
+//type: int
+//kind: this
+//number: 0
+//name: y
+//type: int
+//kind: this
+//number: 1
+//name: isHorizontal
+//type: boolean
+//kind: this
+//number: 2
+//name: swungBat
+//type: boolean
+//kind: this
+//number: 3
+
+
+//method's symbol table
+//name: this
+//type: Bat
+//kind: argument
+//number: 0
+//name: x
+//type: int
+//kind: this
+//number: 0
+//name: y
+//type: int
+//kind: this
+//number: 1
+//name: isHorizontal
+//type: boolean
+//kind: this
+//number: 2
+//name: swungBat
+//type: boolean
+//kind: this
+//number: 3
+
+
+//method's symbol table
+//name: this
+//type: Bat
+//kind: argument
+//number: 0
+//name: x
+//type: int
+//kind: this
+//number: 0
+//name: y
+//type: int
+//kind: this
+//number: 1
+//name: isHorizontal
+//type: boolean
+//kind: this
+//number: 2
+//name: swungBat
+//type: boolean
+//kind: this
+//number: 3
+
+
+//method's symbol table
+//name: this
+//type: Bat
+//kind: argument
+//number: 0
+//name: x
+//type: int
+//kind: this
+//number: 0
+//name: y
+//type: int
+//kind: this
+//number: 1
+//name: isHorizontal
+//type: boolean
+//kind: this
+//number: 2
+//name: swungBat
+//type: boolean
+//kind: this
+//number: 3
+
+
+//method's symbol table
+//name: this
+//type: Bat
+//kind: argument
+//number: 0
+//name: x
+//type: int
+//kind: this
+//number: 0
+//name: y
+//type: int
+//kind: this
+//number: 1
+//name: isHorizontal
+//type: boolean
+//kind: this
+//number: 2
+//name: swungBat
+//type: boolean
+//kind: this
+//number: 3
+
+
+//method's symbol table
+//name: this
+//type: Bat
+//kind: argument
+//number: 0
+//name: x
+//type: int
+//kind: this
+//number: 0
+//name: y
+//type: int
+//kind: this
+//number: 1
+//name: isHorizontal
+//type: boolean
+//kind: this
+//number: 2
+//name: swungBat
+//type: boolean
+//kind: this
+//number: 3
+
+
+//method's symbol table
+//name: this
+//type: Bat
+//kind: argument
+//number: 0
+//name: x
+//type: int
+//kind: this
+//number: 0
+//name: y
+//type: int
+//kind: this
+//number: 1
+//name: isHorizontal
+//type: boolean
+//kind: this
+//number: 2
+//name: swungBat
+//type: boolean
+//kind: this
+//number: 3
+
+
+//method's symbol table
+//name: this
+//type: Bat
+//kind: argument
+//number: 0
+//name: x
+//type: int
+//kind: this
+//number: 0
+//name: y
+//type: int
+//kind: this
+//number: 1
+//name: isHorizontal
+//type: boolean
+//kind: this
+//number: 2
+//name: swungBat
+//type: boolean
+//kind: this
+//number: 3
+
+

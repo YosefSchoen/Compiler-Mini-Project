@@ -67,3 +67,34 @@ pop that 0
 label end.63
 push constant 0
 return
+
+
+//class symbol table
+//name: test
+//type: boolean
+//kind: static
+//number: 0
+
+
+//method's symbol table
+//name: game
+//type: SquareGame
+//kind: var
+//number: 0
+//name: test
+//type: boolean
+//kind: static
+//number: 0
+
+
+//method's symbol table
+//name: a
+//type: Array
+//kind: var
+//number: 3
+//name: test
+//type: boolean
+//kind: static
+//number: 0
+
+

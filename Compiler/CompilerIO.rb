@@ -24,8 +24,18 @@ end
 
 
 def writeCompiledFile(tokens, classNames, outFile)
-  str = compileClass2(tokens, classNames)
+  resultList = compileClass2(tokens, classNames)
+  str = resultList[0]
+  classTable = resultList[1]
+  methodsTableList = resultList[2]
   vmFile = File.new(outFile, "w")
+
+  vmFile.syswrite(str)
+
+  str = "\n\n//class symbol table\n" + classTable.printTable+"\n\n"
+  for i in 0..methodsTableList.size-1
+    str += "//method's symbol table\n" + methodsTableList[i].printTable+"\n\n"
+  end
 
   vmFile.syswrite(str)
 end
