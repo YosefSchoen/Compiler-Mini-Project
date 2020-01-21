@@ -1,22 +1,11 @@
-class Point {
+class  Point {
     field int x, y;
     static int pointCount;
-    constructor Point new(int ax, int ay) {}
-    method int getx() {}
-    method int gety() {}
-    method int getPointCount() {}
-    method Point plus(Point other) {}
 
-    method int distance(Point other) {
-        var int dx, dy;
-        let dx = x - other.getx();
-        let dy = y - other.gety();
-        return Math.sqrt((dx*dx)+ (dy*dy));
-    }
+    method int distance(int i) {
+        var int a, b
 
-    method void print() {}
+        let a[2] = b[a[3]];
 
-    }
-
-
-
+     }
+}

@@ -1,6 +1,7 @@
 require_relative 'CompilerUtility'
 require_relative 'Tokenizer'
 require_relative 'Parser'
+require_relative 'Parser2'
 require_relative 'SymbolsTable'
 
 
@@ -21,6 +22,13 @@ def readJackFile(fileName)
   return lines
 end
 
+
+def writeCompiledFile(tokens, classNames, outFile)
+  str = compileClass2(tokens, classNames)
+  vmFile = File.new(outFile, "w")
+
+  vmFile.syswrite(str)
+end
 
 def writeCompiledXMLFile(tokens, classNames, outFile)
   str = compileClass(tokens, classNames)
@@ -55,12 +63,15 @@ def compile(path)
     fSize = filesWithLines[i][0].size
 
     #renaming the
-    compiledFileName = filesWithLines[i][0][0, fSize-5]+"Out.xml"
+    compiledFileName = filesWithLines[i][0][0, fSize-5]+".vm"
+    compiledFileXMLName = filesWithLines[i][0][0, fSize-5]+"Out.xml"
     tokensFileName = filesWithLines[i][0][0, fSize-5]+"TOut.xml"
     lines = filesWithLines[i][1]
     lines = getLines(lines)
     tokens = tokenize(lines)
-    writeCompiledXMLFile(tokens, classNames, compiledFileName)
+
+    writeCompiledFile(tokens, classNames, compiledFileName)
+    writeCompiledXMLFile(tokens, classNames, compiledFileXMLName)
     writeTokensXMLFile(tokens, tokensFileName)
     puts filesWithLines[i][0] + " was tokenized and compiled" +"\n"
   end

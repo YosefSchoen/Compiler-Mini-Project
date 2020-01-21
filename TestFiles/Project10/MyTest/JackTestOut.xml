@@ -1,13 +1,7 @@
 <class>
 	<keyword> class </keyword>
-	<identifier> foo </identifier>
+	<identifier> Point </identifier>
 	<symbol> { </symbol>
-	<classVarDec>
-		<keyword> static </keyword>
-		<keyword> int </keyword>
-		<identifier> b </identifier>
-		<symbol> ; </symbol>
-	</classVarDec>
 	<classVarDec>
 		<keyword> field </keyword>
 		<keyword> int </keyword>
@@ -19,29 +13,17 @@
 	<classVarDec>
 		<keyword> static </keyword>
 		<keyword> int </keyword>
-		<identifier> z </identifier>
-		<symbol> ; </symbol>
-	</classVarDec>
-	<classVarDec>
-		<keyword> field </keyword>
-		<keyword> char </keyword>
-		<identifier> a </identifier>
+		<identifier> pointCount </identifier>
 		<symbol> ; </symbol>
 	</classVarDec>
 	<subroutineDec>
 		<keyword> method </keyword>
 		<keyword> int </keyword>
-		<identifier> bank </identifier>
+		<identifier> distance </identifier>
 		<symbol> ( </symbol>
 		<parameterList>
 			<keyword> int </keyword>
-			<identifier> x2 </identifier>
-			<symbol> , </symbol>
-			<keyword> int </keyword>
-			<identifier> y2 </identifier>
-			<symbol> , </symbol>
-			<keyword> int </keyword>
-			<identifier> z2 </identifier>
+			<identifier> i </identifier>
 		</parameterList>
 		<symbol> ) </symbol>
 		<subroutineBody>
@@ -49,46 +31,45 @@
 			<varDec>
 				<keyword> var </keyword>
 				<keyword> int </keyword>
-				<identifier> xyz </identifier>
+				<identifier> a </identifier>
 				<symbol> , </symbol>
-				<identifier> xyz2 </identifier>
-				<symbol> ; </symbol>
-			</varDec>
-			<varDec>
-				<keyword> var </keyword>
-				<keyword> char </keyword>
-				<identifier> abc </identifier>
-				<symbol> ; </symbol>
-			</varDec>
-			<statements>
-				<letStatement>
-					<keyword> let </keyword>
-					<identifier> xyz </identifier>
-					<symbol> = </symbol>
-					<expression>
-						<term>
-							<identifier> x2 </identifier>
-						</term>
-						<symbol> + </symbol>
-						<term>
-							<symbol> ( </symbol>
-							<expression>
-								<term>
-									<identifier> y2 </identifier>
-								</term>
-								<symbol> * </symbol>
-								<term>
-									<identifier> z2 </identifier>
-								</term>
-							</expression>
-							<symbol> ) </symbol>
-						</term>
-					</expression>
-					<symbol> ; </symbol>
-				</letStatement>
-			</statements>
-			<symbol> } </symbol>
-		</subroutineBody>
-	</subroutineDec>
-	<symbol> } </symbol>
-</class>
+				<identifier> b </identifier>
+				<statements>
+					<letStatement>
+						<keyword> let </keyword>
+						<identifier> a </identifier>
+						<symbol> [ </symbol>
+						<expression>
+							<term>
+								<integerConstant> 2 </integerConstant>
+							</term>
+						</expression>
+						<symbol> ] </symbol>
+						<symbol> = </symbol>
+						<expression>
+							<term>
+								<identifier> b </identifier>
+								<symbol> [ </symbol>
+								<expression>
+									<term>
+										<identifier> a </identifier>
+										<symbol> [ </symbol>
+										<expression>
+											<term>
+												<integerConstant> 3 </integerConstant>
+											</term>
+										</expression>
+										<symbol> ] </symbol>
+									</term>
+								</expression>
+								<symbol> ] </symbol>
+							</term>
+						</expression>
+						<symbol> ; </symbol>
+					</letStatement>
+				</statements>
+				<symbol> } </symbol>
+			</subroutineBody>
+		</subroutineDec>
+		<symbol> } </symbol>
+	</class>

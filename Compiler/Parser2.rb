@@ -2,25 +2,9 @@ require_relative 'CompilerUtility'
 require_relative 'Tokenizer'
 require_relative 'SymbolsTable'
 require_relative 'vmWriter'
-def readJackFile(fileName)
-lines = []
-
-#new read only file object with the filename passed above
-inFile = File.new(fileName, "r")
-
-while (line = inFile.gets)
-
-  lines << line
-end
-
-inFile.close
-
-#returns an array each element is a string of a line of the file
-return lines
-end
 
 #the first function called compiles the file's class
-def compileClass(tokens, classNames)
+def compileClass2(tokens, classNames)
   str = ""
   table = SymbolsTable.new([])
   i = 0
@@ -42,29 +26,30 @@ def compileClass(tokens, classNames)
   end
 
   #classVarDec*
-  resultList = compileClassVarDec(tokens, classNames, i, table)
+  resultList = compileClassVarDec2(tokens, classNames, i, table)
   table = resultList[0]
   i = resultList[1]
 
   #subroutineDec*
-  resultList = compileSubroutineDec(tokens, classNames, i, this, table)
+  resultList = compileSubroutineDec2(tokens, classNames, i, this, table)
   str += resultList[0]
   methodsTableList = resultList[1]
   i = resultList[2]
+
 
   # terminal }
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, "}")
   end
 
-  puts str
-  return [table, methodsTableList]
+
+  return str
 end
 
 
-def compileClassVarDec(tokens, classNames, i, table)
+def compileClassVarDec2(tokens, classNames, i, table)
   fieldIndex = 0
   staticIndex = 0
-  resultList = compileClassVarDecT(tokens, classNames, i, table, fieldIndex, staticIndex)
+  resultList = compileClassVarDecT2(tokens, classNames, i, table, fieldIndex, staticIndex)
   i = resultList[1]
 
 
@@ -72,7 +57,7 @@ def compileClassVarDec(tokens, classNames, i, table)
 end
 
 
-def compileClassVarDecT(tokens, classNames, i, table, fieldIndex, staticIndex)
+def compileClassVarDecT2(tokens, classNames, i, table, fieldIndex, staticIndex)
   # if the next token is not a variable, then it wont start with static/field
   if notToLarge(tokens, i) and !(isCorrectToken(tokens, i, "static") or isCorrectToken(tokens, i, "field"))
     return [table, i]
@@ -107,7 +92,7 @@ def compileClassVarDecT(tokens, classNames, i, table, fieldIndex, staticIndex)
   table.symbols.append(symbol)
   index += 1
 
-  resultList = varNameT(tokens, i, table, index, kind, type)
+  resultList = varNameT2(tokens, i, table, index, kind, type)
   i = resultList[1]
   index = resultList[2]
 
@@ -123,12 +108,12 @@ def compileClassVarDecT(tokens, classNames, i, table, fieldIndex, staticIndex)
   end
 
   # recursively call
-  resultList = compileClassVarDecT(tokens, classNames, i, table, fieldIndex, staticIndex)
+  resultList = compileClassVarDecT2(tokens, classNames, i, table, fieldIndex, staticIndex)
   return resultList
 end
 
 
-def varNameT(tokens, i, table, index, kind, type)
+def varNameT2(tokens, i, table, index, kind, type)
   if notToLarge(tokens, i) and !isCorrectToken(tokens, i, ",")
     return [table, i, index]
   end
@@ -146,20 +131,20 @@ def varNameT(tokens, i, table, index, kind, type)
   table.symbols.append(symbol)
   index += 1
 
-  resultList = varNameT(tokens, i, table, index, kind, type)
+  resultList = varNameT2(tokens, i, table, index, kind, type)
   return resultList
 end
 
 
-def compileSubroutineDec(tokens, classNames, i, this, classTable)
+def compileSubroutineDec2(tokens, classNames, i, this, classTable)
   # if constructor, method, function
 
-  resultList = compileSubroutineDecT(tokens, classNames, i, this, classTable, [], "")
+  resultList = compileSubroutineDecT2(tokens, classNames, i, this, classTable, [], "")
   return resultList
 end
 
 
-def compileSubroutineDecT(tokens, classNames, i, this, classTable, tableList, result)
+def compileSubroutineDecT2(tokens, classNames, i, this, classTable, tableList, result)
   index = 0
   name = ""
   table = SymbolsTable.new([], classTable.symbols)
@@ -197,7 +182,12 @@ def compileSubroutineDecT(tokens, classNames, i, this, classTable, tableList, re
     end
 
     if notToLarge(tokens, i) and (isType(tokens[i][1], classNames) or isCorrectToken(tokens, i, "void"))
+      if isCorrectToken(tokens, i, "void")
+        table.setIsVoid(true)
+      end
+
       i+=1
+
     end
 
     if notToLarge(tokens, i) and isIdentifier(tokens[i][1])
@@ -209,7 +199,7 @@ def compileSubroutineDecT(tokens, classNames, i, this, classTable, tableList, re
       i+=1
     end
 
-    resultList = compileParameterList(tokens, classNames, i, table, index)
+    resultList = compileParameterList2(tokens, classNames, i, table, index)
     table = resultList[0]
     i = resultList[1]
 
@@ -217,7 +207,7 @@ def compileSubroutineDecT(tokens, classNames, i, this, classTable, tableList, re
       i+=1
     end
 
-    resultList = compileSubroutineBody(tokens, classNames, i, table)
+    resultList = compileSubroutineBody2(tokens, classNames, i, table)
 
     nLocals = resultList[3]
     result += writeFunction(name, nLocals.to_s)
@@ -232,19 +222,17 @@ def compileSubroutineDecT(tokens, classNames, i, this, classTable, tableList, re
       result += writePop("pointer", "0")
     end
 
-
-
     result += resultList[0]
     table = resultList[1]
     i = resultList[2]
     tableList.append(table)
-    resultList = compileSubroutineDecT(tokens, classNames, i, this, classTable, tableList, result)
+    resultList = compileSubroutineDecT2(tokens, classNames, i, this, classTable, tableList, result)
     return resultList
   end
 end
 
 
-def compileParameterList(tokens, classNames, i, table, index)
+def compileParameterList2(tokens, classNames, i, table, index)
 
   if notToLarge(tokens, i) and !isType(tokens[i][1], classNames)
     return [table, i]
@@ -264,7 +252,7 @@ def compileParameterList(tokens, classNames, i, table, index)
   index += 1
   table.symbols.append(symbol)
 
-  resultList = compileParameterListT(tokens, classNames, i, table, index)
+  resultList = compileParameterListT2(tokens, classNames, i, table, index)
   table = resultList[0]
   i = resultList[1]
 
@@ -273,7 +261,7 @@ def compileParameterList(tokens, classNames, i, table, index)
 end
 
 
-def compileParameterListT(tokens, classNames, i, table, index)
+def compileParameterListT2(tokens, classNames, i, table, index)
 
   if notToLarge(tokens, i) and !isCorrectToken(tokens, i, ",")
     return [table, i]
@@ -297,24 +285,24 @@ def compileParameterListT(tokens, classNames, i, table, index)
   index += 1
   table.symbols.append(symbol)
 
-  resultList = compileParameterListT(tokens, classNames, i, table, index)
+  resultList = compileParameterListT2(tokens, classNames, i, table, index)
   return resultList
 end
 
 
-def compileSubroutineBody(tokens, classNames, i, table)
+def compileSubroutineBody2(tokens, classNames, i, table)
   str = ""
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, "{")
     i+=1
   end
 
-  resultList = compileVarDec(tokens, classNames, i, table)
+  resultList = compileVarDec2(tokens, classNames, i, table)
   table = resultList[0]
   i = resultList[1]
   nLocal = resultList[2]
 
   #need to update everything from here
-  resultList = compileStatements(tokens, i, table)
+  resultList = compileStatements2(tokens, i, table)
   str += resultList[0]
   i = resultList[1]
 
@@ -326,9 +314,9 @@ def compileSubroutineBody(tokens, classNames, i, table)
 end
 
 
-def compileVarDec(tokens, classNames, i, table)
+def compileVarDec2(tokens, classNames, i, table)
   index = 0
-  resultList = compileVarDecT(tokens, classNames, i, table, index)
+  resultList = compileVarDecT2(tokens, classNames, i, table, index)
   table = resultList[0]
   i = resultList[1]
   nLocals = resultList[2]
@@ -336,7 +324,7 @@ def compileVarDec(tokens, classNames, i, table)
 end
 
 
-def compileVarDecT(tokens, classNames, i, table, index)
+def compileVarDecT2(tokens, classNames, i, table, index)
   if notToLarge(tokens, i) and !isCorrectToken(tokens, i, "var")
     return [table, i, index]
   end
@@ -358,7 +346,7 @@ def compileVarDecT(tokens, classNames, i, table, index)
   symbol = SymbolDef.new(name, type, "var", index.to_s)
   index += 1
   table.symbols.append(symbol)
-  resultList = varNameT(tokens, i, table, index, "var", type)
+  resultList = varNameT2(tokens, i, table, index, "var", type)
   table = resultList[0]
   i = resultList[1]
   index = resultList[2]
@@ -367,44 +355,44 @@ def compileVarDecT(tokens, classNames, i, table, index)
     i+=1
   end
 
-  resultList = compileVarDecT(tokens, classNames, i, table, index)
+  resultList = compileVarDecT2(tokens, classNames, i, table, index)
   return resultList
 end
 
 
-def compileStatements(tokens, i, table)
+def compileStatements2(tokens, i, table)
   str = ""
-  resultList = compileStatementT(tokens, i, "", table)
+  resultList = compileStatementT2(tokens, i, "", table)
   str += resultList[0]
   i = resultList[1]
   return [str, i]
 end
 
 
-def compileStatementT(tokens, i, result, table)
+def compileStatementT2(tokens, i, result, table)
   case tokens[i][1]
   when "let"
-    resultList = compileLet(tokens, i, table)
+    resultList = compileLet2(tokens, i, table)
     result += resultList[0]
     i = resultList[1]
 
   when "if"
-    resultList = compileIf(tokens, i, table)
+    resultList = compileIf2(tokens, i, table)
     result += resultList[0]
     i = resultList[1]
 
   when "while"
-    resultList = compileWhile(tokens, i, table)
+    resultList = compileWhile2(tokens, i, table)
     result += resultList[0]
     i = resultList[1]
 
   when "do"
-    resultList = compileDo(tokens, i, table)
+    resultList = compileDo2(tokens, i, table)
     result += resultList[0]
     i = resultList[1]
 
   when "return"
-    resultList = compileReturn(tokens, i, table)
+    resultList = compileReturn2(tokens, i, table)
     result += resultList[0]
     i = resultList[1]
 
@@ -412,19 +400,19 @@ def compileStatementT(tokens, i, result, table)
     return [result, i]
   end
 
-  resultList = compileStatementT(tokens, i, result, table)
+  resultList = compileStatementT2(tokens, i, result, table)
   return resultList
 end
 
 
-def compileSubStatements(tokens, i, table)
+def compileSubStatements2(tokens, i, table)
   str = ""
 
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, "{")
     i+=1
   end
 
-  resultList = compileStatements(tokens, i,table)
+  resultList = compileStatements2(tokens, i,table)
   str += resultList[0]
   i = resultList[1]
 
@@ -436,7 +424,7 @@ def compileSubStatements(tokens, i, table)
 end
 
 
-def compileLet(tokens, i, table)
+def compileLet2(tokens, i, table)
   str = ""
 
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, "let")
@@ -452,13 +440,12 @@ def compileLet(tokens, i, table)
     i+=1
     str += writePush(term.kind, term.number)
 
-    resultList = compileExpression(tokens, i, table)
+    resultList = compileExpression2(tokens, i, table)
     str += resultList[0]
     i = resultList[1]
 
     str += writeArithmetic("+")
-    str += writePop("pointer", "1")
-    term = SymbolDef.new(term.name, term.type, "that", "0")
+
     if notToLarge(tokens, i) and isCorrectToken(tokens, i, "]")
       i+=1
     end
@@ -468,10 +455,14 @@ def compileLet(tokens, i, table)
     i+=1
   end
 
-  resultList = compileExpression(tokens, i, table)
+  resultList = compileExpression2(tokens, i, table)
   str += resultList[0]
   i = resultList[1]
 
+  str += writePop("temp", "0")
+  str += writePop("pointer", "1")
+  str += writePush("temp", "0")
+  term = SymbolDef.new(term.name, term.type, "that", "0")
   str += writePop(term.kind, term.number)
 
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, ";")
@@ -482,7 +473,7 @@ def compileLet(tokens, i, table)
 end
 
 
-def compileIf(tokens, i, table)
+def compileIf2(tokens, i, table)
   str = ""
 
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, "if")
@@ -494,7 +485,7 @@ def compileIf(tokens, i, table)
     i+=1
   end
 
-  resultList = compileExpression(tokens, i, table)
+  resultList = compileExpression2(tokens, i, table)
   str += resultList[0]
   i = resultList[1]
 
@@ -509,7 +500,7 @@ def compileIf(tokens, i, table)
     i+=1
   end
 
-  resultList = compileStatements(tokens, i, table)
+  resultList = compileStatements2(tokens, i, table)
   str += resultList[0]
   i = resultList[1]
 
@@ -521,7 +512,7 @@ def compileIf(tokens, i, table)
 
   str += writeLabel("false."+labelNumber)
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, "else")
-    resultList = compileElse(tokens, i, table)
+    resultList = compileElse2(tokens, i, table)
     str += resultList[0]
     i = resultList[1]
   end
@@ -531,20 +522,20 @@ def compileIf(tokens, i, table)
 end
 
 
-def compileElse(tokens, i, table)
+def compileElse2(tokens, i, table)
   str = ""
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, "else")
     i += 1
   end
 
-  resultList = compileSubStatements(tokens, i, table)
+  resultList = compileSubStatements2(tokens, i, table)
   str += resultList[0]
   i = resultList[1]
   return [str, i]
 end
 
 
-def compileWhile(tokens, i, table)
+def compileWhile2(tokens, i, table)
   str = ""
   labelNumber = i.to_s
   str += writeLabel("true."+labelNumber)
@@ -557,7 +548,7 @@ def compileWhile(tokens, i, table)
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, "(")
     i+=1
 
-    resultList = compileExpression(tokens, i, table)
+    resultList = compileExpression2(tokens, i, table)
     str += resultList[0]
     i = resultList[1]
 
@@ -569,7 +560,7 @@ def compileWhile(tokens, i, table)
   end
 
   str += writeIf("end."+labelNumber)
-  resultList = compileSubStatements(tokens, i, table)
+  resultList = compileSubStatements2(tokens, i, table)
   str += resultList[0]
   i = resultList[1]
 
@@ -579,14 +570,14 @@ def compileWhile(tokens, i, table)
 end
 
 
-def compileDo(tokens, i, table)
+def compileDo2(tokens, i, table)
   str = ""
 
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, "do")
     i+=1
   end
 
-  resultList = compileSubroutineCall(tokens, i, table)
+  resultList = compileSubroutineCall2(tokens, i, table)
   str += resultList[0]
   i = resultList[1]
 
@@ -598,7 +589,7 @@ def compileDo(tokens, i, table)
 end
 
 
-def compileReturn(tokens, i, table)
+def compileReturn2(tokens, i, table)
   str = ""
 
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, "return")
@@ -614,7 +605,7 @@ def compileReturn(tokens, i, table)
     return [str, i]
   end
 
-  resultList = compileExpression(tokens, i, table)
+  resultList = compileExpression2(tokens, i, table)
   str+= resultList[0]
   i = resultList[1]
 
@@ -629,15 +620,15 @@ def compileReturn(tokens, i, table)
 end
 
 
-def compileExpression(tokens, i, table)
+def compileExpression2(tokens, i, table)
 
   str = ""
 
-  resultList = compileTerm(tokens, i, table)
+  resultList = compileTerm2(tokens, i, table)
   str += resultList[0]
   i = resultList[1]
 
-  resultList = compileExpressionT(tokens, i, table, "")
+  resultList = compileExpressionT2(tokens, i, table, "")
   str += resultList[0]
   i = resultList[1]
 
@@ -645,7 +636,7 @@ def compileExpression(tokens, i, table)
 end
 
 
-def compileExpressionT(tokens, i, table, result)
+def compileExpressionT2(tokens, i, table, result)
   if notToLarge(tokens, i) and !isOp(tokens[i][1])
     return [result, i]
   end
@@ -656,7 +647,7 @@ def compileExpressionT(tokens, i, table, result)
   end
 
 
-  resultList = compileTerm(tokens, i, table)
+  resultList = compileTerm2(tokens, i, table)
   result += resultList[0]
   i = resultList[1]
 
@@ -664,20 +655,20 @@ def compileExpressionT(tokens, i, table, result)
 
   result += writeArithmetic(op)
 
-  resultList = compileExpressionT(tokens, i, table, result)
+  resultList = compileExpressionT2(tokens, i, table, result)
   return resultList
 end
 
 
 #need to write this function
-def compileTerm(tokens, i, table)
+def compileTerm2(tokens, i, table)
   str = ""
 
   # unary Operators
   if notToLarge(tokens, i) and isUnaryOP(tokens[i][1])
     op = tokens[i][1]
     i += 1
-    resultList = compileTerm(tokens, i, table)
+    resultList = compileTerm2(tokens, i, table)
     str += resultList[0]
     str += writeArithmeticUnary(op)
     i = resultList[1]
@@ -686,7 +677,7 @@ def compileTerm(tokens, i, table)
   elsif notToLarge(tokens, i) and isCorrectToken(tokens, i, "(")
     i += 1
 
-    resultList = compileExpression(tokens, i, table)
+    resultList = compileExpression2(tokens, i, table)
     str += resultList[0]
     i = resultList[1]
 
@@ -702,9 +693,18 @@ def compileTerm(tokens, i, table)
     if tokens[i][1] == "this"
       kind = "pointer"
       term = "0"
+
+    elsif tokens[i][1] == "null" or tokens[i][1] == "false"
+      term = "0"
+
+    elsif tokens[i][1] == "true"
+      term = "1"
     end
 
     str += writePush(kind, term)
+    if term == "1"
+      str += writeArithmeticUnary("~")
+    end
     i += 1
 
     #the else is for var name and  subroutine  need to solve this
@@ -714,18 +714,20 @@ def compileTerm(tokens, i, table)
       str += writePush(term.kind, term.number)
       i += 2
 
-      resultList = compileExpression(tokens, i, table)
+      resultList = compileExpression2(tokens, i, table)
       str += resultList[0]
-      str += writeArithmetic("+")
       i = resultList[1]
 
+      str += writeArithmetic("+")
+      str += writePop("pointer", "1")
+      str += writePush("that", "0")
       if notToLarge(tokens, i) and isCorrectToken(tokens, i, "]")
         i += 1
       end
 
 
     elsif notToLarge(tokens, i+1) and (isCorrectToken(tokens, i+1, "(") or isCorrectToken(tokens, i+1, "."))
-      resultList = compileSubroutineCall(tokens, i, table)
+      resultList = compileSubroutineCall2(tokens, i, table)
       str += resultList[0]
       i = resultList[1]
 
@@ -741,9 +743,10 @@ end
 
 
 #need to write this function
-def compileSubroutineCall(tokens, i, table)
+def compileSubroutineCall2(tokens, i, table)
   str = ""
   name = ""
+  callingFromMethod = false
   flag = true
   # if flag is false then it is not the . call
   if notToLarge(tokens, i) and isCorrectToken(tokens, i+1, "(")
@@ -757,6 +760,7 @@ def compileSubroutineCall(tokens, i, table)
         symbol = table.findSymbol(tokens[i][1])
         str += writePush(symbol.kind, symbol.number)
         name += symbol.type
+        callingFromMethod = true
 
       else
         name += tokens[i][1]
@@ -776,7 +780,7 @@ def compileSubroutineCall(tokens, i, table)
     end
   end
   # now that we took care of this . call
-  if notToLarge(tokens, i) and isIdentifier(tokens[i][1])
+  if notToLarge(tokens, i) and isIdentifier(tokens[i][1]) and !isCorrectToken(tokens, i, "(")
     name += tokens[i][1]
     i += 1
   end
@@ -785,7 +789,7 @@ def compileSubroutineCall(tokens, i, table)
     i += 1
   end
 
-  resultList = compileExpressionList(tokens, i, table)
+  resultList = compileExpressionList2(tokens, i, table)
   str += resultList[0]
   i = resultList[1]
   nArgs = resultList[2]
@@ -794,12 +798,21 @@ def compileSubroutineCall(tokens, i, table)
     i += 1
   end
 
+  if callingFromMethod
+    nArgs += 1
+  end
+
   str += writeCall(name, nArgs.to_s)
+
+  if table.isVoid
+    str += writePop("temp", "0")
+  end
+
   return [str, i]
 end
 
 
-def compileExpressionList(tokens, i, table)
+def compileExpressionList2(tokens, i, table)
   str = ""
   nArgs = 0
   #if no parameters
@@ -807,14 +820,14 @@ def compileExpressionList(tokens, i, table)
     return [str, i, nArgs]
   end
 
-  if notToLarge(tokens, i) and isExpression(tokens, i)
-    resultList = compileExpression(tokens, i, table)
+  if notToLarge(tokens, i) and isExpression2(tokens, i)
+    resultList = compileExpression2(tokens, i, table)
     str += resultList[0]
     i = resultList[1]
     nArgs += 1
 
     if notToLarge(tokens, i) and isCorrectToken(tokens, i, ",")
-      resultList = compileExpressionListT(tokens, i, nArgs, table, "")
+      resultList = compileExpressionListT2(tokens, i, nArgs, table, "")
       str += resultList[0]
       i = resultList[1]
       nArgs = resultList[2]
@@ -825,7 +838,7 @@ def compileExpressionList(tokens, i, table)
 end
 
 
-def compileExpressionListT(tokens, i, nArgs, table, result)
+def compileExpressionListT2(tokens, i, nArgs, table, result)
   if notToLarge(tokens, i) and !isCorrectToken(tokens, i, ",")
     return [result, i, nArgs]
   end
@@ -834,34 +847,19 @@ def compileExpressionListT(tokens, i, nArgs, table, result)
     i += 1
   end
 
-  resultList = compileExpression(tokens, i, table)
+  resultList = compileExpression2(tokens, i, table)
   result += resultList[0]
   i = resultList[1]
   nArgs += 1
 
-  resultList = compileExpressionListT(tokens, i, nArgs, table, result)
+  resultList = compileExpressionListT2(tokens, i, nArgs, table, result)
   return resultList
 end
 
 
-def isExpression(tokens, i)
+def isExpression2(tokens, i)
   str = tokens[i][1]
 
   return (notToLarge(tokens, i) and (isIntConstant(str) or tokens[i][0] == "stringConstant" or
       isKeywordConst(str) or isIdentifier(str) or isUnaryOP(str)))
-end
-
-
-path = "C:/Users/josep/RubymineProjects/HackToVmProject/TestFiles/Project10/MyTest/JackTest.jack"
-lines = readJackFile(path)
-lines = getLines(lines)
-tokens = tokenize(lines)
-
-tables = compileClass(tokens, [])
-classTable = tables[0]
-methodTableList = tables[1]
-
-classTable.printTable
-for i in 0..methodTableList.size-1
-  methodTableList[i].printTable
 end

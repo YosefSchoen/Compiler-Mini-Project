@@ -3,9 +3,15 @@ push constant 2
 call Memory.alloc 1
 pop pointer 0
 push argument 0
-pop this 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
 push argument 1
-pop this 1
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
 push pointer 0
 return
 function Vertex.getX 0

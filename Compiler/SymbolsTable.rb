@@ -1,9 +1,10 @@
 class SymbolsTable
-  def initialize(symbols, parentSymbols = [])
+  def initialize(symbols, parentSymbols = [], isVoid = false)
     #symbols is an array of symbolDef Objects
     @symbols = symbols
     @parentSymbols = parentSymbols
     setParentSymbolKind
+    @isVoid = isVoid
   end
 
   def symbols
@@ -21,6 +22,14 @@ class SymbolsTable
 
   def parentSymbols
     @parentSymbols
+  end
+
+  def isVoid
+    @isVoid
+  end
+
+  def setIsVoid(newBool)
+    @isVoid = newBool
   end
 
   def findSymbol(varName)

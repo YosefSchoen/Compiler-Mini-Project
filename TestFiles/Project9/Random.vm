@@ -1,23 +1,42 @@
 function Random.init 0
 push constant 100
-pop static 1
-push constant 2345
-pop static 2
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 2345s
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
 push constant 4
-pop static 3
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
 push argument 0
 push static 3
 call Random.mod 2
-pop static 0
+pop temp 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
 push constant 0
 return
 function Random.mod 0
 push argument 0
 call Math.abs 1
-pop argument 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
 push argument 1
 call Math.abs 1
-pop argument 1
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
 push argument 0
 push argument 1
 push argument 0
@@ -34,11 +53,18 @@ push static 2
 add
 push static 3
 call Random.mod 2
-pop static 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
 push static 0
 push constant 1
+not
 add
-pop static 1
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
 push static 0
 push static 1
 call Math.multiply 2
@@ -46,13 +72,20 @@ push static 2
 add
 push static 3
 call Random.mod 2
-pop static 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
 push static 0
 push constant 1
+not
 add
 push constant 3
 call Math.multiply 2
-pop static 2
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
 push static 0
 push static 1
 call Math.multiply 2
@@ -60,6 +93,9 @@ push static 2
 add
 push static 3
 call Random.mod 2
-pop static 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
 push static 0
 return

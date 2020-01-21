@@ -1,12 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e2bbf7f2-661c-4b38-bdc0-4dc1c947d57a" name="Default Changelist" comment="Need to finish writing if, else, while, and do">
+    <list default="true" id="e2bbf7f2-661c-4b38-bdc0-4dc1c947d57a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compiler/CompilerIO.rb" beforeDir="false" afterPath="$PROJECT_DIR$/Compiler/CompilerIO.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Compiler/Parser2.rb" beforeDir="false" afterPath="$PROJECT_DIR$/Compiler/Parser2.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Compiler/SymbolsTable.rb" beforeDir="false" afterPath="$PROJECT_DIR$/Compiler/SymbolsTable.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compiler/Tokenizer.rb" beforeDir="false" afterPath="$PROJECT_DIR$/Compiler/Tokenizer.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compiler/vmWriter.rb" beforeDir="false" afterPath="$PROJECT_DIR$/Compiler/vmWriter.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.rb" beforeDir="false" afterPath="$PROJECT_DIR$/Main.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestFiles/Project10/ExpressionLessSquare/Main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project10/ExpressionLessSquare/Main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestFiles/Project10/ExpressionLessSquare/MainOut.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestFiles/Project10/ExpressionLessSquare/MainTOut.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestFiles/Project10/ExpressionLessSquare/SquareGameOut.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestFiles/Project10/ExpressionLessSquare/SquareGameTOut.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestFiles/Project10/ExpressionLessSquare/SquareOut.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestFiles/Project10/ExpressionLessSquare/SquareTOut.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/TestFiles/Project10/MyTest/JackTest.jack" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project10/MyTest/JackTest.jack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestFiles/Project10/MyTest/JackTestOut.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project10/MyTest/JackTestOut.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestFiles/Project10/MyTest/JackTestTOut.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project10/MyTest/JackTestTOut.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestFiles/Project9/Ball.vm" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project9/Ball.vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestFiles/Project9/Bat.vm" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project9/Bat.vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestFiles/Project9/Main.vm" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project9/Main.vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestFiles/Project9/Player.vm" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project9/Player.vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestFiles/Project9/Random.vm" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project9/Random.vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestFiles/Project9/Vertex.vm" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project9/Vertex.vm" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,24 +61,24 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Project9" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/TestFiles/Project10" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\josep\RubymineProjects\HackToVmProject\TestFiles\Project10" />
+      <recent name="C:\Users\josep\RubymineProjects\HackToVmProject\Project9" />
+      <recent name="C:\Users\josep\RubymineProjects\HackToVmProject\Project11" />
+      <recent name="C:\Users\josep\RubymineProjects\Project7\Project8" />
+      <recent name="C:\Users\josep\RubymineProjects\Project7\Stage2\StaticTest" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\josep\RubymineProjects\HackToVmProject\TestFiles\Project10\MyTest" />
       <recent name="C:\Users\josep\RubymineProjects\HackToVmProject\TestFiles" />
       <recent name="C:\Users\josep\RubymineProjects\HackToVmProject\Translator" />
       <recent name="C:\Users\josep\RubymineProjects\HackToVmProject\Compiler" />
       <recent name="C:\Users\josep\RubymineProjects\HackToVmProject" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\josep\RubymineProjects\HackToVmProject\Project9" />
-      <recent name="C:\Users\josep\RubymineProjects\HackToVmProject\Project11" />
-      <recent name="C:\Users\josep\RubymineProjects\Project7\Project8" />
-      <recent name="C:\Users\josep\RubymineProjects\Project7\Stage2\StaticTest" />
-      <recent name="C:\Users\josep\RubymineProjects\Project7\Stage2\PointerTest" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -76,7 +93,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Ruby.Parser2">
+  <component name="RunManager" selected="Ruby.Main">
     <configuration name="CompilerIO" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
       <module name="Project7" />
       <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="" />
@@ -192,14 +209,7 @@
       <workItem from="1574945043043" duration="14983000" />
       <workItem from="1577728508224" duration="52117000" />
       <workItem from="1578517304087" duration="81436000" />
-      <workItem from="1579451276315" duration="50111000" />
-    </task>
-    <task id="LOCAL-00012" summary="Finished stage 1 and commenting the main file">
-      <created>1574763434420</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1574763434420</updated>
+      <workItem from="1579451276315" duration="61375000" />
     </task>
     <task id="LOCAL-00013" summary="Finished stage 1 and commenting the main file">
       <created>1574770350526</created>
@@ -537,7 +547,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579573792648</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="Need to finish writing if, else, while, and do">
+      <created>1579618290385</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1579618290385</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -645,10 +662,10 @@
     <SUITE FILE_PATH="coverage/Project7@Test.rcov" NAME="Main Coverage Results" MODIFIED="1574885669794" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="C:\Users\josep\RubymineProjects\Project7" MODULE_NAME="Project7" />
     <SUITE FILE_PATH="coverage/Project7@CompilerIO.rcov" NAME="CompilerIO Coverage Results" MODIFIED="1579012728358" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
     <SUITE FILE_PATH="coverage/Project7@SymbolsTable.rcov" NAME="SymbolsTable Coverage Results" MODIFIED="1579112223493" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Compiler" MODULE_NAME="Project7" />
-    <SUITE FILE_PATH="coverage/Project7@Parser2.rcov" NAME="Parser2 Coverage Results" MODIFIED="1579618277464" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Compiler" MODULE_NAME="Project7" />
+    <SUITE FILE_PATH="coverage/Project7@Parser2.rcov" NAME="Parser2 Coverage Results" MODIFIED="1579622138625" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Compiler" MODULE_NAME="Project7" />
     <SUITE FILE_PATH="coverage/Project7@Tokenizer.rcov" NAME="Tokenizer Coverage Results" MODIFIED="1578563816695" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
     <SUITE FILE_PATH="coverage/Project7@code_writer.rcov" NAME="code_writer Coverage Results" MODIFIED="1574813817501" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
     <SUITE FILE_PATH="coverage/Project7@Utility.rcov" NAME="Utility Coverage Results" MODIFIED="1574100649750" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
-    <SUITE FILE_PATH="coverage/Project7@Main.rcov" NAME="Main Coverage Results" MODIFIED="1579457886970" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
+    <SUITE FILE_PATH="coverage/Project7@Main.rcov" NAME="Main Coverage Results" MODIFIED="1579631972460" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
   </component>
 </project>

@@ -31,7 +31,10 @@ def writeArithmetic(cmd)
   str = ""
   case cmd
   when "*"
-    str = "mult\n"
+    str = "call Math.multiply 2\n"
+
+  when "/"
+    str = "call Math.divide 2\n"
 
   when "+"
     str = "add\n"

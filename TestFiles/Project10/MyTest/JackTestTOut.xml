@@ -1,11 +1,7 @@
 <tokens>
 	<keyword> class </keyword>
-	<identifier> foo </identifier>
+	<identifier> Point </identifier>
 	<symbol> { </symbol>
-	<keyword> static </keyword>
-	<keyword> int </keyword>
-	<identifier> b </identifier>
-	<symbol> ; </symbol>
 	<keyword> field </keyword>
 	<keyword> int </keyword>
 	<identifier> x </identifier>
@@ -14,46 +10,34 @@
 	<symbol> ; </symbol>
 	<keyword> static </keyword>
 	<keyword> int </keyword>
-	<identifier> z </identifier>
-	<symbol> ; </symbol>
-	<keyword> field </keyword>
-	<keyword> char </keyword>
-	<identifier> a </identifier>
+	<identifier> pointCount </identifier>
 	<symbol> ; </symbol>
 	<keyword> method </keyword>
 	<keyword> int </keyword>
-	<identifier> bank </identifier>
+	<identifier> distance </identifier>
 	<symbol> ( </symbol>
 	<keyword> int </keyword>
-	<identifier> x2 </identifier>
-	<symbol> , </symbol>
-	<keyword> int </keyword>
-	<identifier> y2 </identifier>
-	<symbol> , </symbol>
-	<keyword> int </keyword>
-	<identifier> z2 </identifier>
+	<identifier> i </identifier>
 	<symbol> ) </symbol>
 	<symbol> { </symbol>
 	<keyword> var </keyword>
 	<keyword> int </keyword>
-	<identifier> xyz </identifier>
+	<identifier> a </identifier>
 	<symbol> , </symbol>
-	<identifier> xyz2 </identifier>
-	<symbol> ; </symbol>
-	<keyword> var </keyword>
-	<keyword> char </keyword>
-	<identifier> abc </identifier>
-	<symbol> ; </symbol>
+	<identifier> b </identifier>
 	<keyword> let </keyword>
-	<identifier> xyz </identifier>
+	<identifier> a </identifier>
+	<symbol> [ </symbol>
+	<integerConstant> 2 </integerConstant>
+	<symbol> ] </symbol>
 	<symbol> = </symbol>
-	<identifier> x2 </identifier>
-	<symbol> + </symbol>
-	<symbol> ( </symbol>
-	<identifier> y2 </identifier>
-	<symbol> * </symbol>
-	<identifier> z2 </identifier>
-	<symbol> ) </symbol>
+	<identifier> b </identifier>
+	<symbol> [ </symbol>
+	<identifier> a </identifier>
+	<symbol> [ </symbol>
+	<integerConstant> 3 </integerConstant>
+	<symbol> ] </symbol>
+	<symbol> ] </symbol>
 	<symbol> ; </symbol>
 	<symbol> } </symbol>
 	<symbol> } </symbol>
