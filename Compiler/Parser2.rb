@@ -634,8 +634,7 @@ def compileExpressionT(tokens, i, table, result)
   resultList = compileTerm(tokens, i, table)
   result += resultList[0]
   i = resultList[1]
-  #term = table.findSymbol(resultList[0])
-  #result += writePush(term.kind, term.number)
+
 
 
   result += writeArithmetic(op)
@@ -672,9 +671,15 @@ def compileTerm(tokens, i, table)
 
     #int/keyword/string Constant
   elsif notToLarge(tokens, i) and (isIntConstant(tokens[i][1]) or isKeywordConst(tokens[i][1]) or tokens[i][0] == "stringConstant")
+    kind = "constant"
     term = tokens[i][1]
 
-    str += writePush("constant", term)
+    if tokens[i][1] == "this"
+      kind = "pointer"
+      term = "0"
+    end
+
+    str += writePush(kind, term)
     i += 1
 
     #the else is for var name and  subroutine  need to solve this
