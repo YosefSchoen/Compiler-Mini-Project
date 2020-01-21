@@ -6,7 +6,7 @@
 	<keyword> int </keyword>
 	<identifier> bar </identifier>
 	<symbol> ( </symbol>
-	<keyword> int </keyword>
+	<identifier> foo </identifier>
 	<identifier> p </identifier>
 	<symbol> , </symbol>
 	<keyword> int </keyword>
@@ -16,20 +16,6 @@
 	<keyword> var </keyword>
 	<keyword> int </keyword>
 	<identifier> p1 </identifier>
-	<symbol> ; </symbol>
-	<keyword> let </keyword>
-	<identifier> p1 </identifier>
-	<symbol> = </symbol>
-	<identifier> p </identifier>
-	<symbol> . </symbol>
-	<identifier> distance </identifier>
-	<symbol> ( </symbol>
-	<identifier> x </identifier>
-	<symbol> , </symbol>
-	<identifier> x </identifier>
-	<symbol> , </symbol>
-	<identifier> x </identifier>
-	<symbol> ) </symbol>
 	<symbol> ; </symbol>
 	<symbol> } </symbol>
 	<symbol> } </symbol>

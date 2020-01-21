@@ -1,6 +1,6 @@
 #function to get all the class names to use later for the compiler
 def getClassNames(filesWithLines)
-  classNames = []
+  classNames = %w(Math String Array Output Screen Keyboard Memory Sys)
   for i in 0..filesWithLines.size-1
     lines = filesWithLines[i][1]
     lines = getLines(lines)

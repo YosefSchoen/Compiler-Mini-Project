@@ -6,15 +6,9 @@ push constant 0
 push constant 0
 push constant 30
 call Square.new 3
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop this 0
 push constant 0
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop this 1
 push pointer 0
 return
 function SquareGame.dispose 0
@@ -84,10 +78,7 @@ function SquareGame.run 2
 push argument 0
 pop pointer 0
 push constant 0
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop local 1
 label true.160
 push local 1
 not
@@ -101,10 +92,7 @@ not
 if-goto end.166
 call Keyboard.keyPressed 0
 pop temp 0
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop local 0
 call moveSquare 0
 pop temp 0
 label end.166
@@ -115,10 +103,7 @@ not
 if-goto false.188
 push constant 1
 not
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop local 1
 goto end.188
 label false.188
 label end.188
@@ -150,10 +135,7 @@ eq
 not
 if-goto false.231
 push constant 1
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop this 1
 goto end.231
 label false.231
 label end.231
@@ -163,10 +145,7 @@ eq
 not
 if-goto false.244
 push constant 2
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop this 1
 goto end.244
 label false.244
 label end.244
@@ -176,10 +155,7 @@ eq
 not
 if-goto false.257
 push constant 3
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop this 1
 goto end.257
 label false.257
 label end.257
@@ -189,10 +165,7 @@ eq
 not
 if-goto false.270
 push constant 4
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop this 1
 goto end.270
 label false.270
 label end.270
@@ -205,10 +178,7 @@ not
 if-goto end.283
 call Keyboard.keyPressed 0
 pop temp 0
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop local 0
 call moveSquare 0
 pop temp 0
 label end.283
@@ -218,6 +188,10 @@ return
 
 
 //class symbol table
+//name: square
+//type: Square
+//kind: this
+//number: 0
 //name: direction
 //type: int
 //kind: this
@@ -266,6 +240,14 @@ return
 
 
 //method's symbol table
+//name: this
+//type: SquareGame
+//kind: argument
+//number: 0
+//name: key
+//type: char
+//kind: var
+//number: 0
 //name: exit
 //type: boolean
 //kind: var

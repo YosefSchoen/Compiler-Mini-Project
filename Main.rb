@@ -27,7 +27,7 @@ def main
 
 
   #compile("TestFiles/Project9")
-  compile("TestFiles/Project10/MyTest")
+  #compile("TestFiles/Project10/MyTest")
   #compile("TestFiles/Project10/ExpressionLessSquare")
   #compile("TestFiles/Project10/Square")
   #compile("TestFiles/Project10/ArrayTest")

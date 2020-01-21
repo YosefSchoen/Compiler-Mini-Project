@@ -1,12 +1,6 @@
 function foo.bar 1
 push argument 0
 pop pointer 0
-push argument 1
-push argument 2
-push argument 2
-push argument 2
-call int.distance 4
-pop local 0
 
 
 //class symbol table
@@ -18,7 +12,7 @@ pop local 0
 //kind: argument
 //number: 0
 //name: p
-//type: int
+//type: foo
 //kind: argument
 //number: 1
 //name: x

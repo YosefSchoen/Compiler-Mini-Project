@@ -16,7 +16,6 @@ def compileClass2(tokens, classNames)
   # terminal className, check if legal!
   if notToLarge(tokens, i) and isIdentifier(tokens[i][1])
     this = tokens[i][1]
-    classNames.push(tokens[i][1])
     i+=1
   end
 
@@ -226,7 +225,7 @@ def compileSubroutineDecT2(tokens, classNames, i, this, classTable, tableList, r
     table = resultList[1]
     i = resultList[2]
     tableList.append(table)
-    puts table.printTable
+    # puts table.printTable
     resultList = compileSubroutineDecT2(tokens, classNames, i, this, classTable, tableList, result)
     return resultList
   end
@@ -234,7 +233,6 @@ end
 
 
 def compileParameterList2(tokens, classNames, i, table, index)
-
   if notToLarge(tokens, i) and !isType(tokens[i][1], classNames)
     return [table, i]
   end
@@ -810,6 +808,9 @@ def compileSubroutineCall2(tokens, i, table)
 
   if table.isVoid
     str += writePop("temp", "0")
+    puts table.printTable
+    puts "hello"
+    puts i
   end
 
   return [str, i]

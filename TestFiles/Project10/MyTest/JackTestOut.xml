@@ -8,7 +8,7 @@
 		<identifier> bar </identifier>
 		<symbol> ( </symbol>
 		<parameterList>
-			<keyword> int </keyword>
+			<identifier> foo </identifier>
 			<identifier> p </identifier>
 			<symbol> , </symbol>
 			<keyword> int </keyword>
@@ -24,40 +24,6 @@
 				<symbol> ; </symbol>
 			</varDec>
 			<statements>
-				<letStatement>
-					<keyword> let </keyword>
-					<identifier> p1 </identifier>
-					<symbol> = </symbol>
-					<expression>
-						<term>
-							<identifier> p </identifier>
-							<symbol> . </symbol>
-							<identifier> distance </identifier>
-							<symbol> ( </symbol>
-							<expressionList>
-								<expression>
-									<term>
-										<identifier> x </identifier>
-									</term>
-								</expression>
-								<symbol> , </symbol>
-								<expression>
-									<term>
-										<identifier> x </identifier>
-									</term>
-								</expression>
-								<symbol> , </symbol>
-								<expression>
-									<term>
-										<identifier> x </identifier>
-									</term>
-								</expression>
-							</expressionList>
-							<symbol> ) </symbol>
-						</term>
-					</expression>
-					<symbol> ; </symbol>
-				</letStatement>
 			</statements>
 			<symbol> } </symbol>
 		</subroutineBody>

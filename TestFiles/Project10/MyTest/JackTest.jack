@@ -1,9 +1,7 @@
 class foo {
 
-    method int bar(int p, int x) {
+    method int bar(foo p, int x) {
         var int p1;
-
-        let p1 = p.distance(x, x, x);
     }
 
 }
