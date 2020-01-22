@@ -12,6 +12,7 @@ def getClassNames(filesWithLines)
 end
 
 def getFunctionNameTypesFiles(filesWithLines)
+
   functionInfo = []
   for i in 0..filesWithLines.size-1
     lines = filesWithLines[i][1]

@@ -69,6 +69,7 @@ def compile(path)
   classNames = getClassNames(filesWithLines)
   functionInfo = getFunctionNameTypesFiles(filesWithLines)
   compilerInfo = [classNames, functionInfo]
+
   for i in 0..filesWithLines.size-1
     fSize = filesWithLines[i][0].size
 
