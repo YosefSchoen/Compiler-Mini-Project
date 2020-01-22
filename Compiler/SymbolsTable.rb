@@ -49,9 +49,13 @@ class SymbolsTable
 
     parentSymbolList = []
     for i in 0..parentSymbolsP.size-1
-      if parentSymbols[i].kind == "field" or parentSymbols[i].kind == "static"
+      if parentSymbols[i].kind == "field"
         symbol = SymbolDef.new(parentSymbolsP[i].name, parentSymbolsP[i].type, "this", parentSymbolsP[i].number)
         parentSymbolList.append(SymbolDef.new(symbol.name, symbol.type, "this", symbol.number))
+
+      elsif parentSymbols[i].kind == "static"
+        symbol = SymbolDef.new(parentSymbolsP[i].name, parentSymbolsP[i].type, parentSymbolsP[i].kind, parentSymbolsP[i].number)
+        parentSymbolList.append(SymbolDef.new(symbol.name, symbol.type, symbol.kind, symbol.number))
       end
     end
 
@@ -60,7 +64,6 @@ class SymbolsTable
 
   def symbolInParentSymbolTable(symbol)
     for i in 0..@parentSymbols.size-1
-      puts @parentSymbols[i]
       if @parentSymbols[i].name == symbol
         return @parentSymbols[i]
       end

@@ -166,7 +166,7 @@ def compileSubroutineDecT2(tokens, compilerInfo, i, this, classTable, tableList,
 
       allocSize = 0
       for j in 0..classTable.symbols.size-1
-        if classTable.symbols[j].kind == "this"
+        if classTable.symbols[j].kind == "field"
           allocSize += 1
         end
       end
@@ -211,6 +211,7 @@ def compileSubroutineDecT2(tokens, compilerInfo, i, this, classTable, tableList,
     resultList = compileSubroutineBody2(tokens, compilerInfo, i, table)
 
     nLocals = resultList[3]
+    puts nLocals
     result += writeFunction(name, nLocals.to_s)
 
     if type == "method"
@@ -258,7 +259,7 @@ def compileParameterList2(tokens, compilerInfo, i, table, index)
   i = resultList[1]
 
 
-  return [table, i]
+  return [table, i, index]
 end
 
 
@@ -366,7 +367,7 @@ def compileStatements2(tokens, compilerInfo, i, table)
   resultList = compileStatementT2(tokens, compilerInfo, i, "", table)
   str += resultList[0]
   i = resultList[1]
-  return [str, i]
+  return [str, i, ]
 end
 
 
@@ -767,7 +768,7 @@ def compileSubroutineCall2(tokens, compilerInfo, i, table)
       if table.findSymbol(tokens[i][1])
         symbol = table.findSymbol(tokens[i][1])
         str += writePush(symbol.kind, symbol.number)
-        #name += symbol.type
+        name += symbol.type
 
         unless compilerInfo[0].include?(tokens[i][1])
           callingMethodFromObject = true
