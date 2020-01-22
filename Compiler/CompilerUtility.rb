@@ -83,27 +83,33 @@ end
 
 
 def spaceSymbols(lines)
+
   newLines = []
 
   for i in 0..lines.size-1
-    line = lines[i]
-    newLine = []
 
-    for j in 0..line.size-1
-      str = line[j]
+    someLines = lines[i]
+    newLine = []
+    inString = false
+
+    for j in 0..someLines.size-1
+
+      line = someLines[j]
       newStr = ""
 
-      for k in 0..str.size-1
-        if getSymbols.include?(str[k])
-          newStr = newStr + " "+str[k]+" "
-
+      for k in 0..line.size-1
+        char = line[k]
+        if getSymbols.include?(char) and !inString # If char is symbol
+          newStr = newStr + " " + char + " " # Add whitespace around symbol
+        elsif char == "\""
+          inString = !inString
+          newStr += char
         else
-          newStr += str[k]
+          newStr += char
         end
       end
 
       newStr = newStr.split(" ")
-
       newLine.concat(newStr)
     end
 
