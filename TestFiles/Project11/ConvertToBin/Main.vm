@@ -47,6 +47,7 @@ push local 1
 add
 push constant 1
 call Memory.poke 2
+pop temp 0
 goto end.102
 label false.102
 push constant 8000
@@ -54,6 +55,7 @@ push local 1
 add
 push constant 0
 call Memory.poke 2
+pop temp 0
 label end.102
 goto end.92
 label false.92
@@ -88,6 +90,7 @@ if-goto end.199
 push argument 0
 push argument 2
 call Memory.poke 2
+pop temp 0
 push argument 1
 push constant 1
 sub

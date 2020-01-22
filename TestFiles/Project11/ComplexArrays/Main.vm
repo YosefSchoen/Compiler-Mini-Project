@@ -1,49 +1,28 @@
 function Main.main 3
 push constant 10
 call Array.new 1
-pop temp 0
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop local 0
 push constant 5
 call Array.new 1
-pop temp 0
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop local 1
 push constant 1
 call Array.new 1
-pop temp 0
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop local 2
 push local 0
 push constant 3
 add
 push constant 2
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop local 0
 push local 0
 push constant 4
 add
 push constant 8
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop local 0
 push local 0
 push constant 5
 add
 push constant 4
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop local 0
 push local 1
 push local 0
 push constant 3
@@ -58,10 +37,7 @@ pop pointer 1
 push that 0
 push constant 3
 add
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop local 1
 push local 0
 push local 1
 push local 0
@@ -92,7 +68,6 @@ push that 0
 sub
 push constant 2
 call Main.double 1
-pop temp 0
 sub
 push constant 1
 add
@@ -100,27 +75,18 @@ add
 pop pointer 1
 push that 0
 call Math.multiply 2
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop local 0
 push local 2
 push constant 0
 add
 push constant 0
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop local 2
 push local 2
 push constant 0
 add
 pop pointer 1
 push that 0
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop local 2
 push constant Test 1: expected result: 5 ; actual result:  
 call Output.printString 1
 pop temp 0
@@ -154,10 +120,7 @@ pop temp 0
 call Output.println 0
 pop temp 0
 push constant 0
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop local 2
 push local 2
 push constant 0
 eq
@@ -172,44 +135,29 @@ push constant 3
 add
 pop pointer 1
 push that 0
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop local 2
 push local 2
 push constant 1
 add
 push constant 33
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop local 2
 push local 0
 push constant 7
 add
 pop pointer 1
 push that 0
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop local 2
 push local 2
 push constant 1
 add
 push constant 77
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop local 2
 push local 0
 push constant 3
 add
 pop pointer 1
 push that 0
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop local 1
 push local 1
 push constant 1
 add
@@ -224,10 +172,7 @@ add
 pop pointer 1
 push that 0
 add
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop local 1
 goto end.226
 label false.226
 label end.226
@@ -263,12 +208,39 @@ push constant 2
 call Math.multiply 2
 return
 function Main.fill 0
+label true.380
+push argument 1
+push constant 0
+gt
+not
+if-goto end.380
+push argument 1
+push constant 1
+sub
+pop argument 1
+push argument 0
+push argument 1
+add
+push constant 3
+call Array.new 1
+pop argument 0
+label end.380
+push constant 0
+return
 
 
 //class symbol table
 
 
 //method's symbol table
+//name: a
+//type: Array
+//kind: var
+//number: 0
+//name: b
+//type: Array
+//kind: var
+//number: 1
 //name: c
 //type: Array
 //kind: var
@@ -283,5 +255,13 @@ function Main.fill 0
 
 
 //method's symbol table
+//name: a
+//type: Array
+//kind: argument
+//number: 0
+//name: size
+//type: int
+//kind: argument
+//number: 1
 
 

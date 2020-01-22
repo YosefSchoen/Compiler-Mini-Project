@@ -816,7 +816,6 @@ def compileSubroutineCall2(tokens, compilerInfo, i, table)
   end
 
   if voidFunctions.include?(name)
-    puts "hello"
     str += writePop("temp", "0")
   end
 

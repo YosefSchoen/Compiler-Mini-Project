@@ -12,8 +12,16 @@ def getClassNames(filesWithLines)
 end
 
 def getFunctionNameTypesFiles(filesWithLines)
+  voidStr = "void"
 
-  functionInfo = []
+  functionInfo =[["String.setCharAt", voidStr], ["String.eraseLastChar", voidStr], ["String.setInt", voidStr],
+   ["Array.dispose", voidStr], ["Output.moveCursor", voidStr], ["Output.printChar", voidStr],
+   ["Output.printString", voidStr], ["Output.printInt", voidStr], ["Output.println", voidStr],
+   ["Output.backSpace", voidStr], ["Screen.clearScreen", voidStr], ["Screen.setColor", voidStr],
+   ["Screen.drawPixel", voidStr], ["Screen.drawLine", voidStr], ["Screen.drawRectangle", voidStr],
+   ["Screen.drawCircle", voidStr], ["Memory.poke", voidStr], ["Memory.deAlloc", voidStr], ["Sys.halt", voidStr],
+   ["Sys.error", voidStr], ["Sys.wait", voidStr]]
+
   for i in 0..filesWithLines.size-1
     lines = filesWithLines[i][1]
     lines = getLines(lines)

@@ -1,32 +1,17 @@
 function Bat.new 0
-push constant 5
+push constant 0
 call Memory.alloc 1
 pop pointer 0
 push argument 0
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop this 0
 push argument 1
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop this 1
 push argument 2
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop this 2
 push argument 3
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop this 3
 push constant 2
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop this 4
 call show 0
 push pointer 0
 return
@@ -46,7 +31,6 @@ not
 call Screen.setColor 1
 pop temp 0
 call draw 0
-pop temp 0
 push constant 0
 return
 function Bat.hide 0
@@ -56,7 +40,6 @@ push constant 0
 call Screen.setColor 1
 pop temp 0
 call draw 0
-pop temp 0
 push constant 0
 return
 function Bat.draw 0
@@ -78,10 +61,7 @@ function Bat.setDirection 0
 push argument 0
 pop pointer 0
 push argument 1
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop this 4
 push constant 0
 return
 function Bat.getLeft 0
@@ -100,14 +80,9 @@ function Bat.setWidth 0
 push argument 0
 pop pointer 0
 call hide 0
-pop temp 0
 push argument 1
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop this 2
 call show 0
-pop temp 0
 push constant 0
 return
 function Bat.move 0
@@ -121,19 +96,14 @@ if-goto false.228
 push this 0
 push constant 4
 sub
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop this 0
 push this 0
 push constant 0
+lt
 not
 if-goto false.242
 push constant 0
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop this 0
 goto end.242
 label false.242
 label end.242
@@ -175,23 +145,18 @@ label false.228
 push this 0
 push constant 4
 add
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop this 0
 push this 0
 push this 2
 add
 push constant 511
+gt
 not
 if-goto false.327
 push constant 511
 push this 2
 sub
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop this 0
 goto end.327
 label false.327
 label end.327
@@ -234,13 +199,41 @@ return
 
 
 //class symbol table
+//name: x
+//type: int
+//kind: field
+//number: 0
+//name: y
+//type: int
+//kind: field
+//number: 1
+//name: width
+//type: int
+//kind: field
+//number: 2
+//name: height
+//type: int
+//kind: field
+//number: 3
 //name: direction
 //type: int
-//kind: this
+//kind: field
 //number: 4
 
 
 //method's symbol table
+//name: Ax
+//type: int
+//kind: argument
+//number: 0
+//name: Ay
+//type: int
+//kind: argument
+//number: 1
+//name: Awidth
+//type: int
+//kind: argument
+//number: 2
 //name: Aheight
 //type: int
 //kind: argument
@@ -376,6 +369,10 @@ return
 
 
 //method's symbol table
+//name: this
+//type: Bat
+//kind: argument
+//number: 0
 //name: Adirection
 //type: int
 //kind: argument
@@ -457,6 +454,10 @@ return
 
 
 //method's symbol table
+//name: this
+//type: Bat
+//kind: argument
+//number: 0
 //name: Awidth
 //type: int
 //kind: argument
