@@ -113,6 +113,17 @@ def writeReturn
   return str
 end
 
+def writeString(term)
+  str = ""
+  term.each_byte do |c|
+    str += writePush("constant", c.to_s)
+    str += writeCall("String.appendChar", "2")
+  end
+
+  return str
+end
+
+
 
 def close
 

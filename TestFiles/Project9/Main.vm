@@ -1,61 +1,53 @@
 function Main.main 8
 push constant 1
 not
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
-push constant Game Over!
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop local 6
+push constant 10
+call String.new 1
+push constant 71
+call String.appendChar 2
+push constant 97
+call String.appendChar 2
+push constant 109
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 79
+call String.appendChar 2
+push constant 118
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 114
+call String.appendChar 2
+push constant 33
+call String.appendChar 2
+pop local 5
 push constant 0
 call Player.new 1
-pop temp 0
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop local 0
 push constant 0
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop local 7
 push constant 255
 push constant 100
 push constant 1
 not
 call Ball.new 3
-pop temp 0
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop local 1
 push constant 200
 push constant 163
 call Vertex.new 2
-pop temp 0
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop local 3
 push constant 310
 push constant 163
 call Vertex.new 2
-pop temp 0
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop local 4
 push constant 240
 push constant 226
 call Bat.new 2
-pop temp 0
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop local 2
 push constant 777
 call Random.init 1
 pop temp 0
@@ -68,7 +60,6 @@ call Output.moveCursor 2
 pop temp 0
 push local 0
 call Player.getNumHits 1
-pop temp 0
 call Output.printInt 1
 pop temp 0
 push local 2
@@ -80,17 +71,12 @@ not
 if-goto end.160
 push local 1
 call Ball.getStillPitching 1
-pop temp 0
 push constant 0
 eq
 not
 if-goto false.165
 call Random.nextInt 0
-pop temp 0
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop local 7
 push local 1
 push constant 1
 not
@@ -109,11 +95,9 @@ pop temp 0
 label true.212
 push local 1
 call Ball.getStillPitching 1
-pop temp 0
 not
 if-goto end.212
 call Keyboard.keyPressed 0
-pop temp 0
 push constant 32
 eq
 not
@@ -124,7 +108,6 @@ call Ball.setStillPitching 2
 pop temp 0
 push local 2
 call Bat.getIsHorizontal 1
-pop temp 0
 not
 not
 if-goto false.240
@@ -137,7 +120,6 @@ pop temp 0
 push local 1
 push local 2
 call Ball.contact 2
-pop temp 0
 not
 if-goto false.264
 push local 2
@@ -152,7 +134,6 @@ call Output.moveCursor 2
 pop temp 0
 push local 0
 call Player.getNumHits 1
-pop temp 0
 call Output.printInt 1
 pop temp 0
 push constant 250
@@ -180,10 +161,7 @@ push local 2
 call Bat.drawHorizontal 1
 pop temp 0
 push constant 0
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop local 6
 label end.264
 goto end.240
 label false.240
@@ -202,8 +180,8 @@ call Sys.wait 1
 pop temp 0
 push local 1
 call Ball.getY 1
-pop temp 0
 push constant 246
+gt
 not
 if-goto false.395
 push constant 5
@@ -214,10 +192,7 @@ push local 5
 call Output.printString 1
 pop temp 0
 push constant 0
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop local 6
 goto end.395
 label false.395
 label end.395
@@ -243,6 +218,34 @@ return
 
 
 //method's symbol table
+//name: player
+//type: Player
+//kind: var
+//number: 0
+//name: ball
+//type: Ball
+//kind: var
+//number: 1
+//name: bat
+//type: Bat
+//kind: var
+//number: 2
+//name: vertexLeft
+//type: Vertex
+//kind: var
+//number: 3
+//name: vertexRight
+//type: Vertex
+//kind: var
+//number: 4
+//name: end
+//type: String
+//kind: var
+//number: 5
+//name: flag
+//type: boolean
+//kind: var
+//number: 6
 //name: i
 //type: int
 //kind: var

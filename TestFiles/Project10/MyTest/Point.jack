@@ -1,17 +1,11 @@
 class Point {
-    field int x, y;
-    static int pointCount;
+    method int test() {
+        var int x, y;
+        let x = 0;
+        let y = 0;
 
-    constructor Point new(int ax, int ay) {
-        let x = ax;
-        let y = ay;
-        let pointCount = pointCount + 1;
-        return this;
-    }
-
-    method int distance(int ax, int ay) {
-        var int x;
-        var char y;
-        return 1;
+        while(x < 0) {
+            let y = y + 1
+        }
     }
 }

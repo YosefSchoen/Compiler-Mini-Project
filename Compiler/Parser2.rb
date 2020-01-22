@@ -211,7 +211,6 @@ def compileSubroutineDecT2(tokens, compilerInfo, i, this, classTable, tableList,
     resultList = compileSubroutineBody2(tokens, compilerInfo, i, table)
 
     nLocals = resultList[3]
-    puts nLocals
     result += writeFunction(name, nLocals.to_s)
 
     if type == "method"
@@ -697,22 +696,33 @@ def compileTerm2(tokens, compilerInfo, i, table)
     #int/keyword/string Constant
   elsif notToLarge(tokens, i) and (isIntConstant(tokens[i][1]) or isKeywordConst(tokens[i][1]) or tokens[i][0] == "stringConstant")
     trueStr = ""
-    kind = "constant"
-    term = tokens[i][1]
+    if tokens[i][0] == "stringConstant"
+      trueStr += tokens[i][1].length.to_s
+      kind = "constant"
+      str += writePush(kind, trueStr)  #push size of the string in chars
+      str += writeCall("String.new", "1")
 
-    if tokens[i][1] == "this"
-      kind = "pointer"
-      term = "0"
+      str += writeString(tokens[i][1])
+    else
 
-    elsif tokens[i][1] == "null" or tokens[i][1] == "false"
-      term = "0"
 
-    elsif tokens[i][1] == "true"
-      term = "1"
-      trueStr += writeArithmeticUnary("~")
+      kind = "constant"
+      term = tokens[i][1]
+
+      if tokens[i][1] == "this"
+        kind = "pointer"
+        term = "0"
+
+      elsif tokens[i][1] == "null" or tokens[i][1] == "false"
+        term = "0"
+
+      elsif tokens[i][1] == "true"
+        term = "1"
+        trueStr += writeArithmeticUnary("~")
+      end
+      str += writePush(kind, term)+trueStr
     end
 
-    str += writePush(kind, term)+trueStr
 
     i += 1
 

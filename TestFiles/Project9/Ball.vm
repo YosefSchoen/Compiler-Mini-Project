@@ -3,20 +3,11 @@ push constant 3
 call Memory.alloc 1
 pop pointer 0
 push argument 0
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop this 0
 push argument 1
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop this 1
 push argument 2
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop this 2
 push pointer 0
 return
 function Ball.getY 0
@@ -33,10 +24,7 @@ function Ball.setStillPitching 0
 push argument 0
 pop pointer 0
 push argument 1
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop this 2
 push constant 0
 return
 function Ball.draw 0
@@ -75,7 +63,6 @@ eq
 not
 if-goto false.156
 call pitchFast 0
-pop temp 0
 goto end.156
 label false.156
 label end.156
@@ -85,7 +72,6 @@ eq
 not
 if-goto false.169
 call pitchSlow 0
-pop temp 0
 goto end.169
 label false.169
 label end.169
@@ -96,7 +82,6 @@ not
 if-goto false.182
 push argument 2
 call pitchCurveLeft 1
-pop temp 0
 goto end.182
 label false.182
 label end.182
@@ -107,7 +92,6 @@ not
 if-goto false.196
 push argument 3
 call pitchCurveRight 1
-pop temp 0
 goto end.196
 label false.196
 label end.196
@@ -118,29 +102,22 @@ push argument 0
 pop pointer 0
 push this 1
 push constant 248
+gt
 not
 if-goto false.219
 push constant 0
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop this 2
 push constant 0
 return
 goto end.219
 label false.219
 label end.219
 call erase 0
-pop temp 0
 push this 1
 push constant 5
 add
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop this 1
 call draw 0
-pop temp 0
 push constant 0
 return
 function Ball.pitchSlow 0
@@ -148,51 +125,36 @@ push argument 0
 pop pointer 0
 push this 1
 push constant 245
+gt
 not
 if-goto false.260
 push constant 0
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop this 2
 push constant 0
 return
 goto end.260
 label false.260
 label end.260
 call erase 0
-pop temp 0
 push this 1
 push constant 2
 add
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop this 1
 call draw 0
-pop temp 0
 push constant 0
 return
 function Ball.resetBall 0
 push argument 0
 pop pointer 0
 call erase 0
-pop temp 0
 push constant 255
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop this 0
 push constant 100
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop this 1
 push constant 600
 call Sys.wait 1
 pop temp 0
 call draw 0
-pop temp 0
 push constant 0
 return
 function Ball.distance 3
@@ -205,10 +167,7 @@ push this 0
 push argument 1
 sub
 call Math.multiply 2
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop local 0
 push this 1
 push argument 2
 sub
@@ -216,18 +175,12 @@ push this 1
 push argument 2
 sub
 call Math.multiply 2
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop local 1
 push local 0
 push local 1
 add
 call Math.sqrt 1
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop local 2
 push local 2
 return
 function Ball.contact 0
@@ -236,10 +189,12 @@ pop pointer 0
 push argument 1
 call Bat.getY 1
 push this 1
+lt
 not
 if-goto false.411
 push argument 1
 call Bat.drawHorizontal 1
+pop temp 0
 push constant 0
 return
 goto end.411
@@ -251,10 +206,12 @@ push argument 1
 call Bat.getY 1
 call distance 2
 push constant 49
+gt
 not
 if-goto false.433
 push argument 1
 call Bat.drawHorizontal 1
+pop temp 0
 push constant 0
 return
 goto end.433
@@ -268,52 +225,39 @@ push argument 0
 pop pointer 0
 push this 1
 push constant 247
+gt
 not
 if-goto false.476
 push constant 0
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop this 2
 push constant 0
 return
 goto end.476
 label false.476
 label end.476
 call erase 0
-pop temp 0
 push this 1
 push constant 4
 add
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop this 1
 push this 1
 push argument 1
 call Vertex.getY 1
-pop temp 0
+lt
 not
 if-goto false.503
 push this 0
 push constant 4
 sub
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop this 0
 goto end.503
 label false.503
 push this 0
 push constant 4
 add
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop this 0
 label end.503
 call draw 0
-pop temp 0
 push constant 0
 return
 function Ball.pitchCurveRight 0
@@ -321,52 +265,39 @@ push argument 0
 pop pointer 0
 push this 1
 push constant 247
+gt
 not
 if-goto false.548
 push constant 0
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop this 2
 push constant 0
 return
 goto end.548
 label false.548
 label end.548
 call erase 0
-pop temp 0
 push this 1
 push constant 4
 add
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop this 1
 push this 1
 push argument 1
 call Vertex.getY 1
-pop temp 0
+lt
 not
 if-goto false.575
 push this 0
 push constant 4
 add
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop this 0
 goto end.575
 label false.575
 push this 0
 push constant 4
 sub
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop this 0
 label end.575
 call draw 0
-pop temp 0
 push constant 0
 return
 function Ball.calcXLeft 2
@@ -376,20 +307,14 @@ push this 1
 push argument 1
 call Vertex.getY 1
 sub
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop local 1
 push local 1
 push local 1
 call Math.multiply 2
 push argument 1
 call Vertex.getX 1
 add
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop local 0
 push local 0
 return
 function Ball.dispose 0
@@ -397,19 +322,34 @@ push argument 0
 pop pointer 0
 push pointer 0
 call Memory.dealloc 1
-pop temp 0
 push constant 0
 return
 
 
 //class symbol table
+//name: x
+//type: int
+//kind: field
+//number: 0
+//name: y
+//type: int
+//kind: field
+//number: 1
 //name: stillPitching
 //type: boolean
-//kind: this
+//kind: field
 //number: 2
 
 
 //method's symbol table
+//name: _x
+//type: int
+//kind: argument
+//number: 0
+//name: _y
+//type: int
+//kind: argument
+//number: 1
 //name: _still
 //type: boolean
 //kind: argument
@@ -467,6 +407,10 @@ return
 
 
 //method's symbol table
+//name: this
+//type: Ball
+//kind: argument
+//number: 0
 //name: sp
 //type: boolean
 //kind: argument
@@ -524,6 +468,18 @@ return
 
 
 //method's symbol table
+//name: this
+//type: Ball
+//kind: argument
+//number: 0
+//name: i
+//type: int
+//kind: argument
+//number: 1
+//name: left
+//type: Vertex
+//kind: argument
+//number: 2
 //name: right
 //type: Vertex
 //kind: argument
@@ -600,6 +556,26 @@ return
 
 
 //method's symbol table
+//name: this
+//type: Ball
+//kind: argument
+//number: 0
+//name: batX
+//type: int
+//kind: argument
+//number: 1
+//name: batY
+//type: int
+//kind: argument
+//number: 2
+//name: xDistance
+//type: int
+//kind: var
+//number: 0
+//name: yDistance
+//type: int
+//kind: var
+//number: 1
 //name: dist
 //type: int
 //kind: var
@@ -619,6 +595,10 @@ return
 
 
 //method's symbol table
+//name: this
+//type: Ball
+//kind: argument
+//number: 0
 //name: bat
 //type: Bat
 //kind: argument
@@ -638,6 +618,10 @@ return
 
 
 //method's symbol table
+//name: this
+//type: Ball
+//kind: argument
+//number: 0
 //name: vertex
 //type: Vertex
 //kind: argument
@@ -657,6 +641,10 @@ return
 
 
 //method's symbol table
+//name: this
+//type: Ball
+//kind: argument
+//number: 0
 //name: vertex
 //type: Vertex
 //kind: argument
@@ -676,6 +664,18 @@ return
 
 
 //method's symbol table
+//name: this
+//type: Ball
+//kind: argument
+//number: 0
+//name: vertex
+//type: Vertex
+//kind: argument
+//number: 1
+//name: xCoord
+//type: int
+//kind: var
+//number: 0
 //name: yAxis
 //type: int
 //kind: var

@@ -3,20 +3,11 @@ push constant 3
 call Memory.alloc 1
 pop pointer 0
 push argument 0
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop this 0
 push argument 1
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop this 1
 push argument 2
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop this 2
 call draw 0
 push this 0
 return
@@ -63,14 +54,9 @@ push this 0
 not
 if-goto false.136
 call erase 0
-pop temp 0
 push this 2
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop this 2
 call draw 0
-pop temp 0
 goto end.136
 label false.136
 label end.136
@@ -83,14 +69,9 @@ push this 2
 not
 if-goto false.166
 call erase 0
-pop temp 0
 push this 2
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop this 2
 call draw 0
-pop temp 0
 goto end.166
 label false.166
 label end.166
@@ -112,10 +93,7 @@ push this 1
 call Screen.drawRectangle 4
 pop temp 0
 push this 1
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop this 1
 push this 0
 call Screen.setColor 1
 pop temp 0
@@ -146,10 +124,7 @@ push this 1
 call Screen.drawRectangle 4
 pop temp 0
 push this 1
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop this 1
 push this 0
 call Screen.setColor 1
 pop temp 0
@@ -180,10 +155,7 @@ push this 1
 call Screen.drawRectangle 4
 pop temp 0
 push this 0
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop this 0
 push this 0
 call Screen.setColor 1
 pop temp 0
@@ -214,10 +186,7 @@ push this 1
 call Screen.drawRectangle 4
 pop temp 0
 push this 0
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop this 0
 push this 0
 call Screen.setColor 1
 pop temp 0
@@ -235,13 +204,29 @@ return
 
 
 //class symbol table
+//name: x
+//type: int
+//kind: field
+//number: 0
+//name: y
+//type: int
+//kind: field
+//number: 1
 //name: size
 //type: int
-//kind: this
+//kind: field
 //number: 2
 
 
 //method's symbol table
+//name: Ax
+//type: int
+//kind: argument
+//number: 0
+//name: Ay
+//type: int
+//kind: argument
+//number: 1
 //name: Asize
 //type: int
 //kind: argument

@@ -3,25 +3,13 @@ push constant 4
 call Memory.alloc 1
 pop pointer 0
 push argument 0
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop this 0
 push argument 1
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop this 1
 push constant 0
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop this 2
 push constant 0
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop this 3
 push pointer 0
 return
 function Bat.getIsHorizontal 0
@@ -62,10 +50,7 @@ add
 call Screen.drawRectangle 4
 pop temp 0
 push constant 0
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop this 2
 push constant 0
 return
 function Bat.drawHorizontal 0
@@ -87,10 +72,7 @@ call Screen.drawRectangle 4
 pop temp 0
 push constant 1
 not
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop this 2
 push constant 0
 return
 function Bat.eraseVertical 0
@@ -133,9 +115,7 @@ function Bat.resetBat 0
 push argument 0
 pop pointer 0
 call eraseHorizontal 0
-pop temp 0
 call drawVertical 0
-pop temp 0
 push constant 0
 return
 function Bat.dispose 0
@@ -143,19 +123,34 @@ push argument 0
 pop pointer 0
 push pointer 0
 call Memory.dealloc 1
-pop temp 0
 push constant 0
 return
 
 
 //class symbol table
+//name: x
+//type: int
+//kind: field
+//number: 0
+//name: y
+//type: int
+//kind: field
+//number: 1
+//name: isHorizontal
+//type: boolean
+//kind: field
+//number: 2
 //name: swungBat
 //type: boolean
-//kind: this
+//kind: field
 //number: 3
 
 
 //method's symbol table
+//name: _x
+//type: int
+//kind: argument
+//number: 0
 //name: _y
 //type: int
 //kind: argument

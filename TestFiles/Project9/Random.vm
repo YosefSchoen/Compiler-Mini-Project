@@ -1,42 +1,23 @@
 function Random.init 0
 push constant 100
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop static 1
 push constant 2345s
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop static 2
 push constant 4
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop static 3
 push argument 0
 push static 3
 call Random.mod 2
-pop temp 0
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop static 0
 push constant 0
 return
 function Random.mod 0
 push argument 0
 call Math.abs 1
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop argument 0
 push argument 1
 call Math.abs 1
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop argument 1
 push argument 0
 push argument 1
 push argument 0
@@ -53,17 +34,11 @@ push static 2
 add
 push static 3
 call Random.mod 2
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop static 0
 push static 0
 push constant 1
 add
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop static 1
 push static 0
 push static 1
 call Math.multiply 2
@@ -71,19 +46,13 @@ push static 2
 add
 push static 3
 call Random.mod 2
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop static 0
 push static 0
 push constant 1
 add
 push constant 3
 call Math.multiply 2
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop static 2
 push static 0
 push static 1
 call Math.multiply 2
@@ -91,15 +60,24 @@ push static 2
 add
 push static 3
 call Random.mod 2
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop static 0
 push static 0
 return
 
 
 //class symbol table
+//name: previous
+//type: int
+//kind: static
+//number: 0
+//name: a
+//type: int
+//kind: static
+//number: 1
+//name: b
+//type: int
+//kind: static
+//number: 2
 //name: m
 //type: int
 //kind: static
@@ -130,6 +108,10 @@ return
 
 
 //method's symbol table
+//name: a
+//type: int
+//kind: argument
+//number: 0
 //name: y
 //type: int
 //kind: argument

@@ -1,9 +1,6 @@
 function Main.main 1
 push local 0
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop local 0
 push local 0
 call SquareGame.run 1
 pop temp 0
@@ -17,42 +14,24 @@ push local 0
 not
 if-goto false.59
 push local 0
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop local 2
 push local 1
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop local 2
 push local 3
 push local 0
 add
 push local 1
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop local 3
 goto end.59
 label false.59
 push local 0
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop local 0
 push local 1
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop local 1
 push local 0
 push local 1
 or
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
+pop local 0
 label end.59
 push constant 0
 return
@@ -77,6 +56,18 @@ return
 
 
 //method's symbol table
+//name: i
+//type: int
+//kind: var
+//number: 0
+//name: j
+//type: int
+//kind: var
+//number: 1
+//name: s
+//type: String
+//kind: var
+//number: 2
 //name: a
 //type: Array
 //kind: var
