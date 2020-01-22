@@ -1,0 +1,9 @@
+class foo {
+    method int bar(Point other) {
+        var int d;
+        var Point p;
+
+        let d = p.distance(other);
+        return d;
+    }
+}

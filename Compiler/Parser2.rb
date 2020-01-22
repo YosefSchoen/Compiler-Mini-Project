@@ -801,7 +801,7 @@ def compileSubroutineCall2(tokens, i, table)
   end
 
   if callingFromMethod
-    nArgs += 1
+    #nArgs += 1
   end
 
   str += writeCall(name, nArgs.to_s)

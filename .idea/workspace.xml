@@ -2,17 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e2bbf7f2-661c-4b38-bdc0-4dc1c947d57a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/MyTest/jackTestCaller.jack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compiler/CompilerUtility.rb" beforeDir="false" afterPath="$PROJECT_DIR$/Compiler/CompilerUtility.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Compiler/Parser2.rb" beforeDir="false" afterPath="$PROJECT_DIR$/Compiler/Parser2.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.rb" beforeDir="false" afterPath="$PROJECT_DIR$/Main.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestFiles/Project10/ArrayTest/Main.vm" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project10/ArrayTest/Main.vm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TestFiles/Project10/MyTest/JackTest.jack" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project10/MyTest/JackTest.jack" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestFiles/Project10/MyTest/JackTest.vm" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project10/MyTest/JackTest.vm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestFiles/Project10/MyTest/JackTestOut.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project10/MyTest/JackTestOut.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestFiles/Project10/MyTest/JackTestTOut.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project10/MyTest/JackTestTOut.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestFiles/Project11/Square/Main.vm" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project11/Square/Main.vm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestFiles/Project11/Square/Square.vm" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project11/Square/Square.vm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestFiles/Project11/Square/SquareGame.vm" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project11/Square/SquareGame.vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestFiles/Project10/MyTest/JackTest.vm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestFiles/Project10/MyTest/JackTestOut.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestFiles/Project10/MyTest/JackTestTOut.xml" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -198,14 +196,7 @@
       <workItem from="1574945043043" duration="14983000" />
       <workItem from="1577728508224" duration="52117000" />
       <workItem from="1578517304087" duration="81436000" />
-      <workItem from="1579451276315" duration="70135000" />
-    </task>
-    <task id="LOCAL-00017" summary="Finished stage 2 and commenting">
-      <created>1574885682539</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1574885682539</updated>
+      <workItem from="1579451276315" duration="72424000" />
     </task>
     <task id="LOCAL-00018" summary="Finished stage 2 and commenting">
       <created>1574886575833</created>
@@ -543,7 +534,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579645496501</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="Maybe needs some debug">
+      <created>1579649795999</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1579649795999</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -656,6 +654,6 @@
     <SUITE FILE_PATH="coverage/Project7@Tokenizer.rcov" NAME="Tokenizer Coverage Results" MODIFIED="1578563816695" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
     <SUITE FILE_PATH="coverage/Project7@code_writer.rcov" NAME="code_writer Coverage Results" MODIFIED="1574813817501" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
     <SUITE FILE_PATH="coverage/Project7@Utility.rcov" NAME="Utility Coverage Results" MODIFIED="1574100649750" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
-    <SUITE FILE_PATH="coverage/Project7@Main.rcov" NAME="Main Coverage Results" MODIFIED="1579649784163" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
+    <SUITE FILE_PATH="coverage/Project7@Main.rcov" NAME="Main Coverage Results" MODIFIED="1579686443323" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
   </component>
 </project>
