@@ -7,7 +7,6 @@ call Main.fillMemory 3
 pop temp 0
 push constant 8000
 call Memory.peek 1
-pop temp 0
 pop local 0
 push local 0
 call Main.convert 1
@@ -28,15 +27,16 @@ add
 pop local 1
 push local 0
 call Main.nextMask 1
-pop temp 0
 pop local 0
 push local 1
 push constant 16
+gt
 not
 not
 if-goto false.92
 push argument 0
 push local 0
+and
 push constant 0
 eq
 not
@@ -47,7 +47,6 @@ push local 1
 add
 push constant 1
 call Memory.poke 2
-pop temp 0
 goto end.102
 label false.102
 push constant 8000
@@ -55,7 +54,6 @@ push local 1
 add
 push constant 0
 call Memory.poke 2
-pop temp 0
 label end.102
 goto end.92
 label false.92
@@ -84,12 +82,12 @@ function Main.fillMemory 0
 label true.199
 push argument 1
 push constant 0
+gt
 not
 if-goto end.199
 push argument 0
 push argument 2
 call Memory.poke 2
-pop temp 0
 push argument 1
 push constant 1
 sub

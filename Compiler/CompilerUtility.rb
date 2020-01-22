@@ -11,6 +11,39 @@ def getClassNames(filesWithLines)
   return classNames
 end
 
+def getFunctionNameTypesFiles(filesWithLines)
+  functionInfo = []
+  for i in 0..filesWithLines.size-1
+    lines = filesWithLines[i][1]
+    lines = getLines(lines)
+    tokens = tokenize(lines)
+    functionInfo.concat(getFunctionNameTypes(tokens))
+  end
+
+  return functionInfo
+end
+
+def getFunctionNameTypes(tokens)
+  functionInfo = []
+  for i in 0..tokens.size-1
+    if tokens[i][1] == "function" or tokens[i][1] == "method"
+      i += 1
+
+      if notToLarge(tokens, i) and tokens[i][1] == "void"
+        type = "void"
+        i += 1
+
+        if notToLarge(tokens, i)
+          name = tokens[1][1]+"."+tokens[i][1]
+        end
+        functionInfo.append([name, type])
+      end
+    end
+
+  end
+
+  return functionInfo
+end
 #remove comments from a jack file
 def removeComments(lines)
   newLines = []
@@ -200,8 +233,8 @@ end
 
 
 #check if the type is one of the built in types or a previous class name
-def isType(str, classNames)
-  return (str == "int" or str == "char" or str == "boolean" or classNames.include?(str))
+def isType(str, compilerInfo)
+  return (str == "int" or str == "char" or str == "boolean" or compilerInfo[0].include?(str))
 end
 
 

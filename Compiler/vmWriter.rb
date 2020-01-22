@@ -45,13 +45,13 @@ def writeArithmetic(cmd)
   when "="
     str = "eq\n"
 
-  when "&gt"
+  when "&gt;"
     str = "gt\n"
 
-  when "&lt"
+  when "&lt;"
     str = "lt\n"
 
-  when "&amp"
+  when "&amp;"
     str = "and\n"
 
   when "|"

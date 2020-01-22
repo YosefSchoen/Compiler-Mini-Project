@@ -30,10 +30,10 @@ def main
   #compile("TestFiles/Project10/MyTest")
   #compile("TestFiles/Project10/ExpressionLessSquare")
   #compile("TestFiles/Project10/Square")
-  compile("TestFiles/Project10/ArrayTest")
+  #compile("TestFiles/Project10/ArrayTest")
 
-  #compile("TestFiles/Project11/Seven")
-  #compile("TestFiles/Project11/ConvertToBin")
+  compile("TestFiles/Project11/Seven")
+  compile("TestFiles/Project11/ConvertToBin")
   #compile("TestFiles/Project11/Square")
   #compile("TestFiles/Project11/Average")
   #compile("TestFiles/Project11/Pong")

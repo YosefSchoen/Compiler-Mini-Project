@@ -67,8 +67,8 @@ def compile(path)
   files = getFilesInDirCompiler(path)
   filesWithLines = getFilesWithLinesCompiler(files)
   classNames = getClassNames(filesWithLines)
-
-
+  functionInfo = getFunctionNameTypesFiles(filesWithLines)
+  compilerInfo = [classNames, functionInfo]
   for i in 0..filesWithLines.size-1
     fSize = filesWithLines[i][0].size
 
@@ -80,10 +80,11 @@ def compile(path)
     lines = getLines(lines)
     tokens = tokenize(lines)
 
-    writeCompiledFile(tokens, classNames, compiledFileName)
+    writeCompiledFile(tokens, compilerInfo, compiledFileName)
     writeCompiledXMLFile(tokens, classNames, compiledFileXMLName)
     writeTokensXMLFile(tokens, tokensFileName)
     puts filesWithLines[i][0] + " was tokenized and compiled" +"\n"
+    @tables.tables.clear
   end
 end
 
