@@ -434,6 +434,10 @@ def compileLet2(tokens, compilerInfo, i, table)
 
   if notToLarge(tokens, i) and isIdentifier(tokens[i][1])
     term = table.findSymbol(tokens[i][1])
+
+    if term == nil
+      term = table.symbolInParentSymbolTable(tokens[i][1])
+    end
     i+=1
   end
 

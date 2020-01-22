@@ -115,6 +115,5 @@ def tokenize(lines)
     token = getToken(lines[i])
     tokens.push(token)
   end
-
   return tokens
 end
