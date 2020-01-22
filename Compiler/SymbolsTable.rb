@@ -27,6 +27,7 @@ class SymbolsTable
     @symbols = symbols
 
     @parentSymbols = parentSymbolsP
+
     setParentSymbolKind(parentSymbolsP)
 
     @isVoid = false
@@ -45,15 +46,27 @@ class SymbolsTable
   end
 
   def setParentSymbolKind(parentSymbolsP)
+
     parentSymbolList = []
     for i in 0..parentSymbolsP.size-1
-      if parentSymbols[i].kind == "field"
+      if parentSymbols[i].kind == "field" or parentSymbols[i].kind == "static"
         symbol = SymbolDef.new(parentSymbolsP[i].name, parentSymbolsP[i].type, "this", parentSymbolsP[i].number)
         parentSymbolList.append(SymbolDef.new(symbol.name, symbol.type, "this", symbol.number))
       end
     end
 
     @parentSymbols = parentSymbolList
+  end
+
+  def symbolInParentSymbolTable(symbol)
+    for i in 0..@parentSymbols.size-1
+      puts @parentSymbols[i]
+      if @parentSymbols[i].name == symbol
+        return @parentSymbols[i]
+      end
+    end
+
+    return nil
   end
 
   def parentSymbols
