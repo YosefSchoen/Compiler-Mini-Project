@@ -28,6 +28,7 @@ return
 
 
 //class symbol table
+//Vertex
 //name: x
 //type: int
 //kind: field
@@ -39,6 +40,7 @@ return
 
 
 //method's symbol table
+//Vertex.new
 //name: _x
 //type: int
 //kind: argument
@@ -58,6 +60,7 @@ return
 
 
 //method's symbol table
+//Vertex.getX
 //name: this
 //type: Vertex
 //kind: argument
@@ -73,6 +76,7 @@ return
 
 
 //method's symbol table
+//Vertex.getY
 //name: this
 //type: Vertex
 //kind: argument
@@ -88,6 +92,7 @@ return
 
 
 //method's symbol table
+//Vertex.dispose
 //name: this
 //type: Vertex
 //kind: argument

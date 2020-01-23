@@ -8,7 +8,9 @@ push argument 1
 pop this 1
 push argument 2
 pop this 2
-call draw 0
+push pointer 0
+call Square.draw 1
+pop temp 0
 push this 0
 return
 function Square.dispose 0
@@ -53,10 +55,14 @@ pop pointer 0
 push this 0
 not
 if-goto ifFalse.136
-call erase 0
+push pointer 0
+call Square.erase 1
+pop temp 0
 push this 2
 pop this 2
-call draw 0
+push pointer 0
+call Square.draw 1
+pop temp 0
 goto endIf.136
 label ifFalse.136
 label endIf.136
@@ -68,10 +74,14 @@ pop pointer 0
 push this 2
 not
 if-goto ifFalse.166
-call erase 0
+push pointer 0
+call Square.erase 1
+pop temp 0
 push this 2
 pop this 2
-call draw 0
+push pointer 0
+call Square.draw 1
+pop temp 0
 goto endIf.166
 label ifFalse.166
 label endIf.166
@@ -204,6 +214,7 @@ return
 
 
 //class symbol table
+//Square
 //name: x
 //type: int
 //kind: field
@@ -219,6 +230,7 @@ return
 
 
 //method's symbol table
+//Square.new
 //name: Ax
 //type: int
 //kind: argument
@@ -246,6 +258,7 @@ return
 
 
 //method's symbol table
+//Square.dispose
 //name: this
 //type: Square
 //kind: argument
@@ -265,6 +278,7 @@ return
 
 
 //method's symbol table
+//Square.draw
 //name: this
 //type: Square
 //kind: argument
@@ -284,6 +298,7 @@ return
 
 
 //method's symbol table
+//Square.erase
 //name: this
 //type: Square
 //kind: argument
@@ -303,6 +318,7 @@ return
 
 
 //method's symbol table
+//Square.incSize
 //name: this
 //type: Square
 //kind: argument
@@ -322,6 +338,7 @@ return
 
 
 //method's symbol table
+//Square.decSize
 //name: this
 //type: Square
 //kind: argument
@@ -341,6 +358,7 @@ return
 
 
 //method's symbol table
+//Square.moveUp
 //name: this
 //type: Square
 //kind: argument
@@ -360,6 +378,7 @@ return
 
 
 //method's symbol table
+//Square.moveDown
 //name: this
 //type: Square
 //kind: argument
@@ -379,6 +398,7 @@ return
 
 
 //method's symbol table
+//Square.moveLeft
 //name: this
 //type: Square
 //kind: argument
@@ -398,6 +418,7 @@ return
 
 
 //method's symbol table
+//Square.moveRight
 //name: this
 //type: Square
 //kind: argument

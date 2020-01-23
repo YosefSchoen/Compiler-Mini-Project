@@ -62,7 +62,9 @@ push constant 0
 eq
 not
 if-goto ifFalse.156
-call pitchFast 0
+push pointer 0
+call Ball.pitchFast 1
+pop temp 0
 goto endIf.156
 label ifFalse.156
 label endIf.156
@@ -71,7 +73,9 @@ push constant 1
 eq
 not
 if-goto ifFalse.169
-call pitchSlow 0
+push pointer 0
+call Ball.pitchSlow 1
+pop temp 0
 goto endIf.169
 label ifFalse.169
 label endIf.169
@@ -80,8 +84,10 @@ push constant 2
 eq
 not
 if-goto ifFalse.182
+push pointer 0
 push argument 2
-call pitchCurveLeft 1
+call Ball.pitchCurveLeft 2
+pop temp 0
 goto endIf.182
 label ifFalse.182
 label endIf.182
@@ -90,8 +96,10 @@ push constant 3
 eq
 not
 if-goto ifFalse.196
+push pointer 0
 push argument 3
-call pitchCurveRight 1
+call Ball.pitchCurveRight 2
+pop temp 0
 goto endIf.196
 label ifFalse.196
 label endIf.196
@@ -112,12 +120,16 @@ return
 goto endIf.219
 label ifFalse.219
 label endIf.219
-call erase 0
+push pointer 0
+call Ball.erase 1
+pop temp 0
 push this 1
 push constant 5
 add
 pop this 1
-call draw 0
+push pointer 0
+call Ball.draw 1
+pop temp 0
 push constant 0
 return
 function Ball.pitchSlow 0
@@ -135,18 +147,24 @@ return
 goto endIf.260
 label ifFalse.260
 label endIf.260
-call erase 0
+push pointer 0
+call Ball.erase 1
+pop temp 0
 push this 1
 push constant 2
 add
 pop this 1
-call draw 0
+push pointer 0
+call Ball.draw 1
+pop temp 0
 push constant 0
 return
 function Ball.resetBall 0
 push argument 0
 pop pointer 0
-call erase 0
+push pointer 0
+call Ball.erase 1
+pop temp 0
 push constant 255
 pop this 0
 push constant 100
@@ -154,7 +172,9 @@ pop this 1
 push constant 600
 call Sys.wait 1
 pop temp 0
-call draw 0
+push pointer 0
+call Ball.draw 1
+pop temp 0
 push constant 0
 return
 function Ball.distance 3
@@ -200,11 +220,12 @@ return
 goto endIf.411
 label ifFalse.411
 label endIf.411
+push pointer 0
 push argument 1
 call Bat.getX 1
 push argument 1
 call Bat.getY 1
-call distance 2
+call Ball.distance 3
 push constant 49
 gt
 not
@@ -235,7 +256,9 @@ return
 goto endIf.476
 label ifFalse.476
 label endIf.476
-call erase 0
+push pointer 0
+call Ball.erase 1
+pop temp 0
 push this 1
 push constant 4
 add
@@ -257,7 +280,9 @@ push constant 4
 add
 pop this 0
 label endIf.503
-call draw 0
+push pointer 0
+call Ball.draw 1
+pop temp 0
 push constant 0
 return
 function Ball.pitchCurveRight 0
@@ -275,7 +300,9 @@ return
 goto endIf.548
 label ifFalse.548
 label endIf.548
-call erase 0
+push pointer 0
+call Ball.erase 1
+pop temp 0
 push this 1
 push constant 4
 add
@@ -297,7 +324,9 @@ push constant 4
 sub
 pop this 0
 label endIf.575
-call draw 0
+push pointer 0
+call Ball.draw 1
+pop temp 0
 push constant 0
 return
 function Ball.calcXLeft 2
@@ -327,6 +356,7 @@ return
 
 
 //class symbol table
+//Ball
 //name: x
 //type: int
 //kind: field
@@ -342,6 +372,7 @@ return
 
 
 //method's symbol table
+//Ball.new
 //name: _x
 //type: int
 //kind: argument
@@ -369,6 +400,7 @@ return
 
 
 //method's symbol table
+//Ball.getY
 //name: this
 //type: Ball
 //kind: argument
@@ -388,6 +420,7 @@ return
 
 
 //method's symbol table
+//Ball.getStillPitching
 //name: this
 //type: Ball
 //kind: argument
@@ -407,6 +440,7 @@ return
 
 
 //method's symbol table
+//Ball.setStillPitching
 //name: this
 //type: Ball
 //kind: argument
@@ -430,6 +464,7 @@ return
 
 
 //method's symbol table
+//Ball.draw
 //name: this
 //type: Ball
 //kind: argument
@@ -449,6 +484,7 @@ return
 
 
 //method's symbol table
+//Ball.erase
 //name: this
 //type: Ball
 //kind: argument
@@ -468,6 +504,7 @@ return
 
 
 //method's symbol table
+//Ball.pitch
 //name: this
 //type: Ball
 //kind: argument
@@ -499,6 +536,7 @@ return
 
 
 //method's symbol table
+//Ball.pitchFast
 //name: this
 //type: Ball
 //kind: argument
@@ -518,6 +556,7 @@ return
 
 
 //method's symbol table
+//Ball.pitchSlow
 //name: this
 //type: Ball
 //kind: argument
@@ -537,6 +576,7 @@ return
 
 
 //method's symbol table
+//Ball.resetBall
 //name: this
 //type: Ball
 //kind: argument
@@ -556,6 +596,7 @@ return
 
 
 //method's symbol table
+//Ball.distance
 //name: this
 //type: Ball
 //kind: argument
@@ -595,6 +636,7 @@ return
 
 
 //method's symbol table
+//Ball.contact
 //name: this
 //type: Ball
 //kind: argument
@@ -618,6 +660,7 @@ return
 
 
 //method's symbol table
+//Ball.pitchCurveLeft
 //name: this
 //type: Ball
 //kind: argument
@@ -641,6 +684,7 @@ return
 
 
 //method's symbol table
+//Ball.pitchCurveRight
 //name: this
 //type: Ball
 //kind: argument
@@ -664,6 +708,7 @@ return
 
 
 //method's symbol table
+//Ball.calcXLeft
 //name: this
 //type: Ball
 //kind: argument
@@ -695,6 +740,7 @@ return
 
 
 //method's symbol table
+//Ball.dispose
 //name: this
 //type: Ball
 //kind: argument

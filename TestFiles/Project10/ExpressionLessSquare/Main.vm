@@ -41,6 +41,7 @@ return
 
 
 //class symbol table
+//Main
 //name: test
 //type: boolean
 //kind: static
@@ -48,6 +49,7 @@ return
 
 
 //method's symbol table
+//Main.main
 //name: game
 //type: SquareGame
 //kind: var
@@ -59,6 +61,7 @@ return
 
 
 //method's symbol table
+//Main.test
 //name: i
 //type: int
 //kind: var

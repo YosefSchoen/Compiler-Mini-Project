@@ -30,6 +30,7 @@ return
 
 
 //class symbol table
+//Player
 //name: numHits
 //type: int
 //kind: field
@@ -37,6 +38,7 @@ return
 
 
 //method's symbol table
+//Player.new
 //name: _numHits
 //type: int
 //kind: argument
@@ -48,6 +50,7 @@ return
 
 
 //method's symbol table
+//Player.getNumHits
 //name: this
 //type: Player
 //kind: argument
@@ -59,6 +62,7 @@ return
 
 
 //method's symbol table
+//Player.increaseNumHits
 //name: this
 //type: Player
 //kind: argument
@@ -70,6 +74,7 @@ return
 
 
 //method's symbol table
+//Player.dispose
 //name: this
 //type: Player
 //kind: argument

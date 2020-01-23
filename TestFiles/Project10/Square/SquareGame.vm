@@ -92,7 +92,9 @@ not
 if-goto endWhile.166
 call Keyboard.keyPressed 0
 pop local 0
-call moveSquare 0
+push pointer 0
+call SquareGame.moveSquare 1
+pop temp 0
 goto WhileTrue.166
 label endWhile.166
 push local 0
@@ -177,7 +179,9 @@ not
 if-goto endWhile.283
 call Keyboard.keyPressed 0
 pop local 0
-call moveSquare 0
+push pointer 0
+call SquareGame.moveSquare 1
+pop temp 0
 goto WhileTrue.283
 label endWhile.283
 goto WhileTrue.160
@@ -187,6 +191,7 @@ return
 
 
 //class symbol table
+//SquareGame
 //name: square
 //type: Square
 //kind: field
@@ -198,6 +203,7 @@ return
 
 
 //method's symbol table
+//SquareGame.new
 //name: square
 //type: Square
 //kind: this
@@ -209,6 +215,7 @@ return
 
 
 //method's symbol table
+//SquareGame.dispose
 //name: this
 //type: SquareGame
 //kind: argument
@@ -224,6 +231,7 @@ return
 
 
 //method's symbol table
+//SquareGame.moveSquare
 //name: this
 //type: SquareGame
 //kind: argument
@@ -239,6 +247,7 @@ return
 
 
 //method's symbol table
+//SquareGame.run
 //name: this
 //type: SquareGame
 //kind: argument

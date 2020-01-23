@@ -114,8 +114,12 @@ return
 function Bat.resetBat 0
 push argument 0
 pop pointer 0
-call eraseHorizontal 0
-call drawVertical 0
+push pointer 0
+call Bat.eraseHorizontal 1
+pop temp 0
+push pointer 0
+call Bat.drawVertical 1
+pop temp 0
 push constant 0
 return
 function Bat.dispose 0
@@ -128,6 +132,7 @@ return
 
 
 //class symbol table
+//Bat
 //name: x
 //type: int
 //kind: field
@@ -147,6 +152,7 @@ return
 
 
 //method's symbol table
+//Bat.new
 //name: _x
 //type: int
 //kind: argument
@@ -174,6 +180,7 @@ return
 
 
 //method's symbol table
+//Bat.getIsHorizontal
 //name: this
 //type: Bat
 //kind: argument
@@ -197,6 +204,7 @@ return
 
 
 //method's symbol table
+//Bat.getSwungBat
 //name: this
 //type: Bat
 //kind: argument
@@ -220,6 +228,7 @@ return
 
 
 //method's symbol table
+//Bat.getX
 //name: this
 //type: Bat
 //kind: argument
@@ -243,6 +252,7 @@ return
 
 
 //method's symbol table
+//Bat.getY
 //name: this
 //type: Bat
 //kind: argument
@@ -266,6 +276,7 @@ return
 
 
 //method's symbol table
+//Bat.drawVertical
 //name: this
 //type: Bat
 //kind: argument
@@ -289,6 +300,7 @@ return
 
 
 //method's symbol table
+//Bat.drawHorizontal
 //name: this
 //type: Bat
 //kind: argument
@@ -312,6 +324,7 @@ return
 
 
 //method's symbol table
+//Bat.eraseVertical
 //name: this
 //type: Bat
 //kind: argument
@@ -335,6 +348,7 @@ return
 
 
 //method's symbol table
+//Bat.eraseHorizontal
 //name: this
 //type: Bat
 //kind: argument
@@ -358,6 +372,7 @@ return
 
 
 //method's symbol table
+//Bat.resetBat
 //name: this
 //type: Bat
 //kind: argument
@@ -381,6 +396,7 @@ return
 
 
 //method's symbol table
+//Bat.dispose
 //name: this
 //type: Bat
 //kind: argument
