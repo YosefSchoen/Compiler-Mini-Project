@@ -714,9 +714,11 @@ return
 
 
 //class symbol table
+//Main
 
 
 //method's symbol table
+//Main.main
 //name: a
 //type: Array
 //kind: var
@@ -732,6 +734,7 @@ return
 
 
 //method's symbol table
+//Main.double
 //name: a
 //type: int
 //kind: argument
@@ -739,6 +742,7 @@ return
 
 
 //method's symbol table
+//Main.fill
 //name: a
 //type: Array
 //kind: argument

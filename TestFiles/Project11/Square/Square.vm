@@ -311,6 +311,7 @@ return
 
 
 //class symbol table
+//Square
 //name: x
 //type: int
 //kind: field
@@ -326,6 +327,7 @@ return
 
 
 //method's symbol table
+//Square.new
 //name: Ax
 //type: int
 //kind: argument
@@ -353,6 +355,7 @@ return
 
 
 //method's symbol table
+//Square.dispose
 //name: this
 //type: Square
 //kind: argument
@@ -372,6 +375,7 @@ return
 
 
 //method's symbol table
+//Square.draw
 //name: this
 //type: Square
 //kind: argument
@@ -391,6 +395,7 @@ return
 
 
 //method's symbol table
+//Square.erase
 //name: this
 //type: Square
 //kind: argument
@@ -410,6 +415,7 @@ return
 
 
 //method's symbol table
+//Square.incSize
 //name: this
 //type: Square
 //kind: argument
@@ -429,6 +435,7 @@ return
 
 
 //method's symbol table
+//Square.decSize
 //name: this
 //type: Square
 //kind: argument
@@ -448,6 +455,7 @@ return
 
 
 //method's symbol table
+//Square.moveUp
 //name: this
 //type: Square
 //kind: argument
@@ -467,6 +475,7 @@ return
 
 
 //method's symbol table
+//Square.moveDown
 //name: this
 //type: Square
 //kind: argument
@@ -486,6 +495,7 @@ return
 
 
 //method's symbol table
+//Square.moveLeft
 //name: this
 //type: Square
 //kind: argument
@@ -505,6 +515,7 @@ return
 
 
 //method's symbol table
+//Square.moveRight
 //name: this
 //type: Square
 //kind: argument

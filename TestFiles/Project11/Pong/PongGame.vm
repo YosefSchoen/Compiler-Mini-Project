@@ -109,7 +109,9 @@ pop local 0
 push this 0
 call Bat.move 1
 pop temp 0
-call moveBall 0
+push pointer 0
+call PongGame.moveBall 1
+pop temp 0
 push constant 50
 call Sys.wait 1
 pop temp 0
@@ -165,7 +167,9 @@ pop local 0
 push this 0
 call Bat.move 1
 pop temp 0
-call moveBall 0
+push pointer 0
+call PongGame.moveBall 1
+pop temp 0
 push constant 50
 call Sys.wait 1
 pop temp 0
@@ -318,6 +322,7 @@ return
 
 
 //class symbol table
+//PongGame
 //name: instance
 //type: PongGame
 //kind: static
@@ -353,6 +358,7 @@ return
 
 
 //method's symbol table
+//PongGame.new
 //name: instance
 //type: PongGame
 //kind: static
@@ -388,6 +394,7 @@ return
 
 
 //method's symbol table
+//PongGame.dispose
 //name: this
 //type: PongGame
 //kind: argument
@@ -427,6 +434,7 @@ return
 
 
 //method's symbol table
+//PongGame.newInstance
 //name: instance
 //type: PongGame
 //kind: static
@@ -462,6 +470,7 @@ return
 
 
 //method's symbol table
+//PongGame.getInstance
 //name: instance
 //type: PongGame
 //kind: static
@@ -497,6 +506,7 @@ return
 
 
 //method's symbol table
+//PongGame.run
 //name: this
 //type: PongGame
 //kind: argument
@@ -540,6 +550,7 @@ return
 
 
 //method's symbol table
+//PongGame.moveBall
 //name: this
 //type: PongGame
 //kind: argument

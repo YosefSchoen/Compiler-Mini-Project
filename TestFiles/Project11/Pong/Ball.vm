@@ -20,7 +20,9 @@ sub
 pop this 13
 push constant 0
 pop this 14
-call show 0
+push pointer 0
+call Ball.show 1
+pop temp 0
 push pointer 0
 return
 function Ball.dispose 0
@@ -38,7 +40,9 @@ push constant 1
 neg
 call Screen.setColor 1
 pop temp 0
-call draw 0
+push pointer 0
+call Ball.draw 1
+pop temp 0
 push constant 0
 return
 function Ball.hide 0
@@ -47,7 +51,9 @@ pop pointer 0
 push constant 0
 call Screen.setColor 1
 pop temp 0
-call draw 0
+push pointer 0
+call Ball.draw 1
+pop temp 0
 push constant 0
 return
 function Ball.draw 0
@@ -147,7 +153,9 @@ return
 function Ball.move 0
 push argument 0
 pop pointer 0
-call hide 0
+push pointer 0
+call Ball.hide 1
+pop temp 0
 push this 4
 push constant 0
 lt
@@ -284,7 +292,9 @@ pop this 1
 goto endIf.589
 label ifFalse.589
 label endIf.589
-call show 0
+push pointer 0
+call Ball.show 1
+pop temp 0
 push this 14
 return
 function Ball.bounce 5
@@ -418,12 +428,14 @@ label endIf.760
 label endIf.720
 push local 0
 push local 1
-call setDestination 2
+call Ball.setDestination 3
+pop temp 0
 push constant 0
 return
 
 
 //class symbol table
+//Ball
 //name: x
 //type: int
 //kind: field
@@ -487,6 +499,7 @@ return
 
 
 //method's symbol table
+//Ball.new
 //name: Ax
 //type: int
 //kind: argument
@@ -574,6 +587,7 @@ return
 
 
 //method's symbol table
+//Ball.dispose
 //name: this
 //type: Ball
 //kind: argument
@@ -641,6 +655,7 @@ return
 
 
 //method's symbol table
+//Ball.show
 //name: this
 //type: Ball
 //kind: argument
@@ -708,6 +723,7 @@ return
 
 
 //method's symbol table
+//Ball.hide
 //name: this
 //type: Ball
 //kind: argument
@@ -775,6 +791,7 @@ return
 
 
 //method's symbol table
+//Ball.draw
 //name: this
 //type: Ball
 //kind: argument
@@ -842,6 +859,7 @@ return
 
 
 //method's symbol table
+//Ball.getLeft
 //name: this
 //type: Ball
 //kind: argument
@@ -909,6 +927,7 @@ return
 
 
 //method's symbol table
+//Ball.getRight
 //name: this
 //type: Ball
 //kind: argument
@@ -976,6 +995,7 @@ return
 
 
 //method's symbol table
+//Ball.setDestination
 //name: this
 //type: Ball
 //kind: argument
@@ -1063,6 +1083,7 @@ return
 
 
 //method's symbol table
+//Ball.move
 //name: this
 //type: Ball
 //kind: argument
@@ -1130,6 +1151,7 @@ return
 
 
 //method's symbol table
+//Ball.bounce
 //name: this
 //type: Ball
 //kind: argument

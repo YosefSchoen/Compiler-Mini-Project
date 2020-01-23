@@ -21,16 +21,20 @@ class Tables
 end
 
 class SymbolsTable
-  def initialize(tableName, symbols, parentSymbolsP)
+  def initialize(tableName, symbols, parentInfo)
     @tableName = tableName
     #symbols is an array of symbolDef Objects
     @symbols = symbols
 
-    @parentSymbols = parentSymbolsP
-
-    setParentSymbolKind(parentSymbolsP)
+    @parentName = parentInfo[0]
+    @parentSymbols = parentInfo[1]
+    setParentSymbolKind(parentInfo[1])
 
     @isVoid = false
+  end
+
+  def parentName
+    @parentName
   end
 
   def tableName
@@ -48,14 +52,16 @@ class SymbolsTable
   def setParentSymbolKind(parentSymbolsP)
 
     parentSymbolList = []
-    for i in 0..parentSymbolsP.size-1
-      if parentSymbols[i].kind == "field"
-        symbol = SymbolDef.new(parentSymbolsP[i].name, parentSymbolsP[i].type, "this", parentSymbolsP[i].number)
-        parentSymbolList.append(SymbolDef.new(symbol.name, symbol.type, "this", symbol.number))
+    unless parentSymbolsP == nil
+      for i in 0..parentSymbolsP.size-1
+        if parentSymbols[i].kind == "field"
+          symbol = SymbolDef.new(parentSymbolsP[i].name, parentSymbolsP[i].type, "this", parentSymbolsP[i].number)
+          parentSymbolList.append(SymbolDef.new(symbol.name, symbol.type, "this", symbol.number))
 
-      elsif parentSymbols[i].kind == "static"
-        symbol = SymbolDef.new(parentSymbolsP[i].name, parentSymbolsP[i].type, parentSymbolsP[i].kind, parentSymbolsP[i].number)
-        parentSymbolList.append(SymbolDef.new(symbol.name, symbol.type, symbol.kind, symbol.number))
+        elsif parentSymbols[i].kind == "static"
+          symbol = SymbolDef.new(parentSymbolsP[i].name, parentSymbolsP[i].type, parentSymbolsP[i].kind, parentSymbolsP[i].number)
+          parentSymbolList.append(SymbolDef.new(symbol.name, symbol.type, symbol.kind, symbol.number))
+        end
       end
     end
 
@@ -63,9 +69,11 @@ class SymbolsTable
   end
 
   def symbolInParentSymbolTable(symbol)
-    for i in 0..@parentSymbols.size-1
-      if @parentSymbols[i].name == symbol
-        return @parentSymbols[i]
+    unless @parentSymbols.empty?
+      for i in 0..@parentSymbols.size-1
+        if @parentSymbols[i].name == symbol
+          return @parentSymbols[i]
+        end
       end
     end
 
@@ -85,7 +93,6 @@ class SymbolsTable
   end
 
   def findSymbol(varName)
-    #puts "testing"
     for i in 0..symbols.size-1
       if varName == symbols[i].name
         return symbols[i]
@@ -102,7 +109,7 @@ class SymbolsTable
   end
 
   def printTable
-    str = ""
+    str = "//"+@tableName+"\n"
     for i in 0..@symbols.size-1
       str += @symbols[i].printSymbol
     end

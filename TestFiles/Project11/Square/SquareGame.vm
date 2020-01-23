@@ -15,7 +15,6 @@ function SquareGame.dispose 0
 push argument 0
 pop pointer 0
 push this 0
-push pointer 0
 call Square.dispose 1
 pop temp 0
 push pointer 0
@@ -32,7 +31,6 @@ eq
 not
 if-goto ifFalse.70
 push this 0
-push pointer 0
 call Square.moveUp 1
 pop temp 0
 goto endIf.70
@@ -44,7 +42,6 @@ eq
 not
 if-goto ifFalse.85
 push this 0
-push pointer 0
 call Square.moveDown 1
 pop temp 0
 goto endIf.85
@@ -56,7 +53,6 @@ eq
 not
 if-goto ifFalse.100
 push this 0
-push pointer 0
 call Square.moveLeft 1
 pop temp 0
 goto endIf.100
@@ -68,7 +64,6 @@ eq
 not
 if-goto ifFalse.115
 push this 0
-push pointer 0
 call Square.moveRight 1
 pop temp 0
 goto endIf.115
@@ -95,7 +90,6 @@ push constant 0
 eq
 not
 if-goto endWhile.166
-push pointer 0
 call Keyboard.keyPressed 0
 pop local 0
 push pointer 0
@@ -120,7 +114,6 @@ eq
 not
 if-goto ifFalse.201
 push this 0
-push pointer 0
 call Square.decSize 1
 pop temp 0
 goto endIf.201
@@ -132,7 +125,6 @@ eq
 not
 if-goto ifFalse.216
 push this 0
-push pointer 0
 call Square.incSize 1
 pop temp 0
 goto endIf.216
@@ -185,7 +177,6 @@ eq
 not
 not
 if-goto endWhile.283
-push pointer 0
 call Keyboard.keyPressed 0
 pop local 0
 push pointer 0
@@ -200,6 +191,7 @@ return
 
 
 //class symbol table
+//SquareGame
 //name: square
 //type: Square
 //kind: field
@@ -211,6 +203,7 @@ return
 
 
 //method's symbol table
+//SquareGame.new
 //name: square
 //type: Square
 //kind: this
@@ -222,6 +215,7 @@ return
 
 
 //method's symbol table
+//SquareGame.dispose
 //name: this
 //type: SquareGame
 //kind: argument
@@ -237,6 +231,7 @@ return
 
 
 //method's symbol table
+//SquareGame.moveSquare
 //name: this
 //type: SquareGame
 //kind: argument
@@ -252,6 +247,7 @@ return
 
 
 //method's symbol table
+//SquareGame.run
 //name: this
 //type: SquareGame
 //kind: argument

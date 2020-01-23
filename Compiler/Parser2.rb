@@ -27,6 +27,7 @@ def compileClass2(tokens, compilerInfo)
   end
 
   #classVarDec*
+
   resultList = compileClassVarDec2(tokens, compilerInfo, i, table)
   table = resultList[0]
   i = resultList[1]
@@ -147,7 +148,10 @@ end
 def compileSubroutineDecT2(tokens, compilerInfo, i, this, classTable, tableList, result)
   index = 0
   name = ""
-  table = SymbolsTable.new("", [], classTable.symbols)
+  className = classTable.tableName
+  classSymbols = classTable.symbols
+  classInfo = [className, classSymbols]
+  table = SymbolsTable.new("", [], classInfo)
 
   if notToLarge(tokens, i) and !isSubRoutineType(tokens[i][1])
     return [result, tableList, i]
@@ -165,8 +169,8 @@ def compileSubroutineDecT2(tokens, compilerInfo, i, this, classTable, tableList,
       end
 
       allocSize = 0
-      for j in 0..classTable.symbols.size-1
-        if classTable.symbols[j].kind == "field"
+      for j in 0..classSymbols.size-1
+        if classSymbols[j].kind == "field"
           allocSize += 1
         end
       end
@@ -768,6 +772,7 @@ end
 def compileSubroutineCall2(tokens, compilerInfo, i, table)
   str = ""
   name = ""
+  className = ""
   callingMethodFromObject = false
   flag = true
   # if flag is false then it is not the . call
@@ -806,6 +811,7 @@ def compileSubroutineCall2(tokens, compilerInfo, i, table)
 
   else
     name+= tokens[1][1]+"."
+    className = tokens[1][1]
     unless compilerInfo[0].include?(tokens[i][1])
       callingMethodFromObject = true
     end
@@ -818,7 +824,7 @@ def compileSubroutineCall2(tokens, compilerInfo, i, table)
   end
 
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, "(")
-    if tokens[i+1][1] == ")"
+    if tokens[i+1][1] == ")" and className == table.parentName
       str += writePush("pointer", "0")
     end
     i += 1

@@ -14,9 +14,11 @@ return
 
 
 //class symbol table
+//Main
 
 
 //method's symbol table
+//Main.main
 //name: game
 //type: PongGame
 //kind: var

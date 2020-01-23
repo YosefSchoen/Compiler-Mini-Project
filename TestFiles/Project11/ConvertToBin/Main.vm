@@ -107,9 +107,11 @@ return
 
 
 //class symbol table
+//Main
 
 
 //method's symbol table
+//Main.main
 //name: value
 //type: int
 //kind: var
@@ -117,6 +119,7 @@ return
 
 
 //method's symbol table
+//Main.convert
 //name: value
 //type: int
 //kind: argument
@@ -136,6 +139,7 @@ return
 
 
 //method's symbol table
+//Main.nextMask
 //name: mask
 //type: int
 //kind: argument
@@ -143,6 +147,7 @@ return
 
 
 //method's symbol table
+//Main.fillMemory
 //name: startAddress
 //type: int
 //kind: argument
