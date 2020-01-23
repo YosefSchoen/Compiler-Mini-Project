@@ -824,7 +824,7 @@ def compileSubroutineCall2(tokens, compilerInfo, i, table)
   end
 
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, "(")
-    if tokens[i+1][1] == ")" and className == table.parentName
+    if className == table.parentName
       str += writePush("pointer", "0")
     end
     i += 1

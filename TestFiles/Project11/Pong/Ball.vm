@@ -426,6 +426,7 @@ pop local 0
 label endIf.797
 label endIf.760
 label endIf.720
+push pointer 0
 push local 0
 push local 1
 call Ball.setDestination 3
