@@ -476,11 +476,6 @@ def compileLet2(tokens, compilerInfo, i, table)
     str += writePop(term.kind, term.number)
   end
 
-  if isArray
-    puts term.kind
-    puts term.number
-  end
-
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, ";")
     i+=1
   end
@@ -726,7 +721,7 @@ def compileTerm2(tokens, compilerInfo, i, table)
 
       elsif tokens[i][1] == "true"
         term = "1"
-        trueStr += writeArithmeticUnary("~")
+        trueStr += writeArithmeticUnary("-")
       end
       str += writePush(kind, term)+trueStr
     end

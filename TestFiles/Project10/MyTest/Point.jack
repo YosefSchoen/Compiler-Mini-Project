@@ -1,7 +1,9 @@
 class Point {
     method int test() {
-        var Array a, b;
-        let a[3] = b[2];
-        return 0;
+        var int a;
+        let a = 1;
+        let a = ~a;
+        let a = 1;
+        let a = -a;
     }
 }

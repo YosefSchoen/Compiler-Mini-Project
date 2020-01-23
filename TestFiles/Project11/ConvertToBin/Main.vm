@@ -15,7 +15,7 @@ push constant 0
 return
 function Main.convert 3
 push constant 1
-not
+neg
 pop local 2
 label WhileTrue.70
 push local 2

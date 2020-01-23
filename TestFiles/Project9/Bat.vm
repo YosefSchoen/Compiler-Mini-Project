@@ -36,7 +36,7 @@ function Bat.drawVertical 0
 push argument 0
 pop pointer 0
 push constant 1
-not
+neg
 call Screen.setColor 1
 pop temp 0
 push this 0
@@ -57,7 +57,7 @@ function Bat.drawHorizontal 0
 push argument 0
 pop pointer 0
 push constant 1
-not
+neg
 call Screen.setColor 1
 pop temp 0
 push this 0
@@ -71,7 +71,7 @@ add
 call Screen.drawRectangle 4
 pop temp 0
 push constant 1
-not
+neg
 pop this 2
 push constant 0
 return

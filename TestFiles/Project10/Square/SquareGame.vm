@@ -101,7 +101,7 @@ eq
 not
 if-goto ifFalse.188
 push constant 1
-not
+neg
 pop local 1
 goto endIf.188
 label ifFalse.188
