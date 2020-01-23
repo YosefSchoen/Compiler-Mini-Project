@@ -12,7 +12,7 @@ return
 function Main.test 4
 push local 0
 not
-if-goto false.59
+if-goto ifFalse.59
 push local 0
 pop local 2
 push local 1
@@ -21,9 +21,12 @@ push local 3
 push local 0
 add
 push local 1
-pop local 3
-goto end.59
-label false.59
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+goto endIf.59
+label ifFalse.59
 push local 0
 pop local 0
 push local 1
@@ -32,7 +35,7 @@ push local 0
 push local 1
 or
 pop local 0
-label end.59
+label endIf.59
 push constant 0
 return
 

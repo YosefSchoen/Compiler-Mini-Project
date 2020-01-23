@@ -9,7 +9,7 @@ require_relative 'Compiler/CompilerIO'
 # and compile the test cases from projects 9, 10, and 11
 def main
 
-  #translateVmToHack("TestFiles/Project7/MyTest", "TestFiles/Project7/MyTest/test.asm")
+  translateVmToHack("TestFiles/Project7/MyTest", "TestFiles/Project7/MyTest/test.asm")
   #translateVmToHack("TestFiles/Project7/Stage1/SimpleAdd", "TestFiles/Project7/Stage1/SimpleAdd/SimpleAdd.asm")
   #translateVmToHack("TestFiles/Project7/Stage1/StackTest", "TestFiles/Project7/Stage1/StackTest/StackTest.asm")
 

@@ -61,40 +61,40 @@ push argument 1
 push constant 0
 eq
 not
-if-goto false.156
+if-goto ifFalse.156
 call pitchFast 0
-goto end.156
-label false.156
-label end.156
+goto endIf.156
+label ifFalse.156
+label endIf.156
 push argument 1
 push constant 1
 eq
 not
-if-goto false.169
+if-goto ifFalse.169
 call pitchSlow 0
-goto end.169
-label false.169
-label end.169
+goto endIf.169
+label ifFalse.169
+label endIf.169
 push argument 1
 push constant 2
 eq
 not
-if-goto false.182
+if-goto ifFalse.182
 push argument 2
 call pitchCurveLeft 1
-goto end.182
-label false.182
-label end.182
+goto endIf.182
+label ifFalse.182
+label endIf.182
 push argument 1
 push constant 3
 eq
 not
-if-goto false.196
+if-goto ifFalse.196
 push argument 3
 call pitchCurveRight 1
-goto end.196
-label false.196
-label end.196
+goto endIf.196
+label ifFalse.196
+label endIf.196
 push constant 0
 return
 function Ball.pitchFast 0
@@ -104,14 +104,14 @@ push this 1
 push constant 248
 gt
 not
-if-goto false.219
+if-goto ifFalse.219
 push constant 0
 pop this 2
 push constant 0
 return
-goto end.219
-label false.219
-label end.219
+goto endIf.219
+label ifFalse.219
+label endIf.219
 call erase 0
 push this 1
 push constant 5
@@ -127,14 +127,14 @@ push this 1
 push constant 245
 gt
 not
-if-goto false.260
+if-goto ifFalse.260
 push constant 0
 pop this 2
 push constant 0
 return
-goto end.260
-label false.260
-label end.260
+goto endIf.260
+label ifFalse.260
+label endIf.260
 call erase 0
 push this 1
 push constant 2
@@ -191,15 +191,15 @@ call Bat.getY 1
 push this 1
 lt
 not
-if-goto false.411
+if-goto ifFalse.411
 push argument 1
 call Bat.drawHorizontal 1
 pop temp 0
 push constant 0
 return
-goto end.411
-label false.411
-label end.411
+goto endIf.411
+label ifFalse.411
+label endIf.411
 push argument 1
 call Bat.getX 1
 push argument 1
@@ -208,15 +208,15 @@ call distance 2
 push constant 49
 gt
 not
-if-goto false.433
+if-goto ifFalse.433
 push argument 1
 call Bat.drawHorizontal 1
 pop temp 0
 push constant 0
 return
-goto end.433
-label false.433
-label end.433
+goto endIf.433
+label ifFalse.433
+label endIf.433
 push constant 1
 not
 return
@@ -227,14 +227,14 @@ push this 1
 push constant 247
 gt
 not
-if-goto false.476
+if-goto ifFalse.476
 push constant 0
 pop this 2
 push constant 0
 return
-goto end.476
-label false.476
-label end.476
+goto endIf.476
+label ifFalse.476
+label endIf.476
 call erase 0
 push this 1
 push constant 4
@@ -245,18 +245,18 @@ push argument 1
 call Vertex.getY 1
 lt
 not
-if-goto false.503
+if-goto ifFalse.503
 push this 0
 push constant 4
 sub
 pop this 0
-goto end.503
-label false.503
+goto endIf.503
+label ifFalse.503
 push this 0
 push constant 4
 add
 pop this 0
-label end.503
+label endIf.503
 call draw 0
 push constant 0
 return
@@ -267,14 +267,14 @@ push this 1
 push constant 247
 gt
 not
-if-goto false.548
+if-goto ifFalse.548
 push constant 0
 pop this 2
 push constant 0
 return
-goto end.548
-label false.548
-label end.548
+goto endIf.548
+label ifFalse.548
+label endIf.548
 call erase 0
 push this 1
 push constant 4
@@ -285,18 +285,18 @@ push argument 1
 call Vertex.getY 1
 lt
 not
-if-goto false.575
+if-goto ifFalse.575
 push this 0
 push constant 4
 add
 pop this 0
-goto end.575
-label false.575
+goto endIf.575
+label ifFalse.575
 push this 0
 push constant 4
 sub
 pop this 0
-label end.575
+label endIf.575
 call draw 0
 push constant 0
 return

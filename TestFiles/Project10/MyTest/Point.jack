@@ -1,11 +1,7 @@
 class Point {
     method int test() {
-        var int x, y;
-        let x = 0;
-        let y = 0;
-
-        while(x < 0) {
-            let y = y + 1
-        }
+        var Array a, b;
+        let a[3] = b[2];
+        return 0;
     }
 }

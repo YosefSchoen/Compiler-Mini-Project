@@ -12,7 +12,7 @@ return
 function Main.test 4
 push constant 0
 not
-if-goto false.63
+if-goto ifFalse.63
 push constant 15
 call String.new 1
 push constant 115
@@ -56,9 +56,12 @@ push constant 2
 add
 pop pointer 1
 push that 0
-pop local 3
-goto end.63
-label false.63
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+goto endIf.63
+label ifFalse.63
 push local 0
 push local 1
 neg
@@ -73,7 +76,7 @@ push local 0
 push local 1
 or
 pop local 0
-label end.63
+label endIf.63
 push constant 0
 return
 

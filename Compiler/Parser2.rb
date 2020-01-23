@@ -442,6 +442,7 @@ def compileLet2(tokens, compilerInfo, i, table)
   end
 
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, "[")
+    isArray = true
     str += writePush(term.kind, term.number)
     i+=1
 
@@ -470,9 +471,16 @@ def compileLet2(tokens, compilerInfo, i, table)
     str += writePush("temp", "0")
     termThat = SymbolDef.new(term.name, term.type, "that", "0")
     str += writePop(termThat.kind, termThat.number)
+
+  else
+    str += writePop(term.kind, term.number)
   end
 
-  str += writePop(term.kind, term.number)
+  if isArray
+    puts term.kind
+    puts term.number
+  end
+
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, ";")
     i+=1
   end
@@ -498,7 +506,7 @@ def compileIf2(tokens, compilerInfo, i, table)
   i = resultList[1]
 
   str += writeArithmeticUnary("~")
-  str += writeIf("false."+labelNumber)
+  str += writeIf("ifFalse."+labelNumber)
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, ")")
     i += 1
   end
@@ -512,20 +520,20 @@ def compileIf2(tokens, compilerInfo, i, table)
   str += resultList[0]
   i = resultList[1]
 
-  str += writeGoTo("end."+labelNumber)
+  str += writeGoTo("endIf."+labelNumber)
 
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, "}")
     i += 1
   end
 
-  str += writeLabel("false."+labelNumber)
+  str += writeLabel("ifFalse."+labelNumber)
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, "else")
     resultList = compileElse2(tokens, compilerInfo, i, table)
     str += resultList[0]
     i = resultList[1]
   end
 
-  str += writeLabel("end."+labelNumber)
+  str += writeLabel("endIf."+labelNumber)
   return [str, i]
 end
 
@@ -546,7 +554,7 @@ end
 def compileWhile2(tokens, compilerInfo, i, table)
   str = ""
   labelNumber = i.to_s
-  str += writeLabel("true."+labelNumber)
+  str += writeLabel("WhileTrue."+labelNumber)
 
   # check for while
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, "while")
@@ -567,12 +575,12 @@ def compileWhile2(tokens, compilerInfo, i, table)
     end
   end
 
-  str += writeIf("end."+labelNumber)
+  str += writeIf("endWhile."+labelNumber)
   resultList = compileSubStatements2(tokens, compilerInfo, i, table)
   str += resultList[0]
   i = resultList[1]
-
-  str += writeLabel("end."+labelNumber)
+  str += writeGoTo("WhileTrue."+labelNumber)
+  str += writeLabel("endWhile."+labelNumber)
 
   return [str, i]
 end

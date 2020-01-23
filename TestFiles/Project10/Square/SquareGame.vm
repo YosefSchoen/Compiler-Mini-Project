@@ -29,46 +29,46 @@ push this 1
 push constant 1
 eq
 not
-if-goto false.70
+if-goto ifFalse.70
 push this 0
 call Square.moveUp 1
 pop temp 0
-goto end.70
-label false.70
-label end.70
+goto endIf.70
+label ifFalse.70
+label endIf.70
 push this 1
 push constant 2
 eq
 not
-if-goto false.85
+if-goto ifFalse.85
 push this 0
 call Square.moveDown 1
 pop temp 0
-goto end.85
-label false.85
-label end.85
+goto endIf.85
+label ifFalse.85
+label endIf.85
 push this 1
 push constant 3
 eq
 not
-if-goto false.100
+if-goto ifFalse.100
 push this 0
 call Square.moveLeft 1
 pop temp 0
-goto end.100
-label false.100
-label end.100
+goto endIf.100
+label ifFalse.100
+label endIf.100
 push this 1
 push constant 4
 eq
 not
-if-goto false.115
+if-goto ifFalse.115
 push this 0
 call Square.moveRight 1
 pop temp 0
-goto end.115
-label false.115
-label end.115
+goto endIf.115
+label ifFalse.115
+label endIf.115
 push constant 5
 call Sys.wait 1
 pop temp 0
@@ -79,106 +79,109 @@ push argument 0
 pop pointer 0
 push constant 0
 pop local 1
-label true.160
+label WhileTrue.160
 push local 1
 not
 not
-if-goto end.160
-label true.166
+if-goto endWhile.160
+label WhileTrue.166
 push local 0
 push constant 0
 eq
 not
-if-goto end.166
+if-goto endWhile.166
 call Keyboard.keyPressed 0
 pop local 0
 call moveSquare 0
-label end.166
+goto WhileTrue.166
+label endWhile.166
 push local 0
 push constant 81
 eq
 not
-if-goto false.188
+if-goto ifFalse.188
 push constant 1
 not
 pop local 1
-goto end.188
-label false.188
-label end.188
+goto endIf.188
+label ifFalse.188
+label endIf.188
 push local 0
 push constant 90
 eq
 not
-if-goto false.201
+if-goto ifFalse.201
 push this 0
 call Square.decSize 1
 pop temp 0
-goto end.201
-label false.201
-label end.201
+goto endIf.201
+label ifFalse.201
+label endIf.201
 push local 0
 push constant 88
 eq
 not
-if-goto false.216
+if-goto ifFalse.216
 push this 0
 call Square.incSize 1
 pop temp 0
-goto end.216
-label false.216
-label end.216
+goto endIf.216
+label ifFalse.216
+label endIf.216
 push local 0
 push constant 131
 eq
 not
-if-goto false.231
+if-goto ifFalse.231
 push constant 1
 pop this 1
-goto end.231
-label false.231
-label end.231
+goto endIf.231
+label ifFalse.231
+label endIf.231
 push local 0
 push constant 133
 eq
 not
-if-goto false.244
+if-goto ifFalse.244
 push constant 2
 pop this 1
-goto end.244
-label false.244
-label end.244
+goto endIf.244
+label ifFalse.244
+label endIf.244
 push local 0
 push constant 130
 eq
 not
-if-goto false.257
+if-goto ifFalse.257
 push constant 3
 pop this 1
-goto end.257
-label false.257
-label end.257
+goto endIf.257
+label ifFalse.257
+label endIf.257
 push local 0
 push constant 132
 eq
 not
-if-goto false.270
+if-goto ifFalse.270
 push constant 4
 pop this 1
-goto end.270
-label false.270
-label end.270
-label true.283
+goto endIf.270
+label ifFalse.270
+label endIf.270
+label WhileTrue.283
 push local 0
 push constant 0
 eq
 not
 not
-if-goto end.283
+if-goto endWhile.283
 call Keyboard.keyPressed 0
 pop local 0
 call moveSquare 0
-label end.283
-label end.160
+goto WhileTrue.283
+label endWhile.283
+goto WhileTrue.160
+label endWhile.160
 push constant 0
 return
 

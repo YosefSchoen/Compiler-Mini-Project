@@ -12,17 +12,26 @@ push local 0
 push constant 3
 add
 push constant 2
-pop local 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
 push local 0
 push constant 4
 add
 push constant 8
-pop local 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
 push local 0
 push constant 5
 add
 push constant 4
-pop local 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
 push local 1
 push local 0
 push constant 3
@@ -37,7 +46,10 @@ pop pointer 1
 push that 0
 push constant 3
 add
-pop local 1
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
 push local 0
 push local 1
 push local 0
@@ -75,12 +87,18 @@ add
 pop pointer 1
 push that 0
 call Math.multiply 2
-pop local 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
 push local 2
 push constant 0
 add
 push constant 0
-pop local 2
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
 push local 2
 push constant 0
 add
@@ -394,7 +412,7 @@ push local 2
 push constant 0
 eq
 not
-if-goto false.226
+if-goto ifFalse.226
 push local 0
 push constant 10
 call Main.fill 2
@@ -409,7 +427,10 @@ push local 2
 push constant 1
 add
 push constant 33
-pop local 2
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
 push local 0
 push constant 7
 add
@@ -420,7 +441,10 @@ push local 2
 push constant 1
 add
 push constant 77
-pop local 2
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
 push local 0
 push constant 3
 add
@@ -441,10 +465,13 @@ add
 pop pointer 1
 push that 0
 add
-pop local 1
-goto end.226
-label false.226
-label end.226
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+goto endIf.226
+label ifFalse.226
+label endIf.226
 push constant 45
 call String.new 1
 push constant 84
@@ -661,12 +688,12 @@ push constant 2
 call Math.multiply 2
 return
 function Main.fill 0
-label true.380
+label WhileTrue.380
 push argument 1
 push constant 0
 gt
 not
-if-goto end.380
+if-goto endWhile.380
 push argument 1
 push constant 1
 sub
@@ -676,8 +703,12 @@ push argument 1
 add
 push constant 3
 call Array.new 1
-pop argument 0
-label end.380
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+goto WhileTrue.380
+label endWhile.380
 push constant 0
 return
 

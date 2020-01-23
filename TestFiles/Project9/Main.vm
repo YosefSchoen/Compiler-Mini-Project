@@ -65,16 +65,16 @@ pop temp 0
 push local 2
 call Bat.drawVertical 1
 pop temp 0
-label true.160
+label WhileTrue.160
 push local 6
 not
-if-goto end.160
+if-goto endWhile.160
 push local 1
 call Ball.getStillPitching 1
 push constant 0
 eq
 not
-if-goto false.165
+if-goto ifFalse.165
 call Random.nextInt 0
 pop local 7
 push local 1
@@ -82,9 +82,9 @@ push constant 1
 not
 call Ball.setStillPitching 2
 pop temp 0
-goto end.165
-label false.165
-label end.165
+goto endIf.165
+label ifFalse.165
+label endIf.165
 push constant 8
 push constant 7
 call Output.moveCursor 2
@@ -92,16 +92,16 @@ pop temp 0
 push local 7
 call Output.printInt 1
 pop temp 0
-label true.212
+label WhileTrue.212
 push local 1
 call Ball.getStillPitching 1
 not
-if-goto end.212
+if-goto endWhile.212
 call Keyboard.keyPressed 0
 push constant 32
 eq
 not
-if-goto false.221
+if-goto ifFalse.221
 push local 1
 push constant 0
 call Ball.setStillPitching 2
@@ -110,7 +110,7 @@ push local 2
 call Bat.getIsHorizontal 1
 not
 not
-if-goto false.240
+if-goto ifFalse.240
 push local 2
 call Bat.eraseVertical 1
 pop temp 0
@@ -121,7 +121,7 @@ push local 1
 push local 2
 call Ball.contact 2
 not
-if-goto false.264
+if-goto ifFalse.264
 push local 2
 call Bat.drawHorizontal 1
 pop temp 0
@@ -145,8 +145,8 @@ pop temp 0
 push local 1
 call Ball.resetBall 1
 pop temp 0
-goto end.264
-label false.264
+goto endIf.264
+label ifFalse.264
 push local 2
 call Bat.drawHorizontal 1
 pop temp 0
@@ -162,13 +162,13 @@ call Bat.drawHorizontal 1
 pop temp 0
 push constant 0
 pop local 6
-label end.264
-goto end.240
-label false.240
-label end.240
-goto end.221
-label false.221
-label end.221
+label endIf.264
+goto endIf.240
+label ifFalse.240
+label endIf.240
+goto endIf.221
+label ifFalse.221
+label endIf.221
 push local 1
 push local 7
 push local 3
@@ -183,7 +183,7 @@ call Ball.getY 1
 push constant 246
 gt
 not
-if-goto false.395
+if-goto ifFalse.395
 push constant 5
 push constant 7
 call Output.moveCursor 2
@@ -193,11 +193,13 @@ call Output.printString 1
 pop temp 0
 push constant 0
 pop local 6
-goto end.395
-label false.395
-label end.395
-label end.212
-label end.160
+goto endIf.395
+label ifFalse.395
+label endIf.395
+goto WhileTrue.212
+label endWhile.212
+goto WhileTrue.160
+label endWhile.160
 push local 1
 call Ball.dispose 1
 pop temp 0

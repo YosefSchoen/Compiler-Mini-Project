@@ -100,7 +100,7 @@ lt
 pop this 7
 push this 7
 not
-if-goto false.288
+if-goto ifFalse.288
 push local 0
 pop local 2
 push local 1
@@ -115,8 +115,8 @@ push this 0
 push argument 1
 lt
 pop this 9
-goto end.288
-label false.288
+goto endIf.288
+label ifFalse.288
 push this 0
 push argument 1
 lt
@@ -125,7 +125,7 @@ push this 1
 push argument 2
 lt
 pop this 9
-label end.288
+label endIf.288
 push constant 2
 push local 1
 call Math.multiply 2
@@ -152,138 +152,138 @@ push this 4
 push constant 0
 lt
 not
-if-goto false.391
+if-goto ifFalse.391
 push this 4
 push this 5
 add
 pop this 4
-goto end.391
-label false.391
+goto endIf.391
+label ifFalse.391
 push this 4
 push this 6
 add
 pop this 4
 push this 9
 not
-if-goto false.415
+if-goto ifFalse.415
 push this 7
 not
-if-goto false.420
+if-goto ifFalse.420
 push this 0
 push constant 4
 add
 pop this 0
-goto end.420
-label false.420
+goto endIf.420
+label ifFalse.420
 push this 1
 push constant 4
 add
 pop this 1
-label end.420
-goto end.415
-label false.415
+label endIf.420
+goto endIf.415
+label ifFalse.415
 push this 7
 not
-if-goto false.446
+if-goto ifFalse.446
 push this 0
 push constant 4
 sub
 pop this 0
-goto end.446
-label false.446
+goto endIf.446
+label ifFalse.446
 push this 1
 push constant 4
 sub
 pop this 1
-label end.446
-label end.415
-label end.391
+label endIf.446
+label endIf.415
+label endIf.391
 push this 8
 not
-if-goto false.471
+if-goto ifFalse.471
 push this 7
 not
-if-goto false.476
+if-goto ifFalse.476
 push this 1
 push constant 4
 add
 pop this 1
-goto end.476
-label false.476
+goto endIf.476
+label ifFalse.476
 push this 0
 push constant 4
 add
 pop this 0
-label end.476
-goto end.471
-label false.471
+label endIf.476
+goto endIf.471
+label ifFalse.471
 push this 7
 not
-if-goto false.502
+if-goto ifFalse.502
 push this 1
 push constant 4
 sub
 pop this 1
-goto end.502
-label false.502
+goto endIf.502
+label ifFalse.502
 push this 0
 push constant 4
 sub
 pop this 0
-label end.502
-label end.471
+label endIf.502
+label endIf.471
 push this 0
 push this 10
 gt
 not
 not
-if-goto false.526
+if-goto ifFalse.526
 push constant 1
 pop this 14
 push this 10
 pop this 0
-goto end.526
-label false.526
-label end.526
+goto endIf.526
+label ifFalse.526
+label endIf.526
 push this 0
 push this 11
 lt
 not
 not
-if-goto false.547
+if-goto ifFalse.547
 push constant 2
 pop this 14
 push this 11
 pop this 0
-goto end.547
-label false.547
-label end.547
+goto endIf.547
+label ifFalse.547
+label endIf.547
 push this 1
 push this 12
 gt
 not
 not
-if-goto false.568
+if-goto ifFalse.568
 push constant 3
 pop this 14
 push this 12
 pop this 1
-goto end.568
-label false.568
-label end.568
+goto endIf.568
+label ifFalse.568
+label endIf.568
 push this 1
 push this 13
 lt
 not
 not
-if-goto false.589
+if-goto ifFalse.589
 push constant 4
 pop this 14
 push this 13
 pop this 1
-goto end.589
-label false.589
-label end.589
+goto endIf.589
+label ifFalse.589
+label endIf.589
 call show 0
 push this 14
 return
@@ -302,11 +302,11 @@ push argument 1
 push constant 0
 eq
 not
-if-goto false.653
+if-goto ifFalse.653
 push constant 10
 pop local 4
-goto end.653
-label false.653
+goto endIf.653
+label ifFalse.653
 push this 2
 push constant 0
 lt
@@ -325,20 +325,20 @@ eq
 and
 or
 not
-if-goto false.668
+if-goto ifFalse.668
 push constant 20
 pop local 4
-goto end.668
-label false.668
+goto endIf.668
+label ifFalse.668
 push constant 5
 pop local 4
-label end.668
-label end.653
+label endIf.668
+label endIf.653
 push this 14
 push constant 1
 eq
 not
-if-goto false.720
+if-goto ifFalse.720
 push constant 506
 pop local 0
 push local 3
@@ -354,13 +354,13 @@ push local 4
 call Math.multiply 2
 add
 pop local 1
-goto end.720
-label false.720
+goto endIf.720
+label ifFalse.720
 push this 14
 push constant 2
 eq
 not
-if-goto false.760
+if-goto ifFalse.760
 push constant 0
 pop local 0
 push local 3
@@ -375,13 +375,13 @@ push local 4
 call Math.multiply 2
 add
 pop local 1
-goto end.760
-label false.760
+goto endIf.760
+label ifFalse.760
 push this 14
 push constant 3
 eq
 not
-if-goto false.797
+if-goto ifFalse.797
 push constant 250
 pop local 1
 push local 2
@@ -397,8 +397,8 @@ push local 4
 call Math.multiply 2
 add
 pop local 0
-goto end.797
-label false.797
+goto endIf.797
+label ifFalse.797
 push constant 0
 pop local 1
 push local 2
@@ -413,9 +413,9 @@ push local 4
 call Math.multiply 2
 add
 pop local 0
-label end.797
-label end.760
-label end.720
+label endIf.797
+label endIf.760
+label endIf.720
 push local 0
 push local 1
 call setDestination 2

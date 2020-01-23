@@ -24,40 +24,40 @@ push argument 0
 pop pointer 0
 push this 1
 not
-if-goto false.61
+if-goto ifFalse.61
 push this 0
 call Square.moveUp 1
 pop temp 0
-goto end.61
-label false.61
-label end.61
+goto endIf.61
+label ifFalse.61
+label endIf.61
 push this 1
 not
-if-goto false.74
+if-goto ifFalse.74
 push this 0
 call Square.moveDown 1
 pop temp 0
-goto end.74
-label false.74
-label end.74
+goto endIf.74
+label ifFalse.74
+label endIf.74
 push this 1
 not
-if-goto false.87
+if-goto ifFalse.87
 push this 0
 call Square.moveLeft 1
 pop temp 0
-goto end.87
-label false.87
-label end.87
+goto endIf.87
+label ifFalse.87
+label endIf.87
 push this 1
 not
-if-goto false.100
+if-goto ifFalse.100
 push this 0
 call Square.moveRight 1
 pop temp 0
-goto end.100
-label false.100
-label end.100
+goto endIf.100
+label ifFalse.100
+label endIf.100
 push this 1
 call Sys.wait 1
 pop temp 0
@@ -68,85 +68,88 @@ push argument 0
 pop pointer 0
 push local 0
 pop local 1
-label true.143
+label WhileTrue.143
 push local 1
 not
-if-goto end.143
-label true.148
+if-goto endWhile.143
+label WhileTrue.148
 push local 0
 not
-if-goto end.148
+if-goto endWhile.148
 push local 0
 pop local 0
 call moveSquare 0
-label end.148
+goto WhileTrue.148
+label endWhile.148
 push local 0
 not
-if-goto false.164
+if-goto ifFalse.164
 push local 1
 pop local 1
-goto end.164
-label false.164
-label end.164
+goto endIf.164
+label ifFalse.164
+label endIf.164
 push local 0
 not
-if-goto false.175
+if-goto ifFalse.175
 push this 0
 call Square.decSize 1
 pop temp 0
-goto end.175
-label false.175
-label end.175
+goto endIf.175
+label ifFalse.175
+label endIf.175
 push local 0
 not
-if-goto false.188
+if-goto ifFalse.188
 push this 0
 call Square.incSize 1
 pop temp 0
-goto end.188
-label false.188
-label end.188
+goto endIf.188
+label ifFalse.188
+label endIf.188
 push local 0
 not
-if-goto false.201
+if-goto ifFalse.201
 push local 1
 pop this 1
-goto end.201
-label false.201
-label end.201
+goto endIf.201
+label ifFalse.201
+label endIf.201
 push local 0
 not
-if-goto false.212
+if-goto ifFalse.212
 push local 0
 pop this 1
-goto end.212
-label false.212
-label end.212
+goto endIf.212
+label ifFalse.212
+label endIf.212
 push local 0
 not
-if-goto false.223
+if-goto ifFalse.223
 push this 0
 pop this 1
-goto end.223
-label false.223
-label end.223
+goto endIf.223
+label ifFalse.223
+label endIf.223
 push local 0
 not
-if-goto false.234
+if-goto ifFalse.234
 push this 1
 pop this 1
-goto end.234
-label false.234
-label end.234
-label true.245
+goto endIf.234
+label ifFalse.234
+label endIf.234
+label WhileTrue.245
 push local 0
 not
-if-goto end.245
+if-goto endWhile.245
 push local 0
 pop local 0
 call moveSquare 0
-label end.245
-label end.143
+goto WhileTrue.245
+label endWhile.245
+goto WhileTrue.143
+label endWhile.143
 push constant 0
 return
 

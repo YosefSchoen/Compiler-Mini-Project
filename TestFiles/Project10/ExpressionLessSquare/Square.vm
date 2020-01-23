@@ -52,14 +52,14 @@ push argument 0
 pop pointer 0
 push this 0
 not
-if-goto false.136
+if-goto ifFalse.136
 call erase 0
 push this 2
 pop this 2
 call draw 0
-goto end.136
-label false.136
-label end.136
+goto endIf.136
+label ifFalse.136
+label endIf.136
 push constant 0
 return
 function Square.decSize 0
@@ -67,14 +67,14 @@ push argument 0
 pop pointer 0
 push this 2
 not
-if-goto false.166
+if-goto ifFalse.166
 call erase 0
 push this 2
 pop this 2
 call draw 0
-goto end.166
-label false.166
-label end.166
+goto endIf.166
+label ifFalse.166
+label endIf.166
 push constant 0
 return
 function Square.moveUp 0
@@ -82,7 +82,7 @@ push argument 0
 pop pointer 0
 push this 1
 not
-if-goto false.196
+if-goto ifFalse.196
 push this 0
 call Screen.setColor 1
 pop temp 0
@@ -103,9 +103,9 @@ push this 0
 push this 1
 call Screen.drawRectangle 4
 pop temp 0
-goto end.196
-label false.196
-label end.196
+goto endIf.196
+label ifFalse.196
+label endIf.196
 push constant 0
 return
 function Square.moveDown 0
@@ -113,7 +113,7 @@ push argument 0
 pop pointer 0
 push this 1
 not
-if-goto false.260
+if-goto ifFalse.260
 push this 0
 call Screen.setColor 1
 pop temp 0
@@ -134,9 +134,9 @@ push this 0
 push this 1
 call Screen.drawRectangle 4
 pop temp 0
-goto end.260
-label false.260
-label end.260
+goto endIf.260
+label ifFalse.260
+label endIf.260
 push constant 0
 return
 function Square.moveLeft 0
@@ -144,7 +144,7 @@ push argument 0
 pop pointer 0
 push this 0
 not
-if-goto false.324
+if-goto ifFalse.324
 push this 0
 call Screen.setColor 1
 pop temp 0
@@ -165,9 +165,9 @@ push this 0
 push this 1
 call Screen.drawRectangle 4
 pop temp 0
-goto end.324
-label false.324
-label end.324
+goto endIf.324
+label ifFalse.324
+label endIf.324
 push constant 0
 return
 function Square.moveRight 0
@@ -175,7 +175,7 @@ push argument 0
 pop pointer 0
 push this 0
 not
-if-goto false.388
+if-goto ifFalse.388
 push this 0
 call Screen.setColor 1
 pop temp 0
@@ -196,9 +196,9 @@ push this 0
 push this 1
 call Screen.drawRectangle 4
 pop temp 0
-goto end.388
-label false.388
-label end.388
+goto endIf.388
+label ifFalse.388
+label endIf.388
 push constant 0
 return
 

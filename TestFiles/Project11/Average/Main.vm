@@ -46,12 +46,12 @@ call Array.new 1
 pop local 0
 push constant 0
 pop local 2
-label true.48
+label WhileTrue.48
 push local 2
 push local 1
 lt
 not
-if-goto end.48
+if-goto endWhile.48
 push local 0
 push local 2
 add
@@ -92,7 +92,10 @@ call String.appendChar 2
 push constant 32
 call String.appendChar 2
 call Keyboard.readInt 1
-pop local 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
 push local 3
 push local 0
 push local 2
@@ -105,7 +108,8 @@ push local 2
 push constant 1
 add
 pop local 2
-label end.48
+goto WhileTrue.48
+label endWhile.48
 push constant 16
 call String.new 1
 push constant 84
