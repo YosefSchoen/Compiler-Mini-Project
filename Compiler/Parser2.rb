@@ -776,6 +776,7 @@ def compileSubroutineCall2(tokens, compilerInfo, i, table)
   end
   # flag stays false
   # # if flag is false,
+
   if flag
     if notToLarge(tokens, i) and isIdentifier(tokens[i][1])
       if table.findSymbol(tokens[i][1])
@@ -802,7 +803,14 @@ def compileSubroutineCall2(tokens, compilerInfo, i, table)
       name += tokens[i][1]
       i += 1
     end
+
+  else
+    name+= tokens[1][1]+"."
+    unless compilerInfo[0].include?(tokens[i][1])
+      callingMethodFromObject = true
+    end
   end
+
   # now that we took care of this . call
   if notToLarge(tokens, i) and isIdentifier(tokens[i][1]) and !isCorrectToken(tokens, i, "(")
     name += tokens[i][1]
@@ -810,6 +818,9 @@ def compileSubroutineCall2(tokens, compilerInfo, i, table)
   end
 
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, "(")
+    if tokens[i+1][1] == ")"
+      str += writePush("pointer", "0")
+    end
     i += 1
   end
 
@@ -827,11 +838,12 @@ def compileSubroutineCall2(tokens, compilerInfo, i, table)
   end
 
   str += writeCall(name, nArgs.to_s)
-
   voidFunctions = []
+
   for j in 0..compilerInfo[1].size-1
     voidFunctions.append(compilerInfo[1][j][0])
   end
+
 
   if voidFunctions.include?(name)
     str += writePop("temp", "0")

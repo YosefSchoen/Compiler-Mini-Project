@@ -8,7 +8,9 @@ push argument 1
 pop this 1
 push argument 2
 pop this 2
-call draw 0
+push pointer 0
+call Square.draw 1
+pop temp 0
 push pointer 0
 return
 function Square.dispose 0
@@ -72,12 +74,16 @@ lt
 and
 not
 if-goto ifFalse.144
-call erase 0
+push pointer 0
+call Square.erase 1
+pop temp 0
 push this 2
 push constant 2
 add
 pop this 2
-call draw 0
+push pointer 0
+call Square.draw 1
+pop temp 0
 goto endIf.144
 label ifFalse.144
 label endIf.144
@@ -91,12 +97,16 @@ push constant 2
 gt
 not
 if-goto ifFalse.194
-call erase 0
+push pointer 0
+call Square.erase 1
+pop temp 0
 push this 2
 push constant 2
 sub
 pop this 2
-call draw 0
+push pointer 0
+call Square.draw 1
+pop temp 0
 goto endIf.194
 label ifFalse.194
 label endIf.194
