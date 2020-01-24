@@ -1,7 +1,11 @@
 require_relative '../Compiler/SymbolsTable'
 require_relative '../Compiler/Tokenizer'
+
+#function to write a vm push command
 def writePush(segment, index)
   case segment
+
+  #jack class fields and method local vars will be called local
   when "var"
     segment = "local"
 
@@ -14,6 +18,7 @@ def writePush(segment, index)
 end
 
 
+#similar to push
 def writePop(segment, index)
   case segment
   when "var"
@@ -27,8 +32,11 @@ def writePop(segment, index)
 end
 
 
+#this function will write a vm binary arithmetic command
 def writeArithmetic(cmd)
   str = ""
+
+  #Math.multiply and Math.divide are not called directly in the jack code
   case cmd
   when "*"
     str = "call Math.multiply 2\n"
@@ -65,6 +73,7 @@ def writeArithmetic(cmd)
 end
 
 
+#similar to arithmetic but for unary operators
 def writeArithmeticUnary(str)
   if str == "-"
     str = "neg\n"
@@ -76,12 +85,15 @@ def writeArithmeticUnary(str)
   return str
 end
 
+
+#function to write a vm label
 def writeLabel(label)
   str = "label " + label + "\n"
   return str
 end
 
 
+#function to write a vm goto
 def writeGoTo(label)
 
   str = "goto " + label + "\n"
@@ -90,29 +102,34 @@ def writeGoTo(label)
 end
 
 
+#function to write a vm if-goto
 def writeIf(label)
   str = "if-goto " + label + "\n"
   return str
 end
 
 
+#function to write a vm function call
 def writeCall(name, nArgs)
   str = "call " + name + " " + nArgs + "\n"
   return str
 end
 
 
+#function to write a vm function declaration
 def writeFunction(name, nLocals)
   str = "function " + name + " " + nLocals + "\n"
   return str
 end
 
 
+#function to write a vm function return
 def writeReturn
   str = "return" + "\n"
   return str
 end
 
+#function to write a string
 def writeString(term)
   str = ""
   term.each_byte do |c|
@@ -122,13 +139,6 @@ def writeString(term)
 
   return str
 end
-
-
-
-def close
-
-end
-
 
 
 

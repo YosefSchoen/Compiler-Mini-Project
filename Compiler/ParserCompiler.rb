@@ -3,7 +3,6 @@ require_relative 'Tokenizer'
 require_relative 'SymbolsTable'
 require_relative 'vmWriter'
 
-@tables = Tables.new([])
 
 #the first function called compiles the file's class
 def compileClass2(tokens, compilerInfo)
@@ -231,7 +230,7 @@ def compileSubroutineDecT2(tokens, compilerInfo, i, this, classTable, tableList,
     table = resultList[1]
     i = resultList[2]
     tableList.append(table)
-    @tables.tables.append(table)
+
     resultList = compileSubroutineDecT2(tokens, compilerInfo, i, this, classTable, tableList, result)
     return resultList
   end

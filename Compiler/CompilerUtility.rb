@@ -11,6 +11,9 @@ def getClassNames(filesWithLines)
   return classNames
 end
 
+
+#the compiler need to know if the a function being called is void
+# so all void functions in the jack os and any declared in the jack classes will be added to the list
 def getFunctionNameTypesFiles(filesWithLines)
   voidStr = "void"
 
@@ -32,6 +35,8 @@ def getFunctionNameTypesFiles(filesWithLines)
   return functionInfo
 end
 
+
+#function to find all void functions in the jack tokens
 def getFunctionNameTypes(tokens)
   functionInfo = []
   for i in 0..tokens.size-1
@@ -53,6 +58,8 @@ def getFunctionNameTypes(tokens)
 
   return functionInfo
 end
+
+
 #remove comments from a jack file
 def removeComments(lines)
   newLines = []
@@ -90,6 +97,8 @@ def removeComments(lines)
 end
 
 
+#function to space the symbols from other words ie class foo(){}
+# needs to be tokenized as class, foo, (, ), {, },
 def spaceSymbols(lines)
 
   newLines = []
@@ -128,6 +137,7 @@ def spaceSymbols(lines)
 end
 
 
+#function to get a string constant
 def getStrConst(lines)
   newLines = []
   buildingString = false
@@ -160,6 +170,8 @@ def getStrConst(lines)
 end
 
 
+
+#function to take the lines of a jack file and make it parseable
 def getLines(lines)
   lines = removeComments(lines)
   lines = spaceSymbols(lines)
@@ -168,6 +180,7 @@ def getLines(lines)
 end
 
 
+#function to tab an xml file for ease of reading
 def tabXMLTags(str)
   lineTabs = []
   numTabs = 0
@@ -199,6 +212,7 @@ def tabXMLTags(str)
 end
 
 
+#function to identify a tag to tab every line below until the matching end tag is found
 def isStartTag(str)
 
   #a string is a start tag if it is of form <"substr">
@@ -220,6 +234,7 @@ def isStartTag(str)
 end
 
 
+#function to find an end tag to stop tabbing
 def isEndTag(str)
   #a string is a end tag if it is of form </"substr">
   if str[0] == "<" and str[1] == "/"
@@ -238,7 +253,6 @@ def isEndTag(str)
   #if the top if statement is false return false
   return false
 end
-
 
 
 #function to check if the token currently being checked is not out of range

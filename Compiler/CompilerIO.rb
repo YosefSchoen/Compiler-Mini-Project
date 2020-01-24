@@ -1,7 +1,7 @@
 require_relative 'CompilerUtility'
 require_relative 'Tokenizer'
-require_relative 'Parser'
-require_relative 'Parser2'
+require_relative 'ParserXML'
+require_relative 'ParserCompiler'
 require_relative 'SymbolsTable'
 
 
@@ -23,6 +23,7 @@ def readJackFile(fileName)
 end
 
 
+#this function will write the fully compiled jack file using Parser2
 def writeCompiledFile(tokens, classNames, outFile)
   resultList = compileClass2(tokens, classNames)
   str = resultList[0]
@@ -32,6 +33,7 @@ def writeCompiledFile(tokens, classNames, outFile)
 
   vmFile.syswrite(str)
 
+  #will print the symbol tables commented out in the vm file
   str = "\n\n//class symbol table\n" + classTable.printTable+"\n\n"
   for i in 0..methodsTableList.size-1
     str += "//method's symbol table\n" + methodsTableList[i].printTable+"\n\n"
@@ -40,6 +42,8 @@ def writeCompiledFile(tokens, classNames, outFile)
   vmFile.syswrite(str)
 end
 
+
+#this function will write the xml file of the parse tree from parser
 def writeCompiledXMLFile(tokens, classNames, outFile)
   str = compileClass(tokens, classNames)
   str = tabXMLTags(str)
@@ -50,6 +54,7 @@ def writeCompiledXMLFile(tokens, classNames, outFile)
 end
 
 
+#this function will write the tokens in an xml file
 def writeTokensXMLFile(tokens, outFile)
   str = "<tokens>\n"
   for i in 0..tokens.size-1
@@ -63,6 +68,7 @@ def writeTokensXMLFile(tokens, outFile)
 end
 
 
+#the main function of the compiler IO to get all the files in a directory and compile it
 def compile(path)
   files = getFilesInDirCompiler(path)
   filesWithLines = getFilesWithLinesCompiler(files)
@@ -85,7 +91,6 @@ def compile(path)
     writeCompiledXMLFile(tokens, classNames, compiledFileXMLName)
     writeTokensXMLFile(tokens, tokensFileName)
     puts filesWithLines[i][0] + " was tokenized and compiled" +"\n"
-    @tables.tables.clear
   end
 end
 

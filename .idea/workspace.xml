@@ -2,261 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e2bbf7f2-661c-4b38-bdc0-4dc1c947d57a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ArrayTest/Array.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ArrayTest/ArrayOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ArrayTest/ArrayTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ArrayTest/ArrayTest.asm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ArrayTest/Keyboard.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ArrayTest/KeyboardOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ArrayTest/KeyboardTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ArrayTest/Math.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ArrayTest/MathOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ArrayTest/MathTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ArrayTest/Memory.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ArrayTest/MemoryOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ArrayTest/MemoryTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ArrayTest/Output.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ArrayTest/OutputOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ArrayTest/OutputTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ArrayTest/Screen.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ArrayTest/ScreenOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ArrayTest/ScreenTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ArrayTest/String.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ArrayTest/StringOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ArrayTest/StringTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ArrayTest/Sys.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ArrayTest/SysOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ArrayTest/SysTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ExpressionLessSquare/Array.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ExpressionLessSquare/ArrayOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ExpressionLessSquare/ArrayTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ExpressionLessSquare/ExpressionLessSquare.asm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ExpressionLessSquare/Keyboard.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ExpressionLessSquare/KeyboardOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ExpressionLessSquare/KeyboardTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ExpressionLessSquare/Math.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ExpressionLessSquare/MathOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ExpressionLessSquare/MathTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ExpressionLessSquare/Memory.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ExpressionLessSquare/MemoryOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ExpressionLessSquare/MemoryTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ExpressionLessSquare/Output.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ExpressionLessSquare/OutputOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ExpressionLessSquare/OutputTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ExpressionLessSquare/Screen.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ExpressionLessSquare/ScreenOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ExpressionLessSquare/ScreenTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ExpressionLessSquare/String.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ExpressionLessSquare/StringOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ExpressionLessSquare/StringTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ExpressionLessSquare/Sys.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ExpressionLessSquare/SysOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ExpressionLessSquare/SysTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/MyTest/Array.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/MyTest/ArrayOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/MyTest/ArrayTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/MyTest/JackTest.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/MyTest/Keyboard.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/MyTest/KeyboardOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/MyTest/KeyboardTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/MyTest/Math.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/MyTest/MathOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/MyTest/MathTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/MyTest/Memory.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/MyTest/MemoryOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/MyTest/MemoryTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/MyTest/MyTest.asm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/MyTest/Output.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/MyTest/OutputOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/MyTest/OutputTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/MyTest/Point.Out.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/MyTest/Point.TOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/MyTest/Point.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/MyTest/PointCall.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/MyTest/PointCallOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/MyTest/PointCallTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/MyTest/PointOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/MyTest/PointTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/MyTest/Screen.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/MyTest/ScreenOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/MyTest/ScreenTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/MyTest/String.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/MyTest/StringOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/MyTest/StringTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/MyTest/Sys.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/MyTest/SysOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/MyTest/SysTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/Square/Array.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/Square/ArrayOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/Square/ArrayTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/Square/Keyboard.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/Square/KeyboardOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/Square/KeyboardTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/Square/Math.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/Square/MathOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/Square/MathTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/Square/Memory.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/Square/MemoryOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/Square/MemoryTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/Square/Output.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/Square/OutputOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/Square/OutputTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/Square/Screen.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/Square/ScreenOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/Square/ScreenTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/Square/Square.asm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/Square/String.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/Square/StringOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/Square/StringTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/Square/Sys.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/Square/SysOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/Square/SysTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Average/Array.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Average/ArrayOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Average/ArrayTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Average/Average.asm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Average/Keyboard.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Average/KeyboardOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Average/KeyboardTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Average/Math.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Average/MathOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Average/MathTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Average/Memory.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Average/MemoryOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Average/MemoryTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Average/Output.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Average/OutputOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Average/OutputTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Average/Screen.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Average/ScreenOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Average/ScreenTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Average/String.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Average/StringOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Average/StringTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Average/Sys.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Average/SysOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Average/SysTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ComplexArrays/Array.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ComplexArrays/ArrayOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ComplexArrays/ArrayTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ComplexArrays/ComplexArrays.asm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ComplexArrays/Keyboard.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ComplexArrays/KeyboardOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ComplexArrays/KeyboardTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ComplexArrays/Math.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ComplexArrays/MathOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ComplexArrays/MathTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ComplexArrays/Memory.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ComplexArrays/MemoryOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ComplexArrays/MemoryTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ComplexArrays/Output.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ComplexArrays/OutputOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ComplexArrays/OutputTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ComplexArrays/Screen.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ComplexArrays/ScreenOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ComplexArrays/ScreenTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ComplexArrays/String.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ComplexArrays/StringOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ComplexArrays/StringTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ComplexArrays/Sys.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ComplexArrays/SysOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ComplexArrays/SysTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ConvertToBin/Array.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ConvertToBin/ArrayOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ConvertToBin/ArrayTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ConvertToBin/ConvertToBin.asm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ConvertToBin/Keyboard.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ConvertToBin/KeyboardOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ConvertToBin/KeyboardTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ConvertToBin/Math.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ConvertToBin/MathOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ConvertToBin/MathTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ConvertToBin/Memory.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ConvertToBin/MemoryOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ConvertToBin/MemoryTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ConvertToBin/Output.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ConvertToBin/OutputOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ConvertToBin/OutputTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ConvertToBin/Screen.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ConvertToBin/ScreenOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ConvertToBin/ScreenTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ConvertToBin/String.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ConvertToBin/StringOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ConvertToBin/StringTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ConvertToBin/Sys.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ConvertToBin/SysOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ConvertToBin/SysTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Pong/Array.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Pong/ArrayOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Pong/ArrayTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Pong/Keyboard.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Pong/KeyboardOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Pong/KeyboardTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Pong/Math.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Pong/MathOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Pong/MathTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Pong/Memory.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Pong/MemoryOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Pong/MemoryTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Pong/Output.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Pong/OutputOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Pong/OutputTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Pong/Pong.asm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Pong/Screen.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Pong/ScreenOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Pong/ScreenTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Pong/String.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Pong/StringOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Pong/StringTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Pong/Sys.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Pong/SysOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Pong/SysTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Seven/Array.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Seven/ArrayOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Seven/ArrayTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Seven/Keyboard.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Seven/KeyboardOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Seven/KeyboardTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Seven/Math.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Seven/MathOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Seven/MathTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Seven/Memory.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Seven/MemoryOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Seven/MemoryTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Seven/Output.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Seven/OutputOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Seven/OutputTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Seven/Screen.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Seven/ScreenOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Seven/ScreenTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Seven/Seven.asm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Seven/String.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Seven/StringOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Seven/StringTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Seven/Sys.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Seven/SysOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Seven/SysTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Square/Array.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Square/ArrayOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Square/ArrayTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Square/Keyboard.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Square/KeyboardOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Square/KeyboardTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Square/Math.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Square/MathOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Square/MathTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Square/Memory.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Square/MemoryOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Square/MemoryTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Square/Output.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Square/OutputOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Square/OutputTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Square/Screen.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Square/ScreenOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Square/ScreenTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Square/Square.asm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project9/BaseBall.asm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Square/String.vm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Square/StringOut.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Square/StringTOut.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Square/Sys.vm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Square/SysOut.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Square/SysTOut.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compiler/CompilerIO.rb" beforeDir="false" afterPath="$PROJECT_DIR$/Compiler/CompilerIO.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compiler/CompilerUtility.rb" beforeDir="false" afterPath="$PROJECT_DIR$/Compiler/CompilerUtility.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compiler/Parser.rb" beforeDir="false" afterPath="$PROJECT_DIR$/Compiler/ParserXML.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compiler/Parser2.rb" beforeDir="false" afterPath="$PROJECT_DIR$/Compiler/ParserCompiler.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compiler/vmWriter.rb" beforeDir="false" afterPath="$PROJECT_DIR$/Compiler/vmWriter.rb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -355,7 +111,7 @@
       <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
       <method v="2" />
     </configuration>
-    <configuration name="Parser2" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
+    <configuration name="ParserCompiler" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
       <module name="Project7" />
       <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="" />
       <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$/Compiler" />
@@ -365,7 +121,7 @@
       <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
       <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
       <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" />
-      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/Compiler/Parser2.rb" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/Compiler/ParserCompiler.rb" />
       <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
       <method v="2" />
     </configuration>
@@ -413,7 +169,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Ruby.Parser2" />
+        <item itemvalue="Ruby.ParserCompiler" />
         <item itemvalue="Ruby.vmWriter" />
         <item itemvalue="Ruby.SymbolsTable" />
         <item itemvalue="Ruby.CompilerIO" />
@@ -445,14 +201,7 @@
       <workItem from="1579451276315" duration="72442000" />
       <workItem from="1579686561240" duration="32466000" />
       <workItem from="1579776838509" duration="17519000" />
-      <workItem from="1579867924702" duration="429000" />
-    </task>
-    <task id="LOCAL-00031" summary="need to fix helpers">
-      <created>1578245149217</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1578245149217</updated>
+      <workItem from="1579867924702" duration="1597000" />
     </task>
     <task id="LOCAL-00032" summary="need to fix helpers">
       <created>1578245370418</created>
@@ -790,7 +539,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579826248178</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="Maybe needs some debug">
+      <created>1579868371858</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1579868371860</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -882,7 +638,7 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="ruby-line">
-          <url>file://$PROJECT_DIR$/Compiler/Parser.rb</url>
+          <url>file://$PROJECT_DIR$/Compiler/ParserXML.rb</url>
           <line>5</line>
           <properties a="-1">
             <option name="block-ordinal" value="-1" />
@@ -903,6 +659,6 @@
     <SUITE FILE_PATH="coverage/Project7@Tokenizer.rcov" NAME="Tokenizer Coverage Results" MODIFIED="1578563816695" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
     <SUITE FILE_PATH="coverage/Project7@code_writer.rcov" NAME="code_writer Coverage Results" MODIFIED="1574813817501" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
     <SUITE FILE_PATH="coverage/Project7@Utility.rcov" NAME="Utility Coverage Results" MODIFIED="1574100649750" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
-    <SUITE FILE_PATH="coverage/Project7@Main.rcov" NAME="Main Coverage Results" MODIFIED="1579826484278" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
+    <SUITE FILE_PATH="coverage/Project7@Main.rcov" NAME="Main Coverage Results" MODIFIED="1579869470262" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
   </component>
 </project>
