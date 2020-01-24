@@ -1,0 +1,15 @@
+<class>
+	<keyword> class </keyword>
+	<identifier> Array </identifier>
+	<symbol> { </symbol>
+	<subroutineDec>
+		<keyword> function </keyword>
+		<identifier> Array </identifier>
+		<parameterList>
+		</parameterList>
+		<subroutineBody>
+			<statements>
+			</statements>
+		</subroutineBody>
+	</subroutineDec>
+</class>

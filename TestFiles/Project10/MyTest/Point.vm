@@ -1,0 +1,31 @@
+function Point.test 1
+push argument 0
+pop pointer 0
+push constant 1
+pop local 0
+push local 0
+not
+pop local 0
+push constant 1
+pop local 0
+push local 0
+neg
+pop local 0
+
+
+//class symbol table
+//Point
+
+
+//method's symbol table
+//Point.test
+//name: this
+//type: Point
+//kind: argument
+//number: 0
+//name: a
+//type: int
+//kind: var
+//number: 0
+
+

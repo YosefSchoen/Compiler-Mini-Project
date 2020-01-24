@@ -1,0 +1,22 @@
+<tokens>
+	<keyword> class </keyword>
+	<identifier> Array </identifier>
+	<symbol> { </symbol>
+	<keyword> function </keyword>
+	<identifier> Array </identifier>
+	<identifier> new </identifier>
+	<symbol> ( </symbol>
+	<keyword> int </keyword>
+	<identifier> size </identifier>
+	<symbol> ) </symbol>
+	<symbol> { </symbol>
+	<symbol> } </symbol>
+	<keyword> method </keyword>
+	<keyword> void </keyword>
+	<identifier> dispose </identifier>
+	<symbol> ( </symbol>
+	<symbol> ) </symbol>
+	<symbol> { </symbol>
+	<symbol> } </symbol>
+	<symbol> } </symbol>
+</tokens>

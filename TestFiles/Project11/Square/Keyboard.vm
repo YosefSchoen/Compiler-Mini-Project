@@ -1,0 +1,39 @@
+function Keyboard.init 0
+function Keyboard.keyPressed 0
+function Keyboard.readChar 0
+function Keyboard.readLine 0
+function Keyboard.readInt 0
+
+
+//class symbol table
+//Keyboard
+
+
+//method's symbol table
+//Keyboard.init
+
+
+//method's symbol table
+//Keyboard.keyPressed
+
+
+//method's symbol table
+//Keyboard.readChar
+
+
+//method's symbol table
+//Keyboard.readLine
+//name: message
+//type: String
+//kind: argument
+//number: 0
+
+
+//method's symbol table
+//Keyboard.readInt
+//name: message
+//type: String
+//kind: argument
+//number: 0
+
+

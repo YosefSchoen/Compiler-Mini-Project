@@ -1,0 +1,60 @@
+<class>
+	<keyword> class </keyword>
+	<identifier> Keyboard </identifier>
+	<symbol> { </symbol>
+	<subroutineDec>
+		<keyword> function </keyword>
+		<keyword> void </keyword>
+		<identifier> init </identifier>
+		<symbol> ( </symbol>
+		<parameterList>
+		</parameterList>
+		<symbol> ) </symbol>
+		<subroutineBody>
+			<symbol> { </symbol>
+			<statements>
+			</statements>
+			<symbol> } </symbol>
+		</subroutineBody>
+	</subroutineDec>
+	<subroutineDec>
+		<keyword> function </keyword>
+		<keyword> char </keyword>
+		<identifier> keyPressed </identifier>
+		<symbol> ( </symbol>
+		<parameterList>
+		</parameterList>
+		<symbol> ) </symbol>
+		<subroutineBody>
+			<symbol> { </symbol>
+			<statements>
+			</statements>
+			<symbol> } </symbol>
+		</subroutineBody>
+	</subroutineDec>
+	<subroutineDec>
+		<keyword> function </keyword>
+		<keyword> char </keyword>
+		<identifier> readChar </identifier>
+		<symbol> ( </symbol>
+		<parameterList>
+		</parameterList>
+		<symbol> ) </symbol>
+		<subroutineBody>
+			<symbol> { </symbol>
+			<statements>
+			</statements>
+			<symbol> } </symbol>
+		</subroutineBody>
+	</subroutineDec>
+	<subroutineDec>
+		<keyword> function </keyword>
+		<identifier> String </identifier>
+		<parameterList>
+		</parameterList>
+		<subroutineBody>
+			<statements>
+			</statements>
+		</subroutineBody>
+	</subroutineDec>
+</class>

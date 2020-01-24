@@ -1,0 +1,70 @@
+<class>
+	<keyword> class </keyword>
+	<identifier> Sys </identifier>
+	<symbol> { </symbol>
+	<subroutineDec>
+		<keyword> function </keyword>
+		<keyword> void </keyword>
+		<identifier> init </identifier>
+		<symbol> ( </symbol>
+		<parameterList>
+		</parameterList>
+		<symbol> ) </symbol>
+		<subroutineBody>
+			<symbol> { </symbol>
+			<statements>
+			</statements>
+			<symbol> } </symbol>
+		</subroutineBody>
+	</subroutineDec>
+	<subroutineDec>
+		<keyword> function </keyword>
+		<keyword> void </keyword>
+		<identifier> halt </identifier>
+		<symbol> ( </symbol>
+		<parameterList>
+		</parameterList>
+		<symbol> ) </symbol>
+		<subroutineBody>
+			<symbol> { </symbol>
+			<statements>
+			</statements>
+			<symbol> } </symbol>
+		</subroutineBody>
+	</subroutineDec>
+	<subroutineDec>
+		<keyword> function </keyword>
+		<keyword> void </keyword>
+		<identifier> wait </identifier>
+		<symbol> ( </symbol>
+		<parameterList>
+			<keyword> int </keyword>
+			<identifier> duration </identifier>
+		</parameterList>
+		<symbol> ) </symbol>
+		<subroutineBody>
+			<symbol> { </symbol>
+			<statements>
+			</statements>
+			<symbol> } </symbol>
+		</subroutineBody>
+	</subroutineDec>
+	<subroutineDec>
+		<keyword> function </keyword>
+		<keyword> void </keyword>
+		<identifier> error </identifier>
+		<symbol> ( </symbol>
+		<parameterList>
+			<keyword> int </keyword>
+			<identifier> errorCode </identifier>
+		</parameterList>
+		<symbol> ) </symbol>
+		<subroutineBody>
+			<symbol> { </symbol>
+			<statements>
+			</statements>
+			<symbol> } </symbol>
+		</subroutineBody>
+	</subroutineDec>
+	<symbol> } </symbol>
+</class>

@@ -1,0 +1,97 @@
+function Screen.init 0
+function Screen.clearScreen 0
+function Screen.setColor 0
+function Screen.drawPixel 0
+function Screen.drawLine 0
+function Screen.drawRectangle 0
+function Screen.drawCircle 0
+
+
+//class symbol table
+//Screen
+
+
+//method's symbol table
+//Screen.init
+
+
+//method's symbol table
+//Screen.clearScreen
+
+
+//method's symbol table
+//Screen.setColor
+//name: b
+//type: boolean
+//kind: argument
+//number: 0
+
+
+//method's symbol table
+//Screen.drawPixel
+//name: x
+//type: int
+//kind: argument
+//number: 0
+//name: y
+//type: int
+//kind: argument
+//number: 1
+
+
+//method's symbol table
+//Screen.drawLine
+//name: x1
+//type: int
+//kind: argument
+//number: 0
+//name: y1
+//type: int
+//kind: argument
+//number: 1
+//name: x2
+//type: int
+//kind: argument
+//number: 2
+//name: y2
+//type: int
+//kind: argument
+//number: 3
+
+
+//method's symbol table
+//Screen.drawRectangle
+//name: x1
+//type: int
+//kind: argument
+//number: 0
+//name: y1
+//type: int
+//kind: argument
+//number: 1
+//name: x2
+//type: int
+//kind: argument
+//number: 2
+//name: y2
+//type: int
+//kind: argument
+//number: 3
+
+
+//method's symbol table
+//Screen.drawCircle
+//name: x
+//type: int
+//kind: argument
+//number: 0
+//name: y
+//type: int
+//kind: argument
+//number: 1
+//name: r
+//type: int
+//kind: argument
+//number: 2
+
+

@@ -1,0 +1,135 @@
+<class>
+	<keyword> class </keyword>
+	<identifier> Math </identifier>
+	<symbol> { </symbol>
+	<subroutineDec>
+		<keyword> function </keyword>
+		<keyword> void </keyword>
+		<identifier> init </identifier>
+		<symbol> ( </symbol>
+		<parameterList>
+		</parameterList>
+		<symbol> ) </symbol>
+		<subroutineBody>
+			<symbol> { </symbol>
+			<statements>
+			</statements>
+			<symbol> } </symbol>
+		</subroutineBody>
+	</subroutineDec>
+	<subroutineDec>
+		<keyword> function </keyword>
+		<keyword> int </keyword>
+		<identifier> abs </identifier>
+		<symbol> ( </symbol>
+		<parameterList>
+			<keyword> int </keyword>
+			<identifier> x </identifier>
+		</parameterList>
+		<symbol> ) </symbol>
+		<subroutineBody>
+			<symbol> { </symbol>
+			<statements>
+			</statements>
+			<symbol> } </symbol>
+		</subroutineBody>
+	</subroutineDec>
+	<subroutineDec>
+		<keyword> function </keyword>
+		<keyword> int </keyword>
+		<identifier> multiply </identifier>
+		<symbol> ( </symbol>
+		<parameterList>
+			<keyword> int </keyword>
+			<identifier> x </identifier>
+			<symbol> , </symbol>
+			<keyword> int </keyword>
+			<identifier> y </identifier>
+		</parameterList>
+		<symbol> ) </symbol>
+		<subroutineBody>
+			<symbol> { </symbol>
+			<statements>
+			</statements>
+			<symbol> } </symbol>
+		</subroutineBody>
+	</subroutineDec>
+	<subroutineDec>
+		<keyword> function </keyword>
+		<keyword> int </keyword>
+		<identifier> divide </identifier>
+		<symbol> ( </symbol>
+		<parameterList>
+			<keyword> int </keyword>
+			<identifier> x </identifier>
+			<symbol> , </symbol>
+			<keyword> int </keyword>
+			<identifier> y </identifier>
+		</parameterList>
+		<symbol> ) </symbol>
+		<subroutineBody>
+			<symbol> { </symbol>
+			<statements>
+			</statements>
+			<symbol> } </symbol>
+		</subroutineBody>
+	</subroutineDec>
+	<subroutineDec>
+		<keyword> function </keyword>
+		<keyword> int </keyword>
+		<identifier> sqrt </identifier>
+		<symbol> ( </symbol>
+		<parameterList>
+			<keyword> int </keyword>
+			<identifier> x </identifier>
+		</parameterList>
+		<symbol> ) </symbol>
+		<subroutineBody>
+			<symbol> { </symbol>
+			<statements>
+			</statements>
+			<symbol> } </symbol>
+		</subroutineBody>
+	</subroutineDec>
+	<subroutineDec>
+		<keyword> function </keyword>
+		<keyword> int </keyword>
+		<identifier> max </identifier>
+		<symbol> ( </symbol>
+		<parameterList>
+			<keyword> int </keyword>
+			<identifier> a </identifier>
+			<symbol> , </symbol>
+			<keyword> int </keyword>
+			<identifier> b </identifier>
+		</parameterList>
+		<symbol> ) </symbol>
+		<subroutineBody>
+			<symbol> { </symbol>
+			<statements>
+			</statements>
+			<symbol> } </symbol>
+		</subroutineBody>
+	</subroutineDec>
+	<subroutineDec>
+		<keyword> function </keyword>
+		<keyword> int </keyword>
+		<identifier> min </identifier>
+		<symbol> ( </symbol>
+		<parameterList>
+			<keyword> int </keyword>
+			<identifier> a </identifier>
+			<symbol> , </symbol>
+			<keyword> int </keyword>
+			<identifier> b </identifier>
+		</parameterList>
+		<symbol> ) </symbol>
+		<subroutineBody>
+			<symbol> { </symbol>
+			<statements>
+			</statements>
+			<symbol> } </symbol>
+		</subroutineBody>
+	</subroutineDec>
+	<symbol> } </symbol>
+</class>

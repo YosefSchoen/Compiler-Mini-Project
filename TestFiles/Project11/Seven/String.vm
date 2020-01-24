@@ -1,0 +1,141 @@
+function String.new 0
+push constant 0
+call Memory.alloc 1
+pop pointer 0
+function String.dispose 0
+push argument 0
+pop pointer 0
+function String.length 0
+push argument 0
+pop pointer 0
+function String.charAt 0
+push argument 0
+pop pointer 0
+function String.setCharAt 0
+push argument 0
+pop pointer 0
+function String.appendChar 0
+push argument 0
+pop pointer 0
+function String.eraseLastChar 0
+push argument 0
+pop pointer 0
+function String.intValue 0
+push argument 0
+pop pointer 0
+function String.setInt 0
+push argument 0
+pop pointer 0
+function String.newLine 0
+function String.backSpace 0
+function String.doubleQuote 0
+
+
+//class symbol table
+//String
+
+
+//method's symbol table
+//String.new
+//name: maxLength
+//type: int
+//kind: argument
+//number: 0
+
+
+//method's symbol table
+//String.dispose
+//name: this
+//type: String
+//kind: argument
+//number: 0
+
+
+//method's symbol table
+//String.length
+//name: this
+//type: String
+//kind: argument
+//number: 0
+
+
+//method's symbol table
+//String.charAt
+//name: this
+//type: String
+//kind: argument
+//number: 0
+//name: j
+//type: int
+//kind: argument
+//number: 1
+
+
+//method's symbol table
+//String.setCharAt
+//name: this
+//type: String
+//kind: argument
+//number: 0
+//name: j
+//type: int
+//kind: argument
+//number: 1
+//name: c
+//type: char
+//kind: argument
+//number: 2
+
+
+//method's symbol table
+//String.appendChar
+//name: this
+//type: String
+//kind: argument
+//number: 0
+//name: c
+//type: char
+//kind: argument
+//number: 1
+
+
+//method's symbol table
+//String.eraseLastChar
+//name: this
+//type: String
+//kind: argument
+//number: 0
+
+
+//method's symbol table
+//String.intValue
+//name: this
+//type: String
+//kind: argument
+//number: 0
+
+
+//method's symbol table
+//String.setInt
+//name: this
+//type: String
+//kind: argument
+//number: 0
+//name: val
+//type: int
+//kind: argument
+//number: 1
+
+
+//method's symbol table
+//String.newLine
+
+
+//method's symbol table
+//String.backSpace
+
+
+//method's symbol table
+//String.doubleQuote
+
+

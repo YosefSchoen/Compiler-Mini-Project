@@ -1,0 +1,51 @@
+function Memory.init 0
+function Memory.peek 0
+function Memory.poke 0
+function Memory.alloc 0
+function Memory.deAlloc 0
+
+
+//class symbol table
+//Memory
+
+
+//method's symbol table
+//Memory.init
+
+
+//method's symbol table
+//Memory.peek
+//name: address
+//type: int
+//kind: argument
+//number: 0
+
+
+//method's symbol table
+//Memory.poke
+//name: address
+//type: int
+//kind: argument
+//number: 0
+//name: value
+//type: int
+//kind: argument
+//number: 1
+
+
+//method's symbol table
+//Memory.alloc
+//name: size
+//type: int
+//kind: argument
+//number: 0
+
+
+//method's symbol table
+//Memory.deAlloc
+//name: o
+//type: Array
+//kind: argument
+//number: 0
+
+

@@ -1,0 +1,26 @@
+function Array.new 0
+function Array.dispose 0
+push argument 0
+pop pointer 0
+
+
+//class symbol table
+//Array
+
+
+//method's symbol table
+//Array.new
+//name: size
+//type: int
+//kind: argument
+//number: 0
+
+
+//method's symbol table
+//Array.dispose
+//name: this
+//type: Array
+//kind: argument
+//number: 0
+
+

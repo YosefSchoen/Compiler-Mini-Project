@@ -1,0 +1,99 @@
+<class>
+	<keyword> class </keyword>
+	<identifier> String </identifier>
+	<symbol> { </symbol>
+	<subroutineDec>
+		<keyword> constructor </keyword>
+		<identifier> String </identifier>
+		<identifier> new </identifier>
+		<symbol> ( </symbol>
+		<parameterList>
+			<keyword> int </keyword>
+			<identifier> maxLength </identifier>
+		</parameterList>
+		<symbol> ) </symbol>
+		<subroutineBody>
+			<symbol> { </symbol>
+			<statements>
+			</statements>
+			<symbol> } </symbol>
+		</subroutineBody>
+	</subroutineDec>
+	<subroutineDec>
+		<keyword> method </keyword>
+		<keyword> void </keyword>
+		<identifier> dispose </identifier>
+		<symbol> ( </symbol>
+		<parameterList>
+		</parameterList>
+		<symbol> ) </symbol>
+		<subroutineBody>
+			<symbol> { </symbol>
+			<statements>
+			</statements>
+			<symbol> } </symbol>
+		</subroutineBody>
+	</subroutineDec>
+	<subroutineDec>
+		<keyword> method </keyword>
+		<keyword> int </keyword>
+		<identifier> length </identifier>
+		<symbol> ( </symbol>
+		<parameterList>
+		</parameterList>
+		<symbol> ) </symbol>
+		<subroutineBody>
+			<symbol> { </symbol>
+			<statements>
+			</statements>
+			<symbol> } </symbol>
+		</subroutineBody>
+	</subroutineDec>
+	<subroutineDec>
+		<keyword> method </keyword>
+		<keyword> char </keyword>
+		<identifier> charAt </identifier>
+		<symbol> ( </symbol>
+		<parameterList>
+			<keyword> int </keyword>
+			<identifier> j </identifier>
+		</parameterList>
+		<symbol> ) </symbol>
+		<subroutineBody>
+			<symbol> { </symbol>
+			<statements>
+			</statements>
+			<symbol> } </symbol>
+		</subroutineBody>
+	</subroutineDec>
+	<subroutineDec>
+		<keyword> method </keyword>
+		<keyword> void </keyword>
+		<identifier> setCharAt </identifier>
+		<symbol> ( </symbol>
+		<parameterList>
+			<keyword> int </keyword>
+			<identifier> j </identifier>
+			<symbol> , </symbol>
+			<keyword> char </keyword>
+			<identifier> c </identifier>
+		</parameterList>
+		<symbol> ) </symbol>
+		<subroutineBody>
+			<symbol> { </symbol>
+			<statements>
+			</statements>
+			<symbol> } </symbol>
+		</subroutineBody>
+	</subroutineDec>
+	<subroutineDec>
+		<keyword> method </keyword>
+		<identifier> String </identifier>
+		<parameterList>
+		</parameterList>
+		<subroutineBody>
+			<statements>
+			</statements>
+		</subroutineBody>
+	</subroutineDec>
+</class>

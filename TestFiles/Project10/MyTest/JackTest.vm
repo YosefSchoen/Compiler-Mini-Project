@@ -1,0 +1,70 @@
+function Point.distance 2
+push argument 0
+pop pointer 0
+push this 0
+push argument 1
+call Point.getx 1
+sub
+pop local 0
+push this 1
+push argument 1
+call Point.gety 1
+sub
+pop local 1
+push local 0
+push local 0
+call Math.multiply 2
+push local 1
+push local 1
+call Math.multiply 2
+add
+call Math.sqrt 1
+return
+
+
+//class symbol table
+//name: x
+//type: int
+//kind: field
+//number: 0
+//name: y
+//type: int
+//kind: field
+//number: 1
+//name: pointCount
+//type: int
+//kind: static
+//number: 0
+
+
+//method's symbol table
+//name: this
+//type: Point
+//kind: argument
+//number: 0
+//name: other
+//type: Point
+//kind: argument
+//number: 1
+//name: dx
+//type: int
+//kind: var
+//number: 0
+//name: dy
+//type: int
+//kind: var
+//number: 1
+//name: x
+//type: int
+//kind: this
+//number: 0
+//name: y
+//type: int
+//kind: this
+//number: 1
+//name: pointCount
+//type: int
+//kind: this
+//number: 0
+
+

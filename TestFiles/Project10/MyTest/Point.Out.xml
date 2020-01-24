@@ -1,0 +1,54 @@
+<class>
+	<keyword> class </keyword>
+	<identifier> Point </identifier>
+	<symbol> { </symbol>
+	<subroutineDec>
+		<keyword> method </keyword>
+		<keyword> int </keyword>
+		<identifier> test </identifier>
+		<symbol> ( </symbol>
+		<parameterList>
+		</parameterList>
+		<symbol> ) </symbol>
+		<subroutineBody>
+			<symbol> { </symbol>
+			<varDec>
+				<keyword> var </keyword>
+				<identifier> Array </identifier>
+				<identifier> a </identifier>
+				<symbol> , </symbol>
+				<identifier> b </identifier>
+				<symbol> ; </symbol>
+			</varDec>
+			<statements>
+				<letStatement>
+					<keyword> let </keyword>
+					<identifier> a </identifier>
+					<symbol> [ </symbol>
+					<expression>
+						<term>
+							<integerConstant> 3 </integerConstant>
+						</term>
+					</expression>
+					<symbol> ] </symbol>
+					<symbol> = </symbol>
+					<expression>
+						<term>
+							<identifier> b </identifier>
+							<symbol> [ </symbol>
+							<expression>
+								<term>
+									<integerConstant> 2 </integerConstant>
+								</term>
+							</expression>
+							<symbol> ] </symbol>
+						</term>
+					</expression>
+					<symbol> ; </symbol>
+				</letStatement>
+			</statements>
+			<symbol> } </symbol>
+		</subroutineBody>
+	</subroutineDec>
+	<symbol> } </symbol>
+</class>

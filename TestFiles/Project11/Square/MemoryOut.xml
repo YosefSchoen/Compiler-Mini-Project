@@ -1,0 +1,86 @@
+<class>
+	<keyword> class </keyword>
+	<identifier> Memory </identifier>
+	<symbol> { </symbol>
+	<subroutineDec>
+		<keyword> function </keyword>
+		<keyword> void </keyword>
+		<identifier> init </identifier>
+		<symbol> ( </symbol>
+		<parameterList>
+		</parameterList>
+		<symbol> ) </symbol>
+		<subroutineBody>
+			<symbol> { </symbol>
+			<statements>
+			</statements>
+			<symbol> } </symbol>
+		</subroutineBody>
+	</subroutineDec>
+	<subroutineDec>
+		<keyword> function </keyword>
+		<keyword> int </keyword>
+		<identifier> peek </identifier>
+		<symbol> ( </symbol>
+		<parameterList>
+			<keyword> int </keyword>
+			<identifier> address </identifier>
+		</parameterList>
+		<symbol> ) </symbol>
+		<subroutineBody>
+			<symbol> { </symbol>
+			<statements>
+			</statements>
+			<symbol> } </symbol>
+		</subroutineBody>
+	</subroutineDec>
+	<subroutineDec>
+		<keyword> function </keyword>
+		<keyword> void </keyword>
+		<identifier> poke </identifier>
+		<symbol> ( </symbol>
+		<parameterList>
+			<keyword> int </keyword>
+			<identifier> address </identifier>
+			<symbol> , </symbol>
+			<keyword> int </keyword>
+			<identifier> value </identifier>
+		</parameterList>
+		<symbol> ) </symbol>
+		<subroutineBody>
+			<symbol> { </symbol>
+			<statements>
+			</statements>
+			<symbol> } </symbol>
+		</subroutineBody>
+	</subroutineDec>
+	<subroutineDec>
+		<keyword> function </keyword>
+		<keyword> int </keyword>
+		<identifier> alloc </identifier>
+		<symbol> ( </symbol>
+		<parameterList>
+			<keyword> int </keyword>
+			<identifier> size </identifier>
+		</parameterList>
+		<symbol> ) </symbol>
+		<subroutineBody>
+			<symbol> { </symbol>
+			<statements>
+			</statements>
+			<symbol> } </symbol>
+		</subroutineBody>
+	</subroutineDec>
+	<subroutineDec>
+		<keyword> function </keyword>
+		<keyword> void </keyword>
+		<identifier> deAlloc </identifier>
+		<symbol> ( </symbol>
+		<parameterList>
+		</parameterList>
+		<subroutineBody>
+			<statements>
+			</statements>
+		</subroutineBody>
+	</subroutineDec>
+</class>

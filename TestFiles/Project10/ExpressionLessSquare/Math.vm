@@ -1,0 +1,81 @@
+function Math.init 0
+function Math.abs 0
+function Math.multiply 0
+function Math.divide 0
+function Math.sqrt 0
+function Math.max 0
+function Math.min 0
+
+
+//class symbol table
+//Math
+
+
+//method's symbol table
+//Math.init
+
+
+//method's symbol table
+//Math.abs
+//name: x
+//type: int
+//kind: argument
+//number: 0
+
+
+//method's symbol table
+//Math.multiply
+//name: x
+//type: int
+//kind: argument
+//number: 0
+//name: y
+//type: int
+//kind: argument
+//number: 1
+
+
+//method's symbol table
+//Math.divide
+//name: x
+//type: int
+//kind: argument
+//number: 0
+//name: y
+//type: int
+//kind: argument
+//number: 1
+
+
+//method's symbol table
+//Math.sqrt
+//name: x
+//type: int
+//kind: argument
+//number: 0
+
+
+//method's symbol table
+//Math.max
+//name: a
+//type: int
+//kind: argument
+//number: 0
+//name: b
+//type: int
+//kind: argument
+//number: 1
+
+
+//method's symbol table
+//Math.min
+//name: a
+//type: int
+//kind: argument
+//number: 0
+//name: b
+//type: int
+//kind: argument
+//number: 1
+
+
