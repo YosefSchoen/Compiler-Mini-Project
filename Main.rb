@@ -32,12 +32,25 @@ def main(path)
   compile("TestFiles/Project10/Square")
   compile("TestFiles/Project10/ArrayTest")
 
+  translateVmToHack("TestFiles/Project9", "TestFiles/Project9/BaseBall.asm")
+  translateVmToHack("TestFiles/Project10/MyTest", "TestFiles/Project10/MyTest/MyTest.asm")
+  translateVmToHack("TestFiles/Project10/ExpressionLessSquare", "TestFiles/Project10/ExpressionLessSquare/ExpressionLessSquare.asm")
+  translateVmToHack("TestFiles/Project10/Square", "TestFiles/Project10/Square/Square.asm")
+  translateVmToHack("TestFiles/Project10/ArrayTest", "TestFiles/Project10/ArrayTest/ArrayTest.asm")
+
   compile("TestFiles/Project11/Seven")
   compile("TestFiles/Project11/ConvertToBin")
   compile("TestFiles/Project11/Square")
   compile("TestFiles/Project11/Average")
   compile("TestFiles/Project11/Pong")
   compile("TestFiles/Project11/ComplexArrays")
+
+  translateVmToHack("TestFiles/Project11/Seven", "TestFiles/Project11/Seven/Seven.asm")
+  translateVmToHack("TestFiles/Project11/ConvertToBin", "TestFiles/Project11/ConvertToBin/ConvertToBin.asm")
+  translateVmToHack("TestFiles/Project11/Square", "TestFiles/Project11/Square/Square.asm")
+  translateVmToHack("TestFiles/Project11/Average", "TestFiles/Project11/Average/Average.asm")
+  translateVmToHack("TestFiles/Project11/Pong", "TestFiles/Project11/Pong/Pong.asm")
+  translateVmToHack("TestFiles/Project11/ComplexArrays", "TestFiles/Project11/ComplexArrays/ComplexArrays.asm")
 
 
   #compile(path)

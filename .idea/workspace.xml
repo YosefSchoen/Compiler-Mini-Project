@@ -2,9 +2,88 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e2bbf7f2-661c-4b38-bdc0-4dc1c947d57a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ArrayTest/Array.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ArrayTest/Keyboard.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ArrayTest/Math.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ArrayTest/Memory.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ArrayTest/Output.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ArrayTest/Screen.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ArrayTest/String.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ArrayTest/Sys.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ExpressionLessSquare/Array.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ExpressionLessSquare/Keyboard.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ExpressionLessSquare/Math.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ExpressionLessSquare/Memory.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ExpressionLessSquare/Output.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ExpressionLessSquare/Screen.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ExpressionLessSquare/String.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/ExpressionLessSquare/Sys.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/MyTest/Array.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/MyTest/Keyboard.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/MyTest/Math.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/MyTest/Memory.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/MyTest/Output.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/MyTest/Screen.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/MyTest/String.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/MyTest/Sys.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/Square/Array.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/Square/Keyboard.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/Square/Math.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/Square/Memory.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/Square/Output.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/Square/Screen.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/Square/String.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project10/Square/Sys.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Average/Array.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Average/Keyboard.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Average/Math.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Average/Memory.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Average/Output.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Average/Screen.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Average/String.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Average/Sys.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ComplexArrays/Array.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ComplexArrays/Keyboard.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ComplexArrays/Math.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ComplexArrays/Memory.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ComplexArrays/Output.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ComplexArrays/Screen.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ComplexArrays/String.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ComplexArrays/Sys.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ConvertToBin/Array.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ConvertToBin/Keyboard.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ConvertToBin/Math.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ConvertToBin/Memory.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ConvertToBin/Output.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ConvertToBin/Screen.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ConvertToBin/String.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/ConvertToBin/Sys.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Pong/Array.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Pong/Keyboard.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Pong/Math.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Pong/Memory.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Pong/Output.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Pong/Screen.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Pong/String.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Pong/Sys.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Seven/Array.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Seven/Keyboard.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Seven/Math.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Seven/Memory.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Seven/Output.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Seven/Screen.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Seven/String.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Seven/Sys.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Square/Array.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Square/Keyboard.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Square/Math.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Square/Memory.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Square/Output.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Square/Screen.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Square/String.jack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Square/Sys.jack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compiler/Parser2.rb" beforeDir="false" afterPath="$PROJECT_DIR$/Compiler/Parser2.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestFiles/Project11/Pong/Ball.vm" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project11/Pong/Ball.vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.rb" beforeDir="false" afterPath="$PROJECT_DIR$/Main.rb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,7 +121,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/TestFiles/Project10" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/TestFiles/Project10/Square" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
@@ -192,21 +271,7 @@
       <workItem from="1578517304087" duration="81436000" />
       <workItem from="1579451276315" duration="72442000" />
       <workItem from="1579686561240" duration="32466000" />
-      <workItem from="1579776838509" duration="15657000" />
-    </task>
-    <task id="LOCAL-00028" summary="need to fix helpers">
-      <created>1577899234406</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1577899234406</updated>
-    </task>
-    <task id="LOCAL-00029" summary="need to fix helpers">
-      <created>1578240751512</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1578240751513</updated>
+      <workItem from="1579776838509" duration="17239000" />
     </task>
     <task id="LOCAL-00030" summary="need to fix helpers">
       <created>1578242133970</created>
@@ -537,7 +602,21 @@
       <option name="project" value="LOCAL" />
       <updated>1579796183224</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="Maybe needs some debug">
+      <created>1579797263255</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1579797263255</updated>
+    </task>
+    <task id="LOCAL-00078" summary="Maybe needs some debug">
+      <created>1579797498474</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1579797498474</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -650,6 +729,6 @@
     <SUITE FILE_PATH="coverage/Project7@Tokenizer.rcov" NAME="Tokenizer Coverage Results" MODIFIED="1578563816695" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
     <SUITE FILE_PATH="coverage/Project7@code_writer.rcov" NAME="code_writer Coverage Results" MODIFIED="1574813817501" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
     <SUITE FILE_PATH="coverage/Project7@Utility.rcov" NAME="Utility Coverage Results" MODIFIED="1574100649750" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
-    <SUITE FILE_PATH="coverage/Project7@Main.rcov" NAME="Main Coverage Results" MODIFIED="1579797108167" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
+    <SUITE FILE_PATH="coverage/Project7@Main.rcov" NAME="Main Coverage Results" MODIFIED="1579825942458" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
   </component>
 </project>
