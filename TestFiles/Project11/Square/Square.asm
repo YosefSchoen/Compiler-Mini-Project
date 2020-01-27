@@ -27330,6 +27330,631 @@ D=0
 D=0
 
 //create function
+(String.new)
+D=0
+
+//push constant to stack
+@0
+D=A
+//push to stack
+@SP
+A=M
+M=D
+//increment the stack pointer
+@SP
+M=M+1
+
+
+//call function
+@String.$ret.2
+D=A
+//push to stack
+@SP
+A=M
+M=D
+//increment the stack pointer
+@SP
+M=M+1
+
+//call segment pointer
+@LCL
+D=M
+//push to stack
+@SP
+A=M
+M=D
+//increment the stack pointer
+@SP
+M=M+1
+
+//call segment pointer
+@ARG
+D=M
+//push to stack
+@SP
+A=M
+M=D
+//increment the stack pointer
+@SP
+M=M+1
+
+//call segment pointer
+@THIS
+D=M
+//push to stack
+@SP
+A=M
+M=D
+//increment the stack pointer
+@SP
+M=M+1
+
+//call segment pointer
+@THAT
+D=M
+//push to stack
+@SP
+A=M
+M=D
+//increment the stack pointer
+@SP
+M=M+1
+
+@SP
+D=M
+@1
+D=D-A
+@5
+D=D-A
+@ARG
+M=D
+@SP
+D=M
+@LCL
+M=D
+@Memory.alloc
+0;JMP
+(String.$ret.2)
+
+//pop to segment
+//get segment position
+@3
+D=A
+@0
+D=D+A
+
+//store to free register
+@R13
+M=D
+
+//get the top of stack
+@SP
+A=M-1
+
+D=M
+//send to segment from free register
+@R13
+A=M
+M=D
+
+//remove to stack
+//get the top of stack
+@SP
+A=M-1
+
+D=M
+M=M-D
+//decrement the stack pointer
+@SP
+M=M-1
+
+//delete content from free register
+@R13
+D=M
+M=M-D
+
+
+//create function
+(String.dispose)
+D=0
+
+//push from argument segment
+//push from segment
+//get segment position
+@ARG
+D=M
+@0
+D=D+A
+
+A=D
+D=M
+//push to stack
+@SP
+A=M
+M=D
+//increment the stack pointer
+@SP
+M=M+1
+
+
+//pop to segment
+//get segment position
+@3
+D=A
+@0
+D=D+A
+
+//store to free register
+@R13
+M=D
+
+//get the top of stack
+@SP
+A=M-1
+
+D=M
+//send to segment from free register
+@R13
+A=M
+M=D
+
+//remove to stack
+//get the top of stack
+@SP
+A=M-1
+
+D=M
+M=M-D
+//decrement the stack pointer
+@SP
+M=M-1
+
+//delete content from free register
+@R13
+D=M
+M=M-D
+
+
+//create function
+(String.length)
+D=0
+
+//push from argument segment
+//push from segment
+//get segment position
+@ARG
+D=M
+@0
+D=D+A
+
+A=D
+D=M
+//push to stack
+@SP
+A=M
+M=D
+//increment the stack pointer
+@SP
+M=M+1
+
+
+//pop to segment
+//get segment position
+@3
+D=A
+@0
+D=D+A
+
+//store to free register
+@R13
+M=D
+
+//get the top of stack
+@SP
+A=M-1
+
+D=M
+//send to segment from free register
+@R13
+A=M
+M=D
+
+//remove to stack
+//get the top of stack
+@SP
+A=M-1
+
+D=M
+M=M-D
+//decrement the stack pointer
+@SP
+M=M-1
+
+//delete content from free register
+@R13
+D=M
+M=M-D
+
+
+//create function
+(String.charAt)
+D=0
+
+//push from argument segment
+//push from segment
+//get segment position
+@ARG
+D=M
+@0
+D=D+A
+
+A=D
+D=M
+//push to stack
+@SP
+A=M
+M=D
+//increment the stack pointer
+@SP
+M=M+1
+
+
+//pop to segment
+//get segment position
+@3
+D=A
+@0
+D=D+A
+
+//store to free register
+@R13
+M=D
+
+//get the top of stack
+@SP
+A=M-1
+
+D=M
+//send to segment from free register
+@R13
+A=M
+M=D
+
+//remove to stack
+//get the top of stack
+@SP
+A=M-1
+
+D=M
+M=M-D
+//decrement the stack pointer
+@SP
+M=M-1
+
+//delete content from free register
+@R13
+D=M
+M=M-D
+
+
+//create function
+(String.setCharAt)
+D=0
+
+//push from argument segment
+//push from segment
+//get segment position
+@ARG
+D=M
+@0
+D=D+A
+
+A=D
+D=M
+//push to stack
+@SP
+A=M
+M=D
+//increment the stack pointer
+@SP
+M=M+1
+
+
+//pop to segment
+//get segment position
+@3
+D=A
+@0
+D=D+A
+
+//store to free register
+@R13
+M=D
+
+//get the top of stack
+@SP
+A=M-1
+
+D=M
+//send to segment from free register
+@R13
+A=M
+M=D
+
+//remove to stack
+//get the top of stack
+@SP
+A=M-1
+
+D=M
+M=M-D
+//decrement the stack pointer
+@SP
+M=M-1
+
+//delete content from free register
+@R13
+D=M
+M=M-D
+
+
+//create function
+(String.appendChar)
+D=0
+
+//push from argument segment
+//push from segment
+//get segment position
+@ARG
+D=M
+@0
+D=D+A
+
+A=D
+D=M
+//push to stack
+@SP
+A=M
+M=D
+//increment the stack pointer
+@SP
+M=M+1
+
+
+//pop to segment
+//get segment position
+@3
+D=A
+@0
+D=D+A
+
+//store to free register
+@R13
+M=D
+
+//get the top of stack
+@SP
+A=M-1
+
+D=M
+//send to segment from free register
+@R13
+A=M
+M=D
+
+//remove to stack
+//get the top of stack
+@SP
+A=M-1
+
+D=M
+M=M-D
+//decrement the stack pointer
+@SP
+M=M-1
+
+//delete content from free register
+@R13
+D=M
+M=M-D
+
+
+//create function
+(String.eraseLastChar)
+D=0
+
+//push from argument segment
+//push from segment
+//get segment position
+@ARG
+D=M
+@0
+D=D+A
+
+A=D
+D=M
+//push to stack
+@SP
+A=M
+M=D
+//increment the stack pointer
+@SP
+M=M+1
+
+
+//pop to segment
+//get segment position
+@3
+D=A
+@0
+D=D+A
+
+//store to free register
+@R13
+M=D
+
+//get the top of stack
+@SP
+A=M-1
+
+D=M
+//send to segment from free register
+@R13
+A=M
+M=D
+
+//remove to stack
+//get the top of stack
+@SP
+A=M-1
+
+D=M
+M=M-D
+//decrement the stack pointer
+@SP
+M=M-1
+
+//delete content from free register
+@R13
+D=M
+M=M-D
+
+
+//create function
+(String.intValue)
+D=0
+
+//push from argument segment
+//push from segment
+//get segment position
+@ARG
+D=M
+@0
+D=D+A
+
+A=D
+D=M
+//push to stack
+@SP
+A=M
+M=D
+//increment the stack pointer
+@SP
+M=M+1
+
+
+//pop to segment
+//get segment position
+@3
+D=A
+@0
+D=D+A
+
+//store to free register
+@R13
+M=D
+
+//get the top of stack
+@SP
+A=M-1
+
+D=M
+//send to segment from free register
+@R13
+A=M
+M=D
+
+//remove to stack
+//get the top of stack
+@SP
+A=M-1
+
+D=M
+M=M-D
+//decrement the stack pointer
+@SP
+M=M-1
+
+//delete content from free register
+@R13
+D=M
+M=M-D
+
+
+//create function
+(String.setInt)
+D=0
+
+//push from argument segment
+//push from segment
+//get segment position
+@ARG
+D=M
+@0
+D=D+A
+
+A=D
+D=M
+//push to stack
+@SP
+A=M
+M=D
+//increment the stack pointer
+@SP
+M=M+1
+
+
+//pop to segment
+//get segment position
+@3
+D=A
+@0
+D=D+A
+
+//store to free register
+@R13
+M=D
+
+//get the top of stack
+@SP
+A=M-1
+
+D=M
+//send to segment from free register
+@R13
+A=M
+M=D
+
+//remove to stack
+//get the top of stack
+@SP
+A=M-1
+
+D=M
+M=M-D
+//decrement the stack pointer
+@SP
+M=M-1
+
+//delete content from free register
+@R13
+D=M
+M=M-D
+
+
+//create function
+(String.newLine)
+D=0
+
+//create function
+(String.backSpace)
+D=0
+
+//create function
+(String.doubleQuote)
+D=0
+
+//create function
 (Sys.init)
 D=0
 

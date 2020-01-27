@@ -1,7 +1,8 @@
 require_relative 'Translator'
 
+
 #creates an array of the lines of a vm file to read
-def readFile(fileName)
+def readFileTranslator(fileName)
   lines = []
 
   #new read only file object with the filename passed above
@@ -23,7 +24,7 @@ end
 
 
 #writes the lines to a asm file
-def writeFile(asmFile, filesWithLines)
+def writeFileTranslator(asmFile, filesWithLines)
   #new write only file object with the file name passed above
   outFile = File.new(asmFile, "w")
 
@@ -61,7 +62,7 @@ end
 
 
 #this function will get all of the files in a specified path and return them in an array
-def getFilesInDir(path)
+def getFilesInDirTranslator(path)
   files = []
 
   #search for all of the files in the directory
@@ -80,12 +81,12 @@ def getFilesInDir(path)
 end
 
 
-def getFilesWithLines(files)
+def getFilesWithLinesTranslator(files)
   fileWithLines = []
 
   #storing the file's name and its lines of vm commands in a tuple (name, [lines])
   for i in 0..files.size-1
-    lines = (readFile(files[i]))
+    lines = (readFileTranslator(files[i]))
     tuple = [files[i], lines]
     #storing each tuple into  list
     fileWithLines.append(tuple)
@@ -98,9 +99,9 @@ end
 def translateVmToHack(vmFilesDirectory, asmFile)
 
   #will store all of the code in the input files into an array of strings
-  files = getFilesInDir(vmFilesDirectory)
+  files = getFilesInDirTranslator(vmFilesDirectory)
 
-  fileWithLines = getFilesWithLines(files)
+  fileWithLines = getFilesWithLinesTranslator(files)
   #will write the strings in the array to the asm file
-  writeFile(asmFile, fileWithLines)
+  writeFileTranslator(asmFile, fileWithLines)
 end

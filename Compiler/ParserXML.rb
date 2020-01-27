@@ -12,8 +12,6 @@ def compileClass(tokens, classNames)
   if notToLarge(tokens, i) and isCorrectToken(tokens, i, "class")
     str+= "<class>"+"\n"+getXMLString(tokens, i)
     i+=1
-
-
   end
 
   # terminal className, check if legal!
@@ -54,11 +52,9 @@ end
 def compileClassVarDec(tokens, classNames, i)
   str = ""
 
-
   resultList = compileClassVarDecT(tokens, classNames, i, "")
   str += resultList[0]
   i = resultList[1]
-
 
   return [str, i]
 end

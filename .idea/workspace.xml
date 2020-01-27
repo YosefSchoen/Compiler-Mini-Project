@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e2bbf7f2-661c-4b38-bdc0-4dc1c947d57a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Square/String.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Square/StringOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Square/StringTOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Square/Sys.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Square/SysOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Project11/Square/SysTOut.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compiler/CompilerIO.rb" beforeDir="false" afterPath="$PROJECT_DIR$/Compiler/CompilerIO.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compiler/CompilerUtility.rb" beforeDir="false" afterPath="$PROJECT_DIR$/Compiler/CompilerUtility.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compiler/Parser.rb" beforeDir="false" afterPath="$PROJECT_DIR$/Compiler/ParserXML.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compiler/Parser2.rb" beforeDir="false" afterPath="$PROJECT_DIR$/Compiler/ParserCompiler.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compiler/vmWriter.rb" beforeDir="false" afterPath="$PROJECT_DIR$/Compiler/vmWriter.rb" afterDir="false" />
+    <list default="true" id="e2bbf7f2-661c-4b38-bdc0-4dc1c947d57a" name="Default Changelist" comment="Maybe needs some debug">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compiler/ParserXML.rb" beforeDir="false" afterPath="$PROJECT_DIR$/Compiler/ParserXML.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.rb" beforeDir="false" afterPath="$PROJECT_DIR$/Main.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestFiles/Project11/Square/Square.asm" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project11/Square/Square.asm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestFiles/Project7/MyTest/test.asm" beforeDir="false" afterPath="$PROJECT_DIR$/TestFiles/Project7/MyTest/MyTest.asm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Translator/TranslatorIO.rb" beforeDir="false" afterPath="$PROJECT_DIR$/Translator/TranslatorIO.rb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -201,14 +196,7 @@
       <workItem from="1579451276315" duration="72442000" />
       <workItem from="1579686561240" duration="32466000" />
       <workItem from="1579776838509" duration="17519000" />
-      <workItem from="1579867924702" duration="1597000" />
-    </task>
-    <task id="LOCAL-00032" summary="need to fix helpers">
-      <created>1578245370418</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1578245370418</updated>
+      <workItem from="1579867924702" duration="8015000" />
     </task>
     <task id="LOCAL-00033" summary="need to fix helpers">
       <created>1578331795619</created>
@@ -546,7 +534,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579868371860</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="Maybe needs some debug">
+      <created>1579869539314</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1579869539315</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -634,20 +629,6 @@
     </state>
     <state x="330" y="1" width="840" height="1034" key="search.everywhere.popup/0.0.1500.960@0.0.1500.960" timestamp="1578415769651" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="ruby-line">
-          <url>file://$PROJECT_DIR$/Compiler/ParserXML.rb</url>
-          <line>5</line>
-          <properties a="-1">
-            <option name="block-ordinal" value="-1" />
-          </properties>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Project7@Parser.rcov" NAME="Parser Coverage Results" MODIFIED="1578402315711" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
     <SUITE FILE_PATH="coverage/MiniProject@Test.rcov" NAME="Test Coverage Results" MODIFIED="1573607065364" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
@@ -659,6 +640,6 @@
     <SUITE FILE_PATH="coverage/Project7@Tokenizer.rcov" NAME="Tokenizer Coverage Results" MODIFIED="1578563816695" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
     <SUITE FILE_PATH="coverage/Project7@code_writer.rcov" NAME="code_writer Coverage Results" MODIFIED="1574813817501" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
     <SUITE FILE_PATH="coverage/Project7@Utility.rcov" NAME="Utility Coverage Results" MODIFIED="1574100649750" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
-    <SUITE FILE_PATH="coverage/Project7@Main.rcov" NAME="Main Coverage Results" MODIFIED="1579869470262" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
+    <SUITE FILE_PATH="coverage/Project7@Main.rcov" NAME="Main Coverage Results" MODIFIED="1580121422200" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Project7" />
   </component>
 </project>
