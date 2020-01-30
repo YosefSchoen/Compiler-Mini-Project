@@ -52,11 +52,8 @@ end
 def main(path)
   testFiles = getTestFiles
   for i in 0..testFiles.size-1
-    compileAndTranslate(testFiles[i])
+    #compileAndTranslate(testFiles[i])
   end
 
-  #compileAndTranslate(path)
+  compileAndTranslate(path)
 end
-
-path = ""
-main(path)
