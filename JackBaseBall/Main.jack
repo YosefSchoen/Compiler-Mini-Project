@@ -1,0 +1,76 @@
+
+class Main
+{
+    function void main()
+    {
+        var Player player;
+        var Ball ball;
+        var Bat bat;
+        var Vertex vertexLeft;
+        var Vertex vertexRight;
+        var String end;
+        var boolean spacebar;
+        var int i;
+
+        let end = "Game Over!";
+        let player = Player.new(0); // pass in numHits = 0
+        let i = 0;
+        let spacebar = false;
+
+    
+        // all variables declared in the beginning of the function
+        
+        let ball = Ball.new(255, 100);
+        let vertexLeft = Vertex.new(200, 163);
+        //let test = Ball.new( 200, 163); // TEST
+        let bat = Bat.new(240, 226);
+        //let vertexLeft = Vertex.new();
+        // draw the objects
+        do ball.draw();
+        //do test.draw(); // TEST
+        do Output.moveCursor(22, 7); // put cursor in upper right corner
+        do Output.printInt(player.getNumHits()); // output number of hits
+        do bat.drawVertical();
+
+
+        // loop for each frame
+        while(true)
+        {
+            if(Keyboard.keyPressed() = 32)
+            {
+                if(~bat.getIsHorizontal())
+                {
+                    do bat.eraseVertical();
+                    do bat.drawHorizontal();
+                    if(ball.contact(bat))
+                    {
+                        do bat.drawHorizontal();
+                        do player.increaseNumHits();
+                        do Output.moveCursor(22, 7); // put cursor in upper right corner
+                        do Output.printInt(player.getNumHits()); // output number of hits
+                        do Sys.wait(250);
+                        do bat.resetBat();
+                        do ball.resetBall();
+                    }
+
+                    else 
+                    { 
+                        do bat.drawHorizontal();
+                        do Output.moveCursor(5,7);
+                        do Output.printString(end);
+                    }
+                }
+            }
+            
+            // YOSEF this is where the differennt pitches are
+            do ball.pitchCurveRight(vertexLeft);
+            do Sys.wait(17); //frames/sec inversely proportional 17 * 60 is about 1000
+            
+        }
+        do ball.dispose();
+        do bat.dispose();
+        do player.dispose();
+        do vertexLeft.dispose();
+        return;
+    }
+}

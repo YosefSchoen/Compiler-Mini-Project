@@ -1,0 +1,20 @@
+class Random
+{
+    static int prev;
+    static int a;
+    static int b;
+    static int m;
+
+    function void initializer(int seed)
+    {
+        let m = 717;
+    }
+    
+    // from wikipedia and the dovids
+    function int mod(int a, int n) 
+    {
+        let a = Math.abs(a);
+        let n = Math.abs(n);
+        return a - (n * (Math.divide(a, n)));
+    }
+}

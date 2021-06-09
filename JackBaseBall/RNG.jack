@@ -1,0 +1,24 @@
+class RNG {
+  static int previous;
+  static int a;
+  static int b;
+  static int m;
+
+  function void init(int seed) {
+    let a = 100;
+    let b = 2345;
+    let m = 513;
+    let previous = Utils.mod(seed, m);
+    
+    return;
+  }
+
+  function int nextInt() {
+    let previous = Utils.mod((previous * a) + b, m);
+    let a = previous + 1;
+    let previous = Utils.mod((previous * a) + b, m);
+    let b = (previous + 1) * 3;
+    let previous = Utils.mod((previous * a) + b, m);
+    return previous;
+  }
+}
